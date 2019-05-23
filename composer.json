@@ -1,0 +1,15 @@
+{
+    "name": "mmiller/it-osu-pl",
+    "description": "IT@OSU Pattern Lab",
+    "type": "design-system",
+    "require": {
+        "composer/installers": "^1.6"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "M Miller",
+            "email": "miller.2676@gmail.com"
+        }
+    ]
+}
