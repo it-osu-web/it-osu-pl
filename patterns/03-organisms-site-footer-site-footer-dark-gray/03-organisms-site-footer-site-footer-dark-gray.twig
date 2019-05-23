@@ -1,0 +1,19 @@
+<footer id="site-footer" class={{ footer_color }}>
+  <div class="site-footer__inner">
+
+    {% include "@molecules/address-block/address-block.twig" %}
+    {% include "@molecules/social-media-links/social-media-links.twig" %}
+
+    <div id="footer-text-block" class="footer-text">
+      <p>{{ footer_text }}</p>
+    </div>
+
+    {# show admin_link if selected and user is not logged in #}
+    {% if admin_link == 1 %}
+      {% if not logged_in %}
+        <a class="footer-login-link" href="/user/login">Admin Login</a>
+      {% endif %}
+    {% endif %}
+
+  </div>
+</footer>

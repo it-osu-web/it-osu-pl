@@ -1,0 +1,44 @@
+<div class="sg-typography">
+  {% for item in items %}
+
+  <div class="sg-typography__group">
+      <div class="sg-info" style="padding: 10px;">
+        <span style="font-size: 30px; font-weight: 100; font-family: {{item.value}}">{{item.name}} 100</span>
+      </div>
+      <div class="sg-info" style="padding: 10px;">
+        <span style="font-size: 30px; font-weight: 300; font-family: {{item.value}}">{{item.name}} 300</span>
+      </div>
+      <div class="sg-info" style="padding: 10px;">
+        <span style="font-size: 30px; font-weight: 400; font-family: {{item.value}}">{{item.name}} 400</span>
+      </div>
+      <div class="sg-info" style="padding: 10px;">
+        <span style="font-size: 30px; font-weight: 600; font-family: {{item.value}}">{{item.name}} 600</span>
+      </div>
+      <div class="sg-info" style="padding: 10px;">
+        <span style="font-size: 30px; font-weight: 700; font-family: {{item.value}}">{{item.name}} 700</span>
+      </div>
+  </div>
+
+  <div class="sg-typography__group">
+      <div class="sg-info" style="padding: 10px;">
+        <span style="font-size: 30px; font-weight: 100; font-style: italic; font-family: {{item.value}}">{{item.name}} 100 italic</span>
+      </div>
+      <div class="sg-info" style="padding: 10px;">
+        <span style="font-size: 30px; font-weight: 300; font-style: italic; font-family: {{item.value}}">{{item.name}} 300 italic</span>
+      </div>
+      <div class="sg-info" style="padding: 10px;">
+        <span style="font-size: 30px; font-weight: 400; font-style: italic; font-family: {{item.value}}">{{item.name}} 400 italic</span>
+      </div>
+      <div class="sg-info" style="padding: 10px;">
+        <span style="font-size: 30px; font-weight: 600; font-style: italic; font-family: {{item.value}}">{{item.name}} 600 italic</span>
+      </div>
+      <div class="sg-info" style="padding: 10px;">
+        <span style="font-size: 30px; font-weight: 700; font-style: italic; font-family: {{item.value}}">{{item.name}} 700 italic</span>
+      </div>
+  </div>
+
+  {% endfor %}
+</div>
+{% if meta %}
+  <p> <small>{{ meta.description }}</small> </p>
+{% endif %}

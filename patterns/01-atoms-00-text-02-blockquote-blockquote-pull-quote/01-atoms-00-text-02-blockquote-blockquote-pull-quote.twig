@@ -1,0 +1,29 @@
+{#
+/**
+ * Available variables:
+ * - blockquote_base_class - the base classname
+ * - blockquote_modifiers - array of modifiers to add to the base classname
+ * - blockquote_blockname - blockname prepended to the base classname
+ * - blockquote_url - the url this blockquote should point to
+ * - blockquote_content - the content of the blockquote (typically text)
+ *
+ * Available blocks:
+ * - blockquote_content - used to replace the content of the blockquote with something other than text
+ *   for example: A formatted text field in Drupal
+ */
+#}
+
+{% set blockquote_base_class = blockquote_base_class|default('blockquote') %}
+
+<blockquote
+  {{ bem(blockquote_base_class, (blockquote_modifiers), blockquote_blockname) }}
+>
+  {% block blockquote_content %}
+    {% if blockquote_base_class == 'pull-quote' %}
+      <div class="pull-quote__icon"><i class="fas fa-quote-left fa-3x"></i></div>
+      <div class="pull-quote__text"><p>{{ blockquote_content }}</p></div>
+    {% else %}
+      <p>{{ blockquote_content }}</p>
+    {% endif %}
+  {% endblock %}
+</blockquote>

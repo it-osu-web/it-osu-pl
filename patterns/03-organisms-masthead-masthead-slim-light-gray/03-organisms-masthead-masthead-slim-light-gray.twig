@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Pattern for masthead.
+ *
+ */
+#}
+
+<div id="masthead" class="masthead--{{ masthead_variant }} masthead--{{ masthead_color }}">
+  <div class="masthead__inner">
+    <div id="site-name">
+
+      <div class="site-name__inner">
+        {% if site_name_prefix|length %}
+          <span class="site-name__prefix">{{ site_name_prefix }}</span>
+        {% endif %}
+
+        {% if site_name|length > 30 %}
+          <a class="site-name__link site-name__link--long" href="/" title="home" rel="home">{{ site_name }}</a>
+        {% else %}
+          <a class="site-name__link" href="/" title="home" rel="home">{{ site_name }}</a>
+        {% endif %}
+      </div>
+
+    </div>
+
+    <div id="site-logo">
+      {% if masthead_variant == 'slim' %}
+        <a class="site-logo__link" href="http://osu.edu" target="_blank"><img class="site-logo__image" src="{{ base_path ~ directory }}/images/osu-logos/block-o/block-o.svg" alt="The Ohio State University" /></a>
+      {% else %}
+        <a class="site-logo__link" href="http://osu.edu" target="_blank"><img class="site-logo__image" src="{{ base_path ~ directory }}/images/osu-logos/stacked/osu-stacked-{{ masthead_color }}.svg" alt="The Ohio State University" /></a>
+      {% endif %}
+    </div>
+
+  </div>
+</div>
