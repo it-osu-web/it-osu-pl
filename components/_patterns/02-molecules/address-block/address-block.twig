@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Pattern for address-block.
+ *
+ */
+#}
+
+<div id="address-block">
+  <div id="site-wordmark">
+    <a href="http://osu.edu" target="_blank"><img src="{{ base_path ~ directory }}/images/osu-logos/wordmark/osu-footer-wordmark-{{ footer_color }}.svg" alt="The Ohio State University" /></a>
+  </div>
+  <address id="site-address">
+    <p class="site-name">{{ site_name_prefix }} {{ site_name }}</p>
+
+    <p class="address-line">
+      {% if address_1|length and address_2|length %}
+        {{ address_1 }}<span class="pipe"> | </span>{{ address_2 }}
+      {% else %}
+        {{ address_1 }}{{ address_2 }}
+      {% endif %}
+
+      {% if city|length and state|length %}
+        <span class="pipe"> | </span>{{ city }}, {{ state }} {{ zip }}
+      {% elseif  city|length or state|length or zip|length %}
+        <span class="pipe"> | </span>{{ city }} {{ state }} {{ zip }}
+      {% endif %}
+    </p>
+
+    {% if phone|length and fax|length %}
+      <p>Phone: <a href="tel:{{ phone }}">{{ phone }}</a><span class="pipe"> | </span>Fax: {{ fax }}</p>
+    {% else %}
+      <p> {% if phone|length %} Phone: <a href="tel:{{ phone }}">{{ phone }}</p> {% elseif fax|length %} Fax: {{ fax }} {% endif %}</p>
+    {% endif %}
+
+    {% if contact_email|length %}
+      <p>Email: <a href="mailto:{{ contact_email }}">{{ contact_email }}</a></p>
+    {% endif %}
+
+  </address>
+</div>

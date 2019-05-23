@@ -1,0 +1,248 @@
+//
+// Generic header styles:
+// All arguments are optional. If not defined, the defaults below will be used
+//
+
+$color-heading: $gray-darker;
+$color-heading--hover: $teal;
+
+@mixin heading-xl(
+  $font-family: $font-heading,
+  $font-size: 2.6rem,
+  $line-height: 1.2,
+  $color: $color-heading,
+  $color-link: inherit,
+  $color-link-hover: $color-heading--hover,
+  $font-weight: 700,
+  $margin: 0 0 $space-one-fourth
+) {
+  color: #{$color};
+  font-family: #{$font-family};
+  font-weight: #{$font-weight};
+  font-style: normal;
+  font-size: #{$font-size};
+  line-height: #{$line-height};
+  margin: #{$margin};
+  width: auto;
+
+  a,
+  &__link {
+    color: $color-link;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+
+    &:focus {
+      outline: 2px dotted $color-heading--hover;
+      outline-offset: 3px;
+    }
+  }
+}
+
+@mixin heading-large(
+  $font-family: $font-heading,
+  $font-size: 2rem,
+  $line-height: 1.2,
+  $color: $color-heading,
+  $color-link: inherit,
+  $color-link-hover: $color-heading--hover,
+  $font-weight: 600,
+  $margin: 0 0 $space-one-fourth
+) {
+  color: #{$color};
+  font-family: #{$font-family};
+  font-weight: #{$font-weight};
+  font-style: normal;
+  font-size: #{$font-size};
+  line-height: #{$line-height};
+  margin: #{$margin};
+  width: auto;
+
+  a,
+  &__link {
+    color: $color-link;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+
+    &:focus {
+      outline: 2px dotted $color-heading--hover;
+      outline-offset: 3px;
+    }
+  }
+}
+
+@mixin heading-medium(
+  $font-family: $font-heading,
+  $font-size: 1.75rem,
+  $line-height: 1.4,
+  $color: $color-heading,
+  $color-link: inherit,
+  $color-link-hover: $color-heading--hover,
+  $font-weight: 400,
+  $margin: 0 0 $space-one-fourth
+) {
+  color: #{$color};
+  font-family: #{$font-family};
+  font-weight: #{$font-weight};
+  font-style: normal;
+  font-size: #{$font-size};
+  line-height: #{$line-height};
+  margin: #{$margin};
+  width: auto;
+
+  a,
+  &__link {
+    color: $color-link;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+
+    &:focus {
+      outline: 2px dotted $color-heading--hover;
+      outline-offset: 3px;
+    }
+  }
+}
+
+@mixin heading-small(
+  $font-family: $font-heading,
+  $font-size: 1.4rem,
+  $line-height: 1.4,
+  $color: $color-heading,
+  $color-link: inherit,
+  $color-link-hover: $color-heading--hover,
+  $font-weight: 600,
+  $margin: 0 0 $space-one-eighth
+) {
+  color: #{$color};
+  font-family: #{$font-family};
+  font-weight: #{$font-weight};
+  font-style: normal;
+  font-size: #{$font-size};
+  line-height: #{$line-height};
+  margin: #{$margin};
+  width: auto;
+
+  a,
+  &__link {
+    color: $color-link;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+
+    &:focus {
+      outline: 2px dotted $color-heading--hover;
+      outline-offset: 3px;
+    }
+  }
+}
+
+@mixin heading-xs(
+  $font-family: $font-heading,
+  $font-size: 1.2rem,
+  $line-height: 1.4,
+  $color: $color-heading,
+  $color-link: inherit,
+  $color-link-hover: $color-heading--hover,
+  $font-weight: 600,
+  $margin: 0 0 $space-one-fourth
+) {
+  color: #{$color};
+  font-family: #{$font-family};
+  font-weight: #{$font-weight};
+  font-style: normal;
+  font-size: #{$font-size};
+  line-height: #{$line-height};
+  margin: #{$margin};
+  width: auto;
+
+  a,
+  &__link {
+    color: $color-link;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+
+    &:focus {
+      outline: 2px dotted $color-heading--hover;
+      outline-offset: 3px;
+    }
+  }
+}
+
+.h1 {
+  @include heading-xl();
+}
+
+.h2 {
+  @include heading-large();
+}
+
+.h3 {
+  @include heading-medium();
+}
+
+.h4 {
+  @include heading-small();
+}
+
+.h5,
+.h6 {
+  @include heading-xs();
+}
+
+// TODO: BEM selectors should be applied to wysiwyg-created content
+
+.text-long {
+  h2 {
+    @extend .h2;
+
+    margin-bottom: $space-one-tenth;
+  }
+
+  h3 {
+    @extend .h3;
+
+    margin-bottom: $space-one-tenth;
+  }
+
+  h4 {
+    @extend .h4;
+  }
+
+  h5 {
+    @extend .h5;
+  }
+
+  h6 {
+    @extend .h6;
+  }
+
+  p + h2,
+  ul + h2,
+  ol + h2 {
+    margin-top: $space !important;
+  }
+
+  p + h3,
+  ul + h3,
+  ol + h3,
+  p + h4,
+  ul + h4,
+  ol + h4 {
+    margin-top: $space !important;
+  }
+
+  h2 + h3 {
+    margin-top: $space-one-fourth;
+  }
+}

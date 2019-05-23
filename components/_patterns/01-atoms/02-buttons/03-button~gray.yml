@@ -1,0 +1,7 @@
+button_url:
+  "#"
+button_content:
+  "Gray Button"
+button_modifiers:
+  1:
+    "gray"

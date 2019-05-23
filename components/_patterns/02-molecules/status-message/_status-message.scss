@@ -1,0 +1,43 @@
+$statuses: (
+  'status': $teal,
+  'warning': $orange-dark,
+  'error': $violet,
+) !default;
+
+@each $status-type, $color in $statuses {
+  .status--#{$status-type} {
+    background: $color;
+    color: $white;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 2em;
+    padding: 1.5em;
+    border-radius: 6px;
+
+    a {
+      color: $gray-lighter;
+      font-weight: 600;
+      text-decoration: underline;
+
+      &:focus,
+      &:hover {
+        color: $white;
+      }
+    }
+
+    .icon {
+      float: left;
+      margin-right: 1.25em;
+    }
+
+    .svg-inline--fa {
+      font-size: 2rem;
+      margin-top: -0.1375em;
+    }
+
+    .placeholder {
+      font-style: normal;
+      font-weight: 700;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.blockquote {
+  border-left: solid 3px $gray-lighter;
+  margin: 2em 0 2em 2em;
+  padding-left: 1em;
+  padding-right: 3em;
+  p {
+    line-height: 1.6;
+  }
+}
+
+blockquote:not(.pull-quote) {
+  @extend .blockquote;
+}
+
+.pull-quote {
+  border: 0;
+  padding: 2em;
+  padding-right: 4em;
+  margin: 2em 0;
+  position: relative;
+}
+
+.pull-quote__icon {
+  color: $gray-lighter;
+  position: absolute;
+  top: 0.8em;
+}
+
+.pull-quote__text {
+  font-family: $capita;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 115%;
+  padding: 0;
+  padding-left: 3.5em;
+
+  p {
+    line-height: 1.6;
+  }
+}

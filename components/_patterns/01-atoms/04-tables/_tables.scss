@@ -1,0 +1,66 @@
+.table {
+  border: 1px solid $gray-light;
+  border-bottom: 0;
+  border-right: 0;
+  border-spacing: 0;
+  background-color: $near-white;
+  width: 100%;
+}
+
+.table__caption {
+  text-align: left;
+  margin-bottom: 0.5em;
+}
+
+.table__heading-cell {
+  color: $gray-dark;
+  font-weight: 700;
+  padding: 0.75em;
+  text-align: left;
+  border-right: 1px solid $gray-light;
+  border-bottom: 1px solid $gray-light;
+
+  &[scope='col'] {
+    border-bottom: 1px solid $gray-light;
+  }
+
+  &[scope='row'] {
+    border-right: 1px solid $gray-light;
+  }
+}
+
+.table__row {
+  &:nth-child(odd) {
+    background-color: $white;
+  }
+}
+
+.table__cell {
+  border-bottom: 1px solid $gray-light;
+  border-right: 1px solid $gray-light;
+  padding: 0.75em;
+}
+
+// TODO: BEM selectors should be applied to wysiwyg-created content
+
+.text-long {
+  table {
+    @extend .table;
+  }
+
+  table caption {
+    @extend .table__caption;
+  }
+
+  th {
+    @extend .table__heading-cell;
+  }
+
+  td {
+    @extend .table__cell;
+  }
+
+  tbody tr {
+    @extend .table__row;
+  }
+}

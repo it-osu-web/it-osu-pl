@@ -1,0 +1,75 @@
+// These styles are specifically for Pattern Lab.
+
+.sg-main {
+  padding: 0 4%;
+  font-family: $proxima;
+}
+
+#sg-patterns {
+  .sg-subtype h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    clear: both;
+    background: $gray-lightest;
+    @include breakout;
+    padding: 6px 0 0 4.75%;
+    margin-top: 2.5em;
+    a {
+      color: $red;
+      text-decoration: none;
+      &:hover {
+        color: black;
+      }
+    }
+  }
+  .sg-subtype:first-child h2 {
+    margin-top: -8px;
+  }
+}
+
+.sg-pattern-title a {
+  font-family: $proxima !important;
+  color: $gray-dark;
+  font-size: 1.25rem;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+}
+
+.sg-colors {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    flex: auto;
+    padding: 0.3em;
+    margin: 0 0.3em 1em;
+    min-width: 9em;
+    max-width: 10em;
+  }
+
+  &__sample {
+    display: block;
+    height: 100px;
+    margin-bottom: 0.3em;
+    border: 1px solid $gray-lighter;
+  }
+}
+
+.sg-typography {
+  display: flex;
+  flex-wrap: wrap;
+
+  .sg-typography__group {
+    padding: 1em 0.25em;
+    min-width: 40%;
+  }
+}
+
+#viewall-base-utils {
+  display: none;
+}
