@@ -105,6 +105,16 @@ function copyBuild(done) {
   done();
 }
 
+// Copy patterns and supporting files to drupal directory.
+function copyDrupal(done) {
+  gulp.src(config.baseDirectory + '/**/*.twig').pipe(gulp.dest('drupal'));
+  gulp.src('./components/css/**').pipe(gulp.dest('drupal/css'));
+  gulp.src('./components/js/**').pipe(gulp.dest('drupal/js'));
+  gulp.src('./components/images/**').pipe(gulp.dest('drupal/images'));
+  gulp.src('composer.json').pipe(gulp.dest('drupal'));
+  done();
+}
+
 // Clear gh-pages cache.
 function ghPagesCache(done) {
   return run('rm -rf node_modules/gh-pages/.cache').exec();
@@ -129,12 +139,44 @@ function ghPublish(done) {
   done();
 }
 
+// Publish patterns to drupal branch to be used in D8 themes.
+function drupalPublish(done) {
+  ghpages.publish(
+    'drupal',
+    {
+      branch: 'patterns',
+      message: 'Publish drupal: auto-generated commit via gulp',
+    },
+    function(err) {
+      if (err === undefined) {
+        console.log('Patterns successfully deployed to github!');
+      } else {
+        console.log(err);
+      }
+    },
+  );
+  done();
+}
+
 // Define grouped tasks.
 const watch = gulp.parallel(watchFiles, browserSync);
-const start = gulp.series(gulp.parallel(css, js), plGenerate, copyBuild, watch);
-const build = gulp.series(gulp.parallel(css, js), plGenerate, copyBuild);
-const deployPages = gulp.series(ghPagesCache, build, ghPublish);
+const start = gulp.series(
+  gulp.parallel(css, js),
+  plGenerate,
+  copyBuild,
+  copyDrupal,
+  watch,
+);
+const buildPages = gulp.series(gulp.parallel(css, js), plGenerate, copyBuild);
+const buildPatterns = gulp.series(
+  gulp.parallel(css, js),
+  plGenerate,
+  copyDrupal,
+);
+const deployPages = gulp.series(ghPagesCache, buildPages, ghPublish);
+const deployDrupal = gulp.series(ghPagesCache, buildPatterns, drupalPublish);
 
 // Exports.
 exports.deployPages = deployPages;
+exports.deployDrupal = deployDrupal;
 exports.default = start;
