@@ -7,6 +7,7 @@ const ghpages = require('gh-pages');
 const gulp = require('gulp');
 const plumber = require('gulp-plumber');
 const postcss = require('gulp-postcss');
+const replace = require('gulp-replace');
 const run = require('gulp-run');
 const sass = require('gulp-sass');
 const sassGlob = require('gulp-sass-glob');
@@ -15,32 +16,36 @@ const uglify = require('gulp-uglify');
 
 // Configuration.
 var config = {};
-config.baseDirectory = 'components/_patterns';
+config.baseDirectory = 'components';
+config.patternDirectory = config.baseDirectory + '/_patterns';
 config.patternLab = {
   watchFiles: [
-    config.baseDirectory + '/**/*.twig',
-    config.baseDirectory + '/**/*.md',
-    config.baseDirectory + '/**/*.yml',
+    config.patternDirectory + '/**/*.twig',
+    config.patternDirectory + '/**/*.md',
+    config.patternDirectory + '/**/*.yml',
+    config.baseDirectory + '/_data/**/*.yml',
   ],
+  publicDirectory: './pattern-lab/public/',
+  ghData: 'components/_data/gh-data',
 };
 config.sass = {
-  srcFiles: config.baseDirectory + '/style.scss',
+  srcFiles: config.patternDirectory + '/style.scss',
   watchFiles: [
-    config.baseDirectory + '/style.scss',
-    config.baseDirectory + '/**/*.scss',
+    config.patternDirectory + '/style.scss',
+    config.patternDirectory + '/**/*.scss',
   ],
   destDir: 'components/css',
 };
 config.js = {
-  srcFiles: config.baseDirectory + '/**/*.js',
-  watchFiles: [config.baseDirectory + '/**/*.js'],
+  srcFiles: config.patternDirectory + '/**/*.js',
+  watchFiles: [config.patternDirectory + '/**/*.js'],
   destDir: 'components/js',
 };
 
 // BrowserSync.
 function browserSync(done) {
   browsersync.init({
-    server: { baseDir: './pattern-lab/public/' },
+    server: { baseDir: config.patternLab.publicDirectory },
   });
   done();
 }
@@ -101,13 +106,15 @@ function watchFiles() {
 
 // Copy PL site files to build directory.
 function copyBuild(done) {
-  gulp.src('./pattern-lab/public/**/*').pipe(gulp.dest('build'));
+  gulp
+    .src(config.patternLab.publicDirectory + '/**/*')
+    .pipe(gulp.dest('build'));
   done();
 }
 
 // Copy patterns and supporting files to drupal directory.
 function copyDrupal(done) {
-  gulp.src(config.baseDirectory + '/**/*.twig').pipe(gulp.dest('drupal'));
+  gulp.src(config.patternDirectory + '/**/*.twig').pipe(gulp.dest('drupal'));
   gulp.src('./components/css/**').pipe(gulp.dest('drupal/css'));
   gulp.src('./components/js/**').pipe(gulp.dest('drupal/js'));
   gulp.src('./components/images/**').pipe(gulp.dest('drupal/images'));
@@ -118,6 +125,21 @@ function copyDrupal(done) {
 // Clear gh-pages cache.
 function ghPagesCache(done) {
   return run('rm -rf node_modules/gh-pages/.cache').exec();
+  done();
+}
+
+// Add _data for gh-pages.
+function ghDataAdd(done) {
+  gulp
+    .src(['components/_data/data.yml'])
+    .pipe(replace('base_path:', 'base_path: ../..'))
+    .pipe(gulp.dest(config.patternLab.ghData));
+  done();
+}
+
+// Remove _data for gh-pages.
+function ghDataRemove(done) {
+  return del([config.patternLab.ghData + '/*']);
   done();
 }
 
@@ -167,16 +189,28 @@ const start = gulp.series(
   copyDrupal,
   watch,
 );
-const buildPages = gulp.series(gulp.parallel(css, js), plGenerate, copyBuild);
+const buildPages = gulp.series(
+  gulp.parallel(css, js),
+  ghDataAdd,
+  plGenerate,
+  copyBuild,
+);
 const buildPatterns = gulp.series(
   gulp.parallel(css, js),
   plGenerate,
   copyDrupal,
 );
-const deployPages = gulp.series(ghPagesCache, buildPages, ghPublish);
+const deployPages = gulp.series(
+  ghPagesCache,
+  buildPages,
+  ghPublish,
+  ghDataRemove,
+);
 const deployDrupal = gulp.series(ghPagesCache, buildPatterns, drupalPublish);
 
 // Exports.
+exports.ghDataRemove = ghDataRemove;
+exports.ghDataAdd = ghDataAdd;
 exports.deployPages = deployPages;
 exports.deployDrupal = deployDrupal;
 exports.default = start;
