@@ -190,12 +190,14 @@ const start = gulp.series(
   watch,
 );
 const buildPages = gulp.series(
+  clean,
   gulp.parallel(css, js),
   ghDataAdd,
   plGenerate,
   copyBuild,
 );
 const buildPatterns = gulp.series(
+  clean,
   gulp.parallel(css, js),
   plGenerate,
   copyDrupal,
