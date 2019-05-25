@@ -166,7 +166,7 @@ function drupalPublish(done) {
   ghpages.publish(
     'drupal',
     {
-      branch: 'patterns',
+      branch: 'drupal',
       message: 'Publish drupal: auto-generated commit via gulp',
     },
     function(err) {
