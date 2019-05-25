@@ -209,8 +209,6 @@ const deployPages = gulp.series(
 const deployDrupal = gulp.series(ghPagesCache, buildPatterns, drupalPublish);
 
 // Exports.
-exports.ghDataRemove = ghDataRemove;
-exports.ghDataAdd = ghDataAdd;
 exports.deployPages = deployPages;
 exports.deployDrupal = deployDrupal;
 exports.default = start;
