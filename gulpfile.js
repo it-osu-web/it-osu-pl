@@ -166,7 +166,7 @@ function drupalPublish(done) {
   ghpages.publish(
     'drupal',
     {
-      branch: 'patterns',
+      branch: 'drupal',
       message: 'Publish drupal: auto-generated commit via gulp',
     },
     function(err) {
@@ -190,12 +190,14 @@ const start = gulp.series(
   watch,
 );
 const buildPages = gulp.series(
+  clean,
   gulp.parallel(css, js),
   ghDataAdd,
   plGenerate,
   copyBuild,
 );
 const buildPatterns = gulp.series(
+  clean,
   gulp.parallel(css, js),
   plGenerate,
   copyDrupal,
@@ -209,8 +211,6 @@ const deployPages = gulp.series(
 const deployDrupal = gulp.series(ghPagesCache, buildPatterns, drupalPublish);
 
 // Exports.
-exports.ghDataRemove = ghDataRemove;
-exports.ghDataAdd = ghDataAdd;
 exports.deployPages = deployPages;
 exports.deployDrupal = deployDrupal;
 exports.default = start;
