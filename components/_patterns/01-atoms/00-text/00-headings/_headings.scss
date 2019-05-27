@@ -79,7 +79,7 @@ $color-heading--hover: $teal;
 @mixin heading-medium(
   $font-family: $font-heading,
   $font-size: 1.75rem,
-  $line-height: 1.4,
+  $line-height: 1.2,
   $color: $color-heading,
   $color-link: inherit,
   $color-link-hover: $color-heading--hover,
@@ -114,7 +114,7 @@ $color-heading--hover: $teal;
 @mixin heading-small(
   $font-family: $font-heading,
   $font-size: 1.4rem,
-  $line-height: 1.4,
+  $line-height: 1.3,
   $color: $color-heading,
   $color-link: inherit,
   $color-link-hover: $color-heading--hover,
@@ -148,7 +148,7 @@ $color-heading--hover: $teal;
 @mixin heading-xs(
   $font-family: $font-heading,
   $font-size: 1.2rem,
-  $line-height: 1.4,
+  $line-height: 1.3,
   $color: $color-heading,
   $color-link: inherit,
   $color-link-hover: $color-heading--hover,
