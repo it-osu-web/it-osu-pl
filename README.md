@@ -33,11 +33,11 @@ Navigate to `components/_patterns`. This is where all contributing work should t
 2. Create a directory with the name of your component (no spaces)
 3. All code for a pattern should be stored within the pattern's directory. Use your folder name as the base file name like the examples below:
 
-- a. `pattern-name.twig`
-- b. `pattern-name.yml` (optional, but used for dummy content and setting variables)
-- c. `_pattern-name.scss` (component-specific styles)
-- d. `pattern-name.js` (optional, if component-specific js is needed)
-- e. `pattern-name.md` (optional, but helpful to display additional information for your component in the styleguide)
+- `pattern-name.twig`
+- `pattern-name.yml` (optional, but used for dummy content)
+- `_pattern-name.scss` (component-specific styles)
+- `pattern-name.js` (optional, if component-specific js is needed)
+- `pattern-name.md` (optional, but helpful to display additional information about your component in the styleguide)
 
 Each directory is ordered alphabetically. To re-order the patterns, just add numbers to the beginning. You may optionally organize patterns into subtypes with subdirectories.
 
