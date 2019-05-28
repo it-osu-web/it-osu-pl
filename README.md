@@ -54,7 +54,36 @@ Also see Emulsify's documentation for more info:
 
 ### How to create sample content
 
-TBD
+Sample content is created via the patterns's `.yml` file. Any variables included in the corresponding `.twig` file should be assigned in the `.yml` file.
+
+**NOTE:** Sample content does not nest along with the pattern's `.twig` file. For example, this content must also be included in the `site-footer.yml` file since "address-block" is nested within "site-footer".
+
+Below is an example of `address-block.yml` contents.
+
+```
+footer_color:
+  white
+site_name:
+  Name of Website
+address_1:
+  100 Mount Hall
+address_2:
+ 1050 Carmack Road
+city:
+  Columbus
+state:
+  OH
+zip:
+  43210
+phone:
+  614-292-8800
+fax:
+  614-292-8860
+contact_email:
+  odee@osu.edu
+```
+
+In addition to pattern-specific data, sample data can be assigned at the root-level of the styleguide in the `/components/_data/data.yml` file. Pattern-level data will override data from this file.
 
 ### How to create pseudo-patterns
 
