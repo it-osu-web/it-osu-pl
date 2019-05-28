@@ -68,14 +68,16 @@ In addition to being helpful for writing scss style variations, pseudo-patterns 
 
 ### Pattern organization
 
-Patterns are divided into categories that progressively become more complex. Atoms, Molecules, and Organisms follow [Atomic Design Methodology](http://atomicdesign.bradfrost.com/chapter-2/)
+Patterns are divided into categories that progressively become more complex. This is based off of [Atomic Design Methodology](http://atomicdesign.bradfrost.com/chapter-2/)
 
-| Category     | Description                                                                                                |
-| ------------ | ---------------------------------------------------------------------------------------------------------- |
-| 00-base      | Base settings, color variables, font-families, etc...                                                      |
-| 01-atoms     | Foundational building blocks, including basic html elements.                                               |
-| 02-molecules | Two or more atoms grouped together for a specific function such as a status message box or group of links. |
-| 03-organisms | Complex UI elements composed of groups of molecules and/or atoms such as a navbar or site header.          |
+| Category     | Description                                                                                                                 |
+| ------------ | --------------------------------------------------------------------------------------------------------------------------- |
+| 00-base      | Base settings, color variables, font-families, etc...                                                                       |
+| 01-atoms     | Foundational building blocks, including basic html elements.                                                                |
+| 02-molecules | Two or more atoms grouped together for a specific function such as a status message box or group of links.                  |
+| 03-organisms | Complex UI elements composed of groups of molecules and/or atoms such as a navbar or site header.                           |
+| 04-templates | Page-level objects that organize patterns into a layout and provide context and content structure.                          |
+| 05-pages     | Specific instances of templates (page prototypes) that show what a UI looks like with real representative content in place. |
 
 ### Use BEM methodology
 
