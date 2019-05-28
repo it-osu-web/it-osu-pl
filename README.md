@@ -25,23 +25,23 @@ TBD (Include Gitflow, Pull requests, BEM Methodology)
 
 ## Working on patterns
 
-Navigate to `components/_patterns`. This is where all contributing work should take place. Each component is self-contained in a directory.
+Navigate to `components/_patterns`. This is where all work should take place. Each pattern is self-contained in a directory.
 
 ### How to add a new pattern
 
 1. Navigate to `components/_patterns/[category]`
-2. Create a directory with the name of your component (no spaces)
+2. Create a directory with the name of your pattern (no spaces)
 3. All code for a pattern should be stored within the pattern's directory. Use your folder name as the base file name like the examples below:
 
 - `pattern-name.twig`
 - `pattern-name.yml` (optional, but used for dummy content)
-- `_pattern-name.scss` (component-specific styles)
+- `_pattern-name.scss` (pattern-specific styles)
 - `pattern-name.js` (optional, if component-specific js is needed)
 - `pattern-name.md` (optional, but helpful to display additional information about your component in the styleguide)
 
 Each directory is ordered alphabetically. To re-order the patterns, just add numbers to the beginning. You may optionally organize patterns into subtypes with subdirectories.
 
-**NOTE:** Adding a new component folder may require you to restart your task runner (gulp).
+**NOTE:** Adding a new folder may require you to restart your task runner (gulp).
 
 ### Nested Patterns
 
@@ -58,7 +58,7 @@ TBD
 
 ### How to create pseudo-patterns
 
-Pseudo-patterns are used to create variants of existing patterns. This is useful for showing multiple color variations, content variants, alternate states, etc...
+Pseudo-patterns are used to create variants of existing patterns. This is useful for showing multiple color variations, content variants, site-specific vatiations, alternate states, etc...
 
 The tilde (`~`) is used to designate a pseudo-pattern. All pseudo-patterns should be stored within the original pattern's directory.
 
