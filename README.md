@@ -66,7 +66,18 @@ For example `masthead~white.yml` is a a pseudo-pattern of `masthead.yml` and the
 
 In addition to being helpful for writing scss style variations, pseudo-patterns can also be helpful to test logic within twig templates.
 
-### Use BEM Methodology
+### Pattern organization
+
+Patterns are divided into categories that progressively become more complex. Atoms, Molecules, and Organisms follow [Atomic Design Methodology](http://atomicdesign.bradfrost.com/chapter-2/)
+
+| Category     | Description                                                                                                |
+| ------------ | ---------------------------------------------------------------------------------------------------------- |
+| 00-base      | Base settings, color variables, font-families, etc...                                                      |
+| 01-atoms     | Foundational building blocks, including basic html elements.                                               |
+| 02-molecules | Two or more atoms grouped together for a specific function such as a status message box or group of links. |
+| 03-organisms | Complex UI elements composed of groups of molecules and/or atoms such as a navbar or site header.          |
+
+### Use BEM methodology
 
 - Here's the details: [Methodology / BEM](https://en.bem.info/methodology/)
 - Here's a helpful function that is available in this theme: [bem-twig-extension](https://github.com/drupal-pattern-lab/bem-twig-extension)
