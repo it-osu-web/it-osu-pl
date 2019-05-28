@@ -11,8 +11,9 @@
 
 1. Clone this repo
 2. Navigate to project folder
-3. Run `npm install`
-4. Run `gulp`
+3. Run `composer install`
+4. Run `npm install`
+5. Run `gulp`
 
 ## Gulp default task
 
@@ -31,21 +32,22 @@ Navigate to `components/_patterns`. This is where all contributing work should t
 1. Navigate to `components/_patterns/[category]`
 2. Create a directory with the name of your component (no spaces)
 3. All code for a pattern should be stored within the pattern's directory. Use your folder name as the base file name like the examples below:
-   a. `pattern-name.twig`
-   b. `pattern-name.yml` (optional, but used for dummy content and setting variables)
-   c. `_pattern-name.scss` (component-specific styles)
-   d. `pattern-name.js` (optional, if component-specific js is needed)
-   e. `pattern-name.md` (optional, but helpful to display additional information for your component in the styleguide)
+
+- a. `pattern-name.twig`
+- b. `pattern-name.yml` (optional, but used for dummy content and setting variables)
+- c. `_pattern-name.scss` (component-specific styles)
+- d. `pattern-name.js` (optional, if component-specific js is needed)
+- e. `pattern-name.md` (optional, but helpful to display additional information for your component in the styleguide)
 
 Each directory is ordered alphabetically. To re-order the patterns, just add numbers to the beginning. You may optionally organize patterns into subtypes with subdirectories.
 
-**NOTE:** Adding a new component folder may require you to restart your task runner.
+**NOTE:** Adding a new component folder may require you to restart your task runner (gulp).
 
 ### Nested Patterns
 
-It is best practice to build up patterns from smaller patterns when appropriate. For example the "site-header" pattern is comprised of the "osu-navbar" and "masthead" patterns.
+It is best practice to build up patterns from smaller patterns when appropriate. For example the "site-footer" pattern is comprised of the "address-block" and "social-media-links" patterns.
 
-See: `03-organisms/site-header/site-header.twig` for usage example.
+See: `components/_patterns/03-organisms/site-footer/_site-footer.twig` for usage example.
 
 Also see Emulsify's documentation for more info:
 [When to use include, extends, and embed](https://github.com/fourkitchens/emulsify/wiki/When-to-use-include,-extends,-and-embed)
