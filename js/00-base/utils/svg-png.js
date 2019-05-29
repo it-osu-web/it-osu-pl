@@ -1,1 +1,0 @@
-function supportsSVG(){return!!document.createElementNS&&!!document.createElementNS("https://www.w3.org/2000/svg","svg").createSVGRect}if(!supportsSVG())for(var imgs=document.getElementsByTagName("img"),dotSVG=/.*\.svg$/,i=0;i!=imgs.length;++i)imgs[i].src.match(dotSVG)&&(imgs[i].src=imgs[i].src.slice(0,-3)+"png");
