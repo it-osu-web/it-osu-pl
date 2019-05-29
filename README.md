@@ -21,7 +21,15 @@ The gulp default task includes initial PL site generation, regeneration as neces
 
 ## Contributing to this project
 
-TBD (Include Gitflow, Pull requests, BEM Methodology)
+Never commit directly to the `develop` or `master` branches. All contributions should be added via pull requests. We will be using the [git-flow](https://danielkummer.github.io/git-flow-cheatsheet/) branching model.
+
+Start the feature locally...
+
+Do not finish a feature yourself via git flow. When you are finished with a feature, create a pull request from your feature branch. The feature will be finished by the repository admin when the pull request is accepted. You may then delete your local version of the feature branch.
+
+Be granular with features. Avoid scope creep.
+
+### Creating, tagging, and assigning issues
 
 ## Working on patterns
 
@@ -50,7 +58,7 @@ It is best practice to build up patterns from smaller patterns when appropriate.
 See: `components/_patterns/03-organisms/site-footer/_site-footer.twig` for usage example.
 
 Also see Emulsify's documentation for more info:
-[When to use include, extends, and embed](https://github.com/fourkitchens/emulsify/wiki/When-to-use-include,-extends,-and-embed)
+[When to use include, extends, and embed](https://github.com/fourkitchens/emulsify/wiki/When-to-use-include,-extends,-and-embed).
 
 ### How to create sample content
 
@@ -97,7 +105,7 @@ In addition to being helpful for writing scss style variations, pseudo-patterns 
 
 ### Pattern organization
 
-Patterns are divided into categories that progressively become more complex. This is based off of [Atomic Design Methodology](http://atomicdesign.bradfrost.com/chapter-2/)
+Patterns are divided into categories that progressively become more complex. This is based off of [Atomic Design Methodology](http://atomicdesign.bradfrost.com/chapter-2/).
 
 | Category  | Description                                                                                                                 |
 | --------- | --------------------------------------------------------------------------------------------------------------------------- |
