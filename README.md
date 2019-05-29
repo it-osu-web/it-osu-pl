@@ -21,9 +21,7 @@ The gulp default task includes initial PL site generation, regeneration as neces
 
 ## Contributing to this project
 
-Never commit directly to the `develop` or `master` branches. All contributions should be added via pull requests. We will be using the [git-flow](https://danielkummer.github.io/git-flow-cheatsheet/) branching model. This requires a one-time [setup](https://danielkummer.github.io/git-flow-cheatsheet/#setup) on your machine and initialization of your local repo.
-
-Run `git flow init` within the root directory of the repo and accept all defaults during the init process.
+Never commit directly to the `develop` or `master` branches. All contributions should be added via pull requests. We will be using the [git-flow](https://danielkummer.github.io/git-flow-cheatsheet/) branching model. This requires a one-time [setup](https://danielkummer.github.io/git-flow-cheatsheet/#setup) on your machine and initialization of your local repo. Run `git flow init` within the root directory of the repo and accept all defaults during the init process.
 
 Be sure to work from the repo's [issue queue](https://github.com/it-osu-web/it-osu-pl/issues). If you plan to work on something that doesn't already have an issue, create one and assign it to yourself.
 
@@ -31,7 +29,7 @@ Be granular with features and avoid scope creep. For example, if you are working
 
 ### Starting a new feature
 
-From the develop branch run `git flow feature start [featurename]`. This action creates a new feature branch based on 'develop' and switches to it. Publish your local branch. Do all of your work on this branch making as many commits as necessary.
+From the develop branch run `git flow feature start [featurename]`. This action creates a new feature branch based on 'develop' and switches to it. Publish your local branch. Do all of your work on this branch, making as many commits as necessary.
 
 ### Finishing a feature
 
@@ -41,11 +39,13 @@ If the pull request is not accepted and requires additional work, you may contin
 
 ### Creating, tagging, and assigning issues
 
-### Working on patterns
+As you identify bugs, tasks, feature requests, or other issues, please add them to the [issue queue](https://github.com/it-osu-web/it-osu-pl/issues) and tag them appropriately. If a task needs to be worked on by a specific person, assign it to them, otherwise leave it unassigned.
+
+## Working on patterns
 
 Navigate to `components/_patterns`. This is where all work should take place. Each pattern is self-contained in a directory.
 
-#### How to add a new pattern
+### How to add a new pattern
 
 1. Navigate to `components/_patterns/[category]`
 2. Create a directory with the name of your pattern (no spaces)
@@ -61,7 +61,7 @@ Each directory is ordered alphabetically. To re-order the patterns, just add num
 
 **NOTE:** Adding a new folder may require you to restart your task runner (gulp).
 
-#### Nested Patterns
+### Nested Patterns
 
 It is best practice to build up patterns from smaller patterns when appropriate. For example the "site-footer" pattern is comprised of the "address-block" and "social-media-links" patterns.
 
@@ -70,9 +70,9 @@ See: `components/_patterns/03-organisms/site-footer/_site-footer.twig` for usage
 Also see Emulsify's documentation for more info:
 [When to use include, extends, and embed](https://github.com/fourkitchens/emulsify/wiki/When-to-use-include,-extends,-and-embed).
 
-#### How to create sample content
+### How to create sample content
 
-Sample content is created via the patterns's `.yml` file. Any variables included in the corresponding `.twig` file should be assigned in the `.yml` file.
+Sample content is created via the patterns' `.yml` file. Any variables included in the corresponding `.twig` file should be assigned in the `.yml` file.
 
 **NOTE:** Sample content does not nest along with the pattern's `.twig` file. For example, this content must also be included in the `site-footer.yml` file since "address-block" is nested within "site-footer".
 
@@ -103,9 +103,9 @@ contact_email:
 
 In addition to pattern-specific data, sample data can be assigned at the root-level of the styleguide in the `/components/_data/data.yml` file. Pattern-level data will override data from this file.
 
-#### How to create pseudo-patterns
+### How to create pseudo-patterns
 
-Pseudo-patterns are used to create variants of existing patterns. This is useful for showing multiple color variations, content variants, site-specific vatiations, alternate states, etc...
+Pseudo-patterns are used to create variants of existing patterns. This is useful for showing multiple color variations, content variants, site-specific variations, alternate states, etc...
 
 The tilde (`~`) is used to designate a pseudo-pattern. All pseudo-patterns should be stored within the original pattern's directory.
 
@@ -113,7 +113,7 @@ For example `masthead~white.yml` is a a pseudo-pattern of `masthead.yml` and the
 
 In addition to being helpful for writing scss style variations, pseudo-patterns can also be helpful to test logic within twig templates.
 
-#### Pattern organization
+### Pattern organization
 
 Patterns are divided into categories that progressively become more complex. This is based off of [Atomic Design Methodology](http://atomicdesign.bradfrost.com/chapter-2/).
 
@@ -126,7 +126,6 @@ Patterns are divided into categories that progressively become more complex. Thi
 | Templates | Page-level objects that organize patterns into a layout and provide context and content structure.                          |
 | Pages     | Specific instances of templates (page prototypes) that show what a UI looks like with real representative content in place. |
 
-#### Use BEM methodology
+### Use BEM methodology
 
 - Here's the details: [Methodology / BEM](https://en.bem.info/methodology/)
-- Here's a helpful function that is available in this theme: [bem-twig-extension](https://github.com/drupal-pattern-lab/bem-twig-extension)
