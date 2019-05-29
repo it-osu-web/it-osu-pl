@@ -1,0 +1,55 @@
+<header role="banner" id="site-header">
+  {% include "@organisms/osu-navbar/_osu-navbar.twig" %}
+  {% include "@organisms/masthead/_masthead.twig" %}
+  {{ page.header }}
+</header>
+
+{% block primary_menu %}
+<div class="region region--primary_menu">
+  {{ page.primary_menu }}
+</div>
+{% endblock %}
+
+{% block hero %}
+<div class="region region--hero">
+  {{ page.hero }}
+</div>
+{% endblock %}
+
+{# start layout container #}
+
+{{ page.breadcrumb }}
+
+{{ page.highlighted }}
+
+{{ page.help }}
+
+<main role="main">
+  <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+
+  <div class="layout-content">
+    {{ page.content }}
+  </div>{# /.layout-content #}
+
+  {% if page.sidebar_first %}
+    <aside class="layout-sidebar-first" role="complementary">
+      {{ page.sidebar_first }}
+    </aside>
+  {% endif %}
+
+  {% if page.sidebar_second %}
+    <aside class="layout-sidebar-second" role="complementary">
+      {{ page.sidebar_second }}
+    </aside>
+  {% endif %}
+
+</main>
+
+  <footer role="contentinfo">
+  {% if page.footer %}
+    {{ page.footer }}
+  {% endif %}
+  {% include "@organisms/site-footer/_site-footer.twig" %}
+  </footer>
+
+
