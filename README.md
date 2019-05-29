@@ -10,7 +10,7 @@
 ## Installation and Local Development Setup
 
 1. Clone this repo
-2. Navigate to project folder
+2. Navigate to repo directory
 3. Run `composer install`
 4. Run `npm install`
 5. Run `gulp`
@@ -21,11 +21,11 @@ The gulp default task includes initial PL site generation, regeneration as neces
 
 ## Contributing to this project
 
-Never commit directly to the `develop` or `master` branches. All contributions should be added via pull requests. We will be using the [git-flow](https://danielkummer.github.io/git-flow-cheatsheet/) branching model. This requires a one-time [setup](https://danielkummer.github.io/git-flow-cheatsheet/#setup) on your machine and initialization of your local repo. Run `git flow init` within the root directory of the repo and accept all defaults during the init process.
+Never commit directly to the `develop` or `master` branches. All contributions should be added via pull requests. We will be using the [git-flow](https://danielkummer.github.io/git-flow-cheatsheet/) branching model. This requires a one-time [setup](https://danielkummer.github.io/git-flow-cheatsheet/#setup) on your machine. And a one-time initialization of your local repo. Run `git flow init` within the root directory of the repo and accept all defaults during the init process.
 
 Be sure to work from the repo's [issue queue](https://github.com/it-osu-web/it-osu-pl/issues). If you plan to work on something that doesn't already have an issue, create one and assign it to yourself.
 
-Be granular with features and avoid scope creep. For example, if you are working on a new pattern, try not to make changes that are not related to that component.
+Be granular with features and avoid scope creep. For example, if you are working on a new pattern, try not to make changes that are not related to that pattern.
 
 ### Starting a new feature
 
