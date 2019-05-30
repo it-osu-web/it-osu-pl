@@ -2,5 +2,5 @@
 /vendor/
 node_modules/
 build/
-/drupal/
+/it-osu-pl-drupal/
 components/_data/gh-data/

@@ -82,8 +82,8 @@ function js(done) {
   done();
 }
 
-// Clean assets (js only for now).
-function clean(done) {
+// Clean js assets.
+function cleanJS(done) {
   return del([config.js.destDir + '/*']);
   done();
 }
@@ -97,7 +97,7 @@ function plGenerate(done) {
 // Watch files.
 function watchFiles() {
   gulp.watch(config.sass.watchFiles, gulp.series(css, plGenerate));
-  gulp.watch(config.js.watchFiles, gulp.series(clean, js, plGenerate));
+  gulp.watch(config.js.watchFiles, gulp.series(cleanJS, js, plGenerate));
   gulp.watch(
     config.patternLab.watchFiles,
     gulp.series(plGenerate, browserSyncReload),
@@ -112,13 +112,29 @@ function copyBuild(done) {
   done();
 }
 
-// Copy patterns and supporting files to drupal directory.
+// Copy patterns and supporting files to it-osu-pl-drupal directory.
 function copyDrupal(done) {
-  gulp.src(config.patternDirectory + '/**/*.twig').pipe(gulp.dest('drupal'));
-  gulp.src('./components/css/**').pipe(gulp.dest('drupal/css'));
-  gulp.src('./components/js/**').pipe(gulp.dest('drupal/js'));
-  gulp.src('./components/images/**').pipe(gulp.dest('drupal/images'));
-  gulp.src('composer.json').pipe(gulp.dest('drupal'));
+  gulp
+    .src(config.patternDirectory + '/**/*.twig')
+    .pipe(gulp.dest('it-osu-pl-drupal'));
+  gulp.src('./components/css/**').pipe(gulp.dest('it-osu-pl-drupal/css'));
+  gulp.src('./components/js/**').pipe(gulp.dest('it-osu-pl-drupal/js'));
+  gulp.src('./components/images/**').pipe(gulp.dest('it-osu-pl-drupal/images'));
+  done();
+}
+
+// Create an altered composer.json file for deployment to it-osu-pl-drupal.
+function drupalComposer(done) {
+  gulp
+    .src(['composer.json'])
+    .pipe(replace('it-osu-web/it-osu-pl', 'it-osu-web/it-osu-pl-drupal'))
+    .pipe(
+      replace(
+        'IT@OSU Pattern Lab',
+        'IT@OSU Pattern Lab assets for Drupal 8 theming',
+      ),
+    )
+    .pipe(gulp.dest('it-osu-pl-drupal'));
   done();
 }
 
@@ -148,7 +164,7 @@ function ghPublish(done) {
   ghpages.publish(
     'build',
     {
-      message: 'Publish gh-pages: auto-generated commit via gulp',
+      message: 'Publish gh-pages: auto-generated commit via gulp.',
     },
     function(err) {
       if (err === undefined) {
@@ -161,13 +177,14 @@ function ghPublish(done) {
   done();
 }
 
-// Publish patterns to drupal branch to be used in D8 themes.
+// Publish patterns to the it-osu-web/it-osu-pl-drupal repository.
 function drupalPublish(done) {
   ghpages.publish(
-    'drupal',
+    'it-osu-pl-drupal',
     {
-      branch: 'drupal',
-      message: 'Publish drupal: auto-generated commit via gulp',
+      repo: 'https://github.com/it-osu-web/it-osu-pl-drupal.git',
+      branch: 'master',
+      message: 'Publish drupal: auto-generated commit via gulp.',
     },
     function(err) {
       if (err === undefined) {
@@ -190,17 +207,18 @@ const start = gulp.series(
   watch,
 );
 const buildPages = gulp.series(
-  clean,
+  cleanJS,
   gulp.parallel(css, js),
   ghDataAdd,
   plGenerate,
   copyBuild,
 );
-const buildPatterns = gulp.series(
-  clean,
+const buildDrupal = gulp.series(
+  cleanJS,
   gulp.parallel(css, js),
   plGenerate,
   copyDrupal,
+  drupalComposer,
 );
 const deployPages = gulp.series(
   ghPagesCache,
@@ -208,7 +226,7 @@ const deployPages = gulp.series(
   ghPublish,
   ghDataRemove,
 );
-const deployDrupal = gulp.series(ghPagesCache, buildPatterns, drupalPublish);
+const deployDrupal = gulp.series(ghPagesCache, buildDrupal, drupalPublish);
 
 // Exports.
 exports.deployPages = deployPages;
