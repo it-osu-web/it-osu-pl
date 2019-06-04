@@ -1,12 +1,16 @@
 {% set paragraph_base_class = paragraph_base_class|default('paragraph') %}
+{% set classes_array = [paragraph_base_class] %}
 
-{% if paragraph_modifier is defined %}
-  {% set paragraph_class = "#{paragraph_base_class} #{paragraph_base_class}--#{paragraph_modifier}" %}
+{% if paragraph_modifiers is defined %}
+  {% for paragraph_modifier in paragraph_modifiers %}
+    {% set classes_array = classes_array|merge(["#{paragraph_base_class}--#{paragraph_modifier}"]) %}
+  {% endfor %}
+  {% set paragraph_classes = classes_array|join(' ') %}
 {% else %}
-  {% set paragraph_class = paragraph_base_class %}
+  {% set paragraph_classes = paragraph_base_class %}
 {% endif %}
 
-<p class="{{paragraph_class}}">
+<p class="{{paragraph_classes}}">
   {% block paragraph_content %}
     {{ paragraph_content }}
   {% endblock %}
