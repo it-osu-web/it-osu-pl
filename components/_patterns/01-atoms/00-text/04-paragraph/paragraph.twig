@@ -18,7 +18,7 @@
   {% set paragraph_classes = paragraph_base_class %}
 {% endif %}
 
-<p class="{{paragraph_classes}}">
+<p class="{{ paragraph_classes }}">
   {% block paragraph_content %}
     {{ paragraph_content }}
   {% endblock %}

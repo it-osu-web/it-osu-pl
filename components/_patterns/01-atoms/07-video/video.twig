@@ -23,7 +23,7 @@
   {% set video_classes = video_base_class %}
 {% endif %}
 
-<div class="{{video_classes}}">
+<div class="{{ video_classes }}">
   {% block video_content %}
     {{ video_content|raw }}
   {% endblock %}
