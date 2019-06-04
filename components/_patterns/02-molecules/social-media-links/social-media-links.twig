@@ -7,7 +7,7 @@
 #}
 
 <div id="social-media-block" class="social-media">
-  <ul {{ bem('list', '' ,'social-media') }} >
+  <ul class="social-media__list">
     {% for social_link in social_links %}
       {% include "@atoms/01-links/social-media-ink/social-media-link.twig" %}
     {% endfor %}
