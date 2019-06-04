@@ -1,7 +1,17 @@
 {% set image_base_class = image_base_class|default('img') %}
+{% set classes_array = [img_base_class] %}
+
+{% if img_modifiers is defined %}
+  {% for img_modifier in img_modifiers %}
+    {% set classes_array = classes_array|merge(["#{img_base_class}--#{img_modifier}"]) %}
+  {% endfor %}
+  {% set img_classes = classes_array|join(' ') %}
+{% else %}
+  {% set img_classes = img_base_class %}
+{% endif %}
 
 <img
-  {{ bem(image_base_class, (image_modifiers), image_blockname) }}
+  class="{{ img_classes }}"
   {% if img_srcset %}
     srcset="{{ img_srcset }}"
   {% endif %}

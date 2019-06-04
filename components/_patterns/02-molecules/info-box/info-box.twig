@@ -1,18 +1,39 @@
-{% set ib_base_class = ib_base_class|default('info-box') %}
+{#
+/**
+ * Available variables:
+ * - infobox_modifiers - array of modifiers to add to the base classname
+ * - heading_level - defaults to 2
+ * - infobox_title - box title
+ * - infobox_title - infobox_link
+ * - infobox_text - the content of the paragraph
+#}
 
-<div {{ bem(ib_base_class, (ib_modifiers), ib_blockname) }}>
-  {% include "@atoms/00-text/00-headings/_heading.twig" with {
-    "heading_level": 3,
-    "heading": infobox_title,
-    "heading_url": infobox_link,
-    "heading_blockname": ib_base_class,
-    "heading_base_class": 'title',
-    "heading_link_blockname": ib_base_class,
-    "heading_link_base_class": 'link',
-  } %}
-  {% include "@atoms/00-text/04-paragraph/paragraph.twig" with {
-    "paragraph_content": infobox_text,
-    "paragraph_blockname": ib_base_class,
-    "paragraph_base_class": card_body_base_class|default('body'),
-  } %}
+
+{% set infobox_base_class = infobox_base_class|default('info-box') %}
+{% set classes_array = [infobox_base_class] %}
+
+{% if infobox_modifiers is defined %}
+  {% for infobox_modifier in infobox_modifiers %}
+    {% set classes_array = classes_array|merge(["#{infobox_base_class}--#{infobox_modifier}"]) %}
+  {% endfor %}
+  {% set infobox_classes = classes_array|join(' ') %}
+{% else %}
+  {% set infobox_classes = infobox_base_class %}
+{% endif %}
+
+
+<div class="{{ infobox_classes }}">
+  <div class="info-box__title">
+    {% include "@atoms/00-text/00-headings/_heading.twig" with {
+      "heading_level": heading_level|default(2),
+      "heading": infobox_title,
+      "heading_url": infobox_link,
+      "heading_link_base_class": 'link',
+    } %}
+  </div>
+  <div class="info-box__body">
+    {% include "@atoms/00-text/04-paragraph/paragraph.twig" with {
+      "paragraph_content": infobox_text,
+    } %}
+  </div>
 </div>

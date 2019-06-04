@@ -126,6 +126,8 @@ Patterns are divided into categories that progressively become more complex. Thi
 | Templates | Page-level objects that organize patterns into a layout and provide context and content structure.                          |
 | Pages     | Specific instances of templates (page prototypes) that show what a UI looks like with real representative content in place. |
 
-### Use BEM methodology
+### Use BEM methodology when possible
 
 - Here's the details: [Methodology / BEM](https://en.bem.info/methodology/)
+- We don't have to be super strict about it right now, but let's do what we can.
+- Provide options to accept modifiers as variables on lower-level (Atoms, Molecules) patterns. See `components/_patterns/01-atoms/00-text/04-paragraph/paragraph.twig` for a good example of how to do that.

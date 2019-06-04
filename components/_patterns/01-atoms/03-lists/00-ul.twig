@@ -9,8 +9,18 @@
  */
 #}
 {% set ul_base_class = ul_base_class|default('ul') %}
+{% set classes_array = [ul_base_class] %}
 
-<ul {{ bem(ul_base_class, (ul_modifiers), ul_blockname) }}>
+{% if ul_modifiers is defined %}
+  {% for ul_modifier in ul_modifiers %}
+    {% set classes_array = classes_array|merge(["#{ul_base_class}--#{ul_modifier}"]) %}
+  {% endfor %}
+  {% set ul_classes = classes_array|join(' ') %}
+{% else %}
+  {% set ul_classes = ul_base_class %}
+{% endif %}
+
+<ul class="{{ ul_classes }}">
   {% block list_content %}
     {% for ul_item in ul_items %}
       {% include "@atoms/03-lists/_list-item.twig" with {

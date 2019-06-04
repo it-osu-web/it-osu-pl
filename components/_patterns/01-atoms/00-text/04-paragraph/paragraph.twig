@@ -1,19 +1,24 @@
 {#
 /**
  * Available variables:
- * - paragraph_base_class - the base classname
+ * - paragraph_content - the content of the paragraph
+ * - paragraph_base_class - the base class name
  * - paragraph_modifiers - array of modifiers to add to the base classname
- * - paragraph_blockname - blockname prepended to the base classname
- * - paragraph_content - the content of the paragraph (typically text)
- *
- * Available blocks:
- * - paragraph_content - used to replace the content of the paragraph with something other than plain text
- *   for example: A formatted text field in Drupal
- */
 #}
-{% set paragraph_base_class = paragraph_base_class|default('paragraph') %}
 
-<p {{ bem(paragraph_base_class, (paragraph_modifiers), paragraph_blockname) }}>
+{% set paragraph_base_class = paragraph_base_class|default('paragraph') %}
+{% set classes_array = [paragraph_base_class] %}
+
+{% if paragraph_modifiers is defined %}
+  {% for paragraph_modifier in paragraph_modifiers %}
+    {% set classes_array = classes_array|merge(["#{paragraph_base_class}--#{paragraph_modifier}"]) %}
+  {% endfor %}
+  {% set paragraph_classes = classes_array|join(' ') %}
+{% else %}
+  {% set paragraph_classes = paragraph_base_class %}
+{% endif %}
+
+<p class="{{ paragraph_classes }}">
   {% block paragraph_content %}
     {{ paragraph_content }}
   {% endblock %}
