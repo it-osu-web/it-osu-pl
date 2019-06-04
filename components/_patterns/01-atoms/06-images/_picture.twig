@@ -1,8 +1,17 @@
 {% set picture_base_class = picture_base_class|default('picture') %}
+{% set classes_array = [picture_base_class] %}
 
-<picture
-  {{ bem(picture_base_class, (picture_modifiers), picture_blockname) }}
->
+{% if picture_modifiers is defined %}
+  {% for picture_modifier in picture_modifiers %}
+    {% set classes_array = classes_array|merge(["#{picture_base_class}--#{picture_modifier}"]) %}
+  {% endfor %}
+  {% set picture_classes = classes_array|join(' ') %}
+{% else %}
+  {% set picture_classes = picture_base_class %}
+{% endif %}
+
+
+<picture class="{{ picture_classes }}">
   {% if sources %}
     {#
     Internet Explorer 9 doesn't recognise source elements that are wrapped in
