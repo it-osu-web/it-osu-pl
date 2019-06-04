@@ -36,8 +36,6 @@ p,
   color: $gray-light;
 }
 
-// TODO: BEM selectors should be applied to wysiwyg-created content
-
 .text-long {
   p {
     @extend .paragraph;
