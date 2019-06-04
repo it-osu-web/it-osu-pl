@@ -2,3 +2,11 @@ p,
 .paragraph {
   line-height: 1.4;
 }
+
+.paragraph--intro {
+  font-family: $capita;
+  font-style: italic;
+  font-weight: 100;
+  font-size: 120%;
+  line-height: 1.75;
+}
