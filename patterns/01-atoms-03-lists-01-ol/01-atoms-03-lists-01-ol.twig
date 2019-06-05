@@ -3,14 +3,23 @@
  * Available variables:
  * - ol_base_class - the base classname
  * - ol_modifiers - array of modifiers to add to the base classname
- * - ol_blockname - blockname prepended to the base classname
  *
  * - listItems - TBD
  */
 #}
 {% set ol_base_class = ol_base_class|default('ol') %}
+{% set classes_array = [ol_base_class] %}
 
-<ol {{ bem(ol_base_class, (ol_modifiers), ol_blockname) }}>
+{% if ol_modifiers is defined %}
+  {% for ol_modifier in ol_modifiers %}
+    {% set classes_array = classes_array|merge(["#{ol_base_class}--#{ol_modifier}"]) %}
+  {% endfor %}
+  {% set ol_classes = classes_array|join(' ') %}
+{% else %}
+  {% set ol_classes = ol_base_class %}
+{% endif %}
+
+<ol class="{{ ol_classes }}">
   {% for ol_item in ol_items %}
     {% include "@atoms/03-lists/_list-item.twig" with {
       "list_item_label": ol_item.label,
@@ -18,7 +27,6 @@
       "li_base_class": ol_item.li_base_class,
       "li_base_class": ol_item.li_base_class,
       "li_modifiers": ol_item.li_modifiers,
-      "li_blockname": ol_item.li_blockname,
     } %}
   {% endfor %}
 </ol>
