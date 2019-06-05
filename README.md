@@ -41,6 +41,11 @@ If the pull request is not accepted and requires additional work, you may contin
 
 As you identify bugs, tasks, feature requests, or other issues, please add them to the [issue queue](https://github.com/it-osu-web/it-osu-pl/issues) and tag them appropriately. If a task needs to be worked on by a specific person, assign it to them, otherwise leave it unassigned.
 
+### Other ways to contribute
+
+- If you are not comfortable building out patterns yourself, or if you have an idea but do not know how to build it, create an issue and provide mockups or other info to help a developer build out the pattern.
+- Identify missing patterns, style improvements, accessibility concerns, bugs, or other issues and add an appropriate item to the issue queue. 
+
 ## Working on patterns
 
 Navigate to `components/_patterns`. This is where all work should take place. Each pattern is self-contained in a directory.
