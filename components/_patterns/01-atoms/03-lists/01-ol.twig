@@ -1,0 +1,49 @@
+{#
+/**
+ * Available variables:
+ * - ol_base_class - the base classname
+ * - ol_modifiers - array of modifiers to add to the base classname
+ *
+ * - listItems - TBD
+ */
+#}
+{% set ol_base_class = ol_base_class|default('ol') %}
+{% set classes_array = [ol_base_class] %}
+
+{% if ol_modifiers is defined %}
+  {% for ol_modifier in ol_modifiers %}
+    {% set classes_array = classes_array|merge(["#{ol_base_class}--#{ol_modifier}"]) %}
+  {% endfor %}
+  {% set ol_classes = classes_array|join(' ') %}
+{% else %}
+  {% set ol_classes = ol_base_class %}
+{% endif %}
+
+<ol class="{{ ol_classes }}">
+  {% for ol_item in ol_items %}
+    {% include "@atoms/03-lists/_list-item.twig" with {
+      "list_item_label": ol_item.label,
+      "list_item_content": ol_item.content,
+      "li_base_class": ol_item.li_base_class,
+      "li_base_class": ol_item.li_base_class,
+      "li_modifiers": ol_item.li_modifiers,
+    } %}
+  {% endfor %}
+</ol>
+
+</br>
+<b>Another Sample List with levels</b>
+<ol>
+  <li>Snackwave synth affogato, la croix slow-carb cronut neutra green juice yuccie pitchfork.
+	<ol>
+    <li>Man bun tumblr chia gluten-free flannel photo booth humblebrag.</li>
+		<li>Schlitz fixie post-ironic green juice cornhole, migas hoodie.
+		<ol>
+      <li>Knausgaard pickled cornhole palo Santo hexagon.</li>
+			<li>Bicycle rights ugh neutra sartorial artisan coloring book migas prism.</li>
+		</ol>
+  </li>
+	</ol>
+  </li>
+	<li>Forage shabby chic narwhal put a bird on it, venmo before they sold out vaporware VHS ugh.</li>
+</ol>

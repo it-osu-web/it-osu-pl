@@ -1,0 +1,150 @@
+@mixin osu-navbar(
+  $bg-color: $gray-lightest,
+  $text-color: $gray-darker,
+  $image-src: '/images/'
+) {
+  background: $bg-color;
+  color: $text-color;
+  border-bottom: 5px solid $red;
+
+  @include clearfix;
+
+  .navbar__inner {
+    @include wrapper;
+  }
+
+  p {
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }
+
+  .univ_info {
+    float: left;
+    padding: 0.875em 0 0.9em;
+  }
+
+  .univ_name a {
+    height: 14px;
+    width: 80px;
+    margin-left: 0;
+    display: block;
+    text-indent: -9999px;
+    background: url(https://www.osu.edu/assets/web/navbar/osu_navbar#{$image-src}osu_name.png)
+      0 0 no-repeat;
+
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      background: url(https://www.osu.edu/assets/web/navbar/osu_navbar#{$image-src}osu_name@2x.png)
+        0 0 no-repeat;
+      background-size: contain;
+    }
+  }
+
+  .univ_links {
+    float: right;
+    clear: none;
+    padding: 0.875em 0 0;
+
+    .links {
+      float: left;
+
+      ul {
+        margin: 0;
+        margin-top: -2px;
+
+        li {
+          font-size: 0.84375em;
+          list-style: none;
+          float: left;
+          margin-right: 0.5em;
+
+          @include large {
+            margin-right: 1.2em;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          a {
+            height: 23px;
+            width: 23px;
+            display: block;
+            overflow: hidden;
+            text-indent: -999px;
+            background: 0 0 no-repeat;
+            color: $text-color;
+            text-decoration: none;
+
+            @include large {
+              text-indent: 0;
+              width: auto;
+              background: none !important;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+
+            &.help {
+              background: url(https://www.osu.edu/assets/web/navbar/osu_navbar#{$image-src}resp-help.png);
+            }
+            &.buckeyelink {
+              background: url(https://www.osu.edu/assets/web/navbar/osu_navbar#{$image-src}resp-buckeyelink.png);
+            }
+            &.map {
+              background: url(https://www.osu.edu/assets/web/navbar/osu_navbar#{$image-src}resp-map.png);
+            }
+            &.findpeople {
+              background: url(https://www.osu.edu/assets/web/navbar/osu_navbar#{$image-src}resp-findpeople.png);
+            }
+            &.webmail {
+              background: url(https://www.osu.edu/assets/web/navbar/osu_navbar#{$image-src}resp-webmail.png);
+            }
+            &.search {
+              background: url(https://www.osu.edu/assets/web/navbar/osu_navbar#{$image-src}/resp-search.png);
+            }
+
+            @media (-webkit-min-device-pixel-ratio: 2),
+              (min-resolution: 192dpi) {
+              &.help {
+                background: url(https://www.osu.edu/assets/web/navbar/osu_navbar#{$image-src}resp-help@2x.png);
+              }
+              &.buckeyelink {
+                background: url(https://www.osu.edu/assets/web/navbar/osu_navbar#{$image-src}resp-buckeyelink@2x.png);
+              }
+              &.map {
+                background: url(https://www.osu.edu/assets/web/navbar/osu_navbar#{$image-src}resp-map@2x.png);
+              }
+              &.findpeople {
+                background: url(https://www.osu.edu/assets/web/navbar/osu_navbar#{$image-src}resp-findpeople@2x.png);
+              }
+              &.webmail {
+                background: url(https://www.osu.edu/assets/web/navbar/osu_navbar#{$image-src}resp-webmail@2x.png);
+              }
+              &.search {
+                background: url(https://www.osu.edu/assets/web/navbar/osu_navbar#{$image-src}resp-search@2x.png);
+              }
+
+              -webkit-background-size: 23px !important;
+              -moz-background-size: 23px !important;
+              background-size: 23px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#osu_navbar,
+#osu_navbar.light {
+  @include osu-navbar;
+
+  background: linear-gradient(to bottom, #e3e3e3 0, #b9b9ba 100%);
+}
+
+#osu_navbar.dark {
+  @include osu-navbar($gray-darker, $white, '/images/white/');
+}

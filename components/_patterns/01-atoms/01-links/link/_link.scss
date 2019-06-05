@@ -1,0 +1,32 @@
+/// Link
+$color-link: $red;
+$color-link--hover: $teal;
+
+@mixin link {
+  color: $color-link;
+
+  &:hover {
+    color: $color-link--hover;
+  }
+
+  &:focus {
+    outline: 1px dotted $color-link--hover;
+    outline-offset: 2px;
+  }
+}
+
+a,
+.link {
+  @include link;
+}
+
+span.ext {
+  margin-left: 4px;
+}
+
+//fixes extlink buttons in Chrome
+a.button {
+  span.link-content {
+    float: left;
+  }
+}

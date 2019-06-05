@@ -1,0 +1,50 @@
+@mixin callout($color: $gray-light) {
+  border: 1px solid $color;
+  border-radius: 5px;
+  margin: 2em 0.625em;
+  display: flex;
+  align-items: stretch;
+
+  .callout__icon {
+    float: left;
+    background: $color;
+    color: white;
+    text-align: center;
+    border-radius: 3px 0 0 3px;
+    display: flex;
+    align-items: center;
+  }
+
+  .svg-inline--fa {
+    font-size: 1.5em;
+    margin: 0 0.5em;
+
+    &.fa-exclamation {
+      font-size: 1.625em;
+      margin: 0 0.6875em;
+    }
+  }
+
+  .callout__body {
+    margin: 1em 1.25em 1em 1.5em;
+    line-height: 1.4;
+  }
+}
+
+.callout {
+  @include callout();
+}
+
+.callout--caution {
+  @include callout($orange);
+}
+
+.callout--ux-tip {
+  @include callout($violet);
+}
+
+.callout {
+  p:last-child {
+    margin-bottom: 0;
+  }
+}

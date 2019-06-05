@@ -1,0 +1,43 @@
+items:
+  - name: $clear
+    value: 'rgba(0, 0, 0, 0)'
+  - name: $white
+    value: '#fff'
+  - name: $near-white
+    value: '#f7f7f7'
+  - name: $gray-lightest
+    value: '#eaeaea'
+  - name: $gray-lighter
+    value: '#ccc'
+  - name: $gray-light
+    value: '#999'
+  - name: $gray
+    value: '#666'
+  - name: $gray-dark
+    value: '#444446'
+  - name: $gray-darker
+    value: '#303033'
+  - name: $gray-darkest
+    value: '#202024'
+  - name: $black
+    value: '#000'
+  - name: $red
+    value: '#b00'
+  - name: $red-dark
+    value: '#830000'
+  - name: $orange
+    value: '#d65828'
+  - name: $orange-dark
+    value: '#c04f24'
+  - name: $green
+    value: '#909738'
+  - name: $green-dark
+    value: '#73792d'
+  - name: $teal
+    value: '#1c7c89'
+  - name: $purple
+    value: '#5d3f82'
+  - name: $blue-dark
+    value: '#476c97'
+  - name: $violet
+    value: '#851e5e'

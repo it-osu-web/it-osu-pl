@@ -1,0 +1,19 @@
+p,
+.paragraph {
+  line-height: 1.4;
+}
+
+.paragraph--center {
+  text-align: center;
+  width: 85%;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+.paragraph--intro {
+  font-family: $capita;
+  font-style: italic;
+  font-weight: 100;
+  font-size: 120%;
+  line-height: 1.75;
+}

@@ -1,0 +1,47 @@
+base_path:
+site_name_prefix: Office of
+site_name: Name of the Website
+masthead_variant: standard
+masthead_color: dk-gray
+footer_color: dk-gray
+address_1: 100 Mount Hall
+address_2: 1050 Carmack Road
+city: Columbus
+state: OH
+zip: 43210
+phone: 614-292-8860
+fax: 614-292-8860
+contact_email: odee@osu.edu
+pl_footer_text: 'This content will be displayed in the footer below the contact info. It can contain links or other pertinent information. This is a good place for your ADA statement.'
+admin_link: 1
+social_links:
+  1:
+    name: Twitter
+    url: http://twitter.com
+    icon: twitter
+    prefix: fab
+  2:
+    name: Facebook
+    url: http://facebook.com
+    icon: facebook-f
+    prefix: fab
+  3:
+    name: LinkedIn
+    url: http://linkedin.com
+    icon: twitter
+    prefix: fab
+  4:
+    name: YouTube
+    url: http://youtube.com
+    icon: youtube
+    prefix: fab
+  5:
+    name: Instagram
+    url: http://instagram.com
+    icon: instagram
+    prefix: fab
+  6:
+    name: Photo-sharing
+    url: http://flickr.com
+    icon: camera
+    prefix: fas

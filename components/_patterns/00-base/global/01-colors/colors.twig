@@ -1,0 +1,11 @@
+<ul class="sg-colors">
+  {% for item in items %}
+    <li>
+      <div class="sg-colors__sample" style="background-color: {{item.value}};"></div>
+      <div class="sg-colors__info">
+        <code>{{item.value}}</code> <br/>
+        <code>{{item.name}}</code>
+      </div>
+    </li>
+  {% endfor %}
+</ul>

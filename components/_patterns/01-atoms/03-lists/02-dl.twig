@@ -1,0 +1,33 @@
+{#
+/**
+ * Available variables:
+ * - dl_base_class - the base classname
+ * - dl_modifiers - array of modifiers to add to the base classname
+ *
+ * - listItems - TBD
+ */
+#}
+{% set dl_base_class = dl_base_class|default('dl') %}
+{% set classes_array = [dl_base_class] %}
+
+{% if dl_modifiers is defined %}
+  {% for dl_modifier in dl_modifiers %}
+    {% set classes_array = classes_array|merge(["#{dl_base_class}--#{dl_modifier}"]) %}
+  {% endfor %}
+  {% set dl_classes = classes_array|join(' ') %}
+{% else %}
+  {% set dl_classes = dl_base_class %}
+{% endif %}
+
+<dl class="{{ dl_classes }}">
+  {% for dl_item in dl_items %}
+    {% include "@atoms/03-lists/_list-item-definition.twig" with {
+      "dl_term": dl_item.dl_term,
+      "dl_def": dl_item.dl_def,
+      "dl_term_base_class": dl_item.dl_term_base_class,
+      "dl_def_base_class": dl_item.dl_def_base_class,
+      "dl_term_modifiers": dl_item.dl_term_modifiers,
+      "dl_def_modifiers": dl_item.dl_def_modifiers,
+    } %}
+  {% endfor %}
+</dl>

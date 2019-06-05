@@ -1,0 +1,101 @@
+@mixin button(
+  $bg: $red,
+  $borderColor: $clear,
+  $color: $white,
+  $hoverBg: $red-dark,
+  $hoverColor: $white
+) {
+  background-color: $bg;
+  border: 1px solid $borderColor;
+  border-radius: 6px;
+  color: $color;
+  cursor: pointer;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding: 0.625em 1em;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+
+  &:visited {
+    color: $color;
+  }
+
+  &:hover {
+    background-color: $hoverBg;
+    color: $hoverColor;
+
+    //if link
+    a {
+      color: $hoverColor;
+    }
+  }
+
+  &:focus {
+    outline: 2px dotted black;
+    outline-offset: 0;
+  }
+
+  // styles for when link is made to look like a button
+  a {
+    color: $color;
+    text-decoration: none;
+
+    &:hover {
+      color: $hoverColor;
+    }
+  }
+}
+
+@mixin button-gray {
+  @include button($gray, $clear, $white, $gray-darker);
+}
+
+@mixin button-teal {
+  @include button($teal, $clear, $white, darken($teal, 10%));
+}
+
+@mixin button-alt {
+  @include button($clear, $red, $red, $red, $white);
+}
+
+@mixin button-alt-teal {
+  @include button($clear, $teal, $teal, $teal, $white);
+}
+
+@mixin button-alt-gray {
+  @include button($clear, $gray, $gray, darken($gray, 6%), $white);
+}
+
+.button {
+  @include button;
+
+  &--gray {
+    @include button;
+    @include button-gray;
+  }
+
+  &--teal {
+    @include button;
+    @include button-teal;
+  }
+
+  &--alt {
+    @include button;
+    @include button-alt;
+  }
+
+  &--alt-gray {
+    @include button;
+    @include button-alt-gray;
+  }
+
+  &--alt-teal {
+    @include button;
+    @include button-alt-teal;
+  }
+}
+
+.more-link {
+  @include button;
+}
