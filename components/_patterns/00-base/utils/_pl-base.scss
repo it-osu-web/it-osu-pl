@@ -5,6 +5,18 @@
   font-family: $proxima;
 }
 
+.sg-tabs-panel {
+  min-height: 25em !important;
+}
+
+.sg-pattern-extra-code {
+  width: 100% !important;
+}
+
+.sg-pattern-extra-code .language-markup {
+  font-size: 85% !important;
+}
+
 #sg-patterns {
   .sg-subtype h2 {
     font-size: 1.75rem;
@@ -67,6 +79,11 @@
   .sg-typography__group {
     padding: 1em 0.25em;
     min-width: 40%;
+
+    .sg-info {
+      padding: 10px;
+      font-size: 30px;
+    }
   }
 }
 
