@@ -44,7 +44,7 @@ As you identify bugs, tasks, feature requests, or other issues, please add them 
 ### Other ways to contribute
 
 - If you are not comfortable building out patterns yourself, or if you have an idea but do not know how to build it, create an issue and provide mockups or other info to help a developer build out the pattern.
-- Identify missing patterns, style improvements, accessibility concerns, bugs, or other issues and add an appropriate item to the issue queue. 
+- Identify missing patterns, missing documentation, style improvements, accessibility concerns, bugs, or other issues and add an appropriate item to the issue queue. 
 
 ## Working on patterns
 
