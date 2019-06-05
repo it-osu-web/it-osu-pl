@@ -5,6 +5,18 @@
   font-family: $proxima;
 }
 
+.sg-tabs-panel {
+  min-height: 25em !important;
+}
+
+.sg-pattern-extra-code {
+  width: 100% !important;
+}
+
+.sg-pattern-extra-code .language-markup {
+  font-size: 85% !important;
+}
+
 #sg-patterns {
   .sg-subtype h2 {
     font-size: 1.75rem;
