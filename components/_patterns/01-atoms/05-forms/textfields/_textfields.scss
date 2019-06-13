@@ -1,12 +1,28 @@
+/* Styling for the text areas */
+
 .form-item__textfield {
-  border: 2px solid $gray-lighter;
-  padding: 0.8em;
-  border-radius: 5px;
-  font-size: 1em;
+  border: 1px solid $gray-lighter;
+  padding: 0.625em 1em;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 6px;
+  width: 100%;
 
   &:focus {
     /*outline: 2px dotted $color-link--hover;*/
-    border: 2px solid $color-link--hover;
+    border: 2px solid $gray;
+    margin: -1px; /* Fixes field moving due to border change when selected */
+    outline: none;
+  }
+
+  &:not(:placeholder-shown):invalid {
+      border: 2px solid $red;
+      margin: -1px;
+  }
+
+  &:not(:placeholder-shown):valid {
+    border: 2px solid $teal;
+    margin: -1px;
   }
 
   &::-webkit-input-placeholder {
@@ -24,7 +40,13 @@
   &:-ms-input-placeholder {
     color: $gray
   }
+
+  &:-moz-ui-invalid {
+    box-shadow: none;
+  }
 }
+
+/* Styling for the form field area */
 
 .form-item__description {
   margin-top: 0.3em;
@@ -34,8 +56,25 @@
   border: 0;
   margin: 2em 0 1em;
   padding: 0;
+  background-color: $near-white;
 
   .form-item {
     margin-left: 1em;
   }
+
+  .button {
+    margin-top: 1em;
+  }
+}
+
+.form-item__textarea {
+  font-family: $font;
+  font-size: 0.9em;
+}
+
+/* Styling to make required fields more accessible */
+
+[aria-required=true]:after {
+  content: " *";
+  color: $red;
 }
