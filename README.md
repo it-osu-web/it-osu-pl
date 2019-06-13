@@ -44,7 +44,7 @@ As you identify bugs, tasks, feature requests, or other issues, please add them 
 ### Other ways to contribute
 
 - If you are not comfortable building out patterns yourself, or if you have an idea but do not know how to build it, create an issue and provide mockups or other info to help a developer build out the pattern.
-- Identify missing patterns, missing documentation, style improvements, accessibility concerns, bugs, or other issues and add an appropriate item to the issue queue. 
+- Identify missing patterns, missing documentation, style improvements, accessibility concerns, bugs, or other issues and add an appropriate item to the issue queue.
 
 ## Working on patterns
 
@@ -133,6 +133,7 @@ Patterns are divided into categories that progressively become more complex. Thi
 
 ### Use BEM methodology when possible
 
-- Here's the details: [Methodology / BEM](https://en.bem.info/methodology/)
+- A great intro to BEM: [BEM will make you happy](https://medium.com/@basterrika/bem-will-make-you-happy-ab0d0a821226)
+- Here's the full details: [Methodology / BEM](https://en.bem.info/methodology/)
 - We don't have to be super strict about it right now, but let's do what we can.
 - Provide options to accept modifiers as variables on lower-level (Atoms, Molecules) patterns. See `components/_patterns/01-atoms/00-text/04-paragraph/paragraph.twig` for a good example of how to do that.
