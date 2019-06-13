@@ -137,3 +137,7 @@ Patterns are divided into categories that progressively become more complex. Thi
 - Here's the full details: [Methodology / BEM](https://en.bem.info/methodology/)
 - We don't have to be super strict about it right now, but let's do what we can.
 - Provide options to accept modifiers as variables on lower-level (Atoms, Molecules) patterns. See `components/_patterns/01-atoms/00-text/04-paragraph/paragraph.twig` for a good example of how to do that.
+
+### Twig resources
+
+- [Official Documentation](https://twig.symfony.com/doc/2.x/templates.html)
