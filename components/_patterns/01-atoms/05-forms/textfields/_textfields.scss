@@ -1,9 +1,12 @@
 .form-item__textfield {
-  border: 1px solid $gray-lighter;
-  padding: 0.6em;
+  border: 2px solid $gray-lighter;
+  padding: 0.8em;
+  border-radius: 5px;
+  font-size: 1em;
 
   &:focus {
-    outline: 2px dotted $color-link--hover;
+    /*outline: 2px dotted $color-link--hover;*/
+    border: 2px solid $color-link--hover;
   }
 
   &::-webkit-input-placeholder {
@@ -15,11 +18,11 @@
   }
 
   &::-moz-placeholder {
-    color: $gray-light;
+    color: $gray;
   }
 
   &:-ms-input-placeholder {
-    color: $gray-light;
+    color: $gray
   }
 }
 
