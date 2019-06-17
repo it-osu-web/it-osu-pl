@@ -72,9 +72,10 @@
   font-size: 0.9em;
 }
 
-/* Styling to make required fields more accessible */
+/* Styling for the required fields */
 
-[aria-required=true]:after {
-  content: " *";
+[aria-required=true]:before {
+  content: "*";
   color: $red;
+  padding-right: 5px;
 }
