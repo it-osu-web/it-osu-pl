@@ -1,0 +1,65 @@
+/* Card styling */
+
+.card {
+  display: inline-block;
+  margin: 20px;
+  padding: 0 0 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: $white;
+  box-shadow: 0 3px 6px rgba(0,0,0,.16),
+              0 3px 6px rgba(0,0,0,.23);
+}
+
+.card__image {
+  border: none;
+  height: 200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+}
+
+.card__title {
+  margin: 18px 0 5px 0;
+  padding: 0 20px 0 20px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.card__content {
+  text-align: left;
+  padding: 0 20px 0 20px;
+  font-weight: 400;
+  margin: 0 0 10px;
+}
+
+.card__button {
+  margin: 20px 0 0 20px;
+  display: block;
+}
+
+/* Card sizes */
+
+.card--small {
+  max-width: 275px;
+}
+
+.card--medium {
+  min-width: 300px;
+  max-width: 375px;
+}
+
+.card--large {
+  min-width: 400px;
+  max-width: 550px;
+}
+
+/* Grids */
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
