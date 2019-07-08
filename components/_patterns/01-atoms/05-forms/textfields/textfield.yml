@@ -1,0 +1,21 @@
+field_placeholder:
+  false
+button_modifiers:
+  false
+field_attributes:
+  autocapitalize:
+    none
+  type:
+    false
+  name:
+    field
+  required:
+    false
+  aria-required:
+    false
+  value:
+    false
+  pattern:
+    false
+  title:
+    false

@@ -1,0 +1,12 @@
+field_placeholder:
+  "First, Middle, Last"
+button_modifiers:
+  1:
+    "name"
+field_attributes:
+  autocapitalize:
+    none
+  type:
+    text
+  name:
+    name
