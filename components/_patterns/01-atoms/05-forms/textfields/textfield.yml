@@ -1,21 +1,17 @@
+field_label: Textfield
 field_placeholder:
-  false
-button_modifiers:
-  false
+field_modifiers:
+field_id:
+  field-text
 field_attributes:
   autocapitalize:
     none
   type:
-    false
+    text
   name:
-    field
+    name
   required:
-    false
-  aria-required:
-    false
+  aria-required: false
   value:
-    false
   pattern:
-    false
   title:
-    false

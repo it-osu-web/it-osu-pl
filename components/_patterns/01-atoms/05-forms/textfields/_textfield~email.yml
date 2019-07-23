@@ -1,21 +1,23 @@
 field_label:
-  Name
+  Email
 field_placeholder:
-  "First, Middle, Last"
+  "name@example.com"
 field_modifiers:
   1:
-    "name"
+    "email"
 field_id:
-  field-name
+  field-email
 field_attributes:
   autocapitalize:
     none
   type:
-    text
+    email
   name:
-    name
+    email
   required:
-  aria-required: false
+    required
+  aria-required:
+    true
   value:
-  pattern:
+  pattern: 
   title:

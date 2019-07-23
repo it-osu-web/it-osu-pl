@@ -25,13 +25,12 @@
   {% set field_classes = field_base_class %}
 {% endif %}
 
+<label for="{{ field_id }}" class="form-item__label form-item__label--textfield" aria-required="{{ textfield_data.aria-required }}">{{ field_label }}</label>
+
 <input
-  class="{{ field_classes }}"
+  class="{{ field_classes }}" id="{{ field_id }}"
   {% for attribute,value in field_attributes %}
     {{ attribute }}="{{ value }}"
   {% endfor %}
   placeholder="{{ field_placeholder }}"
 >
-
-
-<!--input autocorrect="none" autocapitalize="none" spellcheck="false" aria-describedby="edit-name--description" type="text" name="name" value="" size="60" maxlength="60" class="form-item__textfield form-item__textfield--required" required="required" aria-required="true" placeholder="First, Middle, Last"-->

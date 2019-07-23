@@ -55,12 +55,8 @@
 .form-fieldset {
   border: 0;
   margin: 2em 0 1em;
-  padding: 0;
+  padding: 1em;
   background-color: $near-white;
-
-  .form-item {
-    margin-left: 1em;
-  }
 
   .button {
     margin-top: 1em;

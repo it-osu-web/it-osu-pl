@@ -1,20 +1,17 @@
+<form>
+  <fieldset class="form-fieldset">
 
+    <legend>Login Form</legend>
 
+    <div class="form-item">
+      {% include "atoms-textfield--email" %}
+    </div>
 
-<div class="form-item">
-  {% include "atoms-form-label" with {title:"Email"} %}
-  {% include "atoms-textfield--password" %}
-</div>
+    <div class="form-item">
+      {% include "atoms-textfield--password" %}
+    </div>
 
-{% include "atoms-textfield" %}
-{% include "atoms-textfield" %}
+    {% include "@atoms/02-buttons/01-button.twig" %}
 
-{% include "@atoms/05-forms/textfields/textfields.twig" %}
-
-{{ include("@atoms/05-forms/_form-label.twig", {title: "test label title", required:"form-required"}) }}
-
-{% include "@atoms/05-forms/_form-label.twig" with {title: "test label title", required:"true"} %}
-
-<p>Hello this is a test</p>
-
-<p>Ok cool, so we can use `include` to... include stuff.</p>
+  </fieldset>
+</form>

@@ -31,3 +31,16 @@ legend {
     margin: 0 4px 0 1px;
   }
 }
+
+.form-item--inline {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+fieldset.form-fieldset {
+  width: 500px;
+}
+
+.form-fieldset .button {
+  display: block;
+}

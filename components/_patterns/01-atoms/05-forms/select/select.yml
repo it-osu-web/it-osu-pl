@@ -1,0 +1,11 @@
+field_label:
+  Age
+dropdown_label:
+  Select one answer
+list_items:
+  1:
+    option: Choice 1
+  2:
+    option: Choice 2
+  3:
+    option: Choice 3

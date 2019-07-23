@@ -1,0 +1,21 @@
+address_field:
+  field_label: Address
+  field_placeholder: Address
+zip_field:
+  field_label: Zip Code
+  field_placeholder: Zip Code
+state_dropdown:
+  field_label: State
+  list_items:
+    1:
+      option: Ohio
+    2:
+      option: New York
+    3:
+      option: Washington
+
+button_base_class:
+  button
+button_content:
+  Submit
+button_url: "#"
