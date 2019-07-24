@@ -1,0 +1,21 @@
+field_label:
+  Name
+field_placeholder:
+  "First, Middle, Last"
+field_modifiers:
+  1:
+    "name"
+field_id:
+  field-name
+field_attributes:
+  autocapitalize:
+    none
+  type:
+    text
+  name:
+    name
+  required:
+  aria-required: false
+  value:
+  pattern:
+  title:
