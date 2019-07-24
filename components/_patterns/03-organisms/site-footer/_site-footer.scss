@@ -1,5 +1,5 @@
 //footer layout
-#site-footer {
+.site-footer {
   padding: 1.5em 0;
 }
 
@@ -7,60 +7,45 @@
   @include wrapper;
 }
 
-#address-block {
-  padding-bottom: 1em;
+.site-footer__social-media {
+  margin-bottom: 1.75em;
 }
 
-#social-media-block {
-  padding: 0.5em 0;
-}
-
-#footer-text-block {
-  clear: both;
-  padding-top: 1em;
-  font-size: 0.875em;
-  line-height: 1.5;
+.site-footer__address-block {
+  margin-bottom: 1.5em;
 }
 
 //layout after large breakpoint
 @include large {
-  #address-block {
-    float: left;
-    width: 60%;
-  }
-
-  #social-media-block {
+  .site-footer__social-media {
     float: right;
-    width: 35%;
-    margin-top: -0.65em;
-    margin-right: -0.7em;
-  }
-
-  .social-media__list {
-    text-align: right;
-  }
-
-  #footer-text-block {
-    width: 80%;
   }
 }
 
 //footer text
 .footer-text {
   line-height: 125%;
+  font-size: 0.875rem;
+}
+
+.site-footer__ada-statement,
+.site-footer__footer-text {
+  @extend .footer-text;
 }
 
 //footer login
-.footer-login-link {
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  text-decoration: none;
-  display: block;
-  padding-top: $space-one-half;
-}
+.site-footer__login-link {
+  margin-top: 2em;
 
-.footer-login-link:hover {
-  text-decoration: underline;
+  a {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 //mixin for colors
@@ -90,8 +75,8 @@
   }
 }
 
-#site-footer,
-#site-footer.dk-gray {
+.site-footer,
+.site-footer--dk-gray {
   @include footer;
 
   .social-media__item a:focus {
@@ -99,7 +84,7 @@
   }
 }
 
-#site-footer.md-gray {
+.site-footer--md-gray {
   @include footer($gray, $white, $gray-lightest, $gray-lightest);
 
   .social-media__item a {
@@ -107,10 +92,10 @@
   }
 }
 
-#site-footer.lt-gray {
+.site-footer--lt-gray {
   @include footer($gray-lightest, $gray-darker, $red, $red);
 }
 
-#site-footer.white {
+.site-footer--white {
   @include footer($white, $gray-dark, $red, $red);
 }

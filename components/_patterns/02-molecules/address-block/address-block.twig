@@ -27,11 +27,25 @@
       {% endif %}
     </p>
 
-    {% if phone|length and fax|length %}
-      <p>Phone: <a href="tel:{{ phone }}">{{ phone }}</a><span class="pipe"> | </span>Fax: {{ fax }}</p>
-    {% else %}
-      <p> {% if phone|length %} Phone: <a href="tel:{{ phone }}">{{ phone }}</p> {% elseif fax|length %} Fax: {{ fax }} {% endif %}</p>
-    {% endif %}
+    {% if phone|length or fax|length or tty|length %}
+      <p class="phone-line">
+        {% if phone|length %}
+          Phone: <a href="tel:{{ phone }}">{{ phone }}</a>
+          {% if fax|length or tty|length %}
+            <span class="pipe"> | </span>
+          {% endif %}
+        {% endif %}{# end phone length #}
+        {% if fax|length %}
+          Fax: {{ fax }}
+          {% if tty|length %}
+            <span class="pipe"> | </span>
+          {% endif %}
+        {% endif %} {# end fax length #}
+        {% if tty|length %}
+          Text Telephone for the Deaf: <a href="tel:+1{{ tty }}" data-rel="external">{{ tty }}</a>
+        {% endif %} {# end tty length #}
+      </p>
+    {% endif %} {# end all three #}
 
     {% if contact_email|length %}
       <p>Email: <a href="mailto:{{ contact_email }}">{{ contact_email }}</a></p>
