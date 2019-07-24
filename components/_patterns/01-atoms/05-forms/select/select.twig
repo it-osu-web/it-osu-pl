@@ -1,6 +1,26 @@
 {% if not attributes %}
 <div class="form-item">
-  <label for="select" class="form-item__label form-item__label--textfield">Age</label>
+  <label for="select" class="form-item__label form-item__label--textfield">{{field_label}}</label>
+  <div class="form-item__dropdown">
+    <select class="form-item__select">
+      <optgroup label="{{dropdown_label}}">
+{% endif %}
+        {% for select_item in list_items %}
+          {% include "@atoms/05-forms/select/_select-item.twig" %}
+        {% endfor %}
+{% if not attributes %}
+      </optgroup>
+    </select>
+  </div>
+</div>
+{% endif %}
+
+
+
+<!--
+{% if not attributes %}
+<div class="form-item">
+  <label for="select" class="form-item__label form-item__label--textfield">State</label>
   <div class="form-item__dropdown">
     <select class="form-item__select">
       <optgroup label="Whatever">
@@ -16,3 +36,4 @@
   </div>
 </div>
 {% endif %}
+-->
