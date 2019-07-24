@@ -1,0 +1,30 @@
+{#
+/**
+ *
+ * Pattern for the card molecule
+ *
+ * Available variables:
+ * - size: card size, either small, medium or large
+ * - image: url for the card's header image
+ * - title: text string for the card's title
+ * - text: text string for the card's content
+ * - button_content: text string for the button label
+ * - button_modifiers: modifiers for the button class, default it "alt"
+ *
+ */
+#}
+
+
+<div class="card card--{{ card_data.size }}">
+  <img class="card__image" alt="Card Image" src="{{ card_data.image }}"/>
+  <h1 class="card__title">{{ card_data.title }}</h1>
+  <p class="card__content">{{ card_data.text }}</p>
+
+  <!-- Card button -->
+  {%
+    include "@atoms/02-buttons/01-button.twig"
+      with {"button_content": card_data.button_content,
+            "button_modifiers": card_data.button_modifiers,
+            "button_url": card_data.button_url}
+  %}
+</div>
