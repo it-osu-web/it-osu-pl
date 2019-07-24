@@ -7,7 +7,7 @@
   border-radius: 6px;
   overflow: hidden;
   background-color: $white;
-  box-shadow: 0 2px 3px rgba(0,0,0,.16);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
 }
 
 .card__image {
@@ -51,12 +51,4 @@
 
 .card--large {
   max-width: 550px;
-}
-
-/* Grids */
-
-.card-grid {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
 }
