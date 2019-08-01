@@ -4,8 +4,7 @@
 
 1.  [PHP 7.1](http://www.php.net/)
 2.  [Node + NPM](https://nodejs.org/en/)
-3.  [Gulp](http://gulpjs.com/) (Install globally)
-4.  [Composer](https://getcomposer.org/)
+3.  [Composer](https://getcomposer.org/)
 
 ## Installation and Local Development Setup
 
@@ -13,7 +12,7 @@
 2. Navigate to repo directory
 3. Run `composer install`
 4. Run `npm install`
-5. Run `gulp`
+5. Run `npm run gulp`
 
 ## Gulp default task
 
