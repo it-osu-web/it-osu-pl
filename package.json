@@ -4,7 +4,8 @@
   "description": "IT@OSU design system using Pattern Lab",
   "main": "index.js",
   "scripts": {
-    "postinstall": "./scripts/pattern_lab.sh"
+    "postinstall": "./scripts/pattern_lab.sh",
+    "gulp": "./node_modules/gulp/bin/gulp.js"
   },
   "author": "M Miller",
   "license": "MIT",
