@@ -115,7 +115,10 @@ function copyBuild(done) {
 // Copy patterns and supporting files to it-osu-pl-drupal directory.
 function copyDrupal(done) {
   gulp
-    .src(config.patternDirectory + '/**/*.twig')
+    .src([
+      config.patternDirectory + '/**/*.twig',
+      config.patternDirectory + '/**/*.scss',
+    ])
     .pipe(gulp.dest('it-osu-pl-drupal'));
   gulp.src('./components/css/**').pipe(gulp.dest('it-osu-pl-drupal/css'));
   gulp.src('./components/js/**').pipe(gulp.dest('it-osu-pl-drupal/js'));
