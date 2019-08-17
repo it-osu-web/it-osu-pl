@@ -1,0 +1,53 @@
+/* Card styling */
+
+.card {
+  display: inline-block;
+  padding: 0 0 20px;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: $white;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
+}
+
+.card__image {
+  border: none;
+  height: 200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+}
+
+.card__title {
+  margin: 18px 0 5px 0;
+  padding: 0 20px 0 20px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.card__content {
+  text-align: left;
+  padding: 0 20px 0 20px;
+  font-weight: 400;
+  margin: 0 0 10px;
+}
+
+.card button {
+  margin: 20px 0 0 20px;
+  display: block;
+}
+
+/* Card sizes */
+
+.card--small {
+  max-width: 275px;
+}
+
+.card--medium {
+  max-width: 375px;
+}
+
+.card--large {
+  max-width: 550px;
+}
