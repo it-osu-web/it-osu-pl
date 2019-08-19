@@ -4,6 +4,8 @@ $color-link--hover: $teal;
 
 @mixin link {
   color: $color-link;
+  text-decoration: underline;
+  font-weight: 400;
 
   &:hover {
     color: $color-link--hover;
