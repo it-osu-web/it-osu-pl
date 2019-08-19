@@ -1,11 +1,16 @@
 <div class="form-item">
-  <label for="edit-name" class="form-item__label form-item__label--required form-item__label--textfield">Name</label>
+  <label for="edit-name" class="form-item__label form-item__label--required form-item__label--textfield" aria-required="true">Name</label>
   <input autocorrect="none" autocapitalize="none" spellcheck="false" aria-describedby="edit-name--description" type="text" name="name" value="" size="60" maxlength="60" class="form-item__textfield form-item__textfield--required" required="required" aria-required="true" placeholder="First, Middle, Last">
 </div>
 
 <div class="form-item">
-  <label for="edit-pass" class="form-item__label form-item__label--required form-item__label--textfield">Password</label>
-  <input aria-describedby="edit-pass--description" type="password" name="pass" size="60" maxlength="128" class="form-item__textfield form-item__textfield--password form-item__textfield--required" required="required" aria-required="true">
+  <label for="edit-pass" class="form-item__label form-item__label--required form-item__label--textfield" aria-required="true">Password</label>
+  <input aria-describedby="edit-pass--description" type="password" name="pass"
+         size="60" maxlength="128"
+         class="form-item__textfield form-item__textfield--password form-item__textfield--required"
+         required="required" aria-required="true" value=""
+         placeholder="Enter your password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+         title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number.">
   <div class="form-item__description">
     Enter the password that accompanies your username.
   </div>
@@ -20,8 +25,23 @@
      </div>
 
      <div class="form-item">
-       <label for="emailaddress" class="form-item__label form-item__label--textfield">Email Address</label>
+       <label for="emailaddress" class="form-item__label form-item__label--textfield" aria-required="false">Email Address</label>
        <input type="email" class="form-item__textfield" placeholder="name@email.com">
+     </div>
+     <div class="form-item">
+       <label for="edit-pass" class="form-item__label form-item__label--required form-item__label--textfield" aria-required="true">Password</label>
+       <input aria-describedby="edit-pass--description" type="password" name="pass"
+              size="60" maxlength="128"
+              class="form-item__textfield form-item__textfield--password form-item__textfield--required"
+              required="required" aria-required="true" value=""
+              placeholder="Enter your password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+              title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number">
+       <div class="form-item__description">
+         Enter the password that accompanies your username.
+       </div>
+     </div>
+      <div class="form-item">
+        <button class="button" href="#">Submit</button>
      </div>
   </fieldset>
  </form>
