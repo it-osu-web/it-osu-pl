@@ -1,7 +1,7 @@
 {
   "name": "it-osu-web/it-osu-pl",
   "description": "IT@OSU Pattern Lab",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "type": "design-system",
   "require": {
     "composer/installers": "^1.6"
