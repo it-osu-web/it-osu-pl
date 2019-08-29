@@ -2,12 +2,12 @@
 /**
  * Available variables:
  * - infobox_modifiers - array of modifiers to add to the base classname
- * - heading_level - defaults to 2
- * - infobox_title - box title
- * - infobox_title - infobox_link
+ * - infobox_extra_classes - string of extra classes to add to main div
+ * - infobox_heading_level - defaults to 2
+ * - infobox_title - title
+ * - infobox_link - link from title (leave blank for no link)
  * - infobox_text - the content of the paragraph
 #}
-
 
 {% set infobox_base_class = infobox_base_class|default('info-box') %}
 {% set classes_array = [infobox_base_class] %}
@@ -22,10 +22,10 @@
 {% endif %}
 
 
-<div class="{{ infobox_classes }}">
+<div class="{{ infobox_classes }} {{ infobox_extra_classes }}">
   <div class="info-box__title">
     {% include "@atoms/00-text/00-headings/_heading.twig" with {
-      "heading_level": heading_level|default(2),
+      "heading_level": infobox_heading_level|default(2),
       "heading": infobox_title,
       "heading_url": infobox_link,
       "heading_link_base_class": 'link',
