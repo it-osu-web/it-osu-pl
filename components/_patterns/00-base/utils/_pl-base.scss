@@ -26,26 +26,26 @@
     clear: both;
     background: $gray-lightest;
     @include breakout;
-    padding: 6px 0 0 4.75%;
+    padding: 6px 0 0 4.5%;
     margin-top: 2.5em;
     a {
       color: $red;
+      font-weight: 700;
       text-decoration: none;
       &:hover {
-        color: black;
+        color: $teal;
       }
     }
   }
   .sg-subtype:first-child h2 {
-    margin-top: -8px;
+    margin-top: 0;
   }
 }
 
 .sg-pattern-title a {
   font-family: $proxima !important;
   color: $gray-dark;
-  font-size: 1.25rem;
-  font-weight: 600 !important;
+  font-size: 1.375rem;
   text-transform: uppercase;
 }
 

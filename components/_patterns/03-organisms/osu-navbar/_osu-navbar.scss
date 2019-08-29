@@ -9,10 +9,6 @@
 
   @include clearfix;
 
-  .navbar__inner {
-    @include wrapper;
-  }
-
   p {
     font-size: 13px;
     line-height: 1.5;
