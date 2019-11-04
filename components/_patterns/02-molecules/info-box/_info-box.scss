@@ -1,15 +1,29 @@
-.info-box {
-  background-color: $gray-lightest;
+@mixin info-box($background: $gray-lightest, $color: $gray-darkest) {
+  background-color: $background;
+  color: $color;
   margin-bottom: 2%;
-  padding: 1.5em 1.5em 0.5em;
+  padding: 1em 1.5em 0.5em;
   width: 100%;
   border-radius: 6px;
+
+  .info-box__title {
+    @include heading-medium();
+    h2,
+    h3,
+    h4 {
+      color: $color;
+    }
+  }
+
+  @if $background == $white {
+    border: 1px solid $gray-lightest;
+  }
 }
 
-.info-box__title {
-  @include heading-medium;
+.info-box {
+  @include info-box();
 }
 
-.info-box__link {
-  @include link;
+.info-box--white {
+  @include info-box($white);
 }
