@@ -1,0 +1,18 @@
+info_box_data:
+  1:
+    infobox_modifiers:
+      1: 'one'
+    infobox_extra_classes: 'cell auto'
+    infobox_title: 'Box 1'
+    heading_level: 3
+    infobox_text: 'Small batch brooklyn edison bulb prism salvia. Forage tote bag four dollar toast, drinking vinegar brunch farm-to-table taxidermy. Intelligentsia cred bitters tumblr taiyaki, ugh austin kogi. Sustainable pok pok irony messenger bag vice, umami banh mi disrupt skateboard ramps cloud bread polaroid pickled glossier migas.'
+  2:
+    infobox_extra_classes: 'cell auto'
+    infobox_title: 'Box 2'
+    heading_level: 3
+    infobox_text: 'Blog leggings chartreuse taxidermy photo booth small batch austin glossier typewriter semiotics lumbersexual. Man bun semiotics fingerstache chillwave street art. Cred swag fashion axe craft beer pour-over chartreuse hexagon. Flannel YOLO swag kale chips bespoke, coloring book ethical yuccie microdosing helvetica messenger bag raclette flexitarian bitters.'
+  3:
+    infobox_extra_classes: 'cell auto'
+    infobox_title: 'Box 3'
+    heading_level: 3
+    infobox_text: 'Vexillologist etsy pug, tilde subway tile cornhole aesthetic fashion axe chicharrones tumblr. Waistcoat seitan normcore, iPhone 90s ethical 8-bit blue bottle pinterest air plant mlkshk listicle. Bushwick skateboard fixie fingerstache, vinyl kogi meditation coloring book food truck. Copper mug literally jianbing, chia retro polaroid listicle. Small batch austin farm-to-table neutra flannel tilde.'
