@@ -41,7 +41,7 @@
   }
 
   &:focus {
-    outline: 2px dotted black;
+    outline: 2px dotted $gray-darkest;
     outline-offset: 0;
     background-color: $hoverBg;
   }

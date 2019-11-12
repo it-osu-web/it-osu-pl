@@ -1,12 +1,12 @@
 items:
   pages:
     1:
-      href: "#"
+      href: '#'
     2:
-      href: "#"
+      href: '#'
     3:
-      href: "#"
+      href: '#'
     4:
-      href: "#"
+      href: '#'
   previous: true
   next: true
