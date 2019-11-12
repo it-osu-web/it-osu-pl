@@ -44,28 +44,3 @@
     box-shadow: none;
   }
 }
-
-/* Styling for the form field area */
-
-.form-item__description {
-  margin-top: 0.3em;
-}
-
-.form-fieldset {
-  border: 0;
-  margin: 2em 0 1em;
-  padding: 1em;
-  background-color: $near-white;
-
-  .button {
-    margin-top: 1em;
-  }
-}
-
-/* Styling for the required fields */
-
-[aria-required='true']:before {
-  content: '*';
-  color: $red;
-  padding-right: 5px;
-}
