@@ -3,7 +3,6 @@
 .form-item__dropdown {
   border: 1px solid $gray-lighter;
   background-color: $white;
-  border-radius: 6px;
   display: block;
   position: relative;
 
@@ -11,7 +10,7 @@
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 9px solid $gray;
-    content: " ";
+    content: ' ';
     position: absolute;
     top: 41%;
     right: 1em;
@@ -47,7 +46,8 @@
   }
 }
 
-@supports ( -webkit-appearance: none ) or ( appearance: none ) or ( ( -moz-appearance: none ) and ( mask-type: alpha ) ) {
+@supports (-webkit-appearance: none) or (appearance: none) or
+  ((-moz-appearance: none) and (mask-type: alpha)) {
   /* Show custom arrow */
   .form-item__dropdown::after {
     display: block;
