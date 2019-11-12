@@ -1,6 +1,5 @@
 @mixin callout($color: $gray-light) {
   border: 1px solid $color;
-  border-radius: 5px;
   margin: 2em 0.625em;
   display: flex;
   align-items: stretch;
@@ -10,7 +9,6 @@
     background: $color;
     color: white;
     text-align: center;
-    border-radius: 3px 0 0 3px;
     display: flex;
     align-items: center;
   }
