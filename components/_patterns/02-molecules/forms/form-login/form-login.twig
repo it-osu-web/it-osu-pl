@@ -1,0 +1,23 @@
+<form>
+  <fieldset class="form-fieldset">
+
+    <legend>Login Form</legend>
+
+    <div class="form-item">
+      {% include "@atoms/05-form-elements/textfield/_textfield.twig"
+            with {field_label:email_field.field_label,
+              field_placeholder:email_field.field_placeholder
+            } %}
+    </div>
+
+    <div class="form-item">
+      {% include "@atoms/05-form-elements/textfield/_textfield.twig"
+            with {field_label:password_field.field_label,
+              field_placeholder:password_field.field_placeholder
+            } %}
+    </div>
+
+    {% include "@atoms/02-buttons/01-button.twig" %}
+
+  </fieldset>
+</form>

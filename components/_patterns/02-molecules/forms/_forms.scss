@@ -1,0 +1,34 @@
+.form-fieldset {
+  border: 0;
+  margin: 2em 0 1em;
+  padding: 1em 1.5em;
+  background-color: $near-white;
+
+  legend {
+    text-transform: uppercase;
+  }
+
+  .button {
+    margin-top: 1em;
+  }
+}
+
+legend {
+  font-weight: 600;
+}
+
+//reusable classes
+.form-options-list {
+  line-height: 160%;
+
+  input {
+    margin: 0 4px 0 1px;
+  }
+}
+
+// If in PL
+.sg-main {
+  .form-fieldset {
+    max-width: 600px;
+  }
+}
