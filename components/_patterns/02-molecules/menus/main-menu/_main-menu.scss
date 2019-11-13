@@ -1,9 +1,9 @@
 //adapted from https://code.osu.edu/ocio_odee_web/a11y-navbar
 
 //translate variables for this theme
-$lt-gray: #eaeaea;
-$md-gray: #666;
-$dk-gray: #202024;
+$lt-gray: $gray-lightest;
+$md-gray: $gray;
+$dk-gray: $gray-darkest;
 $proxima: 'proximanova', Helvetica, Arial, sans-serif;
 $capita: 'capita', Georgia, serif;
 
@@ -45,8 +45,6 @@ $capita: 'capita', Georgia, serif;
 
 //excerpt from original sass/reset/_reset-src.scss
 @mixin element-reset {
-  // margin: 0;
-  // padding: 0;
   border: 0;
   font-size: 100%;
   vertical-align: baseline;

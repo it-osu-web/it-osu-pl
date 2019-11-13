@@ -39,7 +39,8 @@ config.sass = {
 config.js = {
   srcFiles: config.patternDirectory + '/**/*.js',
   watchFiles: [config.patternDirectory + '/**/*.js'],
-  destDir: 'components/js',
+  destDirPatterns: 'components/js/patterns',
+  destDirOther: 'components/js/other',
 };
 config.npm = {
   srcFiles: './node_modules/'
@@ -80,14 +81,14 @@ function js(done) {
     .src([config.js.srcFiles])
     .pipe(plumber())
     // .pipe(uglify())
-    .pipe(gulp.dest(config.js.destDir))
+    .pipe(gulp.dest(config.js.destDirPatterns))
     .pipe(browsersync.stream());
   done();
 }
 
 // Clean js assets.
 function cleanJS(done) {
-  return del([config.js.destDir + '/*']);
+  return del([config.js.destDirPatterns]);
   done();
 }
 
@@ -111,7 +112,7 @@ function watchFiles() {
 function copyNPM(done) {
   gulp
     .src(config.npm.srcFiles + 'hoverintent/dist/hoverintent.min.js')
-    .pipe(gulp.dest(config.js.destDir));
+    .pipe(gulp.dest(config.js.destDirOther));
   done();
 }
 
