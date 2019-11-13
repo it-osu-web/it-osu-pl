@@ -4,8 +4,6 @@
 $lt-gray: $gray-lightest;
 $md-gray: $gray;
 $dk-gray: $gray-darkest;
-$proxima: 'proximanova', Helvetica, Arial, sans-serif;
-$capita: 'capita', Georgia, serif;
 
 //from original sass/mixins/_visually-hidden.scss
 // Hide only visually, but have it available for screenreaders: h5bp.com/v
@@ -76,7 +74,7 @@ nav.a11y-navbar {
   font-family: $proxima;
   display: block;
   position: relative;
-  // width: 100%;
+  width: 100%;
   overflow: visible;
 
   ul.a11y-navbar-menubar {
@@ -115,7 +113,8 @@ nav.a11y-navbar {
 
         &.a11y-navbar-menu-open {
           display: block;
-          width: 10rem;
+          min-width: 10rem;
+          width: 100%;
           position: absolute;
           opacity: 1;
           transition: opacity 0.4s linear;
@@ -501,19 +500,5 @@ button.a11y-navbar-toggle {
     &::after {
       bottom: -5px;
     }
-  }
-}
-
-//theme specific
-.region--primary_menu {
-  background-color: $lt-gray;
-  border-bottom: 1px solid white;
-}
-
-@include breakpoint($medium) {
-  .main-nav--inner {
-    @include wrapper;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
