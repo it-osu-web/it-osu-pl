@@ -39,7 +39,11 @@ config.sass = {
 config.js = {
   srcFiles: config.patternDirectory + '/**/*.js',
   watchFiles: [config.patternDirectory + '/**/*.js'],
-  destDir: 'components/js',
+  destDirPatterns: 'components/js/patterns',
+  destDirOther: 'components/js/other',
+};
+config.npm = {
+  srcFiles: './node_modules/'
 };
 
 // BrowserSync.
@@ -76,15 +80,15 @@ function js(done) {
   return gulp
     .src([config.js.srcFiles])
     .pipe(plumber())
-    .pipe(uglify())
-    .pipe(gulp.dest(config.js.destDir))
+    // .pipe(uglify())
+    .pipe(gulp.dest(config.js.destDirPatterns))
     .pipe(browsersync.stream());
   done();
 }
 
 // Clean js assets.
 function cleanJS(done) {
-  return del([config.js.destDir + '/*']);
+  return del([config.js.destDirPatterns]);
   done();
 }
 
@@ -102,6 +106,14 @@ function watchFiles() {
     config.patternLab.watchFiles,
     gulp.series(plGenerate, browserSyncReload),
   );
+}
+
+// Copy certain files from NPM to js directory.
+function copyNPM(done) {
+  gulp
+    .src(config.npm.srcFiles + 'hoverintent/dist/hoverintent.min.js')
+    .pipe(gulp.dest(config.js.destDirOther));
+  done();
 }
 
 // Copy PL site files to build directory.
@@ -205,6 +217,7 @@ const watch = gulp.parallel(watchFiles, browserSync);
 const start = gulp.series(
   gulp.parallel(css, js),
   plGenerate,
+  copyNPM,
   copyBuild,
   copyDrupal,
   watch,

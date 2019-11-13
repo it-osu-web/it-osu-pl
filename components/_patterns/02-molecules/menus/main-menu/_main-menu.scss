@@ -1,0 +1,504 @@
+//adapted from https://code.osu.edu/ocio_odee_web/a11y-navbar
+
+//translate variables for this theme
+$lt-gray: $gray-lightest;
+$md-gray: $gray;
+$dk-gray: $gray-darkest;
+
+//from original sass/mixins/_visually-hidden.scss
+// Hide only visually, but have it available for screenreaders: h5bp.com/v
+@mixin visually-hidden($focusable: false) {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  // Extends the `visually-hidden` class to allow the element to be focusable
+  // when navigated to via the keyboard: h5bp.com/p
+  @if $focusable == true {
+    &:active,
+    &:focus {
+      clip: auto !important;
+      height: auto !important;
+      margin: 0 !important;
+      overflow: visible !important;
+      position: static !important;
+      width: auto !important;
+    }
+  }
+}
+
+//from original sass/reset/_button-reset.scss
+@mixin button-reset {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+//excerpt from original sass/reset/_reset-src.scss
+@mixin element-reset {
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+// from original sass/base/_navbar.scss -- altered for this theme
+nav.a11y-navbar {
+  @include element-reset();
+
+  /*
+		Reset potentially nested elements.
+	*/
+  div,
+  span,
+  ul,
+  ol,
+  li,
+  a,
+  p {
+    @include element-reset();
+  }
+
+  ul,
+  ol,
+  li {
+    @include list-reset();
+  }
+
+  font-family: $proxima;
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: visible;
+
+  ul.a11y-navbar-menubar {
+    background-color: $lt-gray;
+    list-style-type: none;
+
+    li {
+      list-style-type: none;
+      position: relative;
+
+      a[role='menuitem'] {
+        color: $dk-gray;
+        text-decoration: none;
+        background-color: $lt-gray;
+        line-height: 2.25rem;
+        padding: 0 1rem;
+        display: block;
+        height: 2.25rem;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 99;
+        margin-bottom: 1px;
+
+        &:focus,
+        &:hover {
+          color: $lt-gray;
+          background-color: $dk-gray;
+          outline-offset: -1px;
+          outline-color: white;
+          z-index: 999;
+        }
+      }
+
+      ul[role='menu'] {
+        opacity: 0;
+
+        &.a11y-navbar-menu-open {
+          display: block;
+          min-width: 10rem;
+          width: 100%;
+          position: absolute;
+          opacity: 1;
+          transition: opacity 0.4s linear;
+          z-index: 9999;
+
+          li {
+            display: block;
+            width: 100%;
+
+            a[aria-haspopup='true'] {
+              &::after {
+                // Right arrows
+                content: '';
+                width: 0;
+                height: 0;
+                border-top: 0.25rem solid transparent;
+                border-bottom: 0.25rem solid transparent;
+                border-left: 0.25rem solid $dk-gray;
+                position: absolute;
+                right: 0.5rem;
+                top: 0.75rem;
+              }
+
+              &:focus::after,
+              &:hover::after {
+                border-left: 0.25rem solid $lt-gray;
+              }
+            }
+          }
+        }
+
+        &.a11y-navbar-menu-closed {
+          @include visually-hidden();
+        }
+      }
+    }
+
+    &.a11y-navbar-orientation-horizontal {
+      li {
+        display: inline-block;
+
+        a[role='menuitem'] {
+          &.a11y-navbar-menuitem {
+            border-bottom: none;
+
+            &[aria-haspopup='true'] {
+              padding-right: 1.5rem;
+
+              &::after {
+                // Down arrows
+                content: '';
+                width: 0;
+                height: 0;
+                border-top: 0.25rem solid $dk-gray;
+                border-right: 0.25rem solid transparent;
+                border-left: 0.25rem solid transparent;
+                position: absolute;
+                right: 0.5rem;
+                top: 1rem;
+              }
+
+              &:focus::after,
+              &:hover::after {
+                border-top: 0.25rem solid $lt-gray;
+              }
+            }
+          }
+        }
+
+        ul[role='menu'] {
+          &.a11y-navbar-menu-open {
+            top: 2.325rem;
+            left: 0;
+            background: white;
+
+            li {
+              a[role='menuitem'] {
+                // Second-level menu items
+                background-color: darken($lt-gray, 10%);
+
+                &:focus,
+                &:hover {
+                  background-color: $dk-gray;
+                }
+              }
+
+              ul[role='menu'] {
+                top: 0;
+                left: 100%;
+
+                li {
+                  a[role='menuitem'] {
+                    // Third-level menu items
+                    background-color: darken($lt-gray, 20%);
+
+                    &:focus,
+                    &:hover {
+                      background-color: $dk-gray;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.a11y-navbar-orientation-vertical {
+      width: 10rem;
+
+      a[role='menuitem'] {
+        &[aria-haspopup='true'] {
+          &::after {
+            // Right arrows
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 0.25rem solid transparent;
+            border-bottom: 0.25rem solid transparent;
+            border-left: 0.25rem solid $dk-gray;
+            position: absolute;
+            right: 0.25rem;
+            top: 0.5rem;
+          }
+        }
+      }
+
+      li {
+        border: 1px solid $md-gray;
+        border-bottom: none;
+
+        &:last-child {
+          border-bottom: 1px solid $md-gray;
+        }
+
+        ul[role='menu'] {
+          &.a11y-navbar-menu-open {
+            top: -1px;
+            left: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &.a11y-navbar-responsive {
+    & div.a11y-navbar-instructions-show {
+      // Keep instructions visually hidden in responsive menu.
+      @include visually-hidden();
+    }
+
+    ul.a11y-navbar-menubar {
+      // Responsive menu should be identical whether vertical or horizontal initially.
+      border-top: 1px solid white;
+      background: white;
+
+      &.a11y-navbar-orientation-horizontal,
+      &.a11y-navbar-orientation-vertical {
+        // Undo aria-orientation="vertical" ul[role=menubar] width setting.
+        width: auto;
+
+        li {
+          // Undo aria-orientation="vertical" li border setting.
+          border: none;
+          display: block;
+
+          a[role='menuitem'] {
+            &.a11y-navbar-menuitem {
+              color: $dk-gray;
+              background-color: darken($lt-gray, 7%);
+              border-right: none;
+              position: relative;
+              z-index: 99;
+              height: 2.5rem;
+              line-height: 2.5;
+              margin-bottom: 1px;
+            }
+
+            &:focus,
+            &:hover {
+              outline: 2px dotted $teal;
+              outline-offset: -2px;
+              z-index: 999;
+            }
+
+            &[aria-haspopup='true'] {
+              padding-right: 1.5rem;
+
+              &::after {
+                // Down arrows
+                content: '';
+                width: 0;
+                height: 0;
+                border-top: 0.25rem solid transparent; //should be transparent when using responsiveSubmenuToggles
+                border-right: 0.25rem solid transparent;
+                border-left: 0.25rem solid transparent;
+                position: absolute;
+                right: 1.325rem;
+                top: 1rem;
+              }
+
+              &:focus::after,
+              &:hover::after {
+                border-top: 0.25rem solid transparent; //should be transparent when using responsiveSubmenuToggles
+              }
+            }
+          }
+
+          ul[role='menu'] {
+            opacity: 1;
+            max-height: 0;
+            overflow: hidden;
+            position: static;
+            width: 100%;
+
+            &.a11y-navbar-menu-open {
+              max-height: 9999px;
+              transition: max-height 1s ease-in;
+            }
+
+            li {
+              a[role='menuitem'] {
+                // Second-level menuitems.
+                color: $dk-gray;
+                background-color: darken($lt-gray, 15%);
+                padding-left: 1.875rem;
+                height: 2.5rem;
+                line-height: 2.5;
+                margin-bottom: 1px;
+
+                &:focus,
+                &:hover {
+                  background-color: darken($lt-gray, 15%);
+                  outline: 2px dotted $teal;
+                  outline-offset: -2px;
+                }
+                // Override default right arrows on submenus.
+                &[aria-haspopup='true'] {
+                  padding-right: 1.5rem;
+
+                  &::after {
+                    // Down arrows
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    border-top: 0.25rem solid transparent; //should be transparent when using responsiveSubmenuToggles
+                    border-right: 0.25rem solid transparent;
+                    border-left: 0.25rem solid transparent;
+                    position: absolute;
+                    right: 1.325rem;
+                    top: 1rem;
+                  }
+
+                  &:focus::after,
+                  &:hover::after {
+                    border-top: 0.25rem solid transparent; //should be transparent when using responsiveSubmenuToggles
+                  }
+                }
+              }
+
+              ul[role='menu'] {
+                li {
+                  a[role='menuitem'] {
+                    // Third-level menuitems.
+                    color: darken($dk-gray, 10%);
+                    background-color: darken($lt-gray, 25%);
+                    padding-left: 2.75rem;
+
+                    &:focus,
+                    &:hover {
+                      color: darken($dk-gray, 10%);
+                      background-color: darken($lt-gray, 25%);
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          button.a11y-navbar-submenu-toggle {
+            position: absolute;
+            right: 0.75rem;
+            top: 0.1875rem;
+            height: 2.125rem;
+            width: 2.125rem;
+            z-index: 9999;
+            box-shadow: none;
+            border: none;
+            border-radius: 0;
+            background-color: transparent;
+            padding: 0;
+
+            &:focus {
+              outline: 1px dotted $dk-gray;
+            }
+
+            span {
+              @include visually-hidden();
+            }
+
+            &::after {
+              // Pure CSS Chevron.
+              content: '';
+              display: inline-block;
+              border-right: 2px solid $dk-gray;
+              border-bottom: 2px solid $dk-gray;
+              width: 10px;
+              height: 10px;
+              background-color: transparent;
+              position: relative;
+            }
+
+            &[aria-expanded='true'] {
+              &::after {
+                transform: rotate(225deg);
+                top: 3px;
+              }
+            }
+
+            &[aria-expanded='false'] {
+              &::after {
+                transform: rotate(45deg);
+                top: -2px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.a11y-navbar-closed {
+    @include visually-hidden();
+  }
+
+  div.a11y-navbar-instructions {
+    @include visually-hidden();
+  }
+}
+
+button.a11y-navbar-toggle {
+  @include button-reset();
+
+  font-family: $proxima;
+  background-color: $lt-gray;
+  color: $dk-gray;
+  width: 100%;
+  padding: 0.5rem 1.125rem;
+  text-align: left;
+  position: relative;
+  text-transform: uppercase;
+
+  &:focus {
+    outline: 2px dotted $teal;
+    outline-offset: -2px;
+    z-index: 999;
+  }
+
+  // Hamburger icon.
+  span {
+    position: absolute;
+    right: 1.125rem;
+    top: 45%;
+
+    &,
+    &::after,
+    &::before {
+      cursor: pointer;
+      border-radius: 1px;
+      height: 3px;
+      width: 20px;
+      background: $dk-gray;
+      position: absolute;
+      display: block;
+      content: '';
+    }
+
+    &::before {
+      top: -5px;
+    }
+
+    &::after {
+      bottom: -5px;
+    }
+  }
+}

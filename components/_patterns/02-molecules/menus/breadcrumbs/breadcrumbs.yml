@@ -1,0 +1,9 @@
+breadcrumb:
+  1:
+    url: '#'
+    text: 'Home'
+  2:
+    url: '#'
+    text: '2nd Level'
+  3:
+    text: '3rd Level'
