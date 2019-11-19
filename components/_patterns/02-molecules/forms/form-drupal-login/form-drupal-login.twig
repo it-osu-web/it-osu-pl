@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+<form{{ attributes }}>
+  <div class="login-box login-box--osu">
+    <h2 class="login-box__header login-box__header--osu">Ohio State Users</h2>
+    <a class="button" href="/saml_login">Log in with your Ohio State credentials</a>
+  </div>
+  <details class="login-box login-box--drupal">
+    <summary class="login-box__collapsible"><h2 class="login-box__header login-box__header--drupal">Non-Ohio State Users</h2></summary>
+    <div class="login-form">{{ children }}</div>
+  </details>
+</form>
