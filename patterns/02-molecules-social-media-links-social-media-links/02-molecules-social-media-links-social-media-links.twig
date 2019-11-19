@@ -6,10 +6,19 @@
  */
 #}
 
+{% set social_links = [
+  { 'name':'Twitter', 'url': twitter, 'icon': 'twitter', 'prefix': 'fab' },
+  { 'name':'Facebook', 'url': facebook, 'icon': 'facebook-f', 'prefix': 'fab' },
+  { 'name':'LinkedIn', 'url': linkedin, 'icon': 'linkedin-in', 'prefix': 'fab' },
+  { 'name':'YouTube', 'url': youtube, 'icon': 'youtube', 'prefix': 'fab' },
+  { 'name':'Instagram', 'url': instagram, 'icon': 'instagram', 'prefix': 'fab' },
+  { 'name':'Photo-sharing', 'url': photos, 'icon': 'camera', 'prefix': 'fas' }
+] %}
+
 <div class="social-media-links">
   <ul class="social-media-links__list">
     {% for social_link in social_links %}
-      {% include "@atoms/01-links/social-media-ink/social-media-link.twig" %}
+      {% include "@atoms/01-links/social-media-link/social-media-link.twig" %}
     {% endfor %}
   </ul>
 </div>
