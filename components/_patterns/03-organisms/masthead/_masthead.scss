@@ -29,7 +29,7 @@
 //mixin for masthead--standard
 @mixin masthead-standard($bg-color: $gray-darkest, $text-color: $white) {
   background: $bg-color;
-  padding: $space-one-half 0;
+  padding: 0.75em 0;
 
   #site-name {
     @include medium {
@@ -48,12 +48,15 @@
 
   .site-name__link {
     @include heading-xl();
-
-    font-size: 3rem;
+    font-size: 2.75rem;
     line-height: 105%;
     text-decoration: none;
     color: $text-color;
     letter-spacing: 0.0125em;
+
+    @include large {
+      font-size: 2.875rem;
+    }
   }
 
   .site-name__link--long {
@@ -61,9 +64,14 @@
   }
 
   .site-logo__image {
-    height: 135px;
     width: auto;
     border: none;
+    @include medium {
+      height: 125px;
+    }
+    @include large {
+      height: 135px;
+    }
   }
 }
 
@@ -73,6 +81,7 @@
 
   #site-name {
     min-height: 90px;
+    padding: 0.75em 0;
 
     @include medium {
       padding-right: 2em;
