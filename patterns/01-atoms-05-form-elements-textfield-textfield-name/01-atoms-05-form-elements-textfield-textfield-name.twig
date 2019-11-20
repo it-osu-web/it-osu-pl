@@ -16,14 +16,21 @@
 {% set field_base_class = field_base_class|default('form-item__textfield') %}
 {% set classes_array = [field_base_class] %}
 
-{% if field_modifiers is defined %}
+{% if field_modifiers is defined or field_placeholder %}
   {% for field_modifier in field_modifiers %}
     {% set classes_array = classes_array|merge(["#{field_base_class}--#{field_modifier}"]) %}
   {% endfor %}
+
+  {% if field_placeholder %}
+    {% set classes_array = classes_array|merge(["has-placeholder"]) %}
+  {% endif %}
+
   {% set field_classes = classes_array|join(' ') %}
+
 {% else %}
   {% set field_classes = field_base_class %}
 {% endif %}
+
 
 <label for="{{ field_id }}" class="form-item__label form-item__label--textfield" aria-required="{{ textfield_data.aria-required }}">{{ field_label }}</label>
 
@@ -34,3 +41,9 @@
   {% endfor %}
   placeholder="{{ field_placeholder }}"
 >
+
+{% if field_description %}
+  <div class="form-item__description">
+    {{ field_description }}
+  </div>
+{% endif %}
