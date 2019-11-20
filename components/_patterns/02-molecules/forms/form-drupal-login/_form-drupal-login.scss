@@ -1,0 +1,34 @@
+.login-box {
+  background: $near-white;
+  padding: 1.25em;
+  .button {
+    margin-bottom: 3px;
+  }
+}
+.login-box--osu {
+  margin-bottom: 1.75em;
+}
+.login-box__header {
+  font-size: rem-calc(20);
+  margin-bottom: 0.5em;
+}
+.login-box__header--drupal {
+  display: inline;
+}
+.login-box__collapsible {
+  &:focus {
+    outline: 1px dotted $teal;
+    outline-offset: 1.25em;
+  }
+}
+.login-form {
+  padding-top: 1.5em;
+  .button {
+    margin-top: 1em;
+  }
+}
+
+// Hide SAML login link because it is already displayed further up the page.
+#edit-simplesamlphp-auth-login-link {
+  display: none;
+}

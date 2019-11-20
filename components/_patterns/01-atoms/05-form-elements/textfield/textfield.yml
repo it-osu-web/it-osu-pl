@@ -1,17 +1,14 @@
 field_label: Textfield
 field_placeholder:
 field_modifiers:
-field_id:
-  field-text
+field_id: field-text
 field_attributes:
-  autocapitalize:
-    none
-  type:
-    text
-  name:
-    name
+  autocapitalize: none
+  type: text
+  name: name
   required:
   aria-required: false
   value:
   pattern:
   title:
+field_description: Example field description.

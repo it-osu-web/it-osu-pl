@@ -18,7 +18,9 @@
 }
 
 .form-item__description {
-  margin-top: 0.3em;
+  font-size: rem-calc(14);
+  margin-top: -0.5em;
+  margin-bottom: 1.5em;
 }
 
 // Styling for the required fields
