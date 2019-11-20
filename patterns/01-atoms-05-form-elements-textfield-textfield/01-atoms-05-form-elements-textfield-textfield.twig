@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * Theme override for a form element text field..
+ *
+ * Available variables:
+ * - field_base_class - the base class name
+ * - field_modifiers - array of modifiers to add to the base classname
+ * - field_attributes - array of attribute,value pairs
+ * - field_placeholder - placeholder text for the field
+ *
+ * @see template_preprocess_form_element_label()
+ */
+#}
+
+{% set field_base_class = field_base_class|default('form-item__textfield') %}
+{% set classes_array = [field_base_class] %}
+
+{% if field_modifiers is defined or field_placeholder %}
+  {% for field_modifier in field_modifiers %}
+    {% set classes_array = classes_array|merge(["#{field_base_class}--#{field_modifier}"]) %}
+  {% endfor %}
+
+  {% if field_placeholder %}
+    {% set classes_array = classes_array|merge(["has-placeholder"]) %}
+  {% endif %}
+
+  {% set field_classes = classes_array|join(' ') %}
+
+{% else %}
+  {% set field_classes = field_base_class %}
+{% endif %}
+
+
+<label for="{{ field_id }}" class="form-item__label form-item__label--textfield" aria-required="{{ textfield_data.aria-required }}">{{ field_label }}</label>
+
+<input
+  class="{{ field_classes }}" id="{{ field_id }}"
+  {% for attribute,value in field_attributes %}
+    {{ attribute }}="{{ value }}"
+  {% endfor %}
+  placeholder="{{ field_placeholder }}"
+>
+
+{% if field_description %}
+  <div class="form-item__description">
+    {{ field_description }}
+  </div>
+{% endif %}
