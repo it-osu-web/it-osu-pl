@@ -3,25 +3,24 @@
 .form-item__textfield {
   border: 1px solid $gray-lighter;
   padding: 0.625em 1em;
-  font-size: 0.875rem;
+  margin-bottom: 1em;
+  font-size: rem-calc(14);
   line-height: 1.5;
   width: 100%;
 
   &:focus {
-    /*outline: 2px dotted $color-link--hover;*/
     border: 2px solid $gray;
-    margin: -1px; /* Fixes field moving due to border change when selected */
     outline: none;
   }
 
-  &:not(:placeholder-shown):invalid {
-    border: 2px solid $red;
-    margin: -1px;
-  }
+  &.has-placeholder {
+    &:not(:placeholder-shown):invalid {
+      border: 2px solid $red;
+    }
 
-  &:not(:placeholder-shown):valid {
-    border: 2px solid $teal;
-    margin: -1px;
+    &:not(:placeholder-shown):valid {
+      border: 2px solid $teal;
+    }
   }
 
   &::-webkit-input-placeholder {

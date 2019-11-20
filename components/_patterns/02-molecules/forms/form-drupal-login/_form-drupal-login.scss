@@ -1,5 +1,5 @@
 .login-box {
-  background: $gray-lightest;
+  background: $near-white;
   padding: 1.25em;
   .button {
     margin-bottom: 3px;
@@ -9,7 +9,7 @@
   margin-bottom: 1.75em;
 }
 .login-box__header {
-  font-size: rem-calc(22);
+  font-size: rem-calc(20);
   margin-bottom: 0.5em;
 }
 .login-box__header--drupal {
@@ -23,6 +23,9 @@
 }
 .login-form {
   padding-top: 1.5em;
+  .button {
+    margin-top: 1em;
+  }
 }
 
 // Hide SAML login link because it is already displayed further up the page.
