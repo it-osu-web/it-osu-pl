@@ -8,7 +8,7 @@
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 13px 18px 10px;
+  padding: 10px 16px 8px;
   margin-bottom: 16px;
   display: inline-block;
   position: relative;
@@ -32,26 +32,18 @@
   }
 }
 
-@mixin button-gray {
-  @include button-std($gray);
-}
-
-@mixin button-teal {
-  @include button-std($teal);
-}
-
 @mixin button-rev($bg: $white, $color: $red) {
   background-color: $bg;
   color: $color;
   border: 1px solid $color;
-  padding: 15px 20px 13px;
+  padding: 13px 18px 12px;
 
   &:active {
     transform: none;
     -webkit-transform: none;
     border: 1px solid $color;
     background-color: darken($color, 6%) !important;
-    padding: 15px 20px 13px;
+    padding: 13px 18px 12px;
     margin-bottom: 16px;
   }
 
@@ -62,17 +54,22 @@
     background-color: $color;
   }
 }
-// @mixin button-alt {
-//   @include button(reverse, $clear, $red, $red, $white);
-// }
 
-// @mixin button-alt-teal {
-//   @include button(reverse, $clear, $teal, $teal, $white);
-// }
+@mixin button-gray {
+  @include button-std($gray);
+}
 
-// @mixin button-alt-gray {
-//   @include button(reverse, $clear, $gray, $gray, $white);
-// }
+@mixin button-teal {
+  @include button-std($teal);
+}
+
+@mixin button-alt-teal {
+  @include button-rev($white, $teal);
+}
+
+@mixin button-alt-gray {
+  @include button-rev($white, $gray);
+}
 
 .button {
   @include button-std;
@@ -89,13 +86,13 @@
     @include button-rev;
   }
 
-  // &--alt-gray {
-  //   @include button-alt-gray;
-  // }
+  &--alt-gray {
+    @include button-alt-gray;
+  }
 
-  // &--alt-teal {
-  //   @include button-alt-teal;
-  // }
+  &--alt-teal {
+    @include button-alt-teal;
+  }
 }
 
 .more-link {
