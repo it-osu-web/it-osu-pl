@@ -1,7 +1,4 @@
-button_url:
-  "#"
-button_content:
-  "Button Alt Teal"
+button_url: '#'
+button_content: 'Button Alt Teal'
 button_modifiers:
-  1:
-    "alt-teal"
+  1: 'alt-teal'

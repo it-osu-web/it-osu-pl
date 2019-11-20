@@ -1,84 +1,78 @@
-@mixin button(
-  $variant: normal,
-  $bg: $red,
-  $color: $white,
-  $hoverBg: $red-dark,
-  $hoverColor: $white
-) {
+@mixin button-std($bg: $red, $color: $white) {
   background-color: $bg;
   color: $color;
-  cursor: pointer;
-  font-size: 0.875rem;
+  border-bottom: 4px solid darken($bg, 6%);
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.5;
-  display: inline-block;
-  text-decoration: none;
   text-align: center;
   text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 16px 8px;
+  margin-bottom: 16px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
 
-  // Differences between normal button and reverse button.
-  @if $variant == reverse {
-    box-shadow: none;
-    padding: 0.5em 1em 0.4375em;
-    border: 1px solid $color;
-  } @else {
-    border-bottom: 3px solid $hoverBg;
-    padding: 0.5em 1em 0.375em;
-  }
-
-  &:visited {
-    color: $color;
+  &:active {
+    transform: translate(0px, 3px);
+    -webkit-transform: translate(0px, 3px);
+    border-bottom: 1px solid $bg;
+    margin-bottom: 19px;
   }
 
   &:hover {
-    background-color: $hoverBg;
-    color: $hoverColor;
-
-    // If link.
-    a {
-      color: $hoverColor;
-    }
+    background-color: lighten($bg, 3%);
   }
 
   &:focus {
+    background-color: lighten($bg, 3%);
     outline: 2px dotted $gray-darkest;
     outline-offset: 0;
-    background-color: $hoverBg;
+  }
+}
+
+@mixin button-rev($bg: $white, $color: $red) {
+  background-color: $bg;
+  color: $color;
+  border: 1px solid $color;
+  padding: 13px 18px 12px;
+
+  &:active {
+    transform: none;
+    -webkit-transform: none;
+    border: 1px solid $color;
+    background-color: darken($color, 6%) !important;
+    padding: 13px 18px 12px;
+    margin-bottom: 16px;
   }
 
-  // Styles for when link is made to look like a button
-  a {
-    color: $color;
-    text-decoration: none;
-
-    &:hover {
-      color: $hoverColor;
-    }
+  &:hover {
+    background-color: $color;
+  }
+  &:focus {
+    background-color: $color;
   }
 }
 
 @mixin button-gray {
-  @include button(normal, $gray, $white, darken($gray, 9%));
+  @include button-std($gray);
 }
 
 @mixin button-teal {
-  @include button(normal, $teal, $white, darken($teal, 7%));
-}
-
-@mixin button-alt {
-  @include button(reverse, $clear, $red, $red, $white);
+  @include button-std($teal);
 }
 
 @mixin button-alt-teal {
-  @include button(reverse, $clear, $teal, $teal, $white);
+  @include button-rev($white, $teal);
 }
 
 @mixin button-alt-gray {
-  @include button(reverse, $clear, $gray, $gray, $white);
+  @include button-rev($white, $gray);
 }
 
 .button {
-  @include button;
+  @include button-std;
 
   &--gray {
     @include button-gray;
@@ -89,7 +83,7 @@
   }
 
   &--alt {
-    @include button-alt;
+    @include button-rev;
   }
 
   &--alt-gray {
