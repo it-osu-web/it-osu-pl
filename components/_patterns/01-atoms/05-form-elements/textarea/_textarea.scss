@@ -1,4 +1,9 @@
 .form-item__textarea {
   font-family: $font;
   font-size: 0.9em;
+
+  &:focus {
+    border: 2px solid $gray;
+    outline: none;
+  }
 }

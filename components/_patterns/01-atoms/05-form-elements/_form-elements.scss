@@ -1,7 +1,7 @@
 //common styles for all form elements
 .form-item {
   color: $gray-darker;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 
   @include clearfix;
 }
@@ -10,11 +10,11 @@
   display: block;
   font-weight: 600;
 
-  @include xs {
-    display: block;
-    margin-right: 2%;
-    padding: 0.6em 0 0.3em 0;
-  }
+  // @include xs {
+  //   display: block;
+  //   margin-right: 2%;
+  //   padding: 0.6em 0 0.3em 0;
+  // }
 }
 
 .form-item__description {

@@ -1,9 +1,12 @@
 .login-box {
-  background: $near-white;
-  padding: 1.25em;
+  background: $gray-lightest;
+  padding: 1em 1.25em 0.5em;
 }
 .login-box--osu {
-  margin-bottom: 1.75em;
+  margin-bottom: 1.25em;
+}
+.login-box--drupal {
+  padding: 1.25em;
 }
 .login-box__header {
   font-size: rem-calc(20);
@@ -21,7 +24,8 @@
 .login-form {
   padding-top: 1.5em;
   .button {
-    margin-top: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0;
   }
 }
 
