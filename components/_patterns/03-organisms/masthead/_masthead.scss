@@ -21,7 +21,7 @@
   display: none;
   float: right;
 
-  @include medium {
+  @include breakpoint(medium) {
     display: block;
   }
 }
@@ -32,7 +32,7 @@
   padding: 0.75em 0;
 
   #site-name {
-    @include medium {
+    @include breakpoint(medium) {
       padding-right: 2em;
       height: 135px;
     }
@@ -54,7 +54,7 @@
     color: $text-color;
     letter-spacing: 0.0125em;
 
-    @include large {
+    @include breakpoint(large) {
       font-size: 2.875rem;
     }
   }
@@ -66,10 +66,10 @@
   .site-logo__image {
     width: auto;
     border: none;
-    @include medium {
+    @include breakpoint(medium) {
       height: 125px;
     }
-    @include large {
+    @include breakpoint(large) {
       height: 135px;
     }
   }
@@ -83,7 +83,7 @@
     min-height: 90px;
     padding: 0.75em 0;
 
-    @include medium {
+    @include breakpoint(medium) {
       padding-right: 2em;
       height: 120px;
     }

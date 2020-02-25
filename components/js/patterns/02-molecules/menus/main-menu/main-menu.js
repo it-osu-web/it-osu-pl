@@ -1,7 +1,7 @@
 window.addEventListener('load', function(event) {
   var options = {
     ariaLabel: 'Main Navigation',
-    breakpointMinWidth: 720,
+    breakpointMinWidth: 640,
     mode: 'dualAction',
     responsiveSubmenuToggles: true,
   };

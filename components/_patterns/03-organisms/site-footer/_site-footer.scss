@@ -12,7 +12,7 @@
 }
 
 //layout after large breakpoint
-@include large {
+@include breakpoint(large) {
   .site-footer__social-media {
     float: right;
   }
