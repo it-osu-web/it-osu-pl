@@ -1,0 +1,27 @@
+<details{{ attributes }} class="details-item details-item--plus">
+  {%
+    set summary_classes = [
+      required ? 'js-form-required',
+      required ? 'form-required',
+    ]
+  %}
+  {%- if title -%}
+    <summary{{ summary_attributes.addClass(summary_classes) }} class="summary summary--plus">
+      <div class="summary__inner--plus">
+        <span class="summary__text--plus">{{ details_summary }}</span>
+        <div class="summary__controls--plus">
+          <div class="pm-control plus"></div>
+        </div>
+      </div>
+    </summary>
+  {%- endif -%}
+
+  {% if errors %}
+    <div>
+      {{ errors }}
+    </div>
+  {% endif %}
+  <div class="details__inner">
+    {{ details_content }}
+  </div>
+</details>
