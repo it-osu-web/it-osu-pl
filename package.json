@@ -14,14 +14,14 @@
     "url": "https://github.com/it-osu-web/it-osu-pl.git"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.8.3",
-    "autoprefixer": "^9.7.4",
+    "@babel/polyfill": "^7.7.0",
+    "autoprefixer": "^9.7.1",
     "breakpoint-sass": "^2.7.1",
     "browser-sync": "^2.26.7",
     "cssnano": "^4.1.10",
     "del": "^4.1.1",
-    "foundation-sites": "^6.6.1",
-    "gh-pages": "^2.2.0",
+    "foundation-sites": "^6.5.3",
+    "gh-pages": "^2.1.1",
     "gulp": "^4.0.2",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "eslint-config-airbnb-base": "^13.2.0",
-    "eslint-plugin-import": "^2.20.1"
+    "eslint-plugin-import": "^2.18.2"
   },
   "pre-commit": "lint",
   "engines": {
