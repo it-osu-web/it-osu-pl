@@ -1,5 +1,5 @@
-heading_level: 1
-heading: 'This is a Heading 1 example with a link'
+heading_level: 2
+heading: 'This is a Heading 2 example with a link'
 heading_url: '#'
 heading_link_attributes:
   title: test-title
