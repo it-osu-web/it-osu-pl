@@ -58,3 +58,7 @@ h6,
 .h6 {
   @include heading(18, 400);
 }
+
+h1.page-title {
+  margin-top: 20px;
+}
