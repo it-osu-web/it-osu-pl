@@ -1,0 +1,14 @@
+variant: plus
+items:
+  1:
+    details_icon: fas fa-address-book
+    details_summary: Item 1
+    details_content: Content for Item 1.
+  2:
+    details_icon: fas fa-calendar-alt
+    details_summary: Item 2
+    details_content: Content for Item 2.
+  3:
+    details_icon: fas fa-heart
+    details_summary: Item 3
+    details_content: Content for Item 3.

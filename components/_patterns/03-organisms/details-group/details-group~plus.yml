@@ -1,0 +1,11 @@
+variant: plus
+items:
+  1:
+    details_summary: Item 1
+    details_content: Content for Item 1.
+  2:
+    details_summary: Item 2
+    details_content: Content for Item 2.
+  3:
+    details_summary: Item 3
+    details_content: Content for Item 3.

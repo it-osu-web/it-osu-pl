@@ -1,164 +1,64 @@
-@mixin heading-xl(
+@mixin heading(
+  $size: 36,
+  $weight: $header-font-weight,
   $color: $header-color,
-  $font-family: $font-heading,
+  $font-family: $header-font-family,
+  $line-height: $header-lineheight,
   $color-link: inherit,
-  $color-link-hover: $header-color--hover,
-  $font-weight: 700
+  $color-link-hover: $header-color--hover
 ) {
-  color: #{$color};
-  font-family: #{$font-family};
-  font-weight: #{$font-weight};
-  font-style: normal;
-
+  font-size: rem-calc($size);
+  font-weight: $weight;
+  color: $color;
+  font-family: $proxima;
+  line-height: $line-height;
   a,
   &__link {
     color: $color-link;
     text-decoration: none;
-    font-weight: #{$font-weight};
+    font-weight: $weight;
 
     &:hover {
       color: $color-link-hover;
     }
 
     &:focus {
-      outline: 2px dotted $header-color--hover;
-      outline-offset: 3px;
+      outline: 1px dotted $color-link-hover;
+      outline-offset: 2px;
     }
   }
 }
 
-@mixin heading-large(
-  $color: $header-color,
-  $font-family: $font-heading,
-  $color-link: inherit,
-  $color-link-hover: $header-color--hover,
-  $font-weight: 700
-) {
-  color: #{$color};
-  font-family: #{$font-family};
-  font-weight: #{$font-weight};
-  font-style: normal;
-
-  a,
-  &__link {
-    color: $color-link;
-    text-decoration: none;
-    font-weight: #{$font-weight};
-
-    &:hover {
-      color: $color-link-hover;
-    }
-
-    &:focus {
-      outline: 2px dotted $header-color--hover;
-      outline-offset: 3px;
-    }
-  }
-}
-
-@mixin heading-medium(
-  $color: $header-color,
-  $font-family: $font-heading,
-  $color-link: inherit,
-  $color-link-hover: $header-color--hover,
-  $font-weight: 600
-) {
-  color: #{$color};
-  font-family: #{$font-family};
-  font-weight: #{$font-weight};
-  font-style: normal;
-
-  a,
-  &__link {
-    color: $color-link;
-    text-decoration: none;
-    font-weight: #{$font-weight};
-
-    &:hover {
-      color: $color-link-hover;
-    }
-
-    &:focus {
-      outline: 2px dotted $header-color--hover;
-      outline-offset: 3px;
-    }
-  }
-}
-
-@mixin heading-small(
-  $font-family: $font-heading,
-  $color: $header-color,
-  $color-link: inherit,
-  $color-link-hover: $header-color--hover,
-  $font-weight: 600
-) {
-  color: #{$color};
-  font-family: #{$font-family};
-  font-weight: #{$font-weight};
-  font-style: normal;
-
-  a,
-  &__link {
-    color: $color-link;
-    text-decoration: none;
-    font-weight: #{$font-weight};
-
-    &:hover {
-      color: $color-link-hover;
-    }
-
-    &:focus {
-      outline: 2px dotted $header-color--hover;
-      outline-offset: 3px;
-    }
-  }
-}
-
-@mixin heading-xs(
-  $font-family: $font-heading,
-  $color: $header-color,
-  $color-link: inherit,
-  $color-link-hover: $header-color--hover,
-  $font-weight: 600
-) {
-  color: #{$color};
-  font-family: #{$font-family};
-  font-weight: #{$font-weight};
-  font-style: normal;
-
-  a,
-  &__link {
-    color: $color-link;
-    text-decoration: none;
-    font-weight: #{$font-weight};
-
-    &:hover {
-      color: $color-link-hover;
-    }
-
-    &:focus {
-      outline: 2px dotted $header-color--hover;
-      outline-offset: 3px;
-    }
-  }
-}
-
+h1,
 .h1 {
-  @include heading-xl();
+  @include heading(44, 700, $line-height: 1.1);
 }
 
+h2,
 .h2 {
-  @include heading-large();
+  @include heading(32, 700);
 }
 
+h3,
 .h3 {
-  @include heading-medium();
+  @include heading(28);
 }
 
+h4,
 .h4 {
-  @include heading-small();
+  @include heading(24);
 }
 
+h5,
 .h5 {
-  @include heading-xs();
+  @include heading(22, 400);
+}
+
+h6,
+.h6 {
+  @include heading(18, 400);
+}
+
+h1.page-title {
+  margin-top: 20px;
 }

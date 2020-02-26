@@ -55,7 +55,7 @@
           float: left;
           margin-right: 0.5em;
 
-          @include large {
+          @include breakpoint(large) {
             margin-right: 1.2em;
           }
 
@@ -73,7 +73,7 @@
             color: $text-color;
             text-decoration: none;
 
-            @include large {
+            @include breakpoint(large) {
               text-indent: 0;
               width: auto;
               background: none !important;

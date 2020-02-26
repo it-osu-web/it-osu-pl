@@ -1,3 +1,26 @@
+input {
+  margin-bottom: 5px !important;
+}
+
+legend {
+  font-weight: 600;
+}
+
+.label {
+  background: none;
+  color: inherit;
+  padding: 0;
+  font-size: inherit;
+}
+
+.form-item label {
+  @extend .form-item__label;
+}
+
+.form-item {
+  max-width: none;
+}
+
 .form-fieldset {
   border: 0;
   margin: 2em 0 1em;
@@ -12,10 +35,6 @@
     margin-top: 0.5em;
     margin-bottom: 0.5em;
   }
-}
-
-legend {
-  font-weight: 600;
 }
 
 //reusable classes

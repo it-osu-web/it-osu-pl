@@ -3,8 +3,10 @@
   @include clearfix;
 }
 
+.masthead__inner {
+}
+
 #site-name {
-  float: left;
   display: table;
 }
 
@@ -21,7 +23,7 @@
   display: none;
   float: right;
 
-  @include medium {
+  @include breakpoint(medium) {
     display: block;
   }
 }
@@ -32,44 +34,44 @@
   padding: 0.75em 0;
 
   #site-name {
-    @include medium {
+    @include breakpoint(medium) {
       padding-right: 2em;
       height: 135px;
     }
   }
 
   .site-name__prefix {
-    font-size: 1.2rem;
-    font-weight: 300;
+    font-size: rem-calc(18);
+    font-weight: 400;
     color: $text-color;
     letter-spacing: 0.0125em;
     margin-left: 2px;
   }
 
   .site-name__link {
-    @include heading-xl();
-    font-size: 2.75rem;
+    @include heading(42, 700);
     line-height: 105%;
     text-decoration: none;
     color: $text-color;
     letter-spacing: 0.0125em;
 
-    @include large {
-      font-size: 2.875rem;
+    @include breakpoint(large) {
+      font-size: rem-calc(48);
     }
   }
 
   .site-name__link--long {
-    font-size: 2rem;
+    font-size: rem-calc(30);
   }
 
   .site-logo__image {
     width: auto;
     border: none;
-    @include medium {
+    float: right;
+    @include breakpoint(medium) {
       height: 125px;
     }
-    @include large {
+    @include breakpoint(large) {
       height: 135px;
     }
   }
@@ -83,7 +85,7 @@
     min-height: 90px;
     padding: 0.75em 0;
 
-    @include medium {
+    @include breakpoint(medium) {
       padding-right: 2em;
       height: 120px;
     }
@@ -98,25 +100,27 @@
   }
 
   .site-name__link {
-    @include heading-xl();
-
-    font-size: 2.6rem;
-    font-weight: 600;
+    @include heading(42, 700);
     line-height: 105%;
     text-decoration: none;
     color: $text-color;
     letter-spacing: 0.0125em;
+
+    @include breakpoint(large) {
+      font-size: rem-calc(48);
+    }
   }
 
   .site-name__link--long {
-    font-size: 2rem;
+    font-size: rem-calc(30);
   }
 
   .site-logo__image {
-    height: 85px;
+    height: 90px;
     width: auto;
     border: none;
     box-shadow: 0 1px 6px 0 rgba(49, 49, 49, 0.5);
+    float: right;
   }
 }
 

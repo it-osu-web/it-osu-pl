@@ -5,9 +5,6 @@
 .login-box--osu {
   margin-bottom: 1.25em;
 }
-.login-box--drupal {
-  padding: 1.25em;
-}
 .login-box__header {
   font-size: rem-calc(20);
   margin-bottom: 0.5em;
@@ -15,18 +12,15 @@
 .login-box__header--drupal {
   display: inline;
 }
-.login-box__collapsible {
-  &:focus {
-    outline: 1px dotted $teal;
-    outline-offset: 1.25em;
-  }
-}
 .login-form {
-  padding-top: 1.5em;
+  padding-top: 0.5em;
   .button {
     margin-top: 0.5em;
     margin-bottom: 0;
   }
+}
+.details__inner--drupal {
+  background-color: $gray-lightest;
 }
 
 // Hide SAML login link because it is already displayed further up the page.

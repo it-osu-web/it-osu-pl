@@ -87,8 +87,8 @@ $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
 $global-position: 1rem;
-$global-weight-normal: 300;
-$global-weight-bold: 600;
+$global-weight-normal: 400;
+$global-weight-bold: 700;
 $global-radius: 0;
 $global-menu-padding: 0.7rem 1rem;
 $global-menu-nested-margin: 1rem;
@@ -108,8 +108,8 @@ $print-hrefs: true;
 $breakpoints: (
   small: 0,
   medium: 640px,
-  large: 1024px,
-  xlarge: 1200px,
+  large: 960px,
+  xlarge: 1280px,
   xxlarge: 1440px,
 );
 $print-breakpoint: large;
@@ -137,53 +137,11 @@ $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: $gray-darkest;
 $header-color--hover: $teal;
-$header-lineheight: 1.4;
+$header-lineheight: 1.2;
 $header-margin-bottom: 0.5rem;
-$header-styles: (
-  small: (
-    'h1': (
-      'font-size': 24,
-    ),
-    'h2': (
-      'font-size': 20,
-    ),
-    'h3': (
-      'font-size': 19,
-    ),
-    'h4': (
-      'font-size': 18,
-    ),
-    'h5': (
-      'font-size': 17,
-    ),
-    'h6': (
-      'font-size': 16,
-    ),
-  ),
-  medium: (
-    'h1': (
-      'font-size': 42,
-    ),
-    'h2': (
-      'font-size': 32,
-    ),
-    'h3': (
-      'font-size': 28,
-    ),
-    'h4': (
-      'font-size': 24,
-    ),
-    'h5': (
-      'font-size': 20,
-    ),
-    'h6': (
-      'font-size': 16,
-    ),
-  ),
-);
 $header-text-rendering: optimizeLegibility;
-$small-font-size: 80%;
-$header-small-font-color: $medium-gray;
+$small-font-size: 85%;
+$header-small-font-color: $gray;
 $paragraph-lineheight: 1.6;
 $paragraph-margin-bottom: 1rem;
 $paragraph-text-rendering: optimizeLegibility;
@@ -192,7 +150,7 @@ $code-font-family: $font-family-monospace;
 $code-font-weight: $global-weight-normal;
 $code-background: none;
 $code-border: none;
-$code-padding: rem-calc(2 5 1);
+$code-padding: rem-calc(2 5);
 $anchor-color: $primary-color;
 $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
 $anchor-text-decoration: none;
