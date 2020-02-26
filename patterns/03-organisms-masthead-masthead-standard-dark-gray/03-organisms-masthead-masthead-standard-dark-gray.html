@@ -11,13 +11,8 @@
     <!-- Font Awesome -->
     <script defer="defer" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
 
-    <!-- JS necessary for components -->
-    <script src="../../js/other/hoverintent.min.js"></script>
-    <script src="../../js/patterns/02-molecules/menus/main-menu/a11yNavbar.js"></script>
-    <script src="../../js/patterns/02-molecules/menus/main-menu/main-menu.js"></script>
-
-    <link rel="stylesheet" href="../../css/style.css?1574306522" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1574306522" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1582743682" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1582743682" media="all" />
 
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
     <!-- never cache patterns -->
@@ -27,8 +22,8 @@
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
 
-<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1574306522" media="all">
-<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1574306522" media="all" />
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1582743682" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1582743682" media="all" />
     <!-- End Pattern Lab -->
 
   </head>
@@ -37,23 +32,25 @@
 
 <div class="masthead masthead--standard masthead--dk-gray">
   <div class="masthead__inner grid-container">
-    <div id="site-name">
+    <div class="grid-x grid-margin-x">
 
-      <div class="site-name__inner">
-                  <span class="site-name__prefix">Office of</span>
-        
-                  <a class="site-name__link" href="/" title="home" rel="home">Name of the Website</a>
-              </div>
+              <div id="site-name" class="cell medium-9">
+      
+          <div class="site-name__inner">
+                          <span class="site-name__prefix">Office of</span>
+            
+                          <a class="site-name__link" href="/" title="home" rel="home">Name of the Website</a>
+                      </div>
+        </div>
 
-    </div>
-
-    <div id="site-logo">
-              <a class="site-logo__link" href="http://osu.edu" target="_blank"><img class="site-logo__image" src="../../images/osu-logos/stacked/osu-stacked-dk-gray.svg" alt="The Ohio State University" /></a>
+                  <div id="site-logo" class="site-logo--standard cell medium-3">
+            <a class="site-logo__link" href="http://osu.edu" target="_blank"><img class="site-logo__image" src="../../images/osu-logos/stacked/osu-stacked-dk-gray.svg" alt="The Ohio State University" /></a>
           </div>
-
+        
+      </div>
+    </div>
   </div>
-</div>
-  
+
   <!--DO NOT REMOVE-->
   <script type="text/json" id="sg-pattern-data-footer" class="sg-pattern-data">
   {"cssEnabled":false,"lineage":false,"lineageR":[{"lineagePattern":"templates-page-template","lineagePath":"..\/..\/patterns\/04-templates-drupal-page-template\/04-templates-drupal-page-template.html"}],"patternBreadcrumb":{"patternType":"organisms","patternSubtype":"masthead"},"patternDesc":"","patternExtension":"twig","patternName":"masthead standard dark gray","patternPartial":"organisms-masthead-standard-dark-gray","patternState":"","extraOutput":[]}
@@ -90,10 +87,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1574306522">
+<script id="pl-js-polyfill-insert-1582743682">
   (function() {
     if (self != top) {
-      var cb = '1574306522';
+      var cb = '1582743682';
       var js = [];
       if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
         js.push('styleguide/bower_components/classList.min.js');
@@ -103,15 +100,27 @@
   })();
 </script>
 
-<script id="pl-js-insert-1574306522">
+<script id="pl-js-insert-1582743682">
   (function() {
     if (self != top) {
-      var cb = '1574306522';
+      var cb = '1582743682';
       var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
       scriptLoader.run(js,cb,'pl-js-insert');
     }
   })();
 </script>
-  
+
+    <!-- jQuery -->
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+    <!-- JS necessary for components -->
+    <script src="../../js/other/hoverintent.min.js"></script>
+    <script src="../../js/patterns/02-molecules/menus/main-menu/a11yNavbar.js"></script>
+    <script src="../../js/patterns/02-molecules/menus/main-menu/main-menu.js"></script>
+    <script src="../../js/patterns/02-molecules/details/details.js"></script>
+
   </body>
 </html>

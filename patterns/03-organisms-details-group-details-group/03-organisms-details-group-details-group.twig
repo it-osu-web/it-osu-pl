@@ -1,0 +1,9 @@
+<div class="details-group">
+    {% for item in items %}
+      {% include "@molecules/details/details-item.twig" with {
+        details_icon: item.details_icon,
+        details_summary: item.details_summary,
+        details_content: item.details_content,
+      }%}
+    {% endfor %}
+</div>
