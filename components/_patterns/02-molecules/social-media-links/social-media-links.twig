@@ -18,7 +18,9 @@
 <div class="social-media-links">
   <ul class="social-media-links__list">
     {% for social_link in social_links %}
-      {% include "@atoms/01-links/social-media-link/social-media-link.twig" %}
+      {% if social_link.url is not empty %}
+        {% include "@atoms/01-links/social-media-link/social-media-link.twig" %}
+      {% endif %}
     {% endfor %}
   </ul>
 </div>
