@@ -19,6 +19,9 @@
     margin-bottom: 0;
   }
 }
+.details__inner--drupal {
+  background-color: $gray-lightest;
+}
 
 // Hide SAML login link because it is already displayed further up the page.
 #edit-simplesamlphp-auth-login-link {
