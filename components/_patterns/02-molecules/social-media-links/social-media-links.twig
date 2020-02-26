@@ -6,14 +6,16 @@
  */
 #}
 
-{% set social_links = [
-  { 'name':'Twitter', 'url': twitter, 'icon': 'twitter', 'prefix': 'fab' },
-  { 'name':'Facebook', 'url': facebook, 'icon': 'facebook-f', 'prefix': 'fab' },
-  { 'name':'LinkedIn', 'url': linkedin, 'icon': 'linkedin-in', 'prefix': 'fab' },
-  { 'name':'YouTube', 'url': youtube, 'icon': 'youtube', 'prefix': 'fab' },
-  { 'name':'Instagram', 'url': instagram, 'icon': 'instagram', 'prefix': 'fab' },
-  { 'name':'Photo-sharing', 'url': photos, 'icon': 'camera', 'prefix': 'fas' }
-] %}
+{% if pl != '1' %}
+  {% set social_links = [
+    { 'name':'Twitter', 'url': twitter, 'icon': 'twitter', 'prefix': 'fab' },
+    { 'name':'Facebook', 'url': facebook, 'icon': 'facebook-f', 'prefix': 'fab' },
+    { 'name':'LinkedIn', 'url': linkedin, 'icon': 'linkedin-in', 'prefix': 'fab' },
+    { 'name':'YouTube', 'url': youtube, 'icon': 'youtube', 'prefix': 'fab' },
+    { 'name':'Instagram', 'url': instagram, 'icon': 'instagram', 'prefix': 'fab' },
+    { 'name':'Photo-sharing', 'url': photos, 'icon': 'camera', 'prefix': 'fas' }
+  ] %}
+{% endif %}
 
 <div class="social-media-links">
   <ul class="social-media-links__list">

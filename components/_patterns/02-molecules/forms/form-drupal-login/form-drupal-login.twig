@@ -20,7 +20,7 @@
       <h2 class="login-box__header login-box__header--drupal">Non-Ohio State Users</h2>
     </summary>
     <div class="details__inner">
-      {% if pl %}
+      {% if pl == '1'  %}
         <div class="login-form">
           {% include "@atoms/05-form-elements/textfield/textfield.twig"
             with {
