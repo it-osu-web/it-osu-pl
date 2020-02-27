@@ -1,0 +1,12 @@
+<div class="tile-grid grid-x grid-margin-x">
+  {% for tile in tile_data %}
+    {% include "@molecules/tile/tile.twig" with {
+        "tile_modifiers": tile.tile_modifiers,
+        "tile_extra_classes": tile.tile_extra_classes|default('cell'),
+        "tile_heading_level": tile.heading_level,
+        "tile_link": tile.tile_link,
+        "tile_title": tile.tile_title,
+        "tile_text": tile.tile_text,
+      } %}
+  {% endfor %}
+</div>
