@@ -6,3 +6,8 @@
     min-height: 80px;
   }
 }
+
+// Helper classes.
+.grid-grow {
+  flex-grow: 1 !important;
+}
