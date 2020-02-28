@@ -1,5 +1,5 @@
 tile_modifiers:
-tile_extra_classes: ''
+tile_extra_classes:
 tile_heading_level: 3
 tile_link: '#'
 tile_title: 'Test Title'
