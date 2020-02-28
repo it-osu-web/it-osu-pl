@@ -1,6 +1,12 @@
-
-<div class="card-grid">
+<div class="card-grid grid-x grid-margin-x">
   {% for card_data in card_data %}
-    {% include "@molecules/card/01-card.twig" %}
+    {% if loop.length > 5 %}
+      {% set item_classes = 'small-12 medium-6 large-4 xlarge-3 grid-grow' %}
+    {% else %}
+      {% set item_classes = 'small-12 medium-auto' %}
+    {% endif %}
+    {% include "@molecules/card/card.twig" with {
+
+    } %}
   {% endfor %}
 </div>

@@ -4,27 +4,27 @@
  * Pattern for the card molecule
  *
  * Available variables:
- * - size: card size, either small, medium or large
- * - image: url for the card's header image
- * - title: text string for the card's title
- * - text: text string for the card's content
- * - button_content: text string for the button label
- * - button_modifiers: modifiers for the button class, default it "alt"
+ * - card_size: card size, either small, medium or large
+ * - card_image: url for the card's header image
+ * - card_title: text string for the card's title
+ * - card_text: text string for the card's content
+ * - card_button_content: text string for the button label
+ * - card_button_modifiers: modifiers for the button class, default it "alt"
  *
  */
 #}
 
 
-<div class="card card--{{ card_data.size }}">
-  <img class="card__image" alt="Card Image" src="{{ card_data.image }}"/>
-  <h1 class="card__title">{{ card_data.title }}</h1>
-  <p class="card__content">{{ card_data.text }}</p>
+<div class="card card--{{ card_size }}">
+  <img class="card__image" alt="Card Image" src="{{ card_image }}"/>
+  <h1 class="card__title">{{ card_title }}</h1>
+  <p class="card__content">{{ card_text }}</p>
 
-  <!-- Card button -->
+  {# Card button #}
   {%
-    include "@atoms/02-buttons/01-button.twig"
-      with {"button_content": card_data.button_content,
-            "button_modifiers": card_data.button_modifiers,
-            "button_url": card_data.button_url}
-  %}
+    include "@atoms/02-buttons/01-button.twig" with {
+      "button_content": card_button_content,
+      "button_modifiers": card_button_modifiers|default(['alt']),
+      "button_url": card_button_url
+    } %}
 </div>

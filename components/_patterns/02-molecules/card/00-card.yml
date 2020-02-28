@@ -1,9 +1,6 @@
-card_data:
-  image: https://placeimg.com/640/480/animals
-  title: Card title
-  text: Maybe you'll want more text here.
-    A few lines or so?
-  button_content: Card Button
-  button_modifiers:
-    1: 'alt'
-  button_url: '#'
+card_image: https://placeimg.com/640/480/animals
+card_title: Card title
+card_text: Maybe you'll want more text here.
+  A few lines or so?
+card_button_content: Card Button
+card_button_url: '#'

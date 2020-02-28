@@ -1,6 +1,5 @@
 card_data:
   1:
-    size: small
     image: https://placeimg.com/640/480/animals
     title: First Card
     text: |-
@@ -8,10 +7,9 @@ card_data:
       A few lines or so?
     button_content: Card Button
     button_modifiers:
-      1: "alt"
-    button_url: "#"
+      1: 'alt'
+    button_url: '#'
   2:
-    size: small
     image: https://placeimg.com/640/480/animals
     title: Second Card
     text: |-
@@ -19,10 +17,9 @@ card_data:
       A few lines or so?
     button_content: Card Button
     button_modifiers:
-      1: "alt"
-    button_url: "#"
+      1: 'alt'
+    button_url: '#'
   3:
-    size: small
     image: https://placeimg.com/640/480/animals
     title: Third Card
     text: |-
@@ -30,10 +27,9 @@ card_data:
       A few lines or so?
     button_content: Card Button
     button_modifiers:
-      1: "alt"
-    button_url: "#"
+      1: 'alt'
+    button_url: '#'
   4:
-    size: small
     image: https://placeimg.com/640/480/animals
     title: Fourth Card
     text: |-
@@ -41,10 +37,9 @@ card_data:
       A few lines or so?
     button_content: Card Button
     button_modifiers:
-      1: "alt"
-    button_url: "#"
+      1: 'alt'
+    button_url: '#'
   5:
-    size: small
     image: https://placeimg.com/640/480/animals
     title: Fifth Card
     text: |-
@@ -52,10 +47,9 @@ card_data:
       A few lines or so?
     button_content: Card Button
     button_modifiers:
-      1: "alt"
-    button_url: "#"
+      1: 'alt'
+    button_url: '#'
   6:
-    size: small
     image: https://placeimg.com/640/480/animals
     title: Sixth Card
     text: |-
@@ -63,10 +57,9 @@ card_data:
       A few lines or so?
     button_content: Card Button
     button_modifiers:
-      1: "alt"
-    button_url: "#"
+      1: 'alt'
+    button_url: '#'
   7:
-    size: small
     image: https://placeimg.com/640/480/animals
     title: Seventh Card
     text: |-
@@ -74,5 +67,5 @@ card_data:
       A few lines or so?
     button_content: Card Button
     button_modifiers:
-      1: "alt"
-    button_url: "#"
+      1: 'alt'
+    button_url: '#'
