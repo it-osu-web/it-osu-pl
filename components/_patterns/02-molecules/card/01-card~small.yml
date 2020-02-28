@@ -1,7 +1,7 @@
 card_data:
-  size: medium
+  size: small
   image: https://placeimg.com/640/480/animals
-  title: Medium card title
+  title: Small card title
   text: Maybe you'll want more text here.
     A few lines or so?
   button_content: Card Button

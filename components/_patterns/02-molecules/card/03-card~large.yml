@@ -1,11 +1,10 @@
 card_data:
-    size: large
-    image: https://placeimg.com/640/480/animals
-    title: Large card title
-    text:
-      Maybe you'll want more text here.
-      A few lines or so?
-    button_content: Card Button
-    button_modifiers:
-      1: "alt"
-    button_url: "#"
+  size: large
+  image: https://placeimg.com/640/480/animals
+  title: Large card title
+  text: Maybe you'll want more text here.
+    A few lines or so?
+  button_content: Card Button
+  button_modifiers:
+    1: 'alt'
+  button_url: '#'
