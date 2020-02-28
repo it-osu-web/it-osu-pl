@@ -1,7 +1,7 @@
 @mixin info-box($background: $gray-lightest, $color: $gray-darkest) {
   background-color: $background;
   color: $color;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
   padding: 1.125em 1.25em 0.5em;
   width: 100%;
 
@@ -21,4 +21,21 @@
 
 .info-box--white {
   @include info-box($white);
+}
+
+// Infobox sizes.
+// Adjust a bit based on breakpoints.
+@include breakpoint(medium) {
+  .info-box--small {
+    max-width: 320px;
+  }
+
+  .info-box--medium {
+    max-width: 440px;
+  }
+}
+@include breakpoint(large) {
+  .info-box--large {
+    max-width: 640px;
+  }
 }

@@ -1,78 +1,57 @@
 card_data:
   1:
-    size: small
-    image: https://placeimg.com/640/480/animals
-    title: First Card
-    text: |-
-      Maybe you'll want more text here.
+    card_image: https://placeimg.com/640/480/animals
+    card_title: First Card
+    card_text: |-
+      Maybe you'll want more card_text here.
       A few lines or so?
-    button_content: Card Button
-    button_modifiers:
-      1: "alt"
-    button_url: "#"
+    card_button_content: Card Button
+    card_button_url: '#'
   2:
-    size: small
-    image: https://placeimg.com/640/480/animals
-    title: Second Card
-    text: |-
-      Maybe you'll want more text here.
+    card_image: https://placeimg.com/640/480/animals
+    card_title: Second Card
+    card_text: |-
+      Maybe you'll want more card_text here.
       A few lines or so?
-    button_content: Card Button
-    button_modifiers:
-      1: "alt"
-    button_url: "#"
+    card_button_content: Card Button
+    card_button_url: '#'
   3:
-    size: small
-    image: https://placeimg.com/640/480/animals
-    title: Third Card
-    text: |-
-      Maybe you'll want more text here.
+    card_image: https://placeimg.com/640/480/animals
+    card_title: Third Card
+    card_text: |-
+      Maybe you'll want more card_text here.
       A few lines or so?
-    button_content: Card Button
-    button_modifiers:
-      1: "alt"
-    button_url: "#"
+    card_button_content: Card Button
+    card_button_url: '#'
   4:
-    size: small
-    image: https://placeimg.com/640/480/animals
-    title: Fourth Card
-    text: |-
-      Maybe you'll want more text here.
+    card_image: https://placeimg.com/640/480/animals
+    card_title: Fourth Card
+    card_text: |-
+      Maybe you'll want more card_text here.
       A few lines or so?
-    button_content: Card Button
-    button_modifiers:
-      1: "alt"
-    button_url: "#"
+    card_button_content: Card Button
+    card_button_url: '#'
   5:
-    size: small
-    image: https://placeimg.com/640/480/animals
-    title: Fifth Card
-    text: |-
-      Maybe you'll want more text here.
+    card_image: https://placeimg.com/640/480/animals
+    card_title: Fifth Card
+    card_text: |-
+      Maybe you'll want more card_text here.
       A few lines or so?
-    button_content: Card Button
-    button_modifiers:
-      1: "alt"
-    button_url: "#"
+    card_button_content: Card Button
+    card_button_url: '#'
   6:
-    size: small
-    image: https://placeimg.com/640/480/animals
-    title: Sixth Card
-    text: |-
-      Maybe you'll want more text here.
+    card_image: https://placeimg.com/640/480/animals
+    card_title: Sixth Card
+    card_text: |-
+      Maybe you'll want more card_text here.
       A few lines or so?
-    button_content: Card Button
-    button_modifiers:
-      1: "alt"
-    button_url: "#"
+    card_button_content: Card Button
+    card_button_url: '#'
   7:
-    size: small
-    image: https://placeimg.com/640/480/animals
-    title: Seventh Card
-    text: |-
-      Maybe you'll want more text here.
+    card_image: https://placeimg.com/640/480/animals
+    card_title: Seventh Card
+    card_text: |-
+      Maybe you'll want more card_text here.
       A few lines or so?
-    button_content: Card Button
-    button_modifiers:
-      1: "alt"
-    button_url: "#"
+    card_button_content: Card Button
+    card_button_url: '#'

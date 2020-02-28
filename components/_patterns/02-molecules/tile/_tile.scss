@@ -1,0 +1,37 @@
+@mixin tile($background: $gray-lightest, $color: $gray-darkest) {
+  background-color: $background;
+  color: $color;
+  margin-bottom: 1.5em;
+  padding: 1.125em 1.25em 0.5em;
+  width: 100%;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  color: $color;
+
+  &:hover {
+    background: darken($background, 3%);
+  }
+
+  .tile__title {
+    @include heading(20);
+    color: $color;
+  }
+  .tile__body {
+    font-family: $capita;
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  @if $background == $white {
+    border: 1px solid $gray-lightest;
+  }
+}
+
+a.tile {
+  @include tile();
+}
+
+a.tile--white {
+  @include tile($white);
+}
