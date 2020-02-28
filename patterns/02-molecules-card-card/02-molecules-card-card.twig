@@ -1,52 +1,50 @@
+{#
+/**
+ *
+ * Pattern for the card molecule
+ *
+ * Available variables:
+ * - card_modifiers: array of modifiers to add to the base classname
+ * - card_size: card size, either small, medium or large
+ * - card_extra_classes: string of extra classes to add to main div
+ * - card_image: url for the card's header image
+ * - card_title: text string for the card's title
+ * - card_text: text string for the card's content
+ * - card_button_content: text string for the button label
+ * - card_button_modifiers: modifiers for the button class, defaults to "alt"
+ *
+ */
+#}
 
-<!-- Solitary cards -->
+{% set card_base_class = card_base_class|default('card') %}
+{% set classes_array = [card_base_class] %}
 
-<h4>Example of solitary cards</h4>
+{% if (card_modifiers is defined) or (card_size is defined)  %}
+  {% if card_modifiers is defined %}
+    {% for card_modifier in card_modifiers %}
+      {% set classes_array = classes_array|merge(["#{card_base_class}--#{card_modifier}"]) %}
+    {% endfor %}
+  {% endif %}
+  {% set card_classes = classes_array|join(' ') %}
+  {% if card_size is defined %}
+    {% set classes_array = classes_array|merge(["#{card_base_class}--#{card_size}"]) %}
+  {% endif %}
+  {% set card_classes = classes_array|join(' ') %}
+{% else %}
+  {% set card_classes = card_base_class %}
+{% endif %}
 
-<div class="card card--small">
-  <img class="card__image" alt="Card Image" src="https://placeimg.com/640/480/animals"/>
-  <h1 class="card__title">Card title</h1>
-  <p class="card__content">A small, solitary card.</p>
-  <p class="card__content">Maybe you'll want more text here. <br />A few lines or so?</p>
-  <button class="button button--alt card__button">Card button</button>
-</div>
+<div class="{{ card_classes }} {{ card_extra_classes }}">
+{# <div class="card card--{{ card_size }}"> #}
+  <img class="card__image" alt="Card Image" src="{{ card_image }}"/>
+  <h1 class="card__title">{{ card_title }}</h1>
+  <p class="card__content">{{ card_text }}</p>
 
-<div class="card card--medium">
-  <div class="card__image-container">
-  <img class="card__image" alt="Card Image" src="https://placeimg.com/640/480/animals"/></div>
-  <h1 class="card__title">Card title</h1>
-  <p class="card__content">A medium, solitary card. A medium, solitary card. A medium, solitary card.</p>
-  <p class="card__content">Maybe you'll want more text here. <br />A few lines or so?</p>
-  <button class="button button--alt card__button">Card button</button>
-</div>
-
-<div class="card card--large">
-  <img class="card__image" alt="Card Image" src="https://placeimg.com/640/480/animals"/>
-  <h1 class="card__title">Card title</h1>
-  <p class="card__content">A large, solitary card. A large, solitary card. A large, solitary card. A large, solitary card.</p>
-  <p class="card__content">Maybe you'll want more text here. <br />A few lines or so?</p>
-  <button class="button button--alt card__button">Card button</button>
-</div>
-
-<div class="card card--small">
-  <h1 class="card__title">Card title</h1>
-  <p class="card__content">A small card without an image.</p>
-  <p class="card__content">Maybe you'll want more text here. <br />A few lines or so?</p>
-  <button class="button button--alt card__button">Card button</button>
-</div>
-
-<!-- Cards laid out in a grid -->
-
-<h4>Example of cards laid out in a grid</h4>
-
-<div class="card-grid">
-  {% for i in 0..4 %}
-  <div class="card card--small">
-    <img class="card__image" alt="Card Image" src="https://placeimg.com/640/480/animals"/>
-    <h1 class="card__title">Card title</h1>
-    <p class="card__content">A small card in a grid.</p>
-    <p class="card__content">Maybe you'll want more text here. <br />A few lines or so?</p>
-    <button class="button button--alt card__button">Card button</button>
-  </div>
-  {% endfor %}
+  {# Card button #}
+  {%
+    include "@atoms/02-buttons/01-button.twig" with {
+      "button_content": card_button_content,
+      "button_url": card_button_url,
+      "button_modifiers": card_button_modifiers|default(['alt']),
+    } %}
 </div>

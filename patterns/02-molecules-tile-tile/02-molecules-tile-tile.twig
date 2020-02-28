@@ -1,0 +1,36 @@
+{#
+/**
+ * Available variables:
+ * - tile_modifiers - array of modifiers to add to the base classname
+ * - tile_extra_classes - string of extra classes to add to main div
+ * - tile_heading_level - defaults to 2
+ * - tile_title - title
+ * - tile_link - link from title (leave blank for no link)
+ * - tile_text - the content of the paragraph
+#}
+
+{% set tile_base_class = tile_base_class|default('tile') %}
+{% set classes_array = [tile_base_class] %}
+
+{% if tile_modifiers is defined %}
+  {% for tile_modifier in tile_modifiers %}
+    {% set classes_array = classes_array|merge(["#{tile_base_class}--#{tile_modifier}"]) %}
+  {% endfor %}
+  {% set tile_classes = classes_array|join(' ') %}
+{% else %}
+  {% set tile_classes = tile_base_class %}
+{% endif %}
+
+<a href="{{ tile_link }}" class="{{ tile_classes }} {{ tile_extra_classes }}">
+  <div class="tile__title">
+    {% include "@atoms/00-text/00-headings/_heading.twig" with {
+      "heading_level": tile_heading_level|default(2),
+      "heading": tile_title,
+    } %}
+  </div>
+  <div class="tile__body">
+    {% include "@atoms/00-text/04-paragraph/paragraph.twig" with {
+      "paragraph_content": tile_text,
+    } %}
+  </div>
+</a>

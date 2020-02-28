@@ -1,0 +1,17 @@
+<div class="tile-grid grid-x grid-margin-x">
+  {% for tile in tile_data %}
+    {% if loop.length > 5 %}
+      {% set item_classes = 'small-12 medium-6 large-4 xlarge-3 grid-grow' %}
+    {% else %}
+      {% set item_classes = 'small-12 medium-auto' %}
+    {% endif %}
+    {% include "@molecules/tile/tile.twig" with {
+        "tile_modifiers": tile.tile_modifiers,
+        "tile_extra_classes": tile.tile_extra_classes|default('cell') ~ ' ' ~ item_classes,
+        "tile_heading_level": tile.heading_level,
+        "tile_link": tile.tile_link,
+        "tile_title": tile.tile_title,
+        "tile_text": tile.tile_text,
+      } %}
+  {% endfor %}
+</div>

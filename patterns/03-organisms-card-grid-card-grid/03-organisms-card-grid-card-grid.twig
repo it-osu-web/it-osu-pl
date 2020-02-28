@@ -1,6 +1,19 @@
-
-<div class="card-grid">
-  {% for card_data in card_data %}
-    {% include "@molecules/card/01-card.twig" %}
+<div class="card-grid grid-x grid-margin-x">
+  {% for card in card_data %}
+    {% if loop.length > 5 %}
+      {% set item_classes = 'small-12 medium-6 large-4 xlarge-3 grid-grow' %}
+    {% else %}
+      {% set item_classes = 'small-12 medium-auto' %}
+    {% endif %}
+    {% include "@molecules/card/card.twig" with {
+      "card_modifiers": box.card_modifiers,
+      "card_extra_classes": box.card_extra_classes|default('cell') ~ ' ' ~ item_classes,
+      "card_image": card.card_image,
+      "card_title": card.card_title,
+      "card_text": card.card_text,
+      "card_button_content": card.card_button_content,
+      "card_button_url": card.card_button_url,
+      "card_button_modifiers": card_button_modifiers|default(['alt']),
+    } %}
   {% endfor %}
 </div>
