@@ -5,3 +5,6 @@ card_text: Maybe you'll want more text here.
   A few lines or so?
 card_button_content: Card Button
 card_button_url: '#'
+card_modifiers:
+  1: test
+  2: first
