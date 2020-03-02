@@ -10,7 +10,7 @@
 .breadcrumb__link:visited,
 .breadcrumb__link:focus {
   color: $gray;
-  font-weight: 600;
+  font-weight: 400;
   text-decoration: none;
 }
 
@@ -21,18 +21,18 @@
 
 .breadcrumb__item {
   display: inline-block;
-  font-size: 0.875rem;
+  font-size: rem-calc(14);
+  font-weight: 400;
 
   &::after {
     content: '|';
     color: $red;
     font-weight: 700;
-    margin: 0 0.1625em;
+    margin: 0 3px;
   }
 
   &:last-child {
     color: $gray-darkest;
-    font-weight: 600;
 
     &::after {
       content: none;
