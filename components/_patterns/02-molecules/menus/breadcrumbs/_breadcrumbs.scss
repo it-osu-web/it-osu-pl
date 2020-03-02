@@ -1,7 +1,6 @@
 .breadcrumb {
   @include list-reset;
-
-  padding: 1em 0;
+  padding: $space-y-half 0 $space-y;
 }
 
 .breadcrumb__item,

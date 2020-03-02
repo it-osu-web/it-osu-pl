@@ -121,7 +121,7 @@ $breakpoint-classes: (small medium large xlarge);
 
 $grid-row-width: $global-width;
 $grid-column-count: 12;
-$grid-column-gutter: $v-space;
+$grid-column-gutter: $space-x;
 $grid-column-align-edge: true;
 $grid-column-alias: 'columns';
 $block-grid-max: 8;
@@ -136,7 +136,7 @@ $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: $gray-darkest;
 $header-color--hover: $teal;
 $header-lineheight: 1.2;
-$header-margin-bottom: $h-space;
+$header-margin-bottom: $space-y;
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 85%;
 $header-small-font-color: $gray;

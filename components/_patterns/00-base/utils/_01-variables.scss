@@ -5,22 +5,22 @@
 // and typography into
 // components/_patterns/00-base/global/typography/_typography.scss
 
-// Horizontal spacing.
-$h-space: rem-calc(20);
+// Horizontal spacing (x).
+$space-x: rem-calc(30);
+
+// Less space.
+$space-x-half: $space-x / 2;
+$space-x-third: $space-x / 3;
+$space-x-quarter: $space-x / 4;
+
+// Vertical spacing (y).
+$space-y: rem-calc(20);
 
 // More space.
-$h-space-double: $h-space * 2;
-$h-space-triple: $h-space * 3;
+$space-y-double: $space-y * 2;
+$space-y-triple: $space-y * 3;
 
 // Less space.
-$h-space-half: $h-space / 2;
-$h-space-third: $h-space / 3;
-$h-space-quarter: $h-space / 4;
-
-// Vertical spacing.
-$v-space: rem-calc(30);
-
-// Less space.
-$v-space-half: $v-space / 2;
-$v-space-third: $v-space / 3;
-$v-space-quarter: $v-space / 4;
+$space-y-half: $space-y / 2;
+$space-y-third: $space-y / 3;
+$space-y-quarter: $space-y / 4;

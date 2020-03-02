@@ -7,8 +7,8 @@
 }
 
 .list-item {
-  margin-bottom: $h-space-third;
-  padding-left: $v-space-quarter;
+  margin-bottom: $space-y-third;
+  padding-left: $space-x-quarter;
 }
 
 .dl-term {
@@ -17,13 +17,13 @@
 }
 
 .dl-def {
-  margin-left: $v-space-half;
-  margin-bottom: $h-space-half;
+  margin-left: $space-x-half;
+  margin-bottom: $space-y-half;
 }
 
 ul,
 ol {
-  padding-left: $v-space-third;
+  padding-left: $space-x-third;
 }
 
 ul {
@@ -42,9 +42,11 @@ ol ol ol {
   list-style-type: lower-roman;
 }
 
-ol,
-ul {
-  li {
-    @extend .list-item;
+.field--type-text-long {
+  ol,
+  ul {
+    li {
+      @extend .list-item;
+    }
   }
 }
