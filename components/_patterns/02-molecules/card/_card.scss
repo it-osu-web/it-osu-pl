@@ -2,12 +2,15 @@
 
 .card {
   display: inline-block;
-  padding: 0 0 20px;
-  margin-bottom: 1.5em;
+  margin-bottom: $grid-margin-after;
   overflow: hidden;
   background-color: $white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: $drop-shadow;
   width: 100%;
+}
+
+.card__inner {
+  padding: $padding-y $padding-x $padding-y-bottom;
 }
 
 .card__image {
@@ -20,23 +23,16 @@
 }
 
 .card__title {
-  margin: 18px 0 5px 0;
-  padding: 0 20px 0 20px;
-  text-align: left;
-  font-weight: 600;
-  font-size: 26px;
+  @include heading(26);
+  margin-bottom: $header-margin-after-less;
 }
 
 .card__content {
-  text-align: left;
-  padding: 0 20px 0 20px;
   font-weight: 400;
-  margin: 0 0 10px;
 }
 
 .card button {
-  margin: 20px 0 0 20px;
-  display: block;
+  margin-top: $space-y-half;
 }
 
 // Card sizes.

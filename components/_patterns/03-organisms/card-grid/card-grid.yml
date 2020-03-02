@@ -3,7 +3,7 @@ card_data:
     card_image: https://placeimg.com/640/480/animals
     card_title: First Card
     card_text: |-
-      Maybe you'll want more card_text here.
+      Maybe you'll want more text here.
       A few lines or so?
     card_button_content: Card Button
     card_button_url: '#'
@@ -11,7 +11,7 @@ card_data:
     card_image: https://placeimg.com/640/480/animals
     card_title: Second Card
     card_text: |-
-      Maybe you'll want more card_text here.
+      Maybe you'll want more text here.
       A few lines or so?
     card_button_content: Card Button
     card_button_url: '#'
@@ -19,7 +19,7 @@ card_data:
     card_image: https://placeimg.com/640/480/animals
     card_title: Third Card
     card_text: |-
-      Maybe you'll want more card_text here.
+      Maybe you'll want more text here.
       A few lines or so?
     card_button_content: Card Button
     card_button_url: '#'
@@ -27,7 +27,7 @@ card_data:
     card_image: https://placeimg.com/640/480/animals
     card_title: Fourth Card
     card_text: |-
-      Maybe you'll want more card_text here.
+      Maybe you'll want more text here.
       A few lines or so?
     card_button_content: Card Button
     card_button_url: '#'
@@ -35,7 +35,7 @@ card_data:
     card_image: https://placeimg.com/640/480/animals
     card_title: Fifth Card
     card_text: |-
-      Maybe you'll want more card_text here.
+      Maybe you'll want more text here.
       A few lines or so?
     card_button_content: Card Button
     card_button_url: '#'
@@ -43,7 +43,7 @@ card_data:
     card_image: https://placeimg.com/640/480/animals
     card_title: Sixth Card
     card_text: |-
-      Maybe you'll want more card_text here.
+      Maybe you'll want more text here.
       A few lines or so?
     card_button_content: Card Button
     card_button_url: '#'
@@ -51,7 +51,7 @@ card_data:
     card_image: https://placeimg.com/640/480/animals
     card_title: Seventh Card
     card_text: |-
-      Maybe you'll want more card_text here.
+      Maybe you'll want more text here.
       A few lines or so?
     card_button_content: Card Button
     card_button_url: '#'
