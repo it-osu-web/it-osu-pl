@@ -4,24 +4,24 @@
 // components/_patterns/00-base/global/01-colors/_color-vars.scss
 // and typography into
 // components/_patterns/00-base/global/typography/_typography.scss
-//
 
-// Spacing
-$space: 2.5rem;
+// Horizontal spacing.
+$h-space: rem-calc(20);
 
-// multiplied
-$space-double: $space * 2;
-$space-triple: $space * 3;
-$space-quadruple: $space * 4;
-$space-quintuple: $space * 5;
-$space-sextuple: $space * 6;
+// More space.
+$h-space-double: $h-space * 2;
+$h-space-triple: $h-space * 3;
 
-// divided
-$space-two-thirds: $space * 0.666;
-$space-three-fourths: $space * 0.75;
-$space-one-half: $space/2;
-$space-one-third: $space/3;
-$space-one-fourth: $space/4;
-$space-one-sixth: $space/6;
-$space-one-eighth: $space/8;
-$space-one-tenth: $space/10;
+// Less space.
+$h-space-half: $h-space / 2;
+$h-space-third: $h-space / 3;
+$h-space-quarter: $h-space / 4;
+
+// Vertical spacing.
+$v-space: rem-calc(30);
+
+// Less space.
+$v-space-half: $v-space / 2;
+$v-space-third: $v-space / 3;
+$v-space-quarter: $v-space / 4;
+$v-space-tiny: 3px;

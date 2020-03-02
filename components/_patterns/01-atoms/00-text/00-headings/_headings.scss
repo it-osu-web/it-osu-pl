@@ -60,7 +60,7 @@ h6,
 }
 
 h1.page-title {
-  margin-top: 20px;
+  margin-top: $h-space;
 }
 
 // Headers within long text.
@@ -70,6 +70,6 @@ h1.page-title {
   h4,
   h5,
   h6 {
-    margin-top: 1.25em;
+    margin-top: $h-space;
   }
 }

@@ -61,6 +61,7 @@
 //  56. Xy Grid
 
 @import '../../node_modules/foundation-sites/scss/util/util';
+@import '00-base/utils/_01-variables.scss';
 @import '00-base/global/01-colors/_color-vars.scss';
 @import '00-base/global/02-typography/_typography.scss';
 
@@ -120,10 +121,7 @@ $breakpoint-classes: (small medium large xlarge);
 
 $grid-row-width: $global-width;
 $grid-column-count: 12;
-$grid-column-gutter: (
-  small: 20px,
-  medium: 30px,
-);
+$grid-column-gutter: $v-space;
 $grid-column-align-edge: true;
 $grid-column-alias: 'columns';
 $block-grid-max: 8;
@@ -138,7 +136,7 @@ $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: $gray-darkest;
 $header-color--hover: $teal;
 $header-lineheight: 1.2;
-$header-margin-bottom: 0.5rem;
+$header-margin-bottom: $h-space;
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 85%;
 $header-small-font-color: $gray;
