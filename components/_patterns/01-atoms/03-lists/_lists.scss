@@ -6,9 +6,24 @@
   padding: 0;
 }
 
+.list-item {
+  margin-bottom: $space-y-third;
+  padding-left: $space-x-quarter;
+}
+
+.dl-term {
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.dl-def {
+  margin-left: $space-x-half;
+  margin-bottom: $space-y-half;
+}
+
 ul,
 ol {
-  padding-left: $space-two-thirds;
+  padding-left: $space-x-third;
 }
 
 ul {
@@ -27,21 +42,7 @@ ol ol ol {
   list-style-type: lower-roman;
 }
 
-.list-item {
-  margin-bottom: $space-one-tenth;
-  padding-left: $space-one-fourth;
-}
-
-.dl-term {
-  font-weight: 700;
-}
-
-.dl-def {
-  margin-left: 1em;
-  margin-bottom: $space-one-fourth;
-}
-
-.text-long {
+.field--type-text-long {
   ol,
   ul {
     li {

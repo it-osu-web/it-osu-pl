@@ -35,16 +35,17 @@
 {% endif %}
 
 <div class="{{ card_classes }} {{ card_extra_classes }}">
-{# <div class="card card--{{ card_size }}"> #}
   <img class="card__image" alt="Card Image" src="{{ card_image }}"/>
-  <h1 class="card__title">{{ card_title }}</h1>
-  <p class="card__content">{{ card_text }}</p>
+  <div class="{{card_base_class}}__inner">
+    <h2 class="card__title">{{ card_title }}</h2>
+    <p class="card__content">{{ card_text }}</p>
 
-  {# Card button #}
-  {%
-    include "@atoms/02-buttons/01-button.twig" with {
-      "button_content": card_button_content,
-      "button_url": card_button_url,
-      "button_modifiers": card_button_modifiers|default(['alt']),
-    } %}
+    {# Card button #}
+    {%
+      include "@atoms/02-buttons/01-button.twig" with {
+        "button_content": card_button_content,
+        "button_url": card_button_url,
+        "button_modifiers": card_button_modifiers|default(['alt']),
+      } %}
+  </div>
 </div>

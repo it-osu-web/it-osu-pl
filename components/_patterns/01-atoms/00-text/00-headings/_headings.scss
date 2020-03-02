@@ -41,17 +41,17 @@ h2,
 
 h3,
 .h3 {
-  @include heading(28);
+  @include heading(26);
 }
 
 h4,
 .h4 {
-  @include heading(24);
+  @include heading(22);
 }
 
 h5,
 .h5 {
-  @include heading(22, 400);
+  @include heading(20, 400);
 }
 
 h6,
@@ -60,5 +60,16 @@ h6,
 }
 
 h1.page-title {
-  margin-top: 20px;
+  margin-top: $space-y;
+}
+
+// Headers within long text.
+.field--type-text-long {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: $space-y;
+  }
 }

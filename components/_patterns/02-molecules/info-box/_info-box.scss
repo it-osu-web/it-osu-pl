@@ -1,13 +1,14 @@
 @mixin info-box($background: $gray-lightest, $color: $gray-darkest) {
   background-color: $background;
   color: $color;
-  margin-bottom: 1.5em;
-  padding: 1.125em 1.25em 0.5em;
+  margin-bottom: $grid-margin-after;
+  padding: $padding-y $padding-x $padding-y-bottom;
   width: 100%;
 
   .info-box__title {
-    @include heading(24);
+    @include heading(26);
     color: $color;
+    margin-bottom: $header-margin-after-less;
   }
 
   @if $background == $white {
