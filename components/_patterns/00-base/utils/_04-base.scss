@@ -32,9 +32,11 @@ body.footer-color {
   }
 }
 
+$grid-container-padding: rem-calc(40);
+
 .grid-container {
-  padding-right: $space-x;
-  padding-left: $space-x;
+  padding-right: $grid-container-padding;
+  padding-left: $grid-container-padding;
 }
 
 .layout__wrapper--main {
