@@ -14,9 +14,15 @@
   }
 
   .tile__title {
-    @include heading(26);
     color: $color;
-    margin-bottom: $header-margin-after-less;
+    margin-top: 3px;
+
+    h2,
+    h3,
+    h4 {
+      @include heading(26, 700);
+      margin-bottom: $header-margin-after-less;
+    }
   }
   .tile__body {
     font-family: $capita;

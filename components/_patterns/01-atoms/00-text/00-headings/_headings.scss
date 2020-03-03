@@ -31,12 +31,12 @@
 
 h1,
 .h1 {
-  @include heading(44, 700, $line-height: 1.1);
+  @include heading(42, 800, $line-height: 1.1);
 }
 
 h2,
 .h2 {
-  @include heading(32, 700);
+  @include heading(32, 800);
 }
 
 h3,
@@ -61,6 +61,7 @@ h6,
 
 h1.page-title {
   margin-top: $space-y;
+  margin-bottom: $space-y-half;
 }
 
 // Headers within long text.
@@ -70,6 +71,31 @@ h1.page-title {
   h4,
   h5,
   h6 {
-    margin-top: $space-y;
+    margin-top: $space-y-half;
+    margin-bottom: $space-y-half;
+  }
+
+  p ~ h2,
+  p ~ h3,
+  p ~ h4,
+  p ~ h5,
+  p ~ h6 {
+    margin-top: $space-y-plus-half;
+  }
+
+  ul ~ h2,
+  ul ~ h3,
+  ul ~ h4,
+  ul ~ h5,
+  ul ~ h6 {
+    margin-top: $space-y-plus-half;
+  }
+
+  ol ~ h2,
+  ol ~ h3,
+  ol ~ h4,
+  ol ~ h5,
+  ol ~ h6 {
+    margin-top: $space-y-plus-half;
   }
 }
