@@ -92,6 +92,12 @@ function cleanJS(done) {
   done();
 }
 
+// Clean Drupal assets.
+function cleanDrupal(done) {
+  return del('it-osu-pl-drupal/**/*');
+  done();
+}
+
 // Generate Pattern Lab task.
 function plGenerate(done) {
   return run('php pattern-lab/core/console --generate').exec();
@@ -231,6 +237,7 @@ const buildPages = gulp.series(
 );
 const buildDrupal = gulp.series(
   cleanJS,
+  cleanDrupal,
   gulp.parallel(css, js),
   plGenerate,
   copyDrupal,
@@ -242,9 +249,10 @@ const deployPages = gulp.series(
   ghPublish,
   ghDataRemove,
 );
-const deployDrupal = gulp.series(ghPagesCache, buildDrupal, drupalPublish);
+const deployDrupal = gulp.series(ghPagesCache, drupalPublish);
 
 // Exports.
 exports.deployPages = deployPages;
+exports.buildDrupal = buildDrupal;
 exports.deployDrupal = deployDrupal;
 exports.default = start;
