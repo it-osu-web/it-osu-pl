@@ -13,6 +13,12 @@
     background: darken($background, 2%);
   }
 
+  .tile__icon {
+    max-width: rem-calc(100);
+    height: auto;
+    margin: $space-y-half auto $space-y;
+  }
+
   .tile__title {
     color: $color;
     margin-top: 3px;
