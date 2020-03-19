@@ -12,7 +12,7 @@ items:
   - name: $gray-dark
     value: '#3c3c3c'
   - name: $near-black
-    value: '#1a1a1a'
+    value: '#202022'
   - name: $black
     value: '#000'
   - name: $red
