@@ -1,4 +1,4 @@
-@mixin callout($color: $gray-light) {
+@mixin callout($color: $gray) {
   border: 1px solid $color;
   margin: 2em 0.625em;
   display: flex;

@@ -16,7 +16,7 @@ html {
 
 body.footer-color {
   &--dk-gray {
-    background: $gray-darkest;
+    background: $near-black;
   }
 
   &--md-gray {
@@ -24,7 +24,7 @@ body.footer-color {
   }
 
   &--lt-gray {
-    background: $gray-lightest;
+    background: $near-white;
   }
 
   &--white {

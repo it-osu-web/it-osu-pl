@@ -1,5 +1,5 @@
 .login-box {
-  background: $gray-lightest;
+  background: $near-white;
   padding: 1em 1.25em 0.5em;
 }
 .login-box--osu {
@@ -20,7 +20,7 @@
   }
 }
 .details__inner--drupal {
-  background-color: $gray-lightest;
+  background-color: $near-white;
 }
 
 // Hide SAML login link because it is already displayed further up the page.

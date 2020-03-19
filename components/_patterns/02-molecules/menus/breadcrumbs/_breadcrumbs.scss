@@ -15,7 +15,7 @@
 
 .breadcrumb__link:hover {
   text-decoration: underline;
-  color: $gray-darkest;
+  color: $near-black;
 }
 
 .breadcrumb__item {
@@ -31,7 +31,7 @@
   }
 
   &:last-child {
-    color: $gray-darkest;
+    color: $near-black;
 
     &::after {
       content: none;

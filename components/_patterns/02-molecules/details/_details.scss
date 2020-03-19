@@ -2,17 +2,17 @@
 details,
 .details-item {
   margin-bottom: 3px;
-  border: 1px solid $gray-lightest;
+  border: 1px solid $near-white;
 
   summary {
-    background: $gray-lightest;
+    background: $near-white;
     padding: 0.675em 1em;
     font-size: rem-calc(18);
     font-weight: 600;
 
     &:hover,
     &[aria-expanded='true'] {
-      background: darken($gray-lightest, 5%);
+      background: darken($near-white, 5%);
     }
 
     &:focus {
@@ -52,7 +52,7 @@ details,
         width: 2px;
 
         &.plus {
-          background: $gray-darkest;
+          background: $near-black;
           -webkit-transition: all 0.8s ease;
           -moz-transition: all 0.8s ease;
           -o-transition: all 0.8s ease;
@@ -68,7 +68,7 @@ details,
         }
 
         &:after {
-          background: $gray-darkest;
+          background: $near-black;
           content: '';
           position: absolute;
           height: 2px;

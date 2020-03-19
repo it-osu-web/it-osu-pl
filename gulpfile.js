@@ -43,7 +43,7 @@ config.js = {
   destDirOther: 'components/js/other',
 };
 config.npm = {
-  srcFiles: './node_modules/'
+  srcFiles: './node_modules/',
 };
 
 // BrowserSync.
@@ -77,12 +77,14 @@ function css(done) {
 
 // JS task.
 function js(done) {
-  return gulp
-    .src([config.js.srcFiles])
-    .pipe(plumber())
-    // .pipe(uglify())
-    .pipe(gulp.dest(config.js.destDirPatterns))
-    .pipe(browsersync.stream());
+  return (
+    gulp
+      .src([config.js.srcFiles])
+      .pipe(plumber())
+      // .pipe(uglify())
+      .pipe(gulp.dest(config.js.destDirPatterns))
+      .pipe(browsersync.stream())
+  );
   done();
 }
 

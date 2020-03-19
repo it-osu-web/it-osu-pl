@@ -25,7 +25,7 @@
 
   &:focus {
     background-color: lighten($bg, 3%);
-    outline: 2px dotted $gray-darkest;
+    outline: 2px dotted $near-black;
     outline-offset: 0;
   }
 }

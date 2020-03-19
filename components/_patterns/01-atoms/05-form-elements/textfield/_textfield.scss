@@ -1,7 +1,7 @@
 /* Styling for the text areas */
 
 .form-item__textfield {
-  border: 1px solid $gray-lighter;
+  border: 1px solid $gray-light;
   padding: 0.625em 1em;
   margin-bottom: 1em;
   font-size: rem-calc(14);
@@ -24,11 +24,11 @@
   }
 
   &::-webkit-input-placeholder {
-    color: $gray-light;
+    color: $gray;
   }
 
   &:-moz-placeholder {
-    color: $gray-light;
+    color: $gray;
   }
 
   &::-moz-placeholder {
