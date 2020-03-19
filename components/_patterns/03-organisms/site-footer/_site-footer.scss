@@ -46,10 +46,10 @@
 
 //mixin for colors
 @mixin footer(
-  $bg-color: $gray-darkest,
+  $bg-color: $near-black,
   $text-color: $white,
-  $link-hover: $gray-lighter,
-  $pipe-color: $gray-lighter
+  $link-hover: $gray-light,
+  $pipe-color: $gray-light
 ) {
   background: $bg-color;
   color: $text-color;
@@ -81,17 +81,17 @@
 }
 
 .site-footer--md-gray {
-  @include footer($gray, $white, $gray-lightest, $gray-lightest);
+  @include footer($gray, $white, $near-white, $near-white);
 
   .social-media__item a {
-    border: 1px solid $gray-lighter;
+    border: 1px solid $gray-light;
   }
 }
 
 .site-footer--lt-gray {
-  @include footer($gray-lightest, $gray-darker, $red, $red);
+  @include footer($near-white, $near-black, $red, $red);
 }
 
 .site-footer--white {
-  @include footer($white, $gray-dark, $red, $red);
+  @include footer($white, $near-black, $red, $red);
 }

@@ -1,26 +1,24 @@
+// Neutrals.
 $clear: rgba(0, 0, 0, 0);
 $white: #fff;
-$near-white: #f7f7f7;
-$gray-lightest: #eaeaea;
-$gray-lighter: #ccc;
-$gray-light: #999;
+$near-white: #f2f2f2;
+$gray-light: #ccc;
 $gray: #666;
-$gray-dark: #444446;
-$gray-darker: #303033;
-$gray-darkest: #202024;
+$gray-dark: #3c3c3c;
+$near-black: #202022;
 $black: #000;
 
-//colors
+// Colors.
 $red: #b00;
 $red-dark: #830000;
-
 $orange: #d65828;
-$orange-dark: #c04f24;
-
+$orange-dark: #ab4620;
 $green: #909738;
-$green-dark: #73792d;
-$teal: #1c7c89;
-
-$purple: #5d3f82;
-$blue-dark: #476c97;
+$green-dark: #656927;
+$teal: #26686d;
+$purple: #442369;
+$blue: #667b96;
 $violet: #851e5e;
+
+// Other.
+$gray-border: #ddd;

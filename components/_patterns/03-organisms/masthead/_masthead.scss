@@ -29,7 +29,7 @@
 }
 
 //mixin for masthead--standard
-@mixin masthead-standard($bg-color: $gray-darkest, $text-color: $white) {
+@mixin masthead-standard($bg-color: $near-black, $text-color: $white) {
   background: $bg-color;
   padding: 0.75em 0;
 
@@ -78,7 +78,7 @@
 }
 
 //mixin for masthead--slim
-@mixin masthead-slim($bg-color: $gray-darkest, $text-color: $white) {
+@mixin masthead-slim($bg-color: $near-black, $text-color: $white) {
   background: $bg-color;
 
   #site-name {
@@ -135,11 +135,11 @@
 }
 
 .masthead--standard.masthead--lt-gray {
-  @include masthead-standard($gray-lightest, $gray-darker);
+  @include masthead-standard($near-white, $near-black);
 }
 
 .masthead--standard.masthead--white {
-  @include masthead-standard($white, $gray-dark);
+  @include masthead-standard($white, $near-black);
 }
 
 .masthead--slim,
@@ -154,10 +154,10 @@
 
 .masthead--slim,
 .masthead--slim.masthead--lt-gray {
-  @include masthead-slim($gray-lightest, $gray-darker);
+  @include masthead-slim($near-white, $near-black);
 }
 
 .masthead--slim,
 .masthead--slim.masthead--white {
-  @include masthead-slim($white, $gray-dark);
+  @include masthead-slim($white, $near-black);
 }

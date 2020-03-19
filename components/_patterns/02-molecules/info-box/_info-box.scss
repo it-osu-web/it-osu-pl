@@ -1,4 +1,4 @@
-@mixin info-box($background: $gray-lightest, $color: $gray-darkest) {
+@mixin info-box($background: $near-white, $color: $near-black) {
   background-color: $background;
   color: $color;
   margin-bottom: $grid-margin-after;
@@ -12,7 +12,7 @@
   }
 
   @if $background == $white {
-    border: 1px solid $gray-lightest;
+    border: 1px solid $near-white;
   }
 }
 

@@ -1,5 +1,5 @@
 .blockquote {
-  border-left: solid 3px $gray-lighter;
+  border-left: solid 3px $gray-light;
   margin: 2em 0 2em 2em;
   padding-left: 1em;
   padding-right: 3em;
@@ -21,7 +21,7 @@ blockquote:not(.pull-quote) {
 }
 
 .pull-quote__icon {
-  color: $gray-lighter;
+  color: $gray-light;
   position: absolute;
   top: 0.8em;
 }

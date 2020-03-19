@@ -24,7 +24,7 @@
     text-transform: uppercase;
     margin-bottom: 5px;
     clear: both;
-    background: $gray-lightest;
+    background: $near-white;
     @include breakout;
     padding: 6px 0 0 4.5%;
     margin-top: 2.5em;
@@ -68,7 +68,7 @@
     display: block;
     height: 100px;
     margin-bottom: 0.3em;
-    border: 1px solid $gray-lighter;
+    border: 1px solid #bbb;
   }
 }
 

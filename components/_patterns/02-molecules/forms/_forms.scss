@@ -1,5 +1,5 @@
 input {
-  margin-bottom: 5px !important;
+  margin-bottom: 0 !important;
 }
 
 legend {
@@ -25,7 +25,7 @@ legend {
   border: 0;
   margin: 2em 0 1em;
   padding: 1em 1.5em;
-  background-color: $gray-lightest;
+  background-color: $near-white;
 
   legend {
     text-transform: uppercase;
@@ -40,6 +40,14 @@ legend {
 //reusable classes
 .form-options-list {
   line-height: 160%;
+
+  li {
+    margin-bottom: $space-y-quarter;
+
+    label {
+      font-weight: 400;
+    }
+  }
 
   input {
     margin: 0 4px 0 1px;

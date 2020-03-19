@@ -17,8 +17,7 @@ $color-link--hover: $teal;
   }
 }
 
-a,
-.link {
+a {
   @include link;
 }
 

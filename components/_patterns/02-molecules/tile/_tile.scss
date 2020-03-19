@@ -1,4 +1,4 @@
-@mixin tile($background: $gray-lightest, $color: $gray-darkest) {
+@mixin tile($background: $near-white, $color: $near-black) {
   background-color: $background;
   color: $color;
   margin-bottom: $grid-margin-after;
@@ -37,7 +37,7 @@
   }
 
   @if $background == $white {
-    border: 1px solid $gray-lightest;
+    border: 1px solid $gray-border;
   }
 }
 

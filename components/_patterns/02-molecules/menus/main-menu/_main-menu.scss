@@ -1,9 +1,9 @@
 //adapted from https://code.osu.edu/ocio_odee_web/a11y-navbar
 
 //translate variables for this theme
-$lt-gray: $gray-lightest;
+$lt-gray: $near-white;
 $md-gray: $gray;
-$dk-gray: $gray-darkest;
+$dk-gray: $near-black;
 
 //from original sass/mixins/_visually-hidden.scss
 // Hide only visually, but have it available for screenreaders: h5bp.com/v
