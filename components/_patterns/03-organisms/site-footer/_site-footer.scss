@@ -89,9 +89,9 @@
 }
 
 .site-footer--lt-gray {
-  @include footer($near-white, $gray-dark, $red, $red);
+  @include footer($near-white, $near-black, $red, $red);
 }
 
 .site-footer--white {
-  @include footer($white, $gray-dark, $red, $red);
+  @include footer($white, $near-black, $red, $red);
 }
