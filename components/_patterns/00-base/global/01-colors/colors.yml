@@ -6,11 +6,11 @@ items:
   - name: $near-white
     value: '#f2f2f2'
   - name: $gray-light
-    value: '#ccc'
+    value: '#cecece'
   - name: $gray
     value: '#666'
   - name: $gray-dark
-    value: '#3c3c3c'
+    value: '#3d3d3d'
   - name: $near-black
     value: '#202022'
   - name: $black
@@ -35,3 +35,7 @@ items:
     value: '#667b96'
   - name: $violet
     value: '#851e5e'
+meta:
+  description: >-
+    To add to these items, use Sass variables that start with <code>$</code> in
+    <code>components/_patterns/00-base/global/01-colors/_color-vars.scss</code>
