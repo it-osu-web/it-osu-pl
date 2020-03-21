@@ -1,40 +1,14 @@
-.blockquote {
-  border-left: solid 3px $gray-light;
-  margin: 2em 0 2em 2em;
-  padding-left: 1em;
-  padding-right: 3em;
-  p {
-    line-height: 1.6;
-  }
-}
-
-blockquote:not(.pull-quote) {
-  @extend .blockquote;
-}
-
-.pull-quote {
-  border: 0;
-  padding: 2em;
-  padding-right: 4em;
-  margin: 2em 0;
-  position: relative;
-}
-
-.pull-quote__icon {
-  color: $gray-light;
-  position: absolute;
-  top: 0.8em;
-}
-
-.pull-quote__text {
+blockquote {
   font-family: $capita;
-  font-style: italic;
+  font-size: rem-calc(17);
   font-weight: 300;
-  font-size: 115%;
-  padding: 0;
-  padding-left: 3.5em;
+  font-style: italic;
+  margin: $space-y-double 0 $space-y-double $space-x;
 
-  p {
-    line-height: 1.6;
+  cite {
+    font-family: $proxima;
+    font-weight: 600;
+    font-style: normal;
+    padding-top: $space-y-quarter;
   }
 }

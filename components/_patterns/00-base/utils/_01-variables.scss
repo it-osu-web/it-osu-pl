@@ -22,6 +22,9 @@ $space-y-quarter: $space-y / 4;
 // Horizontal spacing (x).
 $space-x: rem-calc(26);
 
+// More space.
+$space-x-double: $space-x * 2;
+
 // Less space.
 $space-x-half: $space-x / 2;
 $space-x-third: $space-x / 3;
