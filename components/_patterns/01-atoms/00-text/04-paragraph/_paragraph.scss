@@ -1,11 +1,6 @@
-p,
-.paragraph {
-  line-height: 1.4;
-}
-
 .paragraph--center {
   text-align: center;
-  width: 85%;
+  width: 90%;
   margin-right: auto !important;
   margin-left: auto !important;
 }
@@ -15,5 +10,5 @@ p,
   font-style: italic;
   font-weight: 400;
   font-size: rem-calc(20);
-  line-height: 1.75;
+  line-height: 1.7;
 }

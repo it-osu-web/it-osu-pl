@@ -63,6 +63,7 @@
 @import '../../node_modules/foundation-sites/scss/util/util';
 @import '00-base/utils/_01-variables.scss';
 @import '00-base/global/01-colors/_color-vars.scss';
+@import '00-base/global/01-colors/_colors-used.scss';
 @import '00-base/global/02-typography/_typography.scss';
 
 // 1. Global
@@ -70,17 +71,24 @@
 
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
-$global-lineheight: 1.5;
+$global-lineheight: 1.4;
+
 $foundation-palette: (
   primary: $red,
   secondary: $gray,
   success: $teal,
-  warning: $orange,
+  warning: $orange-dark,
   alert: $violet,
 );
-$light-gray: $near-white;
-$medium-gray: $gray-light;
+$primary-color: get-color(primary);
+$secondary-color: get-color(primary);
+$success-color: get-color(success);
+$warning-color: get-color(warning);
+$alert-color: get-color(alert);
+$light-gray: $gray-light;
+$medium-gray: $gray;
 $dark-gray: $gray-dark;
+
 $body-background: $white;
 $body-font-color: $near-black;
 $body-font-family: $proxima;
@@ -99,8 +107,6 @@ $global-prototype-breakpoints: false;
 $global-button-cursor: auto;
 $global-color-pick-contrast-tolerance: 0;
 $print-transparent-backgrounds: true;
-
-@include add-foundation-colors;
 $print-hrefs: true;
 
 // 2. Breakpoints
@@ -139,8 +145,8 @@ $header-lineheight: 1.2;
 $header-margin-bottom: $space-y;
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 85%;
-$header-small-font-color: $gray;
-$paragraph-lineheight: 1.6;
+$header-small-font-color: $gray-dark;
+$paragraph-lineheight: 1.4;
 $paragraph-margin-bottom: 1rem;
 $paragraph-text-rendering: optimizeLegibility;
 $code-color: $black;
@@ -154,23 +160,30 @@ $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
-$hr-border: 1px solid $medium-gray;
+$hr-border: 2px solid $gray-border;
 $hr-margin: rem-calc(20) auto;
+
+/// Lists
 $list-lineheight: $paragraph-lineheight;
 $list-margin-bottom: $paragraph-margin-bottom;
 $list-style-type: disc;
 $list-style-position: outside;
 $list-side-margin: 1rem;
-$list-nested-side-margin: 1rem;
+$list-nested-side-margin: 2rem;
+$list-li-margin-bottom: rem-calc(10); // it-osu variable.
 $defnlist-margin-bottom: 1rem;
 $defnlist-term-weight: $global-weight-bold;
-$defnlist-term-margin-bottom: 0.5rem;
+$defnlist-term-margin-bottom: 0;
+$defnlist-def-margin-bottom: rem-calc(12); // it-osu variable.
+
+/// Blockquote
 $blockquote-color: $near-black;
 $blockquote-padding: rem-calc(0 40 0 20);
 $blockquote-border: 4px solid $gray-light;
 $cite-font-size: rem-calc(15);
 $cite-color: $near-black;
 $cite-pseudo-content: '\2014 \0020';
+
 $keystroke-font: $font-family-monospace;
 $keystroke-color: $black;
 $keystroke-background: $light-gray;

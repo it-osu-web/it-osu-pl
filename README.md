@@ -132,6 +132,10 @@ Patterns are divided into categories that progressively become more complex. Thi
 | Templates | Page-level objects that organize patterns into a layout and provide context and content structure.                          |
 | Pages     | Specific instances of templates (page prototypes) that show what a UI looks like with real representative content in place. |
 
+### Mixins and Reusable Classes
+
+Coming soon.
+
 ### Use BEM methodology when possible
 
 - A great intro to BEM: [BEM will make you happy](https://medium.com/@basterrika/bem-will-make-you-happy-ab0d0a821226)
@@ -161,7 +165,7 @@ We are also explicitly not using certain aspects of Foundation for various reaso
 
 - Primary Menu
 - Buttons
-- Headers
+- Headers (partially uses Foundation settings)
 - Form elements (looking at possible conversion)
 - Images (looking at possible conversion)
 - Callouts (looking at possible conversion)

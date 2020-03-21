@@ -1,19 +1,5 @@
-.list-item {
-  margin-bottom: $space-y-half;
-  padding-left: $space-x-quarter;
-}
-
-.dl-term {
-  font-weight: 700;
-  margin-bottom: 0;
-}
-
-.dl-def {
-  margin-bottom: $space-y-half;
-}
-
-ul {
-  list-style-type: disc;
+li {
+  margin-bottom: $list-li-margin-bottom;
 }
 
 ol {
@@ -28,11 +14,6 @@ ol ol ol {
   list-style-type: lower-roman;
 }
 
-.field--type-text-long {
-  ol,
-  ul {
-    li {
-      @extend .list-item;
-    }
-  }
+dd {
+  margin-bottom: $defnlist-def-margin-bottom;
 }
