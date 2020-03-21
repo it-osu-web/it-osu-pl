@@ -22,7 +22,7 @@ items:
   - name: $orange
     value: '#d65828'
   - name: $orange-dark
-    value: '#ab4620'
+    value: '#b54a22'
   - name: $green
     value: '#909738'
   - name: $green-dark
