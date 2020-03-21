@@ -165,12 +165,15 @@ We are also explicitly not using certain aspects of Foundation for various reaso
 
 - Primary Menu
 - Buttons
+- Breadcrumbs
+- Pagers (looking at possible conversion)
+- Tables (looking at possible conversion)
 - Headers (partially uses Foundation settings)
 - Form elements (looking at possible conversion)
 - Images (looking at possible conversion)
 - Callouts (looking at possible conversion)
 - Cards (looking at possible conversion)
-- Spacing (will likely convert)
+- Spacing Standards (will likely convert)
 
 #### Foundation Documentation
 
