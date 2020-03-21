@@ -1,0 +1,20 @@
+.more-link {
+  a {
+    @include button-rev();
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    display: inline-block;
+    padding: 9px 13px 8px;
+
+    &:hover {
+      color: $white;
+    }
+
+    &:focus {
+      outline: 2px dotted $near-black;
+      outline-offset: 0;
+    }
+  }
+}

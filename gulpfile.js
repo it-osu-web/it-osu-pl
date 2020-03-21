@@ -1,8 +1,10 @@
 // Load plugins.
+const _ = require('lodash');
 const autoprefixer = require('autoprefixer');
 const browsersync = require('browser-sync').create();
 const cssnano = require('cssnano');
 const del = require('del');
+const fs = require('fs');
 const ghpages = require('gh-pages');
 const gulp = require('gulp');
 const plumber = require('gulp-plumber');
@@ -13,6 +15,7 @@ const sass = require('gulp-sass');
 const sassGlob = require('gulp-sass-glob');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
+const yaml = require('js-yaml');
 
 // Configuration.
 var config = {};
@@ -27,6 +30,14 @@ config.patternLab = {
   ],
   publicDirectory: './pattern-lab/public/',
   ghData: 'components/_data/gh-data',
+  colorSwatches: [
+    {
+      src: config.patternDirectory + '/00-base/global/01-colors/_color-vars.scss',
+      dest: config.patternDirectory + '/00-base/global/01-colors/colors.yml',
+      lineStartsWith: '$',
+      allowVarValues: false,
+    }
+  ],
 };
 config.sass = {
   srcFiles: config.patternDirectory + '/style.scss',
@@ -106,9 +117,39 @@ function plGenerate(done) {
   done();
 }
 
+// Generate color swatches.
+// Adapted from: https://github.com/fourkitchens/emulsify-gulp.
+function colorSwatches(done) {
+  config.patternLab.colorSwatches.forEach(({
+    src, lineStartsWith, allowVarValues, dest
+  }) => {
+    const scssVarList = _.filter(fs.readFileSync(src, 'utf8').split('\n'), item => _.startsWith(item, lineStartsWith));
+
+    let varsAndValues = _.map(scssVarList, (item) => {
+      const x = item.split(':');
+      return {
+        name: x[0].trim(), // i.e. $color-gray
+        value: x[1].replace(/;.*/, '').trim(), // i.e. hsl(0, 0%, 50%)
+      };
+    });
+
+    if (!allowVarValues) {
+      varsAndValues = _.filter(varsAndValues, ({ value }) => !_.startsWith(value, '$'));
+    }
+    fs.writeFileSync(dest, yaml.dump({
+      items: varsAndValues,
+      meta: {
+        description: `To add to these items, use Sass variables that start with <code>${lineStartsWith}</code> in <code>${src}</code>`,
+      },
+    }));
+
+  });
+  done();
+}
+
 // Watch files.
 function watchFiles() {
-  gulp.watch(config.sass.watchFiles, gulp.series(css, plGenerate));
+  gulp.watch(config.sass.watchFiles, gulp.series(css, colorSwatches, plGenerate));
   gulp.watch(config.js.watchFiles, gulp.series(cleanJS, js, plGenerate));
   gulp.watch(
     config.patternLab.watchFiles,

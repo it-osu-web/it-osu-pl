@@ -80,6 +80,10 @@
     padding: 1em 0.25em;
     min-width: 40%;
 
+    p {
+      font-size: rem-calc(28);
+    }
+
     .sg-info {
       padding: 10px;
       font-size: 30px;
