@@ -1,11 +1,3 @@
-/// Mixin - list-reset
-/// Reset list item defaults when no margin, padding, list styles needed
-@mixin list-reset {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
 .list-item {
   margin-bottom: $space-y-half;
   padding-left: $space-x-quarter;
@@ -17,13 +9,7 @@
 }
 
 .dl-def {
-  margin-left: $space-x-half;
   margin-bottom: $space-y-half;
-}
-
-ul,
-ol {
-  padding-left: $space-x-third;
 }
 
 ul {
