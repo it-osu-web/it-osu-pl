@@ -1,5 +1,7 @@
 # IT@OSU Pattern Lab
 
+A pattern library for IT@OSU (OCIO/ODEE at The Ohio State University) websites and applications. It uses the [Pattern Lab Standard Edition for Twig](https://github.com/pattern-lab/edition-php-twig-standard) and incorporates many elements from [Foundation v6](https://get.foundation/), including the [XY Grid](https://get.foundation/sites/docs/xy-grid.html).
+
 ## Requirements
 
 1.  [PHP 7.1](http://www.php.net/)
@@ -137,6 +139,37 @@ Patterns are divided into categories that progressively become more complex. Thi
 - We don't have to be super strict about it right now, but let's do what we can.
 - Provide options to accept modifiers as variables on lower-level (Atoms, Molecules) patterns. See `components/_patterns/01-atoms/00-text/04-paragraph/paragraph.twig` for a good example of how to do that.
 
-### Twig resources
+### Twig Resources
 
 - [Official Documentation](https://twig.symfony.com/doc/2.x/templates.html)
+
+### Foundation Use and Resources
+
+Foundation was initially added to this project because of its XY Grid, but we are finding it to be useful in other areas and will gradually be integrating more facets of it into this project.
+
+Before creating a new pattern, check [Foundation's documentation](https://get.foundation/sites/docs/index.html) to determine if it has a built-in component that could be used as a starting point.
+
+Along those same lines, when styling a pattern, be sure to look at `_settings.scss` first to determine if defaults can be changed in that file, before adding additional css rules within your pattern.
+
+There are certain items that you should always rely on Foundation for. They are as as follows:
+
+- XY Grid
+- Breakpoints
+- `rem-calc()` function
+
+We are also explicitly not using certain aspects of Foundation for various reasons such as already having legacy code, custom-designed implementations, or other reasons. These patterns are as follows:
+
+- Primary Menu
+- Buttons
+- Headers
+- Form elements (looking at possible conversion)
+- Images (looking at possible conversion)
+- Callouts (looking at possible conversion)
+- Cards (looking at possible conversion)
+- Spacing (will likely convert)
+
+#### Foundation Documentation
+
+- [Foundation for Sites](https://get.foundation/sites/docs/index.html)
+- [XY Grid](https://get.foundation/sites/docs/xy-grid.html)
+- [rem-calc](https://get.foundation/sites/docs/sass-functions.html#rem-calc)
