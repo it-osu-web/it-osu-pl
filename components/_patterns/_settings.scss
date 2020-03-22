@@ -161,7 +161,7 @@ $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
-$hr-border: 2px solid $gray-border;
+$hr-border: 1px solid $gray-border;
 $hr-margin: rem-calc(20) auto;
 
 /// Lists

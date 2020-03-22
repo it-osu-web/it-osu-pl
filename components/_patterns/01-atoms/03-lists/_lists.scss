@@ -1,4 +1,4 @@
-li {
+.list-item {
   margin-bottom: $list-li-margin-bottom;
 }
 
@@ -16,4 +16,11 @@ ol ol ol {
 
 dd {
   margin-bottom: $defnlist-def-margin-bottom;
+}
+
+.field--type-text-long,
+.field--type-text-with-summary {
+  li {
+    @extend .list-item;
+  }
 }
