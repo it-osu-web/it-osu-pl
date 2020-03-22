@@ -1,55 +1,58 @@
-<header role="banner" id="site-header">
+<header role="banner">
   {% include "@organisms/osu-navbar/_osu-navbar.twig" %}
   {% include "@organisms/masthead/_masthead.twig" %}
-  {{ page.header }}
 </header>
 
-{% block primary_menu %}
-<div class="region region--primary_menu">
-  {{ page.primary_menu }}
+<div class="layout__wrapper layout__wrapper--primary-menu clearfix">
+  <div class="layout__inner layout__inner--primary-menu grid-container">
+    {{ page.primary_menu }}
+  </div>
 </div>
-{% endblock %}
 
-{% block hero %}
-<div class="region region--hero">
-  {{ page.hero }}
+<div class="layout__wrapper layout__wrapper--hero clearfix">
+  <div class="layout__inner layout__inner--hero grid-container">
+    {{ page.hero }}
+  </div>
 </div>
-{% endblock %}
 
-{# start layout container #}
+<div class="layout__wrapper layout__wrapper--breadcrumb clearfix">
+  <div class="layout__inner layout__inner--breadcrumb grid-container">
+    {{ page.breadcrumb }}
+  </div>
+</div>
 
-{{ page.breadcrumb }}
+<div class="layout__wrapper layout__wrapper--system clearfix">
+  <div class="layout__inner layout__inner--system grid-container">
+    {{ page.system }}
+  </div>
+</div>
 
-{{ page.highlighted }}
+<div class="layout__wrapper layout__wrapper--main clearfix">
+  <main role="main">
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-{{ page.help }}
+    <div class="grid-container">
+      <div class="main__inner grid-x">
 
-<main role="main">
-  <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+      <div class="content cell auto">
+        {{ page.tabs }}
+        {{ page.content }}
+      </div>
 
-  <div class="layout-content">
-    {{ page.content }}
-  </div>{# /.layout-content #}
+      {% if page.sidebar %}
+        <aside class="sidebar cell auto medium-3" role="complementary">
+          {{ page.sidebar }}
+        </aside>
+      {% endif %}
 
-  {% if page.sidebar_first %}
-    <aside class="layout-sidebar-first" role="complementary">
-      {{ page.sidebar_first }}
-    </aside>
-  {% endif %}
+      </div>
+    </div>
 
-  {% if page.sidebar_second %}
-    <aside class="layout-sidebar-second" role="complementary">
-      {{ page.sidebar_second }}
-    </aside>
-  {% endif %}
+    {{ page.content_after }}
 
-</main>
+  </main>
+</div>
 
-  <footer role="contentinfo">
-  {% if page.footer %}
-    {{ page.footer }}
-  {% endif %}
+<footer role="contentinfo">
   {% include "@organisms/site-footer/_site-footer.twig" %}
-  </footer>
-
-
+</footer>
