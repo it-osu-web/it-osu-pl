@@ -3,9 +3,6 @@
   @include clearfix;
 }
 
-.masthead__inner {
-}
-
 #site-name {
   display: table;
 }
@@ -19,6 +16,11 @@
   display: block;
 }
 
+.site-name__image {
+  max-width: 400px;
+  padding-top: 10px;
+}
+
 #site-logo {
   display: none;
   float: right;
@@ -26,6 +28,12 @@
   @include breakpoint(medium) {
     display: block;
   }
+}
+
+// Needed for the logo to nest under navbar in slim version.
+#osu_navbar {
+  position: relative;
+  z-index: 99;
 }
 
 //mixin for masthead--standard
@@ -115,49 +123,45 @@
     font-size: rem-calc(30);
   }
 
+  .site-name__image {
+    padding-top: 25px;
+    padding-bottom: 15px;
+  }
+
   .site-logo__image {
     height: 90px;
     width: auto;
     border: none;
     box-shadow: 0 1px 6px 0 rgba(49, 49, 49, 0.5);
     float: right;
+    position: relative;
+    margin-top: -1px;
+    z-index: 9;
   }
 }
 
 // apply mixins based on class
-.masthead--standard,
 .masthead--standard.masthead--dk-gray {
   @include masthead-standard;
 }
-
 .masthead--standard.masthead--md-gray {
   @include masthead-standard($gray);
 }
-
 .masthead--standard.masthead--lt-gray {
   @include masthead-standard($near-white, $near-black);
 }
-
 .masthead--standard.masthead--white {
   @include masthead-standard($white, $near-black);
 }
-
-.masthead--slim,
 .masthead--slim.masthead--dk-gray {
   @include masthead-slim;
 }
-
-.masthead--slim,
 .masthead--slim.masthead--md-gray {
   @include masthead-slim($gray);
 }
-
-.masthead--slim,
 .masthead--slim.masthead--lt-gray {
   @include masthead-slim($near-white, $near-black);
 }
-
-.masthead--slim,
 .masthead--slim.masthead--white {
   @include masthead-slim($white, $near-black);
 }
