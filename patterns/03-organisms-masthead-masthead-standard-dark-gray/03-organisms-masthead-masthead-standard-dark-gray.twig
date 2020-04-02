@@ -10,25 +10,34 @@
   <div class="masthead__inner grid-container">
     <div class="grid-x grid-margin-x">
 
+      {# Site Name #}
       {% if masthead_variant == 'slim' %}
         <div id="site-name" class="cell medium-9 large-10">
       {% else %}
         <div id="site-name" class="cell medium-9">
       {% endif %}
 
-          <div class="site-name__inner">
-            {% if site_name_prefix|length %}
-              <span class="site-name__prefix">{{ site_name_prefix }}</span>
-            {% endif %}
+          {% if use_wordmark == 1 %}
+            <div class="site-name__inner">
+              <a class="site-name__link" href="/" title="home" rel="home"><img class="site-name__image" src="{{ base_path ~ directory }}/{{ masthead_wordmark }}" alt="{{ site_name_prefix }} {{ site_name }}" /></a>
+            </div>
+          {% else %}
+            <div class="site-name__inner">
+              {% if site_name_prefix|length %}
+                <span class="site-name__prefix">{{ site_name_prefix }}</span>
+              {% endif %}
 
-            {% if site_name|length > 30 %}
-              <a class="site-name__link site-name__link--long" href="/" title="home" rel="home">{{ site_name }}</a>
-            {% else %}
-              <a class="site-name__link" href="/" title="home" rel="home">{{ site_name }}</a>
-            {% endif %}
-          </div>
+              {% if site_name|length > 30 %}
+                <a class="site-name__link site-name__link--long" href="/" title="home" rel="home">{{ site_name }}</a>
+              {% else %}
+                <a class="site-name__link" href="/" title="home" rel="home">{{ site_name }}</a>
+              {% endif %}
+            </div>
+          {% endif %}
         </div>
 
+
+        {# Site Logo #}
         {% if masthead_variant == 'slim' %}
           <div id="site-logo" class="site-logo--slim cell medium-3 large-2">
             <a class="site-logo__link" href="http://osu.edu" target="_blank"><img class="site-logo__image" src="{{ base_path ~ directory }}/images/osu-logos/block-o/block-o.svg" alt="The Ohio State University" /></a>
