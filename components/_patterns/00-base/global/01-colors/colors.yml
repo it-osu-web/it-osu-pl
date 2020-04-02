@@ -4,15 +4,15 @@ items:
   - name: $white
     value: '#fff'
   - name: $near-white
-    value: '#f2f2f2'
+    value: '#efefef'
   - name: $gray-light
-    value: '#cecece'
+    value: '#c2c2c2'
   - name: $gray
     value: '#666'
   - name: $gray-dark
-    value: '#3d3d3d'
+    value: '#333'
   - name: $near-black
-    value: '#202022'
+    value: '#1e1e1e'
   - name: $black
     value: '#000'
   - name: $red
