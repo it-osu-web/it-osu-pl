@@ -8,10 +8,12 @@ ol {
 
 ol ol {
   list-style-type: lower-alpha;
+  margin-top: 10px;
 }
 
 ol ol ol {
   list-style-type: lower-roman;
+  margin-top: 10px;
 }
 
 dd {
