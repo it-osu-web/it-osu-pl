@@ -1,6 +1,6 @@
 .breadcrumb {
-  @include list-reset;
-  padding: $space-y-half 0 $space-y;
+	@include list-reset;
+	padding: $space-y / 2 0 $space-y;
 }
 
 .breadcrumb__item,
@@ -8,37 +8,37 @@
 .breadcrumb__link:link,
 .breadcrumb__link:visited,
 .breadcrumb__link:focus {
-  color: $gray;
-  font-weight: 400;
-  text-decoration: none;
+	color: $gray;
+	font-weight: 400;
+	text-decoration: none;
 }
 
 .breadcrumb__link:hover {
-  text-decoration: underline;
-  color: $near-black;
+	text-decoration: underline;
+	color: $near-black;
 }
 
 .breadcrumb__item {
-  display: inline-block;
-  font-size: rem-calc(14);
-  font-weight: 400;
+	display: inline-block;
+	font-size: rem-calc(14);
+	font-weight: 400;
 
-  &::after {
-    content: '|';
-    color: $red;
-    font-weight: 700;
-    margin: 0 3px;
-  }
+	&::after {
+		content: '|';
+		color: $red;
+		font-weight: 700;
+		margin: 0 3px;
+	}
 
-  &:last-child {
-    color: $near-black;
+	&:last-child {
+		color: $near-black;
 
-    &::after {
-      content: none;
-    }
-  }
+		&::after {
+			content: none;
+		}
+	}
 }
 
 .breadcrumb_link:active {
-  color: $red;
+	color: $red;
 }
