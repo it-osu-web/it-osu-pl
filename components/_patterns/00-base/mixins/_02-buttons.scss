@@ -1,47 +1,47 @@
 @mixin button-std($bg: $red, $color: $white) {
-  background-color: $bg;
-  color: $color;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.25;
-  text-align: center;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 11px 16px 10px;
-  margin-bottom: 16px;
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
+	background-color: $bg;
+	color: $color;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1.25;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 11px 16px 10px;
+	margin-bottom: 16px;
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
 
-  &:active {
-    background-color: darken($bg, 5%) !important;
-  }
+	&:active {
+		background-color: darken($bg, 5%) !important;
+	}
 
-  &:hover {
-    background-color: lighten($bg, 3%);
-  }
+	&:hover {
+		background-color: lighten($bg, 3%);
+	}
 
-  &:focus {
-    background-color: lighten($bg, 3%);
-    outline: 2px dotted $near-black;
-    outline-offset: 0;
-  }
+	&:focus {
+		background-color: lighten($bg, 3%);
+		outline: 2px dotted $near-black;
+		outline-offset: 0;
+	}
 }
 
 @mixin button-rev($bg: $white, $color: $red) {
-  background-color: $bg;
-  color: $color;
-  border: 1px solid $color;
-  padding: 11px 16px 10px;
+	background-color: $bg;
+	color: $color;
+	border: 1px solid $color;
+	padding: 11px 16px 10px;
 
-  &:active {
-    background-color: darken($color, 5%) !important;
-  }
+	&:active {
+		background-color: darken($color, 5%) !important;
+	}
 
-  &:hover {
-    background-color: $color;
-  }
-  &:focus {
-    background-color: $color;
-  }
+	&:hover {
+		background-color: $color;
+	}
+	&:focus {
+		background-color: $color;
+	}
 }

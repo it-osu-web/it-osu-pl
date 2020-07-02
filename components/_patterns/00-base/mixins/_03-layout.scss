@@ -1,11 +1,11 @@
 // Use the breakout mixin to extend a background color or image edge-to-edge.
 // Even when a parent container has the 'grid-container' class.
 @mixin breakout() {
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
+	margin-left: calc(-50vw + 50%);
+	margin-right: calc(-50vw + 50%);
 }
 
 // Use when internal elements of a breakout should respect the grid-container alignment.
 @mixin breakout-inner() {
-  @extend .grid-container;
+	@extend .grid-container;
 }
