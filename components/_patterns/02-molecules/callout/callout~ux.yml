@@ -1,3 +1,4 @@
-callout_type: ux-tip
+callout_type: ux_tip
 callout_icon: fa-asterisk
-content: 'This is an example of a UX Tip callout for the Resource Center.'
+callout_icon_label: UX Tip
+callout_body: 'This is an example of a UX Tip callout for the TL Resource Center.'
