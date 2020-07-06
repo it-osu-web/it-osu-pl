@@ -1,0 +1,25 @@
+//////////////////////////
+// General Variables
+// Note: colors should go into
+// components/_patterns/00-base/global/01-colors/_color-vars.scss
+// and typography into
+// components/_patterns/00-base/global/typography/_typography.scss
+
+// Base-level spacing.
+$space-y: rem-calc(20);
+$space-x: rem-calc(26);
+
+// Box padding.
+$padding-y: rem-calc(18);
+$padding-x: rem-calc(22);
+$padding-y-bottom: rem-calc(6);
+
+// Grid spacing.
+$grid-margin-after: rem-calc(24);
+
+// Typography spacing.
+$header-margin-bottom: rem-calc(16);
+$header-margin-bottom-narrow: rem-calc(10);
+
+// Shadows.
+$drop-shadow: 0 3px 6px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.2);

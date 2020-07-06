@@ -1,101 +1,101 @@
 @mixin heading(
-  $size: 36,
-  $weight: $header-font-weight,
-  $color: $header-color,
-  $font-family: $header-font-family,
-  $line-height: $header-lineheight,
-  $color-link: inherit,
-  $color-link-hover: $header-color--hover
+	$size: 36,
+	$weight: $header-font-weight,
+	$color: $header-color,
+	$font-family: $header-font-family,
+	$line-height: $header-lineheight,
+	$color-link: inherit,
+	$color-link-hover: $header-color--hover
 ) {
-  font-size: rem-calc($size);
-  font-weight: $weight;
-  color: $color;
-  font-family: $proxima;
-  line-height: $line-height;
-  a,
-  &__link {
-    color: $color-link;
-    text-decoration: none;
-    font-weight: $weight;
+	font-size: rem-calc($size);
+	font-weight: $weight;
+	color: $color;
+	font-family: $proxima;
+	line-height: $line-height;
+	a,
+	&__link {
+		color: $color-link;
+		text-decoration: none;
+		font-weight: $weight;
 
-    &:hover {
-      color: $color-link-hover;
-    }
+		&:hover {
+			color: $color-link-hover;
+		}
 
-    &:focus {
-      outline: 1px dotted $color-link-hover;
-      outline-offset: 2px;
-    }
-  }
+		&:focus {
+			outline: 1px dotted $color-link-hover;
+			outline-offset: 2px;
+		}
+	}
 }
 
 h1,
 .h1 {
-  @include heading(40, 800, $line-height: 1.1);
+	@include heading(40, 800, $line-height: 1.1);
 }
 
 h2,
 .h2 {
-  @include heading(30, 700, $line-height: 1.1);
+	@include heading(30, 700, $line-height: 1.1);
 }
 
 h3,
 .h3 {
-  @include heading(26);
+	@include heading(26);
 }
 
 h4,
 .h4 {
-  @include heading(22);
+	@include heading(22);
 }
 
 h5,
 .h5 {
-  @include heading(20, 400);
+	@include heading(20, 400);
 }
 
 h6,
 .h6 {
-  @include heading(18, 400);
+	@include heading(18, 400);
 }
 
 h1.page-title {
-  margin-top: $space-y;
-  margin-bottom: $space-y-half;
+	margin-top: 0;
+	margin-bottom: $space-y * 1.5;
 }
 
 // Headers within long text.
 .field--type-text-long {
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-top: $space-y-half;
-    margin-bottom: $space-y-half;
-  }
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-top: $space-y * 1.5;
+		margin-bottom: $space-y * 1.5;
+	}
 
-  p ~ h2,
-  p ~ h3,
-  p ~ h4,
-  p ~ h5,
-  p ~ h6 {
-    margin-top: $space-y-plus-half;
-  }
+	p ~ h2,
+	p ~ h3,
+	p ~ h4,
+	p ~ h5,
+	p ~ h6 {
+		margin-top: $space-y * 1.5;
+	}
 
-  ul ~ h2,
-  ul ~ h3,
-  ul ~ h4,
-  ul ~ h5,
-  ul ~ h6 {
-    margin-top: $space-y-plus-half;
-  }
+	ul ~ h2,
+	ul ~ h3,
+	ul ~ h4,
+	ul ~ h5,
+	ul ~ h6 {
+		margin-top: $space-y * 1.5;
+	}
 
-  ol ~ h2,
-  ol ~ h3,
-  ol ~ h4,
-  ol ~ h5,
-  ol ~ h6 {
-    margin-top: $space-y-plus-half;
-  }
+	ol ~ h2,
+	ol ~ h3,
+	ol ~ h4,
+	ol ~ h5,
+	ol ~ h6 {
+		margin-top: $space-y * 1.5;
+	}
 }

@@ -1,62 +1,62 @@
 input {
-  margin-bottom: 0 !important;
+	margin-bottom: 0 !important;
 }
 
 legend {
-  font-weight: 600;
+	font-weight: 600;
 }
 
 .label {
-  background: none;
-  color: inherit;
-  padding: 0;
-  font-size: inherit;
+	background: none;
+	color: inherit;
+	padding: 0;
+	font-size: inherit;
 }
 
 .form-item label {
-  @extend .form-item__label;
+	@extend .form-item__label;
 }
 
 .form-item {
-  max-width: none;
+	max-width: none;
 }
 
 .form-fieldset {
-  border: 0;
-  margin: 2em 0 1em;
-  padding: 1em 1.5em;
-  background-color: $near-white;
+	border: 0;
+	margin: 2em 0 1em;
+	padding: 1em 1.5em;
+	background-color: $near-white;
 
-  legend {
-    text-transform: uppercase;
-  }
+	legend {
+		text-transform: uppercase;
+	}
 
-  .button {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-  }
+	.button {
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
+	}
 }
 
 //reusable classes
 .form-options-list {
-  line-height: 160%;
+	line-height: 160%;
 
-  li {
-    margin-bottom: $space-y-quarter;
+	li {
+		margin-bottom: $space-y / 4;
 
-    label {
-      font-weight: 400;
-    }
-  }
+		label {
+			font-weight: 400;
+		}
+	}
 
-  input {
-    margin: 0 4px 0 1px;
-  }
+	input {
+		margin: 0 4px 0 1px;
+	}
 }
 
 // If in PL
 .sg-main {
-  .form-fieldset {
-    max-width: 600px;
-  }
+	.form-fieldset {
+		max-width: 600px;
+	}
 }

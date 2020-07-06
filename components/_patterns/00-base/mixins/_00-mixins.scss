@@ -1,13 +1,45 @@
-// General Mixins
+// Global Mixins
+// Links, buttons, and layout mixins have their own partials.
+// In some cases, component-specific mixins may live within components.
 
-/// Mixin - Clearfix.
-/// Adds clearfix based on http://bourbon.io/docs/#clearfix
-/// use example =   @include cleafix
-
+// Mixin - Clearfix.
+// Adds clearfix based on http://bourbon.io/docs/#clearfix
 @mixin clearfix {
-  &::after {
-    clear: both;
-    content: '';
-    display: table;
-  }
+	&::after {
+		clear: both;
+		content: '';
+		display: table;
+	}
+}
+
+// Reset list item defaults when no margin, padding, list styles needed
+@mixin list-reset {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+// Hide only visually, but have it available for screenreaders: h5bp.com/v
+@mixin visually-hidden($focusable: false) {
+	border: 0 !important;
+	clip: rect(0 0 0 0) !important;
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	// Extends the `visually-hidden` class to allow the element to be focusable
+	// when navigated to via the keyboard: h5bp.com/p
+	@if $focusable == true {
+		&:active,
+		&:focus {
+			clip: auto !important;
+			height: auto !important;
+			margin: 0 !important;
+			overflow: visible !important;
+			position: static !important;
+			width: auto !important;
+		}
+	}
 }

@@ -1,49 +1,52 @@
 @mixin callout($color: $gray) {
-  border: 1px solid $color;
-  margin: 2em 0.625em;
-  padding: 0;
-  display: flex;
-  align-items: stretch;
+	border: 1px solid $color;
+	margin: 2em 0;
+	padding: 0;
+	display: flex;
+	align-items: stretch;
 
-  .callout__icon {
-    float: left;
-    background: $color;
-    color: white;
-    text-align: center;
-    display: flex;
-    align-items: center;
-  }
+	.callout__icon {
+		float: left;
+		background: $color;
+		color: white;
+		text-align: center;
+		display: flex;
+		align-items: center;
+	}
 
-  .svg-inline--fa {
-    font-size: 1.5em;
-    margin: 0 0.5em;
+	.svg-inline--fa {
+		font-size: 1.5em;
+		margin: 0 0.5em;
 
-    &.fa-exclamation {
-      font-size: 1.625em;
-      margin: 0 0.6875em;
-    }
-  }
+		&.fa-exclamation {
+			font-size: 1.625em;
+			margin: 0 0.6875em;
+		}
+	}
 
-  .callout__body {
-    margin: 1em 1.25em 1em 1.5em;
-    line-height: 1.4;
-  }
+	.callout__body {
+		margin: 1em 1.25em 1em 1.5em;
+		line-height: 1.4;
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
 }
 
 .callout {
-  @include callout();
+	@include callout();
 }
 
-.callout--caution {
-  @include callout($orange);
+.callout--caution,
+.callout--critical_note {
+	@include callout($orange);
 }
 
-.callout--ux-tip {
-  @include callout($violet);
+.callout--helpful_note {
+	@include callout($teal);
 }
 
-.callout {
-  p:last-child {
-    margin-bottom: 0;
-  }
+.callout--ux_tip {
+	@include callout($violet);
 }
