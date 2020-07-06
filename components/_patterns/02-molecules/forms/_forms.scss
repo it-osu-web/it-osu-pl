@@ -32,8 +32,13 @@ legend {
 	}
 
 	.button {
-		margin-top: 0.5em;
-		margin-bottom: 0.5em;
+		margin-top: rem-calc(20);
+		margin-bottom: rem-calc(5);
+		margin-right: rem-calc(10);
+
+		&:last-child {
+			margin-right: 0;
+		}
 	}
 }
 
