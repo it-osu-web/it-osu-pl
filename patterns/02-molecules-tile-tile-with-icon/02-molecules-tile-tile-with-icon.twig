@@ -39,7 +39,8 @@
 <a href="{{ tile_link }}" class="{{ tile_classes }} {{ tile_extra_classes }}">
 	{% if tile_icon %}
 		<div class="tile__icon">
-			<img src="{{ tile_icon }}" alt="{{ tile_icon_alt }}"/>
+			<img src="{{ base_path }}/images/{{ tile_icon }}" alt="{{ tile_icon_alt }}"/>
+
 		</div>
 	{% endif %}
 	<div class="tile__title">
