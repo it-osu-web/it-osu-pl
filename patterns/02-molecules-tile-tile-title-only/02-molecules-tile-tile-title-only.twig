@@ -12,42 +12,51 @@
 {% set tile_base_class = tile_base_class|default('tile') %}
 {% set classes_array = [tile_base_class] %}
 
-{% if (tile_modifiers is defined) or (tile_icon is defined)  %}
 
-  {% if tile_icon is defined %}
-    {% set classes_array = classes_array|merge(["#{tile_base_class}--with-icon"]) %}
-  {% endif %}
+{% if (tile_modifiers is defined) or (tile_icon is defined) or (tile_text is null) %}
 
-  {% if tile_modifiers is defined %}
-    {% for tile_modifier in tile_modifiers %}
-      {% set classes_array = classes_array|merge(["#{tile_base_class}--#{tile_modifier}"]) %}
-    {% endfor %}
-  {% endif %}
+	{% if tile_icon is defined %}
+		{% set classes_array = classes_array|merge(["#{tile_base_class}--with-icon"]) %}
+	{% endif %}
 
-  {% set tile_classes = classes_array|join(' ') %}
+	{% if tile_modifiers is defined %}
+		{% for tile_modifier in tile_modifiers %}
+			{% set classes_array = classes_array|merge(["#{tile_base_class}--#{tile_modifier}"]) %}
+		{% endfor %}
+	{% endif %}
+
+	{% if tile_text is null %}
+		{% set classes_array = classes_array|merge(["#{tile_base_class}--title-only"]) %}
+	{% endif %}
+
+	{% set tile_classes = classes_array|join(' ') %}
 
 {% else %}
-  {% set tile_classes = tile_base_class %}
+	{% set tile_classes = tile_base_class %}
 {% endif %}
 
 
 <a href="{{ tile_link }}" class="{{ tile_classes }} {{ tile_extra_classes }}">
-  {% if tile_icon %}
-    <div class="tile__icon">
-      <img src="{{ tile_icon }}" alt="{{ tile_icon_alt }}" />
-    </div>
-  {% endif %}
-  <div class="tile__title">
-    {% include "@atoms/00-text/00-headings/_heading.twig" with {
-      "heading_level": tile_heading_level|default(2),
-      "heading": tile_title,
-    } %}
-  </div>
-  {% if tile_text %}
-    <div class="tile__body">
-      {% include "@atoms/00-text/04-paragraph/paragraph.twig" with {
+	{% if tile_icon %}
+		<div class="tile__icon">
+			<img src="{{ tile_icon }}" alt="{{ tile_icon_alt }}"/>
+		</div>
+	{% endif %}
+	<div class="tile__title">
+		{% if tile_heading_level == 0 %}
+			{{ tile_title }}
+		{% else %}
+			{% include "@atoms/00-text/00-headings/_heading.twig" with {
+        "heading_level": tile_heading_level|default(2),
+        "heading": tile_title,
+      } %}
+		{% endif %}
+	</div>
+	{% if tile_text %}
+		<div class="tile__body">
+			{% include "@atoms/00-text/04-paragraph/paragraph.twig" with {
         "paragraph_content": tile_text,
       } %}
-    </div>
-  {% endif %}
+		</div>
+	{% endif %}
 </a>
