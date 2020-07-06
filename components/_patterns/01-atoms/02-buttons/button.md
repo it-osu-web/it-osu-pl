@@ -1,7 +1,11 @@
 ---
-el: ".button"
-title: "Button"
+el: '.button'
+title: 'Button'
 ---
+
 ## Button Styling
 
-Default button styling with alternative variations - use mixins in `_buttons.scss`.
+Default button styling with alternative variations - use mixin in `_buttons.scss`.
+
+- style options: std = standard, rev = reverse
+- size options: std = standard, lg = large
