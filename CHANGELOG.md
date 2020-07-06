@@ -3,7 +3,8 @@
 All notable changes to this project will be documented in this file (beginning July 2020).
 
 ## [Unreleased]
-- Various small and medium changes ported back from Drupal themes including: 
+
+- Various small and medium changes ported back from Drupal themes including:
   - Restructure 00-base directory items.
   - Simplify spacing variables.
   - Clean up cards, info boxes, and tiles.
@@ -11,7 +12,7 @@ All notable changes to this project will be documented in this file (beginning J
   - Standardize callouts.
   - Slightly adjust details styles.
   - Adjust list styles; remove reliance on `list-item` class.
-
+- Adjust button and button-like styles — including `more-link` and pagers.
 
 ## [0.1.0] - 2019-06-04
 
