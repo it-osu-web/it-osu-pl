@@ -169,9 +169,9 @@ $list-lineheight: $paragraph-lineheight;
 $list-margin-bottom: $paragraph-margin-bottom;
 $list-style-type: disc;
 $list-style-position: outside;
-$list-side-margin: 1rem;
-$list-nested-side-margin: 2rem;
-$list-li-margin-bottom: rem-calc(10); // it-osu variable.
+$list-side-margin: rem-calc(40);
+$list-nested-side-margin: rem-calc(30);
+$list-li-margin-bottom: rem-calc(8); // it-osu variable.
 $defnlist-margin-bottom: 1rem;
 $defnlist-term-weight: $global-weight-bold;
 $defnlist-term-margin-bottom: 0;

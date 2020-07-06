@@ -1,28 +1,30 @@
-.list-item {
-  margin-bottom: $list-li-margin-bottom;
+li {
+	margin-bottom: $list-li-margin-bottom;
 }
 
+ul ul {
+
+}
+
+ul ul li {
+	margin-top: $list-li-margin-bottom;
+}
+
+
 ol {
-  list-style-type: decimal;
+	list-style-type: decimal;
 }
 
 ol ol {
-  list-style-type: lower-alpha;
-  margin-top: 10px;
+	list-style-type: lower-alpha;
+	margin-top: 10px;
 }
 
 ol ol ol {
-  list-style-type: lower-roman;
-  margin-top: 10px;
+	list-style-type: lower-roman;
+	margin-top: 10px;
 }
 
 dd {
-  margin-bottom: $defnlist-def-margin-bottom;
-}
-
-.field--type-text-long,
-.field--type-text-with-summary {
-  li {
-    @extend .list-item;
-  }
+	margin-bottom: $defnlist-def-margin-bottom;
 }
