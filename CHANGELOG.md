@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file (beginning J
   - Slightly adjust details styles.
   - Adjust list styles; remove reliance on `list-item` class.
 - Adjust button and button-like styles — including `more-link` and pagers.
+- Adjust Main Menu to accomodate longer items.
 
 ## [0.1.0] - 2019-06-04
 
