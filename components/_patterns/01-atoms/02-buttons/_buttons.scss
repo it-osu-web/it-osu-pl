@@ -22,10 +22,10 @@
 		}
 
 		&:focus {
-			background-color: white;
-			color: $color;
-			border: 2px dotted $near-black;
-			outline: none;
+			background-color: $color;
+			color: $white;
+			border: none;
+			outline: 2px dotted $near-black;
 		}
 	}
 

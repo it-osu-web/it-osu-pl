@@ -17,7 +17,8 @@
 		}
 
 		&:focus {
-			border: none;
+			background: $red;
+			color: $white;
 			outline: 2px dotted $near-black;
 			outline-offset: 0;
 		}
