@@ -5,7 +5,7 @@ tile_data:
     tile_extra_classes: 'cell auto'
     tile_title: 'Box 1'
     heading_level: 3
-    tile_icon: '/images/upload-red.png'
+    tile_icon: 'upload-red.png'
     tile_icon_alt: ' '
     tile_link: '#'
     tile_text: 'Forage tote bag four dollar toast, drinking vinegar brunch farm-to-table taxidermy.'
@@ -13,7 +13,7 @@ tile_data:
     tile_extra_classes: 'cell auto'
     tile_title: 'Box 2'
     heading_level: 3
-    tile_icon: '/images/upload-red.png'
+    tile_icon: 'upload-red.png'
     tile_icon_alt: ' '
     tile_link: '#'
     tile_text: 'Blog leggings, palo santo taxidermy photo booth small batch austin.'
@@ -21,7 +21,7 @@ tile_data:
     tile_extra_classes: 'cell auto'
     tile_title: 'Box 3'
     heading_level: 3
-    tile_icon: '/images/upload-red.png'
+    tile_icon: 'upload-red.png'
     tile_icon_alt: ' '
     tile_link: '#'
     tile_text: 'Vexillologist etsy pug, tilde subway tile cornhole aesthetic.'
@@ -29,7 +29,7 @@ tile_data:
     tile_extra_classes: 'cell auto'
     tile_title: 'Box 4'
     heading_level: 3
-    tile_icon: '/images/upload-red.png'
+    tile_icon: 'upload-red.png'
     tile_icon_alt: ' '
     tile_link: '#'
     tile_text: 'Flannel YOLO swag kale chips bespoke, coloring book ethical bitters.'
