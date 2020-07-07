@@ -1,5 +1,4 @@
 // Global Mixins
-// Links, buttons, and layout mixins have their own partials.
 // In some cases, component-specific mixins may live within components.
 
 // Mixin - Clearfix.
@@ -19,7 +18,7 @@
 	padding: 0;
 }
 
-// Hide only visually, but have it available for screenreaders: h5bp.com/v
+// Hide only visually, but have it available for screenreaders.
 @mixin visually-hidden($focusable: false) {
 	border: 0 !important;
 	clip: rect(0 0 0 0) !important;
@@ -30,7 +29,7 @@
 	position: absolute !important;
 	width: 1px !important;
 	// Extends the `visually-hidden` class to allow the element to be focusable
-	// when navigated to via the keyboard: h5bp.com/p
+	// when navigated to via the keyboard.
 	@if $focusable == true {
 		&:active,
 		&:focus {
@@ -42,4 +41,16 @@
 			width: auto !important;
 		}
 	}
+}
+
+// Use the breakout mixin to extend a background color or image edge-to-edge.
+// Even when a parent container has the 'grid-container' class.
+@mixin breakout() {
+	margin-left: calc(-50vw + 50%);
+	margin-right: calc(-50vw + 50%);
+}
+
+// Use when internal elements of a breakout should respect the grid-container alignment.
+@mixin breakout-inner() {
+	@extend .grid-container;
 }

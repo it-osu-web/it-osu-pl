@@ -22,7 +22,7 @@ The gulp default task includes initial PL site generation, regeneration as neces
 
 ## Contributing to this project
 
-Never commit directly to the `develop` or `master` branches. All contributions should be added via pull requests. We will be using the [git-flow](https://danielkummer.github.io/git-flow-cheatsheet/) branching model. This requires a one-time [setup](https://danielkummer.github.io/git-flow-cheatsheet/#setup) on your machine. And a one-time initialization of your local repo. Run `git flow init` within the root directory of the repo and accept all defaults during the init process.
+Never commit directly to the `master` branch. All contributions should be added via pull requests. We will be following the [GitHub Flow](https://guides.github.com/introduction/flow/) branching model.
 
 Be sure to work from the repo's [issue queue](https://github.com/it-osu-web/it-osu-pl/issues). If you plan to work on something that doesn't already have an issue, create one and assign it to yourself.
 
@@ -30,13 +30,15 @@ Be granular with features and avoid scope creep. For example, if you are working
 
 ### Starting a new feature
 
-From the develop branch run `git flow feature start [featurename]`. This action creates a new feature branch based on 'develop' and switches to it. Publish your local branch. Do all of your work on this branch, making as many commits as necessary.
+Create a new branch from `master`. Your branch name should be descriptive (e.g., refactor-buttons, book-nav-pattern, image-documentation, etc...), so that others can quickly see what is being worked on. If the branch was created locally, be sure to publish it, so that others can see your work in progress. Do all of your work on this branch, making as many commits as necessary. If any new changes have happened on the `master` branch since you originally created your branch, be sure to merge them in and test before finishing your feature.
 
 ### Finishing a feature
 
-Do not finish a feature yourself via git flow. When you are finished with a feature, create a pull request from your feature branch via the github web interface. Be sure to reference corresponding issues in the pull request. The feature will be finished by the repository admin when the pull request is accepted. You may then delete your local version of the feature branch.
+When you are finished with a feature, create a pull request from your feature branch via the github web interface. Be sure to reference corresponding issues in the pull request description by using a [supported keyword](https://docs.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword). For example: `closes #99` would close out issue #99 when the pull request is merged.
 
-If the pull request is not accepted and requires additional work, you may continue to work from the branch. The pull request will remain open. You can request another review once the updates have been made.
+If the pull request is not accepted immediately and requires additional work, you may continue to work from the branch. The pull request will remain open. You can request another review once the updates have been made. You may delete your local version of the feature branch when the pull request has been merged.
+
+If you are working on multiple related features, you may choose to create a draft pull request and then submit it for review after all parts are ready.
 
 ### Creating, tagging, and assigning issues
 
@@ -132,9 +134,24 @@ Patterns are divided into categories that progressively become more complex. Thi
 | Templates | Page-level objects that organize patterns into a layout and provide context and content structure.                          |
 | Pages     | Specific instances of templates (page prototypes) that show what a UI looks like with real representative content in place. |
 
-### Mixins and Reusable Classes
+### Global Mixins
 
-Coming soon.
+| Mixin                                                                                         | Description                                                                                                                             |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `breakout()`                                                                                  | Use the breakout mixin to extend a background color or image edge-to-edge, even when a parent container has the `grid-container` class. |
+| `breakout-inner()`                                                                            | Use when internal elements of a breakout should respect the grid-container alignment.                                                   |
+| `button($color, $style, $size)`                                                               | Use to easily create button styles. Style options: std = standard, rev = reverse. Size options: std = standard, lg = large.             |
+| `clearfix()`                                                                                  | Adds clearfix.                                                                                                                          |
+| `heading($size, $weight, $color, $font-family, $line-height, $color-link, $color-link-hover)` | Use to easily create heading styles.                                                                                                    |
+| `list-reset()`                                                                                | Sets list-style to none, sets margin and padding to 0.                                                                                  |
+| `transition($transition-property, $transition-time, $method)`                                 | Browser-agnostic animations.                                                                                                            |
+| `visually-hidden($focusable: false)`                                                          | Hides visually, but still available for screenreaders. `$focusable: true` = allows the element to be focusable.                         |
+
+### Helper Classes
+
+| Class             | Description                                              |
+| ----------------- | -------------------------------------------------------- |
+| `visually-hidden` | Calls the visually-hidden mixin with `$focusable: false` |
 
 ### Use BEM methodology when possible
 
