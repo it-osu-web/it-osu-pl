@@ -1,74 +1,55 @@
 //footer layout
-#site-footer {
+.site-footer {
   padding: 1.5em 0;
 }
 
-.site-footer__inner {
-  @include wrapper;
+.site-footer__social-media {
+  margin-bottom: 1.75em;
 }
 
-#address-block {
-  padding-bottom: 1em;
-}
-
-#social-media-block {
-  padding: 0.5em 0;
-}
-
-#footer-text-block {
-  clear: both;
-  padding-top: 1em;
-  font-size: 0.875em;
-  line-height: 1.5;
+.site-footer__address-block {
+  margin-bottom: 1.5em;
 }
 
 //layout after large breakpoint
-@include large {
-  #address-block {
-    float: left;
-    width: 60%;
-  }
-
-  #social-media-block {
+@include breakpoint(large) {
+  .site-footer__social-media {
     float: right;
-    width: 35%;
-    margin-top: -0.65em;
-    margin-right: -0.7em;
-  }
-
-  .social-media__list {
-    text-align: right;
-  }
-
-  #footer-text-block {
-    width: 80%;
   }
 }
 
 //footer text
 .footer-text {
   line-height: 125%;
+  font-size: 0.875rem;
+}
+
+.site-footer__ada-statement,
+.site-footer__footer-text {
+  @extend .footer-text;
 }
 
 //footer login
-.footer-login-link {
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  text-decoration: none;
-  display: block;
-  padding-top: $space-one-half;
-}
+.site-footer__login-link {
+  margin-top: 2em;
 
-.footer-login-link:hover {
-  text-decoration: underline;
+  a {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 //mixin for colors
 @mixin footer(
-  $bg-color: $gray-darkest,
+  $bg-color: $near-black,
   $text-color: $white,
-  $link-hover: $gray-lighter,
-  $pipe-color: $gray-lighter
+  $link-hover: $gray-light,
+  $pipe-color: $gray-light
 ) {
   background: $bg-color;
   color: $text-color;
@@ -90,8 +71,8 @@
   }
 }
 
-#site-footer,
-#site-footer.dk-gray {
+.site-footer,
+.site-footer--dk-gray {
   @include footer;
 
   .social-media__item a:focus {
@@ -99,18 +80,18 @@
   }
 }
 
-#site-footer.md-gray {
-  @include footer($gray, $white, $gray-lightest, $gray-lightest);
+.site-footer--md-gray {
+  @include footer($gray, $white, $near-white, $near-white);
 
   .social-media__item a {
-    border: 1px solid $gray-lighter;
+    border: 1px solid $gray-light;
   }
 }
 
-#site-footer.lt-gray {
-  @include footer($gray-lightest, $gray-darker, $red, $red);
+.site-footer--lt-gray {
+  @include footer($near-white, $near-black, $red, $red);
 }
 
-#site-footer.white {
-  @include footer($white, $gray-dark, $red, $red);
+.site-footer--white {
+  @include footer($white, $near-black, $red, $red);
 }

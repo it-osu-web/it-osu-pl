@@ -1,11 +1,12 @@
 # IT@OSU Pattern Lab
 
+A pattern library for IT@OSU (OCIO/ODEE at The Ohio State University) websites and applications. It uses the [Pattern Lab Standard Edition for Twig](https://github.com/pattern-lab/edition-php-twig-standard) and incorporates many elements from [Foundation v6](https://get.foundation/), including the [XY Grid](https://get.foundation/sites/docs/xy-grid.html).
+
 ## Requirements
 
 1.  [PHP 7.1](http://www.php.net/)
 2.  [Node + NPM](https://nodejs.org/en/)
-3.  [Gulp](http://gulpjs.com/) (Install globally)
-4.  [Composer](https://getcomposer.org/)
+3.  [Composer](https://getcomposer.org/)
 
 ## Installation and Local Development Setup
 
@@ -13,7 +14,7 @@
 2. Navigate to repo directory
 3. Run `composer install`
 4. Run `npm install`
-5. Run `gulp`
+5. Run `npm run gulp`
 
 ## Gulp default task
 
@@ -21,7 +22,7 @@ The gulp default task includes initial PL site generation, regeneration as neces
 
 ## Contributing to this project
 
-Never commit directly to the `develop` or `master` branches. All contributions should be added via pull requests. We will be using the [git-flow](https://danielkummer.github.io/git-flow-cheatsheet/) branching model. This requires a one-time [setup](https://danielkummer.github.io/git-flow-cheatsheet/#setup) on your machine. And a one-time initialization of your local repo. Run `git flow init` within the root directory of the repo and accept all defaults during the init process.
+Never commit directly to the `master` branch. All contributions should be added via pull requests. We will be following the [GitHub Flow](https://guides.github.com/introduction/flow/) branching model.
 
 Be sure to work from the repo's [issue queue](https://github.com/it-osu-web/it-osu-pl/issues). If you plan to work on something that doesn't already have an issue, create one and assign it to yourself.
 
@@ -29,17 +30,24 @@ Be granular with features and avoid scope creep. For example, if you are working
 
 ### Starting a new feature
 
-From the develop branch run `git flow feature start [featurename]`. This action creates a new feature branch based on 'develop' and switches to it. Publish your local branch. Do all of your work on this branch, making as many commits as necessary.
+Create a new branch from `master`. Your branch name should be descriptive (e.g., refactor-buttons, book-nav-pattern, image-documentation, etc...), so that others can quickly see what is being worked on. If the branch was created locally, be sure to publish it, so that others can see your work in progress. Do all of your work on this branch, making as many commits as necessary. If any new changes have happened on the `master` branch since you originally created your branch, be sure to merge them in and test before finishing your feature.
 
 ### Finishing a feature
 
-Do not finish a feature yourself via git flow. When you are finished with a feature, create a pull request from your feature branch via the github web interface. Be sure to reference corresponding issues in the pull request. The feature will be finished by the repository admin when the pull request is accepted. You may then delete your local version of the feature branch.
+When you are finished with a feature, create a pull request from your feature branch via the github web interface. Be sure to reference corresponding issues in the pull request description by using a [supported keyword](https://docs.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword). For example: `closes #99` would close out issue #99 when the pull request is merged.
 
-If the pull request is not accepted and requires additional work, you may continue to work from the branch. The pull request will remain open. You can request another review once the updates have been made.
+If the pull request is not accepted immediately and requires additional work, you may continue to work from the branch. The pull request will remain open. You can request another review once the updates have been made. You may delete your local version of the feature branch when the pull request has been merged.
+
+If you are working on multiple related features, you may choose to create a draft pull request and then submit it for review after all parts are ready.
 
 ### Creating, tagging, and assigning issues
 
 As you identify bugs, tasks, feature requests, or other issues, please add them to the [issue queue](https://github.com/it-osu-web/it-osu-pl/issues) and tag them appropriately. If a task needs to be worked on by a specific person, assign it to them, otherwise leave it unassigned.
+
+### Other ways to contribute
+
+- If you are not comfortable building out patterns yourself, or if you have an idea but do not know how to build it, create an issue and provide mockups or other info to help a developer build out the pattern.
+- Identify missing patterns, missing documentation, style improvements, accessibility concerns, bugs, or other issues and add an appropriate item to the issue queue.
 
 ## Working on patterns
 
@@ -126,8 +134,66 @@ Patterns are divided into categories that progressively become more complex. Thi
 | Templates | Page-level objects that organize patterns into a layout and provide context and content structure.                          |
 | Pages     | Specific instances of templates (page prototypes) that show what a UI looks like with real representative content in place. |
 
+### Global Mixins
+
+| Mixin                                                                                         | Description                                                                                                                             |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `breakout()`                                                                                  | Use the breakout mixin to extend a background color or image edge-to-edge, even when a parent container has the `grid-container` class. |
+| `breakout-inner()`                                                                            | Use when internal elements of a breakout should respect the grid-container alignment.                                                   |
+| `button($color, $style, $size)`                                                               | Use to easily create button styles. Style options: std = standard, rev = reverse. Size options: std = standard, lg = large.             |
+| `clearfix()`                                                                                  | Adds clearfix.                                                                                                                          |
+| `heading($size, $weight, $color, $font-family, $line-height, $color-link, $color-link-hover)` | Use to easily create heading styles.                                                                                                    |
+| `list-reset()`                                                                                | Sets list-style to none, sets margin and padding to 0.                                                                                  |
+| `transition($transition-property, $transition-time, $method)`                                 | Browser-agnostic animations.                                                                                                            |
+| `visually-hidden($focusable: false)`                                                          | Hides visually, but still available for screenreaders. `$focusable: true` = allows the element to be focusable.                         |
+
+### Helper Classes
+
+| Class             | Description                                              |
+| ----------------- | -------------------------------------------------------- |
+| `visually-hidden` | Calls the visually-hidden mixin with `$focusable: false` |
+
 ### Use BEM methodology when possible
 
-- Here's the details: [Methodology / BEM](https://en.bem.info/methodology/)
+- A great intro to BEM: [BEM will make you happy](https://medium.com/@basterrika/bem-will-make-you-happy-ab0d0a821226)
+- Here's the full details: [Methodology / BEM](https://en.bem.info/methodology/)
 - We don't have to be super strict about it right now, but let's do what we can.
 - Provide options to accept modifiers as variables on lower-level (Atoms, Molecules) patterns. See `components/_patterns/01-atoms/00-text/04-paragraph/paragraph.twig` for a good example of how to do that.
+
+### Twig Resources
+
+- [Official Documentation](https://twig.symfony.com/doc/2.x/templates.html)
+
+### Foundation Use and Resources
+
+Foundation was initially added to this project because of its XY Grid, but we are finding it to be useful in other areas and will gradually be integrating more facets of it into this project.
+
+Before creating a new pattern, check [Foundation's documentation](https://get.foundation/sites/docs/index.html) to determine if it has a built-in component that could be used as a starting point.
+
+Along those same lines, when styling a pattern, be sure to look at `_settings.scss` first to determine if defaults can be changed in that file, before adding additional css rules within your pattern.
+
+There are certain items that you should always rely on Foundation for. They are as as follows:
+
+- XY Grid
+- Breakpoints
+- `rem-calc()` function
+
+We are also explicitly not using certain aspects of Foundation for various reasons such as already having legacy code, custom-designed implementations, or other reasons. These patterns are as follows:
+
+- Primary Menu
+- Buttons
+- Breadcrumbs
+- Pagers (looking at possible conversion)
+- Tables (looking at possible conversion)
+- Headers (partially uses Foundation settings)
+- Form elements (looking at possible conversion)
+- Images (looking at possible conversion)
+- Callouts (looking at possible conversion)
+- Cards (looking at possible conversion)
+- Spacing Standards (will likely convert)
+
+#### Foundation Documentation
+
+- [Foundation for Sites](https://get.foundation/sites/docs/index.html)
+- [XY Grid](https://get.foundation/sites/docs/xy-grid.html)
+- [rem-calc](https://get.foundation/sites/docs/sass-functions.html#rem-calc)

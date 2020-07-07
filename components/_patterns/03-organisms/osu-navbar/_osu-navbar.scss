@@ -1,6 +1,6 @@
 @mixin osu-navbar(
-  $bg-color: $gray-lightest,
-  $text-color: $gray-darker,
+  $bg-color: $near-white,
+  $text-color: $gray-dark,
   $image-src: '/images/'
 ) {
   background: $bg-color;
@@ -8,10 +8,6 @@
   border-bottom: 5px solid $red;
 
   @include clearfix;
-
-  .navbar__inner {
-    @include wrapper;
-  }
 
   p {
     font-size: 13px;
@@ -59,7 +55,7 @@
           float: left;
           margin-right: 0.5em;
 
-          @include large {
+          @include breakpoint(large) {
             margin-right: 1.2em;
           }
 
@@ -77,7 +73,7 @@
             color: $text-color;
             text-decoration: none;
 
-            @include large {
+            @include breakpoint(large) {
               text-indent: 0;
               width: auto;
               background: none !important;
@@ -146,5 +142,5 @@
 }
 
 #osu_navbar.dark {
-  @include osu-navbar($gray-darker, $white, '/images/white/');
+  @include osu-navbar(#2e2e2e, $white, '/images/white/');
 }

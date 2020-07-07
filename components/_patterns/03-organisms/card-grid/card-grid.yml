@@ -1,0 +1,57 @@
+card_data:
+  1:
+    card_image: https://placeimg.com/640/480/animals
+    card_title: First Card
+    card_text: |-
+      Maybe you'll want more text here.
+      A few lines or so?
+    card_button_content: Card Button
+    card_button_url: '#'
+  2:
+    card_image: https://placeimg.com/640/480/animals
+    card_title: Second Card
+    card_text: |-
+      Maybe you'll want more text here.
+      A few lines or so?
+    card_button_content: Card Button
+    card_button_url: '#'
+  3:
+    card_image: https://placeimg.com/640/480/animals
+    card_title: Third Card
+    card_text: |-
+      Maybe you'll want more text here.
+      A few lines or so?
+    card_button_content: Card Button
+    card_button_url: '#'
+  4:
+    card_image: https://placeimg.com/640/480/animals
+    card_title: Fourth Card
+    card_text: |-
+      Maybe you'll want more text here.
+      A few lines or so?
+    card_button_content: Card Button
+    card_button_url: '#'
+  5:
+    card_image: https://placeimg.com/640/480/animals
+    card_title: Fifth Card
+    card_text: |-
+      Maybe you'll want more text here.
+      A few lines or so?
+    card_button_content: Card Button
+    card_button_url: '#'
+  6:
+    card_image: https://placeimg.com/640/480/animals
+    card_title: Sixth Card
+    card_text: |-
+      Maybe you'll want more text here.
+      A few lines or so?
+    card_button_content: Card Button
+    card_button_url: '#'
+  7:
+    card_image: https://placeimg.com/640/480/animals
+    card_title: Seventh Card
+    card_text: |-
+      Maybe you'll want more text here.
+      A few lines or so?
+    card_button_content: Card Button
+    card_button_url: '#'

@@ -1,0 +1,6 @@
+link_modifiers:
+link_attributes:
+  target: _blank
+  href: '#'
+link_url: '#'
+link_content: 'This is my link text'

@@ -1,0 +1,14 @@
+{% if not attributes %}
+<div class="form-item form-item--checkbox">
+  <legend>Options as Checkboxes</legend>
+  <ul class="form-item--checkboxes">
+{% endif %}
+      {% for key, listItem in listItems.four %}
+        {% include "@atoms/05-form-elements/checkbox/_checkbox-item.twig" with {
+          "checkbox_item": listItem.title
+        } %}
+      {% endfor %}
+{% if not attributes %}
+  </ul>
+</div>
+{% endif %}

@@ -1,7 +1,7 @@
 $statuses: (
-  'status': $teal,
-  'warning': $orange-dark,
-  'error': $violet,
+  'status': $success-color,
+  'warning': $warning-color,
+  'error': $alert-color,
 ) !default;
 
 @each $status-type, $color in $statuses {
@@ -9,13 +9,13 @@ $statuses: (
     background: $color;
     color: $white;
     font-size: 1rem;
+    font-weight: 600;
     display: block;
     margin-bottom: 2em;
     padding: 1.5em;
-    border-radius: 6px;
 
     a {
-      color: $gray-lighter;
+      color: $gray-light;
       font-weight: 600;
       text-decoration: underline;
 
@@ -23,6 +23,11 @@ $statuses: (
       &:hover {
         color: $white;
       }
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
     }
 
     .icon {

@@ -1,0 +1,45 @@
+/* Styling for the text areas */
+
+.form-item__textfield {
+  border: 1px solid $gray-light;
+  padding: 0.625em 1em;
+  margin-bottom: 1em;
+  font-size: rem-calc(14);
+  line-height: 1.5;
+  width: 100%;
+
+  &:focus {
+    border: 2px solid $gray;
+    outline: none;
+  }
+
+  &.has-placeholder {
+    &:not(:placeholder-shown):invalid {
+      border: 2px solid $red;
+    }
+
+    &:not(:placeholder-shown):valid {
+      border: 2px solid $teal;
+    }
+  }
+
+  &::-webkit-input-placeholder {
+    color: $gray;
+  }
+
+  &:-moz-placeholder {
+    color: $gray;
+  }
+
+  &::-moz-placeholder {
+    color: $gray;
+  }
+
+  &:-ms-input-placeholder {
+    color: $gray;
+  }
+
+  &:-moz-ui-invalid {
+    box-shadow: none;
+  }
+}

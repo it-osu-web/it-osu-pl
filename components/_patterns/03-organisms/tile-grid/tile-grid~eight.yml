@@ -1,0 +1,52 @@
+items_per_row: 3
+tile_data:
+  1:
+    tile_modifiers:
+      1: 'one'
+    tile_extra_classes: 'cell auto'
+    tile_title: 'Box 1'
+    heading_level: 3
+    tile_link: "#"
+    tile_text: 'Forage tote bag four dollar toast, drinking vinegar brunch farm-to-table taxidermy.'
+  2:
+    tile_extra_classes: 'cell auto'
+    tile_title: 'Box 2'
+    heading_level: 3
+    tile_link: "#"
+    tile_text: 'Blog leggings, palo santo taxidermy photo booth small batch austin.'
+  3:
+    tile_extra_classes: 'cell auto'
+    tile_title: 'Box 3'
+    heading_level: 3
+    tile_link: "#"
+    tile_text: 'Vexillologist etsy pug, tilde subway tile cornhole aesthetic.'
+  4:
+    tile_extra_classes: 'cell auto'
+    tile_title: 'Box 4'
+    heading_level: 3
+    tile_link: "#"
+    tile_text: 'Flannel YOLO swag kale chips bespoke, coloring book ethical bitters.'
+  5:
+    tile_extra_classes: 'cell auto'
+    tile_title: 'Box 5'
+    heading_level: 3
+    tile_link: "#"
+    tile_text: 'Forage tote bag four dollar toast, drinking vinegar brunch farm-to-table taxidermy.'
+  6:
+    tile_extra_classes: 'cell auto'
+    tile_title: 'Box 6'
+    heading_level: 3
+    tile_link: "#"
+    tile_text: 'Blog leggings, palo santo taxidermy photo booth small batch austin.'
+  7:
+    tile_extra_classes: 'cell auto'
+    tile_title: 'Box 6'
+    heading_level: 3
+    tile_link: "#"
+    tile_text: 'Vexillologist etsy pug, tilde subway tile cornhole aesthetic.'
+  8:
+    tile_extra_classes: 'cell auto'
+    tile_title: 'Box 8'
+    heading_level: 3
+    tile_link: "#"
+    tile_text: 'Flannel YOLO swag kale chips bespoke, coloring book ethical bitters.'

@@ -1,4 +1,9 @@
-@import 'node_modules/breakpoint-sass/stylesheets/_breakpoint.scss';
+@charset "UTF-8";
+
+// Include Foundation
+@import 'settings';
+@import '../../node_modules/foundation-sites/scss/foundation';
+@include foundation-everything;
 
 @import '00-base/**/*.scss';
 @import '01-atoms/**/*.scss';

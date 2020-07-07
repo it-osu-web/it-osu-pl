@@ -1,0 +1,5 @@
+.form-item--checkboxes {
+  @include list-reset;
+
+  @extend .form-options-list;
+}

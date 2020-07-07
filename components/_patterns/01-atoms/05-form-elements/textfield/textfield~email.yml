@@ -1,0 +1,15 @@
+field_label: Email
+field_placeholder: 'name@example.com'
+field_modifiers:
+  1: 'email'
+field_id: field-email
+field_attributes:
+  autocapitalize: none
+  type: email
+  name: email
+  required: required
+  aria-required: true
+  value:
+  pattern:
+  title:
+field_description:

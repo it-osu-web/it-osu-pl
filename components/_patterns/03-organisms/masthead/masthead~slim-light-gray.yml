@@ -1,4 +1,2 @@
-masthead_variant:
-  slim
-masthead_color:
-  lt-gray
+masthead_variant: slim
+masthead_color: lt-gray

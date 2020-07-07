@@ -1,101 +1,87 @@
-@mixin button(
-  $bg: $red,
-  $borderColor: $clear,
-  $color: $white,
-  $hoverBg: $red-dark,
-  $hoverColor: $white
-) {
-  background-color: $bg;
-  border: 1px solid $borderColor;
-  border-radius: 6px;
-  color: $color;
-  cursor: pointer;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  padding: 0.625em 1em;
-  display: inline-block;
-  text-decoration: none;
-  text-align: center;
+// Style options: std = standard, rev = reverse
+// Size options: std = standard, lg = large
 
-  &:visited {
-    color: $color;
-  }
+@mixin button($color: $red, $style: std, $size: std) {
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid $color;
+	line-height: 1.25;
 
-  &:hover {
-    background-color: $hoverBg;
-    color: $hoverColor;
+	// Style variations.
+	@if $style == std {
+		background-color: $color;
+		color: $white;
 
-    //if link
-    a {
-      color: $hoverColor;
-    }
-  }
+		&:hover,
+		&:active {
+			background-color: white;
+			color: $color;
+		}
 
-  &:focus {
-    outline: 2px dotted black;
-    outline-offset: 0;
-  }
+		&:focus {
+			background-color: $color;
+			color: $white;
+			border: none;
+			outline: 2px dotted $near-black;
+		}
+	}
 
-  // styles for when link is made to look like a button
-  a {
-    color: $color;
-    text-decoration: none;
+	@if $style == rev {
+		background-color: white;
+		color: $color;
 
-    &:hover {
-      color: $hoverColor;
-    }
-  }
-}
+		&:hover,
+		&:active {
+			background-color: $color;
+			color: $white;
+		}
 
-@mixin button-gray {
-  @include button($gray, $clear, $white, $gray-darker);
-}
+		&:focus {
+			background-color: $color;
+			color: $white;
+			border: none;
+			outline: 2px dotted $near-black;
+		}
+	}
 
-@mixin button-teal {
-  @include button($teal, $clear, $white, darken($teal, 10%));
-}
+	// Size variations.
+	@if $size == std {
+		font-size: 15px;
+		padding: 10px 16px 8px;
+		font-weight: 600;
+	}
 
-@mixin button-alt {
-  @include button($clear, $red, $red, $red, $white);
-}
-
-@mixin button-alt-teal {
-  @include button($clear, $teal, $teal, $teal, $white);
-}
-
-@mixin button-alt-gray {
-  @include button($clear, $gray, $gray, darken($gray, 6%), $white);
+	@if $size == lg {
+		font-size: 18px;
+		padding: 14px 26px 12px;
+		text-transform: uppercase;
+		font-weight: 400;
+	}
 }
 
 .button {
-  @include button;
+	@include button();
 
-  &--gray {
-    @include button;
-    @include button-gray;
-  }
+	&--secondary {
+		@include button($gray);
+	}
 
-  &--teal {
-    @include button;
-    @include button-teal;
-  }
+	&--alt--teal {
+		@include button($teal);
+	}
 
-  &--alt {
-    @include button;
-    @include button-alt;
-  }
+	&--alt--violet {
+		@include button($violet);
+	}
 
-  &--alt-gray {
-    @include button;
-    @include button-alt-gray;
-  }
+	&--reverse {
+		@include button($style: rev);
+	}
 
-  &--alt-teal {
-    @include button;
-    @include button-alt-teal;
-  }
-}
-
-.more-link {
-  @include button;
+	&--large {
+		@include button($size: lg);
+	}
 }

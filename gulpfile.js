@@ -1,8 +1,10 @@
 // Load plugins.
+const _ = require('lodash');
 const autoprefixer = require('autoprefixer');
 const browsersync = require('browser-sync').create();
 const cssnano = require('cssnano');
 const del = require('del');
+const fs = require('fs');
 const ghpages = require('gh-pages');
 const gulp = require('gulp');
 const plumber = require('gulp-plumber');
@@ -13,6 +15,7 @@ const sass = require('gulp-sass');
 const sassGlob = require('gulp-sass-glob');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
+const yaml = require('js-yaml');
 
 // Configuration.
 var config = {};
@@ -27,6 +30,14 @@ config.patternLab = {
   ],
   publicDirectory: './pattern-lab/public/',
   ghData: 'components/_data/gh-data',
+  colorSwatches: [
+    {
+      src: config.patternDirectory + '/00-base/global/01-colors/_color-vars.scss',
+      dest: config.patternDirectory + '/00-base/global/01-colors/colors.yml',
+      lineStartsWith: '$',
+      allowVarValues: false,
+    }
+  ],
 };
 config.sass = {
   srcFiles: config.patternDirectory + '/style.scss',
@@ -39,7 +50,11 @@ config.sass = {
 config.js = {
   srcFiles: config.patternDirectory + '/**/*.js',
   watchFiles: [config.patternDirectory + '/**/*.js'],
-  destDir: 'components/js',
+  destDirPatterns: 'components/js/patterns',
+  destDirOther: 'components/js/other',
+};
+config.npm = {
+  srcFiles: './node_modules/',
 };
 
 // BrowserSync.
@@ -73,18 +88,26 @@ function css(done) {
 
 // JS task.
 function js(done) {
-  return gulp
-    .src([config.js.srcFiles])
-    .pipe(plumber())
-    .pipe(uglify())
-    .pipe(gulp.dest(config.js.destDir))
-    .pipe(browsersync.stream());
+  return (
+    gulp
+      .src([config.js.srcFiles])
+      .pipe(plumber())
+      // .pipe(uglify())
+      .pipe(gulp.dest(config.js.destDirPatterns))
+      .pipe(browsersync.stream())
+  );
   done();
 }
 
 // Clean js assets.
 function cleanJS(done) {
-  return del([config.js.destDir + '/*']);
+  return del([config.js.destDirPatterns]);
+  done();
+}
+
+// Clean Drupal assets.
+function cleanDrupal(done) {
+  return del('it-osu-pl-drupal/**/*');
   done();
 }
 
@@ -94,14 +117,52 @@ function plGenerate(done) {
   done();
 }
 
+// Generate color swatches.
+// Adapted from: https://github.com/fourkitchens/emulsify-gulp.
+function colorSwatches(done) {
+  config.patternLab.colorSwatches.forEach(({
+    src, lineStartsWith, allowVarValues, dest
+  }) => {
+    const scssVarList = _.filter(fs.readFileSync(src, 'utf8').split('\n'), item => _.startsWith(item, lineStartsWith));
+
+    let varsAndValues = _.map(scssVarList, (item) => {
+      const x = item.split(':');
+      return {
+        name: x[0].trim(), // i.e. $color-gray
+        value: x[1].replace(/;.*/, '').trim(), // i.e. hsl(0, 0%, 50%)
+      };
+    });
+
+    if (!allowVarValues) {
+      varsAndValues = _.filter(varsAndValues, ({ value }) => !_.startsWith(value, '$'));
+    }
+    fs.writeFileSync(dest, yaml.dump({
+      items: varsAndValues,
+      meta: {
+        description: `To add to these items, use Sass variables that start with <code>${lineStartsWith}</code> in <code>${src}</code>`,
+      },
+    }));
+
+  });
+  done();
+}
+
 // Watch files.
 function watchFiles() {
-  gulp.watch(config.sass.watchFiles, gulp.series(css, plGenerate));
+  gulp.watch(config.sass.watchFiles, gulp.series(css, colorSwatches, plGenerate));
   gulp.watch(config.js.watchFiles, gulp.series(cleanJS, js, plGenerate));
   gulp.watch(
     config.patternLab.watchFiles,
     gulp.series(plGenerate, browserSyncReload),
   );
+}
+
+// Copy certain files from NPM to js directory.
+function copyNPM(done) {
+  gulp
+    .src(config.npm.srcFiles + 'hoverintent/dist/hoverintent.min.js')
+    .pipe(gulp.dest(config.js.destDirOther));
+  done();
 }
 
 // Copy PL site files to build directory.
@@ -115,7 +176,10 @@ function copyBuild(done) {
 // Copy patterns and supporting files to it-osu-pl-drupal directory.
 function copyDrupal(done) {
   gulp
-    .src(config.patternDirectory + '/**/*.twig')
+    .src([
+      config.patternDirectory + '/**/*.twig',
+      config.patternDirectory + '/**/*.scss',
+    ])
     .pipe(gulp.dest('it-osu-pl-drupal'));
   gulp.src('./components/css/**').pipe(gulp.dest('it-osu-pl-drupal/css'));
   gulp.src('./components/js/**').pipe(gulp.dest('it-osu-pl-drupal/js'));
@@ -202,6 +266,7 @@ const watch = gulp.parallel(watchFiles, browserSync);
 const start = gulp.series(
   gulp.parallel(css, js),
   plGenerate,
+  copyNPM,
   copyBuild,
   copyDrupal,
   watch,
@@ -215,6 +280,7 @@ const buildPages = gulp.series(
 );
 const buildDrupal = gulp.series(
   cleanJS,
+  cleanDrupal,
   gulp.parallel(css, js),
   plGenerate,
   copyDrupal,
@@ -226,9 +292,10 @@ const deployPages = gulp.series(
   ghPublish,
   ghDataRemove,
 );
-const deployDrupal = gulp.series(ghPagesCache, buildDrupal, drupalPublish);
+const deployDrupal = gulp.series(ghPagesCache, drupalPublish);
 
 // Exports.
 exports.deployPages = deployPages;
+exports.buildDrupal = buildDrupal;
 exports.deployDrupal = deployDrupal;
 exports.default = start;

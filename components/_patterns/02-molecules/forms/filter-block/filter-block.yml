@@ -1,0 +1,12 @@
+label: Filter Results
+button_base_class: button
+button_url: '#'
+dropdown:
+  field_label: Intended Audience
+  list_items:
+    1:
+      option: Students
+    2:
+      option: Faculty/Staff
+    3:
+      option: Alumni

@@ -1,0 +1,36 @@
+//common styles for all form elements
+.form-item {
+  color: $gray-dark;
+  margin-bottom: 0.5em;
+
+  @include clearfix;
+}
+
+.form-item__label {
+  display: block;
+  font-weight: 600;
+}
+
+.form-item__description {
+  font-size: rem-calc(14);
+  margin-top: 5px;
+  margin-bottom: 1.5em;
+}
+
+// Styling for the required fields
+
+[aria-required='true']:before {
+  content: '*';
+  color: $red;
+  padding-right: 5px;
+}
+
+// Remove margin on the second of nested form-items.
+.form-item > .form-item {
+  margin-bottom: 0;
+}
+
+// For Drupal autocomplete items.
+.form-autocomplete {
+  background-position-x: 99% !important;
+}

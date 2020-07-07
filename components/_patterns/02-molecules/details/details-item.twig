@@ -1,0 +1,41 @@
+{% if variant %}
+	<details{{attributes}} class="details-item details-item--{{ variant }}">
+	{% else %}
+		<details{{attributes}} class="details-item">
+		{% endif %}
+
+		{%
+    set summary_classes = [
+      required ? 'js-form-required',
+      required ? 'form-required',
+    ]
+  %}
+		{%- if title -%}
+			{% if variant == 'plus' %}
+				<summary{{summary_attributes.addClass(summary_classes)}} class="summary--plus">
+					<div class="summary__inner">
+						{% if details_icon %}
+							<span class="summary__icon">
+								<i class="{{ details_icon }}"></i>
+							</span>
+						{% endif %}
+						<span class="summary__text">{{ details_summary }}</span>
+						<div class="summary__controls">
+							<div class="pm-control plus"></div>
+						</div>
+					</div>
+				</summary>
+			{% else %}
+				<summary{{summary_attributes.addClass(summary_classes)}}>{{ details_summary }}</summary>
+			{% endif %}
+		{%- endif -%}
+
+		{% if errors %}
+			<div>
+				{{ errors }}
+			</div>
+		{% endif %}
+		<div class="details__inner">
+			{{ details_content }}
+		</div>
+	</details>
