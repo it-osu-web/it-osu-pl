@@ -134,7 +134,7 @@ Patterns are divided into categories that progressively become more complex. Thi
 | Templates | Page-level objects that organize patterns into a layout and provide context and content structure.                          |
 | Pages     | Specific instances of templates (page prototypes) that show what a UI looks like with real representative content in place. |
 
-### Global Mixins and Helper Classes
+### Global Mixins
 
 | Mixin                                                                                         | Description                                                                                                                             |
 | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
@@ -146,6 +146,12 @@ Patterns are divided into categories that progressively become more complex. Thi
 | `list-reset()`                                                                                | Sets list-style to none, sets margin and padding to 0.                                                                                  |
 | `transition($transition-property, $transition-time, $method)`                                 | Browser-agnostic animations.                                                                                                            |
 | `visually-hidden($focusable: false)`                                                          | Hides visually, but still available for screenreaders. `$focusable: true` = allows the element to be focusable.                         |
+
+### Helper Classes
+
+| Class             | Description                                              |
+| ----------------- | -------------------------------------------------------- |
+| `visually-hidden` | Calls the visually-hidden mixin with `$focusable: false` |
 
 ### Use BEM methodology when possible
 
