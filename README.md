@@ -134,15 +134,18 @@ Patterns are divided into categories that progressively become more complex. Thi
 | Templates | Page-level objects that organize patterns into a layout and provide context and content structure.                          |
 | Pages     | Specific instances of templates (page prototypes) that show what a UI looks like with real representative content in place. |
 
-### Mixins and Reusable Classes
+### Global Mixins and Helper Classes
 
-| Mixin                                | Description                                                                                                                             |
-| ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
-| `clearfix()`                         | Adds clearfix.                                                                                                                          |
-| `list-reset()`                       | Sets list-style to none, sets margin and padding to 0.                                                                                  |
-| `visually-hidden($focusable: false)` | Hide only visually, but have it available for screenreaders. `$focusable: true` = allows the element to be focusable.                   |
-| `breakout()`                         | Use the breakout mixin to extend a background color or image edge-to-edge, even when a parent container has the `grid-container` class. |
-| `breakout-inner()`                   | Use when internal elements of a breakout should respect the grid-container alignment.                                                   |
+| Mixin                                                                                         | Description                                                                                                                             |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `breakout()`                                                                                  | Use the breakout mixin to extend a background color or image edge-to-edge, even when a parent container has the `grid-container` class. |
+| `breakout-inner()`                                                                            | Use when internal elements of a breakout should respect the grid-container alignment.                                                   |
+| `button($color, $style, $size)`                                                               | Use to easily create button styles. Style options: std = standard, rev = reverse. Size options: std = standard, lg = large.             |
+| `clearfix()`                                                                                  | Adds clearfix.                                                                                                                          |
+| `heading($size, $weight, $color, $font-family, $line-height, $color-link, $color-link-hover)` | Use to easily create heading styles.                                                                                                    |
+| `list-reset()`                                                                                | Sets list-style to none, sets margin and padding to 0.                                                                                  |
+| `transition($transition-property, $transition-time, $method)`                                 | Browser-agnostic animations.                                                                                                            |
+| `visually-hidden($focusable: false)`                                                          | Hides visually, but still available for screenreaders. `$focusable: true` = allows the element to be focusable.                         |
 
 ### Use BEM methodology when possible
 
