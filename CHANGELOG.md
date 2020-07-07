@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file (beginning J
 
 ## [Unreleased]
 
+## [1.1.0] - 2020-07-06
+
+Re-syncing releases with `it-osu-web/it-osu-pl-drupal`
+
 - Various small and medium changes ported back from Drupal themes including:
   - Restructure 00-base directory items.
   - Simplify spacing variables.
