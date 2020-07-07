@@ -1,0 +1,25 @@
+<div {{ attributes }} class="{{ extra_classes }} filter-block">
+	{{ title_prefix }}
+	{% if label %}
+		<h2 {{ title_attributes }} class='filter-block__title'>{{ label }}</h2>
+	{% endif %}
+	{{ title_suffix }}
+
+	{% block content %}
+		{{ content }}
+
+		{% include "@atoms/05-form-elements/select/select.twig" with {
+      field_label:dropdown.field_label,
+      list_items:dropdown.list_items
+    } %}
+
+		{% include "@atoms/02-buttons/01-button.twig"  with {
+      button_content: "Submit"
+    }%}
+
+		{% include "@atoms/02-buttons/01-button.twig"  with {
+      button_content: "Reset"
+    }%}
+
+	{% endblock %}
+</div>

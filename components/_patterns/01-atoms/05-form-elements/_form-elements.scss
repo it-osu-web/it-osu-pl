@@ -29,3 +29,8 @@
 .form-item > .form-item {
   margin-bottom: 0;
 }
+
+// For Drupal autocomplete items.
+.form-autocomplete {
+  background-position-x: 99% !important;
+}

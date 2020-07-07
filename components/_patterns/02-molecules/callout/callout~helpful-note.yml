@@ -1,0 +1,4 @@
+callout_type: helpful_note
+callout_icon: fa-asterisk
+callout_icon_label: Helpful Note
+callout_body: 'This is an example of a Helpful Note callout for the Admin Resource Center.'

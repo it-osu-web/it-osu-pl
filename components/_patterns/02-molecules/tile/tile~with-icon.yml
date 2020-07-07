@@ -3,7 +3,7 @@ tile_modifiers:
 tile_extra_classes:
 tile_heading_level: 3
 tile_link: '#'
-tile_icon: '/images/upload-red.png'
+tile_icon: 'upload-red.png'
 tile_icon_alt: ' '
 tile_title: 'Test Title'
 tile_text: 'Literally asymmetrical hot chicken, edison bulb copper mug activated charcoal ut try-hard fam veniam cupidatat pop-up banjo.'

@@ -14,8 +14,6 @@ state_dropdown:
     3:
       option: Washington
 
-button_base_class:
-  button
-button_content:
-  Submit
-button_url: "#"
+button_base_class: button
+button_content: Submit
+button_url: '#'

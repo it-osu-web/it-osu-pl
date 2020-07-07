@@ -1,43 +1,46 @@
 .pager {
-  margin: 2em 0;
+	margin: 2em 0;
 }
 
 .pager__items {
-  @include list-reset;
-  text-align: center;
+	@include list-reset;
+	text-align: center;
 }
 
 .pager__item {
-  display: inline-block;
-  margin: 0 0.75em;
+	display: inline-block;
+	margin: 0 rem-calc(6);
 }
 
 .pager__link,
 .pager__link:link,
 .pager__link:visited {
-  border: 1px solid $red;
-  font-weight: 600;
-  text-decoration: none;
-  line-height: 1;
-  padding: 8px;
-  display: block;
-  min-width: 36px;
+	display: block;
+	min-width: 34px;
+	height: 34px;
+	background: $red;
+	color: $white;
+	border: 1px solid $red;
+	padding: 7px 10px 6px;
+	text-decoration: none;
+	line-height: 1.25;
+	font-size: 16px;
+	font-weight: 700;
 
-  &.is-active,
-  &:hover {
-    color: $white;
-    background: $red;
-  }
+	&.is-active,
+	&:hover {
+		background: $white;
+		color: $red;
+	}
 
-  &:focus {
-    outline: 2px dotted $near-black;
-    outline-offset: 0;
-    border-color: $clear;
-  }
+	&:focus {
+		outline: 2px dotted $near-black;
+		outline-offset: 0;
+	}
 }
 
 .pager__link--prev {
-  svg {
-    transform: rotate(180deg);
-  }
+	svg {
+		transform: rotate(180deg);
+	}
 }

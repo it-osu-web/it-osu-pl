@@ -1,42 +1,21 @@
 @mixin info-box($background: $near-white, $color: $near-black) {
-  background-color: $background;
-  color: $color;
-  margin-bottom: $grid-margin-after;
-  padding: $padding-y $padding-x $padding-y-bottom;
-  width: 100%;
+	background-color: $background;
+	color: $color;
+	margin-bottom: $grid-margin-after;
+	padding: $padding-y $padding-x $padding-y-bottom;
+	width: 100%;
 
-  .info-box__title {
-    @include heading(26);
-    color: $color;
-    margin-bottom: $header-margin-after-less;
-  }
-
-  @if $background == $white {
-    border: 1px solid $near-white;
-  }
+	.info-box__title {
+		@include heading(26);
+		color: $color;
+		margin-bottom: $header-margin-bottom-narrow;
+	}
 }
 
 .info-box {
-  @include info-box();
+	@include info-box();
 }
 
 .info-box--white {
-  @include info-box($white);
-}
-
-// Infobox sizes.
-// Adjust a bit based on breakpoints.
-@include breakpoint(medium) {
-  .info-box--small {
-    max-width: 320px;
-  }
-
-  .info-box--medium {
-    max-width: 440px;
-  }
-}
-@include breakpoint(large) {
-  .info-box--large {
-    max-width: 640px;
-  }
+	@include info-box($white);
 }

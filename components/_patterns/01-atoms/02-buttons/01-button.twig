@@ -17,22 +17,16 @@
 {% set classes_array = [button_base_class] %}
 
 {% if button_modifiers is defined %}
-  {% for button_modifier in button_modifiers %}
-    {% set classes_array = classes_array|merge(["#{button_base_class}--#{button_modifier}"]) %}
-  {% endfor %}
-  {% set button_classes = classes_array|join(' ') %}
+	{% for button_modifier in button_modifiers %}
+		{% set classes_array = classes_array|merge(["#{button_base_class}--#{button_modifier}"]) %}
+	{% endfor %}
+	{% set button_classes = classes_array|join(' ') %}
 {% else %}
-  {% set button_classes = button_base_class %}
+	{% set button_classes = button_base_class %}
 {% endif %}
 
-<button
-  class="{{ button_classes }}"
-  {% for attribute,value in button_attributes %}
-    {{ attribute }}="{{ value }}"
-  {% endfor %}
-  href="{{ button_url }}"
->
-  {% block button_content %}
-    {{ button_content }}
-  {% endblock %}
+<button class="{{ button_classes }}" {% for attribute,value in button_attributes %} {{ attribute }}="{{ value }}" {% endfor %} href="{{ button_url }}">
+	{% block button_content %}
+		{{ button_content }}
+	{% endblock %}
 </button>

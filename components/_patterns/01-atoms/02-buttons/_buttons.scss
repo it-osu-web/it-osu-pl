@@ -1,23 +1,87 @@
+// Style options: std = standard, rev = reverse
+// Size options: std = standard, lg = large
+
+@mixin button($color: $red, $style: std, $size: std) {
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid $color;
+	line-height: 1.25;
+
+	// Style variations.
+	@if $style == std {
+		background-color: $color;
+		color: $white;
+
+		&:hover,
+		&:active {
+			background-color: white;
+			color: $color;
+		}
+
+		&:focus {
+			background-color: $color;
+			color: $white;
+			border: none;
+			outline: 2px dotted $near-black;
+		}
+	}
+
+	@if $style == rev {
+		background-color: white;
+		color: $color;
+
+		&:hover,
+		&:active {
+			background-color: $color;
+			color: $white;
+		}
+
+		&:focus {
+			background-color: $color;
+			color: $white;
+			border: none;
+			outline: 2px dotted $near-black;
+		}
+	}
+
+	// Size variations.
+	@if $size == std {
+		font-size: 15px;
+		padding: 10px 16px 8px;
+		font-weight: 600;
+	}
+
+	@if $size == lg {
+		font-size: 18px;
+		padding: 14px 26px 12px;
+		text-transform: uppercase;
+		font-weight: 400;
+	}
+}
+
 .button {
-  @include button-std;
+	@include button();
 
-  &--gray {
-    @include button-std($gray);
-  }
+	&--secondary {
+		@include button($gray);
+	}
 
-  &--teal {
-    @include button-std($teal);
-  }
+	&--alt--teal {
+		@include button($teal);
+	}
 
-  &--alt {
-    @include button-rev;
-  }
+	&--alt--violet {
+		@include button($violet);
+	}
 
-  &--alt-gray {
-    @include button-rev($white, $teal);
-  }
+	&--reverse {
+		@include button($style: rev);
+	}
 
-  &--alt-teal {
-    @include button-rev($white, $gray);
-  }
+	&--large {
+		@include button($size: lg);
+	}
 }
