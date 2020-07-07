@@ -36,9 +36,9 @@ Create a new branch from `master`. Your branch name should be descriptive (e.g.,
 
 When you are finished with a feature, create a pull request from your feature branch via the github web interface. Be sure to reference corresponding issues in the pull request description by using a [supported keyword](https://docs.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword). For example: `closes #99` would close out issue #99 when the pull request is merged.
 
-If the pull request is not accepted immediately and requires additional work, you may continue to work from the branch. The pull request will remain open. You can request another review once the updates have been made.
+If the pull request is not accepted immediately and requires additional work, you may continue to work from the branch. The pull request will remain open. You can request another review once the updates have been made. You may delete your local version of the feature branch when the pull request has been merged.
 
-You may delete your local version of the feature branch when the pull request has been merged.
+If you are working on multiple related features, you may choose to create a draft pull request and then submit it for review after all parts are ready.
 
 ### Creating, tagging, and assigning issues
 
