@@ -136,7 +136,13 @@ Patterns are divided into categories that progressively become more complex. Thi
 
 ### Mixins and Reusable Classes
 
-Coming soon.
+| Mixin                                | Description                                                                                                                             |
+| ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `clearfix()`                         | Adds clearfix.                                                                                                                          |
+| `list-reset()`                       | Sets list-style to none, sets margin and padding to 0.                                                                                  |
+| `visually-hidden($focusable: false)` | Hide only visually, but have it available for screenreaders. `$focusable: true` = allows the element to be focusable.                   |
+| `breakout()`                         | Use the breakout mixin to extend a background color or image edge-to-edge, even when a parent container has the `grid-container` class. |
+| `breakout-inner()`                   | Use when internal elements of a breakout should respect the grid-container alignment.                                                   |
 
 ### Use BEM methodology when possible
 
