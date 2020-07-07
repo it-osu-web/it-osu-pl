@@ -1,7 +1,5 @@
 # Changelog
 
-All notable changes to this project will be documented in this file (beginning July 2020).
-
 ## [Unreleased]
 
 ## [1.1.0] - 2020-07-06
@@ -19,7 +17,3 @@ Re-syncing releases with `it-osu-web/it-osu-pl-drupal`
 - Adjusted button and button-like styles — including `more-link` and pagers.
 - Adjusted Main Menu to accomodate longer items.
 - Added Filter Block pattern.
-
-## [0.1.0] - 2019-06-04
-
-- First pre-release before adding contributors.
