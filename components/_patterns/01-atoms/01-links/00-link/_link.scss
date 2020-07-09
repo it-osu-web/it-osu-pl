@@ -17,6 +17,29 @@ a {
 	@include link;
 }
 
+// Link styled as a button.
+a.button,
+a.link--button {
+	@include button();
+	display: inline-block;
+	font-weight: 600;
+	text-decoration: none;
+	border: 1px solid $red;
+
+	&:hover,
+	&:active {
+		background-color: $white;
+		color: $red;
+	}
+
+	&:focus {
+		background-color: $red;
+		color: $white;
+		border: none;
+		outline: 2px dotted $near-black;
+	}
+}
+
 // extlinks
 a.ext,
 a.link--ext,
@@ -26,12 +49,10 @@ a.link--mailto {
 		margin: rem-calc(0 8 0 6);
 		font-size: 85%;
 	}
-}
-
-// Link styled as a button.
-a.button,
-a.link--button {
-	@include button();
-	font-weight: 600;
-	text-decoration: none;
+	&.link--button {
+		.svg-inline--fa {
+			margin: rem-calc(0 0 0 8);
+			font-size: 95%;
+		}
+	}
 }
