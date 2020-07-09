@@ -32,5 +32,10 @@ dd {
 		ul li {
 			margin-top: $list-li-margin-bottom;
 		}
+
+		& > .media,
+		& > img {
+			margin-top: $list-li-margin-bottom;
+		}
 	}
 }
