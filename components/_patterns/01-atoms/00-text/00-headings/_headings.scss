@@ -44,6 +44,7 @@ h2,
 h3,
 .h3 {
 	@include heading(24, 400, $capita, 1.2, italic, black);
+	margin-bottom: rem-calc(10);
 }
 
 h4,
