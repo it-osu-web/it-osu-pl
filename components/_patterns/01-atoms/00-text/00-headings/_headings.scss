@@ -33,7 +33,7 @@
 
 h1,
 .h1 {
-	@include heading(36, 800, $proxima);
+	@include heading(38, 800, $proxima);
 }
 
 h2,
@@ -43,7 +43,7 @@ h2,
 
 h3,
 .h3 {
-	@include heading(24, 400, $capita, 1.2, italic);
+	@include heading(24, 400, $capita, 1.2, italic, black);
 }
 
 h4,
@@ -76,7 +76,7 @@ h1.page-title {
 	p + h4,
 	p + h5,
 	p + h6 {
-		margin-top: rem-calc(40);
+		margin-top: rem-calc(36);
 	}
 
 	ul + h2,
@@ -84,7 +84,7 @@ h1.page-title {
 	ul + h4,
 	ul + h5,
 	ul + h6 {
-		margin-top: rem-calc(40);
+		margin-top: rem-calc(36);
 	}
 
 	ol + h2,
@@ -92,7 +92,7 @@ h1.page-title {
 	ol + h4,
 	ol + h5,
 	ol + h6 {
-		margin-top: rem-calc(40);
+		margin-top: rem-calc(36);
 	}
 
 	.media + h2,
@@ -105,6 +105,10 @@ h1.page-title {
 	img + h4,
 	img + h5,
 	img + h6 {
-		margin-top: rem-calc(40);
+		margin-top: rem-calc(36);
+	}
+
+	h3 + h4 {
+		margin-top: rem-calc(6);
 	}
 }
