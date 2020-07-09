@@ -1,0 +1,6 @@
+link_modifiers:
+  1: ext
+link_attributes:
+  target: _blank
+link_url: '#'
+link_content: 'This is an external link'
