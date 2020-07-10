@@ -1,10 +1,11 @@
 @mixin link {
 	color: $color-link;
 	text-decoration: underline;
-	font-weight: 400;
+	font-weight: 600;
 
 	&:hover {
 		color: $color-link--hover;
+		text-decoration: none;
 	}
 
 	&:focus {
@@ -49,11 +50,19 @@ a.link--mailto {
 	.svg-inline--fa {
 		margin: rem-calc(0 8 0 6);
 		font-size: 85%;
+		color: lighten($gray, 20%);
 	}
 	&.link--button {
 		.svg-inline--fa {
 			margin: rem-calc(0 0 0 8);
 			font-size: 95%;
+			color: $white;
+		}
+		&:hover,
+		&:active {
+			.svg-inline--fa {
+				color: $red;
+			}
 		}
 	}
 }
