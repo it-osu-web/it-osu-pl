@@ -19,11 +19,11 @@
 					{% endif %}
 
 					{% if use_wordmark == 1 %}
-						<div class="site-name__inner">
+						<div class="site-name__inner site-name__inner--image">
 							<a class="site-name__link" href="/" title="home" rel="home"><img class="site-name__image" src="{{ base_path ~ directory }}/{{ masthead_wordmark }}" alt="{{ site_name_prefix }} {{ site_name }}"/></a>
 						</div>
 					{% else %}
-						<div class="site-name__inner">
+						<div class="site-name__inner site-name__inner--text">
 							{% if site_name_prefix|length %}
 								<span class="site-name__prefix">{{ site_name_prefix }}</span>
 							{% endif %}
@@ -36,7 +36,6 @@
 						</div>
 					{% endif %}
 				</div>
-
 
 				{# Site Logo #}
 				{% if masthead_variant == 'slim' %}

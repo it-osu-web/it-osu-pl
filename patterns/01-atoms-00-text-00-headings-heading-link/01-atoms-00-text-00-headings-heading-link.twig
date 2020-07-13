@@ -17,25 +17,25 @@
 {% set classes_array = [heading_base_class] %}
 
 {% if heading_modifiers is defined %}
-  {% for heading_modifier in heading_modifiers %}
-    {% set classes_array = classes_array|merge(["#{heading_base_class}--#{heading_modifier}"]) %}
-  {% endfor %}
-  {% set heading_classes = classes_array|join(' ') %}
+	{% for heading_modifier in heading_modifiers %}
+		{% set classes_array = classes_array|merge(["#{heading_base_class}--#{heading_modifier}"]) %}
+	{% endfor %}
+	{% set heading_classes = classes_array|join(' ') %}
 {% else %}
-  {% set heading_classes = heading_base_class %}
+	{% set heading_classes = heading_base_class %}
 {% endif %}
 
 
-<h{{ heading_level }}>
-  {% if heading_url %}
-    {% include "@atoms/01-links/00-link/link.twig" with {
+<h{{heading_level}}>
+	{% if heading_url %}
+		{% include "@atoms/01-links/00-link/00-link.twig" with {
       "link_content": heading,
       "link_url": heading_url,
       "link_attributes": heading_link_attributes,
       "link_base_class": heading_link_base_class,
       "link_modifiers": heading_link_modifiers,
     } %}
-  {% else %}
-    {{ heading }}
-  {% endif %}
-</h{{ heading_level }}>
+	{% else %}
+		{{ heading }}
+	{% endif %}
+</h{{heading_level}}>
