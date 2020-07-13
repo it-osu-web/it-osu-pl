@@ -1,16 +1,18 @@
 @mixin link {
 	color: $color-link;
 	text-decoration: underline;
-	font-weight: 600;
+	display: inline-block;
+	padding: 0 3px;
 
 	&:hover {
 		color: $color-link--hover;
+		background: $color-link-bg--hover;
 		text-decoration: none;
 	}
 
 	&:focus {
-		outline: 1px dotted $color-link--hover;
-		outline-offset: 2px;
+		outline: 2px dotted $color-link-bg--hover;
+		text-decoration: none;
 	}
 }
 
@@ -39,6 +41,7 @@ a.link--button {
 		color: $white;
 		border: none;
 		outline: 2px dotted $near-black;
+		outline-offset: 1px;
 	}
 }
 
@@ -48,9 +51,9 @@ a.link--ext,
 a.mailto,
 a.link--mailto {
 	.svg-inline--fa {
-		margin: rem-calc(0 8 0 6);
+		margin: rem-calc(0 2 0 6);
 		font-size: 85%;
-		color: lighten($gray, 20%);
+		color: lighten($gray, 15%);
 	}
 	&.link--button {
 		.svg-inline--fa {

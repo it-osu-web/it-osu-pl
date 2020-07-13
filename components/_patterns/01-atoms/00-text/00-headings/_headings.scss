@@ -22,10 +22,12 @@
 
 		&:hover {
 			color: $color-link-hover;
+			background: inherit;
+			text-decoration: underline;
 		}
 
 		&:focus {
-			outline: 1px dotted $color-link-hover;
+			outline: 2px dotted $color;
 			outline-offset: 2px;
 		}
 	}
