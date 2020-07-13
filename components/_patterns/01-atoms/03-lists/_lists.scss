@@ -1,15 +1,6 @@
-li {
+.list-item {
 	margin-bottom: $list-li-margin-bottom;
 }
-
-ul ul {
-
-}
-
-ul ul li {
-	margin-top: $list-li-margin-bottom;
-}
-
 
 ol {
 	list-style-type: decimal;
@@ -27,4 +18,24 @@ ol ol ol {
 
 dd {
 	margin-bottom: $defnlist-def-margin-bottom;
+}
+
+// Headers within long text.
+.field--type-text-long,
+.field--type-text-with-summary,
+.cke-field {
+	ol,
+	ul {
+		li {
+			@extend .list-item;
+		}
+		ul li {
+			margin-top: $list-li-margin-bottom;
+		}
+
+		& > .media,
+		& > img {
+			margin-top: $list-li-margin-bottom;
+		}
+	}
 }

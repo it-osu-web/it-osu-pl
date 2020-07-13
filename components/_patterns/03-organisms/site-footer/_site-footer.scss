@@ -1,97 +1,119 @@
 //footer layout
 .site-footer {
-  padding: 1.5em 0;
+	padding: 1.5em 0;
 }
 
 .site-footer__social-media {
-  margin-bottom: 1.75em;
+	margin-bottom: 1.75em;
 }
 
 .site-footer__address-block {
-  margin-bottom: 1.5em;
+	margin-bottom: 1.5em;
 }
 
 //layout after large breakpoint
 @include breakpoint(large) {
-  .site-footer__social-media {
-    float: right;
-  }
+	.site-footer__social-media {
+		float: right;
+	}
 }
 
 //footer text
 .footer-text {
-  line-height: 125%;
-  font-size: 0.875rem;
+	line-height: 125%;
+	font-size: rem-calc(13);
 }
 
 .site-footer__ada-statement,
 .site-footer__footer-text {
-  @extend .footer-text;
-}
-
-//footer login
-.site-footer__login-link {
-  margin-top: 2em;
-
-  a {
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
+	@extend .footer-text;
 }
 
 //mixin for colors
 @mixin footer(
-  $bg-color: $near-black,
-  $text-color: $white,
-  $link-hover: $gray-light,
-  $pipe-color: $gray-light
+	$bg-color: $white,
+	$text-color: $black,
+	$link-color: $red,
+	$link-hover: $white,
+	$link-bg-hover: $near-black,
+	$pipe-color: $red
 ) {
-  background: $bg-color;
-  color: $text-color;
+	background: $bg-color;
+	color: $text-color;
 
-  a {
-    color: $text-color;
-  }
+	// All footer text.
+	.site-footer__address-block,
+	.site-footer__ada-statement,
+	.site-footer__footer-text,
+	.site-footer__login-link {
+		a {
+			display: inline-block;
+			padding: 0 3px;
+			color: $link-color;
+			font-weight: 600;
+		}
 
-  a:hover {
-    color: $link-hover;
-  }
+		a:hover {
+			color: $link-hover;
+			background: $link-bg-hover;
+		}
 
-  .pipe {
-    color: $pipe-color;
-  }
+		a:focus {
+			outline-color: $link-bg-hover;
+		}
 
-  .social-media__item a {
-    color: white;
-  }
+		.pipe {
+			color: $pipe-color;
+		}
+	}
+
+	// Wordmark.
+	.address-block__wordmark {
+		a {
+			padding: 0;
+			&:hover {
+				background: none;
+			}
+		}
+	}
+
+	// Login link.
+	.site-footer__login-link {
+		margin-top: 2em;
+
+		a {
+			text-transform: uppercase;
+			font-size: rem-calc(12);
+			padding-top: 2px;
+		}
+	}
+
+	// Social Media Links.
+	.social-media__item a {
+		color: $white;
+	}
+
+	.social-media__item a:focus {
+		outline: 2px dotted $link-bg-hover;
+	}
 }
 
-.site-footer,
-.site-footer--dk-gray {
-  @include footer;
-
-  .social-media__item a:focus {
-    outline: 2px dotted $white;
-  }
-}
-
-.site-footer--md-gray {
-  @include footer($gray, $white, $near-white, $near-white);
-
-  .social-media__item a {
-    border: 1px solid $gray-light;
-  }
+// Apply mixin based on footer color.
+.site-footer--white {
+	@include footer();
 }
 
 .site-footer--lt-gray {
-  @include footer($near-white, $near-black, $red, $red);
+	@include footer($near-white);
 }
 
-.site-footer--white {
-  @include footer($white, $near-black, $red, $red);
+.site-footer--md-gray {
+	@include footer($gray, $white, $white, $gray, $white, $near-white);
+	.social-media__item a {
+		border: 1px solid $gray-light;
+	}
+}
+
+.site-footer--dk-gray {
+	@include footer($near-black, $white, $white, $black, $white, $near-white);
 }

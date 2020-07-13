@@ -90,7 +90,7 @@ $medium-gray: $gray;
 $dark-gray: $gray-dark;
 
 $body-background: $white;
-$body-font-color: $near-black;
+$body-font-color: $black;
 $body-font-family: $proxima;
 $body-antialiased: true;
 
@@ -141,9 +141,9 @@ $header-font-weight: 600;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: $near-black;
-$header-color--hover: $teal;
+$header-color--hover: $red;
 $header-lineheight: 1.2;
-$header-margin-bottom: $space-y;
+$header-margin-bottom: rem-calc(6);
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 85%;
 $header-small-font-color: $gray-dark;
@@ -180,7 +180,7 @@ $defnlist-def-margin-bottom: rem-calc(12); // it-osu variable.
 /// Blockquote
 $blockquote-color: $near-black;
 $blockquote-padding: rem-calc(0 40 0 20);
-$blockquote-border: 4px solid $gray-light;
+$blockquote-border: 6px solid $gray-light;
 $cite-font-size: rem-calc(15);
 $cite-color: $near-black;
 $cite-pseudo-content: '\2014 \0020';
@@ -190,7 +190,7 @@ $keystroke-color: $black;
 $keystroke-background: $light-gray;
 $keystroke-padding: rem-calc(2 4 0);
 $keystroke-radius: $global-radius;
-$abbr-underline: 1px dotted $black;
+$abbr-underline: 2px dotted $black;
 
 // 5. Typography Helpers
 // ---------------------

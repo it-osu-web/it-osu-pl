@@ -1,31 +1,38 @@
 .address-block__wordmark {
-  margin-bottom: 0.5em;
+	margin-bottom: 0.5em;
 
-  img {
-    width: 280px;
-    border: none;
-  }
+	a {
+		padding: 0;
+		&:hover {
+			background: none;
+		}
+	}
+
+	img {
+		width: 280px;
+		border: none;
+	}
 }
 .address-block__address {
-  p {
-    margin: 0;
-    font-size: 0.875rem;
-    line-height: 1.375;
-    font-weight: 300;
-  }
+	p {
+		margin: 0;
+		font-size: 0.875rem;
+		line-height: 1.375;
+		font-weight: 300;
+	}
 
-  .site-name {
-    font-weight: 600;
-    font-size: 1rem;
-    margin-bottom: 2px;
-  }
+	.site-name {
+		font-weight: 600;
+		font-size: 1rem;
+		margin-bottom: 2px;
+	}
 
-  .pipe {
-    font-size: 120%;
-    vertical-align: -2%;
-  }
+	.pipe {
+		font-size: 120%;
+		vertical-align: -2%;
+	}
 
-  span.mailto {
-    display: none;
-  }
+	span.mailto {
+		display: none;
+	}
 }

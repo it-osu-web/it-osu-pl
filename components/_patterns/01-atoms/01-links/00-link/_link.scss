@@ -1,18 +1,71 @@
 @mixin link {
 	color: $color-link;
 	text-decoration: underline;
-	font-weight: 400;
+	display: inline-block;
+	padding: 0 3px;
 
 	&:hover {
 		color: $color-link--hover;
+		background: $color-link-bg--hover;
+		text-decoration: none;
 	}
 
 	&:focus {
-		outline: 1px dotted $color-link--hover;
-		outline-offset: 2px;
+		outline: 2px dotted $color-link-bg--hover;
+		text-decoration: none;
 	}
 }
 
 a {
 	@include link;
+}
+
+// Link styled as a button.
+a.button,
+a.link--button {
+	@include button();
+	display: inline-block;
+	font-weight: 600;
+	text-decoration: none;
+	padding: 11px 16px 10px;
+	border: 1px solid $red;
+
+	&:hover,
+	&:active {
+		background-color: $white;
+		color: $red;
+	}
+
+	&:focus {
+		background-color: $red;
+		color: $white;
+		border: none;
+		outline: 2px dotted $near-black;
+		outline-offset: 1px;
+	}
+}
+
+// extlinks
+a.ext,
+a.link--ext,
+a.mailto,
+a.link--mailto {
+	.svg-inline--fa {
+		margin: rem-calc(0 2 0 6);
+		font-size: 85%;
+		color: lighten($gray, 15%);
+	}
+	&.link--button {
+		.svg-inline--fa {
+			margin: rem-calc(0 0 0 8);
+			font-size: 95%;
+			color: $white;
+		}
+		&:hover,
+		&:active {
+			.svg-inline--fa {
+				color: $red;
+			}
+		}
+	}
 }

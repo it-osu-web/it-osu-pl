@@ -1,0 +1,5 @@
+link_modifiers:
+  1: button
+  2: ext
+link_url: '#'
+link_content: 'Ext link styled as a button'

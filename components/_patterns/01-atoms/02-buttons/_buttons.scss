@@ -17,7 +17,7 @@
 
 		&:hover,
 		&:active {
-			background-color: white;
+			background-color: $white;
 			color: $color;
 		}
 
@@ -26,11 +26,12 @@
 			color: $white;
 			border: none;
 			outline: 2px dotted $near-black;
+			outline-offset: 1px;
 		}
 	}
 
 	@if $style == rev {
-		background-color: white;
+		background-color: $white;
 		color: $color;
 
 		&:hover,
@@ -44,13 +45,14 @@
 			color: $white;
 			border: none;
 			outline: 2px dotted $near-black;
+			outline-offset: 1px;
 		}
 	}
 
 	// Size variations.
 	@if $size == std {
 		font-size: 15px;
-		padding: 10px 16px 8px;
+		padding: 11px 16px 8px;
 		font-weight: 600;
 	}
 

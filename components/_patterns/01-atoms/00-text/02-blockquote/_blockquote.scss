@@ -1,14 +1,15 @@
 blockquote {
 	font-family: $capita;
-	font-size: rem-calc(17);
+	font-size: rem-calc(18);
+	line-height: 1.75;
 	font-weight: 300;
 	font-style: italic;
-	margin: $space-y * 2 0 $space-y * 2 $space-x;
+	margin: rem-calc(36 40);
 
 	cite {
 		font-family: $proxima;
-		font-weight: 600;
+		font-weight: 700;
 		font-style: normal;
-		padding-top: $space-y / 4;
+		padding-top: rem-calc(12);
 	}
 }
