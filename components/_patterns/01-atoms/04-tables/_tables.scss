@@ -1,11 +1,11 @@
 .table__caption {
-  text-align: left;
-  margin-bottom: 0.5em;
+	text-align: left;
+	margin-bottom: 0.5em;
 }
 
 .table__heading-cell {
-  font-weight: 700;
-  &[scope='row'] {
-    text-align: left;
-  }
+	font-weight: 700;
+	&[scope='row'] {
+		text-align: left;
+	}
 }
