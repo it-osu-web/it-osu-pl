@@ -18,8 +18,8 @@
 		}
 
 		&:focus {
-			outline: 2px dotted $color;
-			outline-offset: 2px;
+			outline: 1px solid $color;
+			outline-offset: 3px;
 		}
 	}
 }
