@@ -13,7 +13,3 @@ state_dropdown:
       option: New York
     3:
       option: Washington
-
-button_base_class: button
-button_content: Submit
-button_url: '#'

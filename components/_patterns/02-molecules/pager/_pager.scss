@@ -9,19 +9,17 @@
 
 .pager__item {
 	display: inline-block;
-	margin: 0 rem-calc(6);
+	margin: 0 rem-calc(5);
 }
 
 .pager__link,
 .pager__link:link,
 .pager__link:visited {
 	display: block;
-	min-width: 34px;
-	height: 34px;
+	min-width: 32px;
 	background: $red;
 	color: $white;
-	border: 1px solid $red;
-	padding: 7px 10px 6px;
+	padding: 8px 12px 6px;
 	text-decoration: none;
 	line-height: 1.25;
 	font-size: 16px;
@@ -29,18 +27,22 @@
 
 	&.is-active,
 	&:hover {
-		background: $white;
-		color: $red;
+		background: $near-black;
 	}
 
 	&:focus {
-		outline: 2px dotted $near-black;
-		outline-offset: 0;
+		outline: 3px solid $black;
+		outline-offset: 1px;
 	}
-}
 
-.pager__link--prev {
-	svg {
-		transform: rotate(180deg);
+	&.pager__link--next {
+		padding: 8px 10px 6px 12px;
+	}
+
+	&.pager__link--prev {
+		padding: 8px 12px 6px 10px;
+		svg {
+			transform: rotate(180deg);
+		}
 	}
 }

@@ -140,7 +140,6 @@ Patterns are divided into categories that progressively become more complex. Thi
 | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | `breakout()`                                                                                  | Use the breakout mixin to extend a background color or image edge-to-edge, even when a parent container has the `grid-container` class. |
 | `breakout-inner()`                                                                            | Use when internal elements of a breakout should respect the grid-container alignment.                                                   |
-| `button($color, $style, $size)`                                                               | Use to easily create button styles. Style options: std = standard, rev = reverse. Size options: std = standard, lg = large.             |
 | `clearfix()`                                                                                  | Adds clearfix.                                                                                                                          |
 | `heading($size, $weight, $color, $font-family, $line-height, $color-link, $color-link-hover)` | Use to easily create heading styles.                                                                                                    |
 | `list-reset()`                                                                                | Sets list-style to none, sets margin and padding to 0.                                                                                  |
@@ -181,16 +180,12 @@ There are certain items that you should always rely on Foundation for. They are 
 We are also explicitly not using certain aspects of Foundation for various reasons such as already having legacy code, custom-designed implementations, or other reasons. These patterns are as follows:
 
 - Primary Menu
-- Buttons
 - Breadcrumbs
 - Pagers (looking at possible conversion)
-- Tables (looking at possible conversion)
-- Headers (partially uses Foundation settings)
-- Form elements (looking at possible conversion)
 - Images (looking at possible conversion)
 - Callouts (looking at possible conversion)
 - Cards (looking at possible conversion)
-- Spacing Standards (will likely convert)
+- Spacing Standards (looking at possible conversion)
 
 #### Foundation Documentation
 
