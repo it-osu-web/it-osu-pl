@@ -1,0 +1,44 @@
+{# To use with Drupal as Primary or Secondary Tabs, you must also edit your "menu-local-task.html.twig" template to contain the following code:
+
+	{% set classes = [
+		'menu--tab',
+		is_active ? 'is-active'
+	] %}
+
+	{% set link = link|merge({ '#attributes': { 'class': [ 'menu--tab__link' ] } }) %}
+
+	<li{{ attributes.addClass(classes) }}>{{ link }}</li>
+
+#}
+
+{# Primary and secondary are Drupal specific. #}
+
+{% if primary %}
+	<h2 class="visually-hidden">{{ 'Primary tabs'|t }}</h2>
+	<ul class="menu menu--tabs menu--tabs--primary">{{ primary }}</ul>
+{% elseif secondary %}
+	<h2 class="visually-hidden">{{ 'Secondary tabs'|t }}</h2>
+	<ul class="menu menu--tabs menu--tabs--secondary">{{ secondary }}</ul>
+{% else %}
+	<nav class='tabs' role='navigation' aria-label='{{ aria_label }}'>
+		<h2 class="visually-hidden">{{ menu_name }}</h2>
+		<ul class="menu menu--tabs">
+			{% for item in items %}
+				{% if item.is_active %}
+					<li class='menu--tab is-active'>
+						<a class='menu--tab__link is-active' href="{{ item.url }}" aria-current='page'>
+							{{- item.text -}}
+							<span class="visually-hidden">(active tab)</span>
+						</a>
+					</li>
+				{% else %}
+					<li class='menu--tab'>
+						<a class='menu--tab__link' href="{{ item.url }}">
+							{{- item.text -}}
+						</a>
+					</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	</nav>
+{% endif %}

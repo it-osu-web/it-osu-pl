@@ -1,0 +1,16 @@
+menu_name: Primary tabs
+aria_label: Content Administration Tabs
+items:
+  1:
+    url: "#"
+    text: "View"
+    is_active: 1
+  2:
+    url: "#"
+    text: "Edit"
+  3:
+    url: "#"
+    text: "Delete"
+  4:
+    url: "#"
+    text: "Revisions"
