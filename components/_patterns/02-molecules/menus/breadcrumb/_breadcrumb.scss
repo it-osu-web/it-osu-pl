@@ -1,6 +1,7 @@
 .breadcrumb {
 	@include list-reset;
-	padding: $space-y / 2 0 $space-y;
+	padding: 0;
+	margin: rem-calc(10 0);
 }
 
 .breadcrumb__item,
@@ -8,14 +9,20 @@
 .breadcrumb__link:link,
 .breadcrumb__link:visited,
 .breadcrumb__link:focus {
-	color: $gray;
+	color: $black;
 	font-weight: 400;
 	text-decoration: none;
+	display: inline-block;
+	padding: 0 2px;
 }
 
 .breadcrumb__link:hover {
-	text-decoration: underline;
-	color: $near-black;
+	color: $white;
+	background: $near-black;
+}
+
+.breadcrumb__link.breadcrumb__link--current {
+	font-weight: 700;
 }
 
 .breadcrumb__item {
@@ -26,19 +33,13 @@
 	&::after {
 		content: '|';
 		color: $red;
-		font-weight: 700;
-		margin: 0 3px;
+		font-weight: 800;
+		margin-left: 3px;
 	}
 
 	&:last-child {
-		color: $near-black;
-
 		&::after {
 			content: none;
 		}
 	}
-}
-
-.breadcrumb_link:active {
-	color: $red;
 }

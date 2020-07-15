@@ -78,6 +78,8 @@ See: `components/_patterns/03-organisms/site-footer/_site-footer.twig` for usage
 Also see Emulsify's documentation for more info:
 [When to use include, extends, and embed](https://github.com/fourkitchens/emulsify/wiki/When-to-use-include,-extends,-and-embed).
 
+TBD -- Native examples of include, extends, and embed.
+
 ### How to create sample content
 
 Sample content is created via the patterns' `.yml` file. Any variables included in the corresponding `.twig` file should be assigned in the `.yml` file.

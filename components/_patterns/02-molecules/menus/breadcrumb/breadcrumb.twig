@@ -1,0 +1,32 @@
+{% if breadcrumb %}
+  <nav role='navigation' aria-labelledby='Breadcrumb'>
+    <h2 class='visually-hidden'>{{ 'Breadcrumb'|t }}</h2>
+    <ol class='breadcrumb'>
+
+      {% for item in breadcrumb %}
+
+        {% if loop.last %}
+          <li class='breadcrumb__item breadcrumb__item--current'>
+            {% if item.url %}
+              <a class='breadcrumb__link breadcrumb__link--current' href="{{ item.url }}" aria-current='page'>{{ item.text }}</a>
+            {% else %}
+              {{ item.text }}
+            {% endif %}
+          </li>
+
+        {% else %}
+
+          <li class='breadcrumb__item'>
+            {% if item.url %}
+              <a class='breadcrumb__link' href="{{ item.url }}">{{ item.text }}</a>
+            {% else %}
+              {{ item.text }}
+            {% endif %}
+          </li>
+        {% endif %}
+
+      {% endfor %}
+
+    </ol>
+  </nav>
+{% endif %}
