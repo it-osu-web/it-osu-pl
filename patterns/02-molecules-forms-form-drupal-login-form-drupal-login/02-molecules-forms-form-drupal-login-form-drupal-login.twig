@@ -10,33 +10,33 @@
  * @see template_preprocess_form()
  */
 #}
-<form{{ attributes }}>
-  <div class="login-box login-box--osu">
-    <h2 class="login-box__header login-box__header--osu">Ohio State Users</h2>
-    <a class="button" href="/saml_login">Log in with your Ohio State credentials</a>
-  </div>
-  <details class="details-item login-box--drupal">
-    <summary>
-      <h2 class="login-box__header login-box__header--drupal">Non-Ohio State Users</h2>
-    </summary>
-    <div class="details__inner details__inner--drupal">
-      {% if pl == '1'  %}
-        <div class="login-form">
-          {% include "@atoms/05-form-elements/textfield/textfield.twig"
+<form{{attributes}}>
+	<div class="login-box login-box--osu">
+		<h2 class="login-box__header login-box__header--osu">Ohio State Users</h2>
+		<a class="button" href="/saml_login">Log in with your Ohio State credentials</a>
+	</div>
+	<details class="details-item login-box--drupal">
+		<summary>
+			<h2 class="login-box__header login-box__header--drupal">Non-Ohio State Users</h2>
+		</summary>
+		<div class="details__inner details__inner--drupal">
+			{% if pl == '1'  %}
+				<div class="login-form">
+					{% include "@atoms/05-form-elements/textfield/textfield.twig"
             with {
               field_label:user_field.field_label,
               field_description: user_field.field_description
           } %}
-          {% include "@atoms/05-form-elements/textfield/textfield.twig"
+					{% include "@atoms/05-form-elements/textfield/textfield.twig"
             with {
               field_label:password_field.field_label,
               field_description: password_field.field_description
           } %}
-          {% include "@atoms/02-buttons/01-button.twig" %}
-        </div>
-      {% else %}
-        <div class="login-form">{{ children }}</div>
-      {% endif %}
-    </div>
-  </details>
+					<button class="button" href="#">Submit</button>
+				</div>
+			{% else %}
+				<div class="login-form">{{ children }}</div>
+			{% endif %}
+		</div>
+	</details>
 </form>

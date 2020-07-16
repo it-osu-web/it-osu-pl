@@ -20,32 +20,25 @@
 {% set classes_array = [card_base_class] %}
 
 {% if (card_modifiers is defined) or (card_size is defined)  %}
-  {% if card_modifiers is defined %}
-    {% for card_modifier in card_modifiers %}
-      {% set classes_array = classes_array|merge(["#{card_base_class}--#{card_modifier}"]) %}
-    {% endfor %}
-  {% endif %}
-  {% set card_classes = classes_array|join(' ') %}
-  {% if card_size is defined %}
-    {% set classes_array = classes_array|merge(["#{card_base_class}--#{card_size}"]) %}
-  {% endif %}
-  {% set card_classes = classes_array|join(' ') %}
+	{% if card_modifiers is defined %}
+		{% for card_modifier in card_modifiers %}
+			{% set classes_array = classes_array|merge(["#{card_base_class}--#{card_modifier}"]) %}
+		{% endfor %}
+	{% endif %}
+	{% set card_classes = classes_array|join(' ') %}
+	{% if card_size is defined %}
+		{% set classes_array = classes_array|merge(["#{card_base_class}--#{card_size}"]) %}
+	{% endif %}
+	{% set card_classes = classes_array|join(' ') %}
 {% else %}
-  {% set card_classes = card_base_class %}
+	{% set card_classes = card_base_class %}
 {% endif %}
 
 <div class="{{ card_classes }} {{ card_extra_classes }}">
-  <img class="card__image" alt="Card Image" src="{{ card_image }}"/>
-  <div class="{{card_base_class}}__inner">
-    <h2 class="card__title">{{ card_title }}</h2>
-    <p class="card__content">{{ card_text }}</p>
-
-    {# Card button #}
-    {%
-      include "@atoms/02-buttons/01-button.twig" with {
-        "button_content": card_button_content,
-        "button_url": card_button_url,
-        "button_modifiers": card_button_modifiers|default(['alt']),
-      } %}
-  </div>
+	<img class="card__image" alt="Card Image" src="{{ card_image }}"/>
+	<div class="{{card_base_class}}__inner">
+		<h2 class="card__title">{{ card_title }}</h2>
+		<p class="card__content">{{ card_text }}</p>
+		<button class="button" href="#">Card Button</button>
+	</div>
 </div>
