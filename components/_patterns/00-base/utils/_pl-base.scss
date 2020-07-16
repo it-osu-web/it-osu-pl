@@ -1,3 +1,5 @@
+@import '../../01-atoms/00-text/00-headings/_headings.scss';
+
 // These styles are specifically for use within Pattern Lab.
 .sg-main {
 	padding: 0 4%;
@@ -91,12 +93,15 @@
 	}
 }
 
-.sg-sample-text-block {
-	border: 1px solid $gray-border;
-	padding: rem-calc(12 20);
-}
-
-#viewall-base-mixins,
-#viewall-base-utils {
-	display: none;
+// For creating "instructions" components.
+.sg-instructions {
+	h4 {
+		@include heading(22, 700);
+		text-transform: none;
+		margin-bottom: 1rem;
+	}
+	h5 {
+		@include heading(18, 700);
+		margin-top: 2rem;
+	}
 }

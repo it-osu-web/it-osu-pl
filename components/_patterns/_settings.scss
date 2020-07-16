@@ -155,7 +155,7 @@ $code-font-family: $font-family-monospace;
 $code-font-weight: $global-weight-normal;
 $code-background: $near-white;
 $code-border: none;
-$code-padding: rem-calc(4 8);
+$code-padding: rem-calc(2 4);
 $anchor-color: $primary-color;
 $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
 $anchor-text-decoration: none;
@@ -275,25 +275,25 @@ $breadcrumbs-item-separator-color: $medium-gray;
 // ----------
 
 $button-font-family: inherit;
-$button-padding: 0.85em 1em;
-$button-margin: 0 0 $global-margin 0;
+$button-font-weight: 600;
+$button-padding: 0.625em 1em;
+$button-margin: 0 4px $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;
-$button-background-hover: scale-color($button-background, $lightness: -15%);
+$button-background-hover: $near-black;
 $button-color: $white;
 $button-color-alt: $black;
 $button-radius: $global-radius;
 $button-hollow-border-width: 1px;
 $button-sizes: (
-	tiny: 0.6rem,
 	small: 0.75rem,
-	default: 0.9rem,
+	default: 1rem,
 	large: 1.25rem,
 );
 $button-palette: $foundation-palette;
 $button-opacity-disabled: 0.25;
-$button-background-hover-lightness: -20%;
-$button-hollow-hover-lightness: -50%;
+$button-background-hover-lightness: -100%;
+$button-hollow-hover-lightness: 0;
 $button-transition: background-color 0.25s ease-out, color 0.25s ease-out;
 $button-responsive-expanded: false;
 

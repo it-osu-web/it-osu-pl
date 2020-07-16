@@ -1,13 +1,4 @@
-@mixin heading(
-	$size: 36,
-	$weight: $header-font-weight,
-	$font-family: $header-font-family,
-	$line-height: $header-lineheight,
-	$font-style: normal,
-	$color: $header-color,
-	$color-link: inherit,
-	$color-link-hover: $header-color--hover
-) {
+@mixin heading($size: 36, $weight: $header-font-weight, $font-family: $header-font-family, $line-height: $header-lineheight, $font-style: normal, $color: $header-color, $color-link: inherit, $color-link-hover: $header-color--hover) {
 	font-size: rem-calc($size);
 	font-weight: $weight;
 	font-family: $font-family;
@@ -27,8 +18,8 @@
 		}
 
 		&:focus {
-			outline: 2px dotted $color;
-			outline-offset: 2px;
+			outline: 1px solid $color;
+			outline-offset: 3px;
 		}
 	}
 }

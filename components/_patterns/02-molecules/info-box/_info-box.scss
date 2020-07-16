@@ -1,21 +1,29 @@
 @mixin info-box($background: $near-white, $color: $near-black) {
-	background-color: $background;
-	color: $color;
-	margin-bottom: $grid-margin-after;
-	padding: $padding-y $padding-x $padding-y-bottom;
-	width: 100%;
+  background-color: $background;
+  color: $color;
+  margin-bottom: $grid-margin-after;
+  padding: $padding-y $padding-x $padding-y-bottom;
+  width: 100%;
 
-	.info-box__title {
-		@include heading(26);
-		color: $color;
+  .info-box__title {
+		@include heading(26, 700);
 		margin-bottom: $header-margin-bottom-narrow;
+		color: $color;
+		margin-top: 3px;
+
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			@include heading(26, 700);
+			margin-bottom: 0;
+		}
 	}
 }
 
 .info-box {
-	@include info-box();
+  @include info-box();
 }
 
-.info-box--white {
-	@include info-box($white);
-}
+

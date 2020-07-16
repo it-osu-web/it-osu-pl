@@ -17,7 +17,9 @@
 
 <div class="layout__wrapper layout__wrapper--breadcrumb clearfix">
   <div class="layout__inner layout__inner--breadcrumb grid-container">
-    {{ page.breadcrumb }}
+    {% block breadcrumb %}
+      {{ page.breadcrumb }}
+    {% endblock %}
   </div>
 </div>
 

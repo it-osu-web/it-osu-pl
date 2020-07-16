@@ -1,5 +1,9 @@
 .pipe {
-  margin: 0 3px;
-  color: $red;
-  font-weight: 700;
+	margin: 0 3px;
+	color: $red;
+	font-weight: 700;
+}
+
+code {
+	font-size: rem-calc(15);
 }

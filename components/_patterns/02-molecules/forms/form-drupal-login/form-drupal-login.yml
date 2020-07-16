@@ -5,6 +5,3 @@ user_field:
 password_field:
   field_label: Password
   field_description: Enter the password that accompanies your username.
-button_base_class: button
-button_content: Log in
-button_url: '#'

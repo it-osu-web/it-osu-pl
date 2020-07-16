@@ -1,63 +1,60 @@
-@mixin tile($background: $near-white, $color: $near-black) {
-	background-color: $background;
-	color: $color;
-	margin-bottom: $grid-margin-after;
-	padding: $padding-y $padding-x $padding-y-bottom;
-	width: 100%;
-	text-align: center;
-	display: block;
-	text-decoration: none;
-	color: $color;
+@mixin tile($background: $near-white, $color: $black) {
+  background-color: $background;
+  color: $color;
+  margin-bottom: $grid-margin-after;
+  padding: $padding-y $padding-x $padding-y-bottom;
+  width: 100%;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  color: $color;
 
-	&:hover {
-		background: darken($background, 2%);
-	}
+	&:hover,
+  &:focus {
+    outline: 2px solid $near-black;
+  }
 
-	.tile__icon {
-		max-width: rem-calc(100);
-		height: auto;
-		margin: $space-y / 2 auto $space-y;
-	}
+  .tile__icon {
+    max-width: rem-calc(100);
+    height: auto;
+    margin: $space-y / 2 auto $space-y;
+  }
 
-	.tile__title {
-		@include heading(26, 700);
-		margin-bottom: $header-margin-bottom-narrow;
-		color: $color;
-		margin-top: 3px;
+  .tile__title {
+    @include heading(26, 700);
+    margin-bottom: $header-margin-bottom-narrow;
+    color: $color;
+    margin-top: 3px;
 
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			@include heading(26, 700);
-			margin-bottom: 0;
-		}
-	}
-	.tile__body {
-		font-family: $capita;
-		font-style: italic;
-		font-weight: 300;
-	}
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @include heading(26, 700);
+      margin-bottom: 0;
+    }
+  }
+  .tile__body {
+    font-family: $capita;
+    font-style: italic;
+    font-weight: 300;
+  }
 }
 
 a.tile {
-	@include tile();
+  @include tile();
 }
 
 a.tile--title-only {
-	.tile__title {
-		font-size: rem-calc(22);
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			font-size: rem-calc(21);
-		}
-	}
-}
-
-a.tile--white {
-	@include tile($white);
+  .tile__title {
+    font-size: rem-calc(22);
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: rem-calc(21);
+    }
+  }
 }

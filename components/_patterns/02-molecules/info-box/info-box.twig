@@ -1,13 +1,13 @@
 {#
 /**
  *
- * Pattern for the card molecule
+ * Pattern for the infobox molecule
  *
  * Available variables:
  * - infobox_modifiers - array of modifiers to add to the base classname
  * - infobox_size: card size, either small, medium or large
  * - infobox_extra_classes: string of extra classes to add to main div
- * - infobox_heading_level: defaults to 2
+ * - infobox_heading_level: defaults to 2, use '0' for no header element.
  * - infobox_title: title
  * - infobox_link: link from title (leave blank for no link)
  * - infobox_text: the content of the paragraph(s)
@@ -34,10 +34,14 @@
 
 <div class="{{ infobox_classes }} {{ infobox_extra_classes }}">
   <div class="info-box__title">
-    {% include "@atoms/00-text/00-headings/_heading.twig" with {
-      "heading_level": infobox_heading_level|default(2),
-      "heading": infobox_title,
-    } %}
+    {% if infobox_heading_level == 0 %}
+      {{ infobox_title }}
+    {% else %}
+      {% include "@atoms/00-text/00-headings/_heading.twig" with {
+        "heading_level": infobox_heading_level|default(2),
+        "heading": infobox_title,
+      } %}
+    {% endif %}
   </div>
   <div class="info-box__body">
     {% include "@atoms/00-text/04-paragraph/paragraph.twig" with {
@@ -45,3 +49,4 @@
     } %}
   </div>
 </div>
+

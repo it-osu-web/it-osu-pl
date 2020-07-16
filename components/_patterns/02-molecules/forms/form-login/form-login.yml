@@ -29,7 +29,3 @@ password_field:
     value:
     pattern: ^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$
     title: Please include at least 1 uppercase character, 1 lowercase character, and 1 number.
-
-button_base_class: button
-button_content: Sign Up
-button_url: '#'

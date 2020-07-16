@@ -195,7 +195,7 @@ function drupalComposer(done) {
     .pipe(
       replace(
         'IT@OSU Pattern Lab',
-        'IT@OSU Pattern Lab assets for Drupal 8 theming',
+        'IT@OSU Pattern Lab assets for Drupal 8/9 theming',
       ),
     )
     .pipe(gulp.dest('it-osu-pl-drupal'));
