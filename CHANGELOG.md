@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased]
+
+## [1.1.2] - 2020-07-15
 - Selectively add Foundation components instead of everything.
 - Redo buttons using Foundation as a base.
 - Create sane defaults for nav links.
