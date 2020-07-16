@@ -1,13 +1,21 @@
 # Changelog
 
 ## [Unreleased]
+- Selectively add Foundation components instead of everything.
+- Redo buttons using Foundation as a base.
+- Create sane defaults for nav links.
+- Rework breadcrumb styles and markup.
+- Create menu tabs component.
+- Update infobox to not rely on header level.
+- Add bottom padding to content.
+- Update various hover and focus styles.
 
 
 ## [1.1.1] - 2020-07-13
-- Various typography improvements. 
+- Various typography improvements.
 - Fix list spacing.
-- Fix faux button links. 
-- Update basic text and header links for improved accessibility. 
+- Fix faux button links.
+- Update basic text and header links for improved accessibility.
 - Update footer and masthead components for improved link behaviors and colors.
 - Provide examples of headers and links in long text.
 
