@@ -25,6 +25,15 @@
   }
 }
 
+a.site-logo__link {
+  float: right;
+  padding: 0;
+
+  &:hover {
+    background: none;
+  }
+}
+
 // Needed for the logo to nest under navbar in slim version.
 #osu_navbar {
   position: relative;
@@ -83,12 +92,6 @@
   }
 
   a.site-logo__link {
-    padding: 0;
-
-    &:hover {
-      background: none;
-    }
-
     &:focus {
       background: none;
       outline: 2px solid $text-color;
@@ -163,12 +166,6 @@
   }
 
   a.site-logo__link {
-    padding: 0;
-
-    &:hover {
-      background: none;
-    }
-
     &:focus {
       background: none;
       outline: 3px solid $text-color;
