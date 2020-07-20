@@ -21,7 +21,7 @@
   }
 
   .tile__title {
-    @include heading(26, 700);
+    @include heading(22, 700);
     margin-bottom: $header-margin-bottom-narrow;
     color: $color;
     margin-top: 3px;
@@ -31,10 +31,18 @@
     h4,
     h5,
     h6 {
-      @include heading(26, 700);
+      @include heading(22, 700);
       margin-bottom: 0;
     }
   }
+
+  .tile__label {
+    font-size: rem-calc(18);
+    line-height: 1.125;
+    font-weight: 400;
+    margin: rem-calc(20 0 14);
+  }
+
   .tile__body {
     font-family: $capita;
     font-style: italic;
@@ -48,13 +56,18 @@ a.tile {
 
 a.tile--title-only {
   .tile__title {
-    font-size: rem-calc(22);
+    @include heading(18, 600);
+    margin-top: 20;
     h2,
     h3,
     h4,
     h5,
     h6 {
-      font-size: rem-calc(21);
+      @include heading(18, 600);
     }
   }
+}
+
+a.tile--white {
+  background: white;
 }

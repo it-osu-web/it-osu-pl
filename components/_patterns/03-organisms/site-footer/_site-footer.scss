@@ -27,6 +27,10 @@
 .site-footer__ada-statement,
 .site-footer__footer-text {
   @extend .footer-text;
+
+  .fa-mailto .extlink {
+    display: none;
+  }
 }
 
 //mixin for colors
@@ -72,7 +76,9 @@
   .address-block__wordmark {
     a {
       padding: 0;
-      &:hover,
+      &:hover {
+        background: none;
+      }
       &:focus {
         background: none;
         outline: 2px solid $text-color;

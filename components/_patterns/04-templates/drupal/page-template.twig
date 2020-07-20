@@ -1,17 +1,21 @@
 <header role="banner">
-  {% include "@organisms/osu-navbar/_osu-navbar.twig" %}
+  {% include "@organisms/osu-navbar/_osu-navbar.twig" %} 
   {% include "@organisms/masthead/_masthead.twig" %}
 </header>
 
-<div class="layout__wrapper layout__wrapper--primary-menu clearfix">
+<div class="layout__wrapper layout__wrapper--primary-menu">
   <div class="layout__inner layout__inner--primary-menu grid-container">
-    {{ page.primary_menu }}
+    {% block primary_menu %}
+      {{ page.primary_menu }}
+    {% endblock %}
   </div>
 </div>
 
 <div class="layout__wrapper layout__wrapper--hero clearfix">
   <div class="layout__inner layout__inner--hero grid-container">
-    {{ page.hero }}
+    {% block hero %}
+      {{ page.hero }}
+    {% endblock %}
   </div>
 </div>
 
@@ -25,33 +29,55 @@
 
 <div class="layout__wrapper layout__wrapper--system clearfix">
   <div class="layout__inner layout__inner--system grid-container">
-    {{ page.system }}
+    {% block system %}
+      {{ page.system }}
+    {% endblock %}
   </div>
 </div>
 
-<div class="layout__wrapper layout__wrapper--main clearfix">
-  <main role="main">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+<div class="layout__wrapper layout__wrapper--main">
+  <main id="main-content">
 
     <div class="grid-container">
-      <div class="main__inner grid-x">
+      <div class="main__inner grid-x grid-margin-x">
+        
+        {% if page.sidebar_1 %}
+          <aside class="sidebar sidebar--1 cell small-12 medium-3" role="complementary">
+            <div class="sidebar__inner sidebar__inner--1">
+              {% block sidebar_1 %}
+                {{ page.sidebar_1 }}
+              {% endblock %}
+            </div>
+          </aside>
+        {% endif %}
 
-      <div class="content cell auto">
-        {{ page.tabs }}
-        {{ page.content }}
-      </div>
+        <div class="content small-12 medium-auto">
+          {% block tabs %}
+            {{ page.tabs }}
+          {% endblock %} 
+          
+          {% block content %}
+            <h1 class="page-title">{{ page_title }}</h1>
+            {{ page.content }}
+          {% endblock %}
+        </div>
 
-      {% if page.sidebar %}
-        <aside class="sidebar cell auto medium-3" role="complementary">
-          {{ page.sidebar }}
-        </aside>
-      {% endif %}
+        {% if page.sidebar_2 %}
+          <aside class="sidebar sidebar--2 cell small-12 medium-3" role="complementary">
+            <div class="sidebar__inner sidebar__inner--2">
+              {% block sidebar_2 %}
+                {{ page.sidebar_2 }}
+              {% endblock %}
+            </div>
+          </aside>
+        {% endif %}
 
       </div>
     </div>
 
-    {{ page.content_after }}
-
+    {% block content_after %}
+      {{ page.content_after }}
+    {% endblock %}
   </main>
 </div>
 

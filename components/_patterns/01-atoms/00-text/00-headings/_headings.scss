@@ -57,8 +57,11 @@ h6,
 }
 
 h1.page-title {
-	margin-top: rem-calc(8);
 	margin-bottom: rem-calc(12);
+}
+
+h4.label {
+  text-transform: none;
 }
 
 // Headers within long text.
