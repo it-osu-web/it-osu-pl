@@ -48,6 +48,14 @@ $dk-gray: $near-black;
 	vertical-align: baseline;
 }
 
+// Drupal-specific classes.
+.layout__wrapper--primary-menu {
+	background-color: $lt-gray;
+}
+.layout__inner--primary-menu {
+  padding: 0 1.5rem !important;
+}
+
 // From original sass/base/_navbar.scss -- altered for this theme.
 nav.a11y-navbar {
 	@include element-reset();

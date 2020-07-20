@@ -1,3 +1,27 @@
-div.content {
-  padding-bottom: rem-calc(20);
+main {
+  margin-top: rem-calc(16);
+  padding-bottom: rem-calc(24);
+}
+
+.content {
+  margin: 0 auto;
+}
+
+.sidebar--1 {
+  margin-bottom: rem-calc(30);
+}
+.sidebar--2 {
+  margin-top: rem-calc(30);
+}
+
+@include breakpoint(medium) {
+  .sidebar {
+    margin: 0;
+  }
+  .sidebar--1 {
+    padding-right: rem-calc(16);
+  }
+  .sidebar--2 {
+    padding-left: rem-calc(16);
+  }
 }
