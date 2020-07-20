@@ -27,6 +27,10 @@
 .site-footer__ada-statement,
 .site-footer__footer-text {
   @extend .footer-text;
+
+  .fa-mailto .extlink {
+    display: none;
+  }
 }
 
 //mixin for colors
