@@ -4,6 +4,7 @@ const autoprefixer = require('autoprefixer');
 const browsersync = require('browser-sync').create();
 const cssnano = require('cssnano');
 const del = require('del');
+const download = require('gulp-download-stream');
 const fs = require('fs');
 const ghpages = require('gh-pages');
 const gulp = require('gulp');
@@ -30,14 +31,12 @@ config.patternLab = {
   ],
   publicDirectory: './pattern-lab/public/',
   ghData: 'components/_data/gh-data',
-  colorSwatches: [
-    {
-      src: config.patternDirectory + '/00-base/global/01-colors/_color-vars.scss',
-      dest: config.patternDirectory + '/00-base/global/01-colors/colors.yml',
-      lineStartsWith: '$',
-      allowVarValues: false,
-    }
-  ],
+  colorSwatches: [{
+    src: config.patternDirectory + '/00-base/global/01-colors/_color-vars.scss',
+    dest: config.patternDirectory + '/00-base/global/01-colors/colors.yml',
+    lineStartsWith: '$',
+    allowVarValues: false,
+  }],
 };
 config.sass = {
   srcFiles: config.patternDirectory + '/style.scss',
@@ -60,7 +59,9 @@ config.npm = {
 // BrowserSync.
 function browserSync(done) {
   browsersync.init({
-    server: { baseDir: config.patternLab.publicDirectory },
+    server: {
+      baseDir: config.patternLab.publicDirectory
+    },
   });
   done();
 }
@@ -90,11 +91,11 @@ function css(done) {
 function js(done) {
   return (
     gulp
-      .src([config.js.srcFiles])
-      .pipe(plumber())
-      // .pipe(uglify())
-      .pipe(gulp.dest(config.js.destDirPatterns))
-      .pipe(browsersync.stream())
+    .src([config.js.srcFiles])
+    .pipe(plumber())
+    // .pipe(uglify())
+    .pipe(gulp.dest(config.js.destDirPatterns))
+    .pipe(browsersync.stream())
   );
   done();
 }
@@ -121,7 +122,10 @@ function plGenerate(done) {
 // Adapted from: https://github.com/fourkitchens/emulsify-gulp.
 function colorSwatches(done) {
   config.patternLab.colorSwatches.forEach(({
-    src, lineStartsWith, allowVarValues, dest
+    src,
+    lineStartsWith,
+    allowVarValues,
+    dest
   }) => {
     const scssVarList = _.filter(fs.readFileSync(src, 'utf8').split('\n'), item => _.startsWith(item, lineStartsWith));
 
@@ -134,7 +138,9 @@ function colorSwatches(done) {
     });
 
     if (!allowVarValues) {
-      varsAndValues = _.filter(varsAndValues, ({ value }) => !_.startsWith(value, '$'));
+      varsAndValues = _.filter(varsAndValues, ({
+        value
+      }) => !_.startsWith(value, '$'));
     }
     fs.writeFileSync(dest, yaml.dump({
       items: varsAndValues,
@@ -195,9 +201,23 @@ function drupalComposer(done) {
     .pipe(
       replace(
         'IT@OSU Pattern Lab',
-        'IT@OSU Pattern Lab assets for Drupal 8/9 theming',
+        'IT@OSU Pattern Lab assets for use in a Drupal 8/9 theme',
       ),
     )
+    .pipe(gulp.dest('it-osu-pl-drupal'));
+  done();
+}
+
+// Request current README from it-osu-pl-drupal.
+function requestReadme(done) {
+  download('https://raw.githubusercontent.com/it-osu-web/it-osu-pl-drupal/master/README.md')
+    .pipe(gulp.dest('it-osu-pl-drupal'));
+  done();
+}
+
+// Request current CHANGELOG from it-osu-pl-drupal.
+function requestChangelog(done) {
+  download('https://raw.githubusercontent.com/it-osu-web/it-osu-pl-drupal/master/CHANGELOG.md')
     .pipe(gulp.dest('it-osu-pl-drupal'));
   done();
 }
@@ -226,11 +246,10 @@ function ghDataRemove(done) {
 // Publish compiled PL to gh-pages branch.
 function ghPublish(done) {
   ghpages.publish(
-    'build',
-    {
+    'build', {
       message: 'Publish gh-pages: auto-generated commit via gulp.',
     },
-    function(err) {
+    function (err) {
       if (err === undefined) {
         console.log('PL successfully deployed to github!');
       } else {
@@ -244,13 +263,12 @@ function ghPublish(done) {
 // Publish patterns to the it-osu-web/it-osu-pl-drupal repository.
 function drupalPublish(done) {
   ghpages.publish(
-    'it-osu-pl-drupal',
-    {
+    'it-osu-pl-drupal', {
       repo: 'https://github.com/it-osu-web/it-osu-pl-drupal.git',
       branch: 'master',
       message: 'Publish drupal: auto-generated commit via gulp.',
     },
-    function(err) {
+    function (err) {
       if (err === undefined) {
         console.log('Patterns successfully deployed to github!');
       } else {
@@ -278,6 +296,12 @@ const buildPages = gulp.series(
   plGenerate,
   copyBuild,
 );
+const deployPages = gulp.series(
+  ghPagesCache,
+  buildPages,
+  ghPublish,
+  ghDataRemove,
+);
 const buildDrupal = gulp.series(
   cleanJS,
   cleanDrupal,
@@ -285,12 +309,8 @@ const buildDrupal = gulp.series(
   plGenerate,
   copyDrupal,
   drupalComposer,
-);
-const deployPages = gulp.series(
-  ghPagesCache,
-  buildPages,
-  ghPublish,
-  ghDataRemove,
+  requestChangelog,
+  requestReadme,
 );
 const deployDrupal = gulp.series(ghPagesCache, drupalPublish);
 
