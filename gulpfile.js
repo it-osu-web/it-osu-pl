@@ -208,10 +208,15 @@ function drupalComposer(done) {
   done();
 }
 
-// Request current README and CHANGELOG from it-osu-pl-drupal.
-function requestDrupal(done) {
+// Request current README from it-osu-pl-drupal.
+function requestReadme(done) {
   download('https://raw.githubusercontent.com/it-osu-web/it-osu-pl-drupal/master/README.md')
     .pipe(gulp.dest('it-osu-pl-drupal'));
+  done();
+}
+
+// Request current CHANGELOG from it-osu-pl-drupal.
+function requestChangelog(done) {
   download('https://raw.githubusercontent.com/it-osu-web/it-osu-pl-drupal/master/CHANGELOG.md')
     .pipe(gulp.dest('it-osu-pl-drupal'));
   done();
@@ -304,7 +309,8 @@ const buildDrupal = gulp.series(
   plGenerate,
   copyDrupal,
   drupalComposer,
-  requestDrupal,
+  requestChangelog,
+  requestReadme,
 );
 const deployDrupal = gulp.series(ghPagesCache, drupalPublish);
 
