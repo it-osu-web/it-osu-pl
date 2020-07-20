@@ -4,7 +4,7 @@ const autoprefixer = require('autoprefixer');
 const browsersync = require('browser-sync').create();
 const cssnano = require('cssnano');
 const del = require('del');
-const download = require("gulp-download-stream");
+const download = require('gulp-download-stream');
 const fs = require('fs');
 const ghpages = require('gh-pages');
 const gulp = require('gulp');
@@ -201,18 +201,19 @@ function drupalComposer(done) {
     .pipe(
       replace(
         'IT@OSU Pattern Lab',
-        'IT@OSU Pattern Lab assets for Drupal 8/9 theming',
+        'IT@OSU Pattern Lab assets for use in a Drupal 8/9 theme',
       ),
     )
     .pipe(gulp.dest('it-osu-pl-drupal'));
   done();
 }
 
-
 // Request current README and CHANGELOG from it-osu-pl-drupal.
 function requestDrupal(done) {
-  download('https://raw.githubusercontent.com/it-osu-web/it-osu-pl/master/CHANGELOG.md')
-    .pipe(gulp.dest('test'));
+  download('https://raw.githubusercontent.com/it-osu-web/it-osu-pl-drupal/master/README.md')
+    .pipe(gulp.dest('it-osu-pl-drupal'));
+  download('https://raw.githubusercontent.com/it-osu-web/it-osu-pl-drupal/master/CHANGELOG.md')
+    .pipe(gulp.dest('it-osu-pl-drupal'));
   done();
 }
 
@@ -290,6 +291,12 @@ const buildPages = gulp.series(
   plGenerate,
   copyBuild,
 );
+const deployPages = gulp.series(
+  ghPagesCache,
+  buildPages,
+  ghPublish,
+  ghDataRemove,
+);
 const buildDrupal = gulp.series(
   cleanJS,
   cleanDrupal,
@@ -297,12 +304,7 @@ const buildDrupal = gulp.series(
   plGenerate,
   copyDrupal,
   drupalComposer,
-);
-const deployPages = gulp.series(
-  ghPagesCache,
-  buildPages,
-  ghPublish,
-  ghDataRemove,
+  requestDrupal,
 );
 const deployDrupal = gulp.series(ghPagesCache, drupalPublish);
 
@@ -311,4 +313,3 @@ exports.deployPages = deployPages;
 exports.buildDrupal = buildDrupal;
 exports.deployDrupal = deployDrupal;
 exports.default = start;
-exports.requestDrupal = requestDrupal;
