@@ -1,6 +1,12 @@
 # Changelog
 
 ## [Unreleased]
+- Fixed masthead and footer hover styles.
+- Fixed logo alignment in masthead.
+- Updated site name image size for standard masthead.
+- Updated tile styles, including adding a tile__label option.
+- Reworked Drupal Page Template to use twig blocks.
+- Added second sidebar to Drupal Page Template.
 
 ## [1.1.2] - 2020-07-15
 - Selectively add Foundation components instead of everything.
