@@ -62,7 +62,10 @@
       font-size: rem-calc(48);
     }
 
-    &:hover,
+    &:hover {
+      background: none;
+    }
+
     &:focus {
       background: none;
       outline: 2px solid $text-color;
@@ -81,7 +84,11 @@
 
   a.site-logo__link {
     padding: 0;
-    &:hover,
+
+    &:hover {
+      background: none;
+    }
+
     &:focus {
       background: none;
       outline: 2px solid $text-color;
@@ -135,7 +142,10 @@
       font-size: rem-calc(48);
     }
 
-    &:hover,
+    &:hover {
+      background: none;
+    }
+
     &:focus {
       background: none;
       outline: 2px solid $text-color;
@@ -154,7 +164,11 @@
 
   a.site-logo__link {
     padding: 0;
-    &:hover,
+
+    &:hover {
+      background: none;
+    }
+
     &:focus {
       background: none;
       outline: 3px solid $text-color;
