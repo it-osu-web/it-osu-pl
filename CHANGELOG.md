@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased]
+
+## [1.1.3] - 2020-07-20
 - Fixed masthead and footer hover styles.
 - Fixed logo alignment in masthead.
 - Updated site name image size for standard masthead.
