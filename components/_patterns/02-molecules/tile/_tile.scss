@@ -35,6 +35,14 @@
       margin-bottom: 0;
     }
   }
+
+  .tile__label {
+    font-size: rem-calc(18);
+    line-height: 1.125;
+    font-weight: 400;
+    margin: rem-calc(20 0 14);
+  }
+
   .tile__body {
     font-family: $capita;
     font-style: italic;

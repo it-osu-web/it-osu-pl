@@ -43,6 +43,8 @@
 
 		</div>
 	{% endif %}
+
+	{% if tile_title %}
 	<div class="tile__title">
 		{% if tile_heading_level == 0 %}
 			{{ tile_title }}
@@ -53,6 +55,12 @@
       } %}
 		{% endif %}
 	</div>
+	{% endif %}
+
+	{% if tile_label %}
+		<div class="tile__label">{{ tile_label }}</div>
+	{% endif %}
+
 	{% if tile_text %}
 		<div class="tile__body">
 			{% include "@atoms/00-text/04-paragraph/paragraph.twig" with {
