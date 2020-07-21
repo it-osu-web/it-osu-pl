@@ -16,4 +16,4 @@ page:
   sidebar_1: "Test Sidebar 1"
   sidebar_2: "Test Sidebar 2"
   pre_footer: "Test Pre-footer"
-  hero: "Test Hero"
+  # hero: "Test Hero"
