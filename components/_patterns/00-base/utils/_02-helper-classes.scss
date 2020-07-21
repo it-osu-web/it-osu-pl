@@ -1,5 +1,16 @@
 // It is preferable to use the mixin directly, but this should cover when these classes are used in legacy code.
 .visually-hidden,
 .visuallyhidden {
-	@include visually-hidden();
+  @include visually-hidden();
+}
+
+.skip-link {
+  @include visually-hidden($focusable: true);
+
+  &:focus {
+    padding: rem-calc(10 16) !important;
+    color: $white;
+    background-color: $red;
+    outline: none;
+  }
 }

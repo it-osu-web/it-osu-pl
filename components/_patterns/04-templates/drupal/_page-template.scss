@@ -1,6 +1,6 @@
 main {
-  margin-top: rem-calc(16);
-  padding-bottom: rem-calc(24);
+  padding-top: rem-calc(16);
+  padding-bottom: rem-calc(40);
 }
 
 .content {
@@ -12,6 +12,15 @@ main {
 }
 .sidebar--2 {
   margin-top: rem-calc(30);
+}
+
+.layout__wrapper--system,
+.layout__wrapper--breadcrumb {
+  background: white;
+}
+
+.layout__wrapper--pre-footer {
+  background: $gray;
 }
 
 @include breakpoint(medium) {

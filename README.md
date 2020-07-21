@@ -153,6 +153,7 @@ Patterns are divided into categories that progressively become more complex. Thi
 | Class             | Description                                              |
 | ----------------- | -------------------------------------------------------- |
 | `visually-hidden` | Calls the visually-hidden mixin with `$focusable: false` |
+| `skip-link`       | Calls the visually-hidden mixin with `$focusable: true`  |
 
 ### Use BEM methodology when possible
 
