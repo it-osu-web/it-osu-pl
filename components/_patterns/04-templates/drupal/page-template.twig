@@ -82,5 +82,13 @@
 </div>
 
 <footer role="contentinfo">
+	<div class="layout__wrapper layout__wrapper--pre-footer">
+		<div class="layout__inner layout__inner--pre-footer grid-container">
+			{% block pre_footer %}
+				{{ page.pre_footer }}
+			{% endblock %}
+		</div>
+	</div>
+
 	{% include "@organisms/site-footer/_site-footer.twig" %}
 </footer>
