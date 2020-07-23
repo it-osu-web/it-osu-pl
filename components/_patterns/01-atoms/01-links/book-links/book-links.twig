@@ -1,0 +1,25 @@
+{%- if links -%}
+	<ul class="links links--book inline">
+		{%- for link in links -%}
+
+			{% if link.type == 'book-add-child' %}
+				{% set icon = 'fas fa-plus' %}
+			{% elseif link.type == 'book-printer' %}
+				{% set icon = 'fas fa-print' %}
+			{% elseif link.type == 'book-edit-order' %}
+				{% set icon = 'fas fa-list-ol' %}
+			{% endif %}
+
+			{% if link.type %}
+				<li class="link {{ link.type }}">
+					<i class="{{ icon }}"></i>
+					<a href="{{ link.url }}">{{ link.text }}</a>
+				</li>
+			{% else %}
+				<li class="link">
+					<a href="{{ link.url }}">{{ link.text }}</a>
+				</li>
+			{% endif %}
+		{%- endfor -%}
+	</ul>
+{%- endif -%}

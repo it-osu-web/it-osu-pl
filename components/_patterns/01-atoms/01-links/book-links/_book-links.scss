@@ -1,0 +1,11 @@
+ul.links--book.inline {
+  margin-left: 0;
+
+  li {
+    list-style: none;
+    margin-bottom: 1rem;
+    .svg-inline--fa {
+      margin-right: 5px;
+    }
+  }
+}
