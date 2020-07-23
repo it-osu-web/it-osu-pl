@@ -2,15 +2,22 @@
 
 ## [Unreleased]
 
+- Added pre-footer region to page-template.
+- Moved skip-link to page-template.
+- Re-enabled footer_text in footer component.
+- Re-added foundation flex classes in order to use 'flex-grow'.
+
 ## [1.1.3] - 2020-07-20
+
 - Fixed masthead and footer hover styles.
 - Fixed logo alignment in masthead.
 - Updated site name image size for standard masthead.
-- Updated tile styles, including adding a tile__label option.
+- Updated tile styles, including adding a tile\_\_label option.
 - Reworked Drupal Page Template to use twig blocks.
 - Added second sidebar to Drupal Page Template.
 
 ## [1.1.2] - 2020-07-15
+
 - Selectively add Foundation components instead of everything.
 - Redo buttons using Foundation as a base.
 - Create sane defaults for nav links.
@@ -20,8 +27,8 @@
 - Add bottom padding to content.
 - Update various hover and focus styles.
 
-
 ## [1.1.1] - 2020-07-13
+
 - Various typography improvements.
 - Fix list spacing.
 - Fix faux button links.
@@ -29,8 +36,8 @@
 - Update footer and masthead components for improved link behaviors and colors.
 - Provide examples of headers and links in long text.
 
-
 ## [1.1.0] - 2020-07-06
+
 Re-syncing releases with `it-osu-web/it-osu-pl-drupal`
 
 - Various small and medium changes ported back from Drupal themes including:
