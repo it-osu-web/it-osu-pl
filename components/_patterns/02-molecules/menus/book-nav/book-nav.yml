@@ -1,0 +1,7 @@
+has_links: 1
+book_title: 'Book Name'
+parent_title: 'Book Name'
+prev_url: '#'
+prev_title: 'Book Name'
+next_url: '#'
+next_title: 'Next Page'
