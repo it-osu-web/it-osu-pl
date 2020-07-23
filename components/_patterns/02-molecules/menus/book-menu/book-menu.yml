@@ -1,0 +1,12 @@
+book_parent: Book Name
+items:
+  1:
+    name: Chapter 1
+    url: '#'
+    active: 1
+  2:
+    name: Chapter 2
+    url: '#'
+  3:
+    name: Chapter 3
+    url: '#'

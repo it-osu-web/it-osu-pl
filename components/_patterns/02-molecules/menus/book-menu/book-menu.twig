@@ -1,0 +1,26 @@
+<nav id="book-menu" aria-labelledby="book-menu book-menu-header">
+	<div {{ attributes }} class="{{ classes }}">
+		<h2 id="book-menu-header" class="block__title">{{ book_parent }}</h2>
+
+		{% if items %}
+
+			{% block book_tree %}
+				<ul class="menu--toc">
+					{% for item in items %}
+
+						{% set active_class = '' %}
+						{% if item.active == 1 %}
+							{% set active_class = 'menu__item--toc--active-trail' %}
+						{% endif %}
+
+						<li class="menu__item--toc {{ active_class }}">
+							<a href="{{ item.url }}">{{ item.name }}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			{% endblock %}
+
+		{% endif %}
+
+	</div>
+</nav>
