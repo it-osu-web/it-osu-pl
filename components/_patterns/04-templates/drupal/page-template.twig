@@ -1,86 +1,98 @@
+<a href="#main-content" class="skip-link">
+	{{ 'Skip to main content'|t }}
+</a>
+
 <header role="banner">
-  {% include "@organisms/osu-navbar/_osu-navbar.twig" %} 
-  {% include "@organisms/masthead/_masthead.twig" %}
+	{% include "@organisms/osu-navbar/_osu-navbar.twig" %}
+	{% include "@organisms/masthead/_masthead.twig" %}
 </header>
 
 <div class="layout__wrapper layout__wrapper--primary-menu">
-  <div class="layout__inner layout__inner--primary-menu grid-container">
-    {% block primary_menu %}
-      {{ page.primary_menu }}
-    {% endblock %}
-  </div>
+	<div class="layout__inner layout__inner--primary-menu grid-container">
+		{% block primary_menu %}
+			{{ page.primary_menu }}
+		{% endblock %}
+	</div>
 </div>
 
-<div class="layout__wrapper layout__wrapper--hero clearfix">
-  <div class="layout__inner layout__inner--hero grid-container">
-    {% block hero %}
-      {{ page.hero }}
-    {% endblock %}
-  </div>
+<div class="layout__wrapper layout__wrapper--hero">
+	<div class="layout__inner layout__inner--hero grid-container">
+		{% block hero %}
+			{{ page.hero }}
+		{% endblock %}
+	</div>
 </div>
 
-<div class="layout__wrapper layout__wrapper--breadcrumb clearfix">
-  <div class="layout__inner layout__inner--breadcrumb grid-container">
-    {% block breadcrumb %}
-      {{ page.breadcrumb }}
-    {% endblock %}
-  </div>
+<div class="layout__wrapper layout__wrapper--breadcrumb">
+	<div class="layout__inner layout__inner--breadcrumb grid-container">
+		{% block breadcrumb %}
+			{{ page.breadcrumb }}
+		{% endblock %}
+	</div>
 </div>
 
-<div class="layout__wrapper layout__wrapper--system clearfix">
-  <div class="layout__inner layout__inner--system grid-container">
-    {% block system %}
-      {{ page.system }}
-    {% endblock %}
-  </div>
+<div class="layout__wrapper layout__wrapper--system">
+	<div class="layout__inner layout__inner--system grid-container">
+		{% block system %}
+			{{ page.system }}
+		{% endblock %}
+	</div>
 </div>
 
 <div class="layout__wrapper layout__wrapper--main">
-  <main id="main-content">
+	<main id="main-content">
 
-    <div class="grid-container">
-      <div class="main__inner grid-x grid-margin-x">
-        
-        {% if page.sidebar_1 %}
-          <aside class="sidebar sidebar--1 cell small-12 medium-3" role="complementary">
-            <div class="sidebar__inner sidebar__inner--1">
-              {% block sidebar_1 %}
-                {{ page.sidebar_1 }}
-              {% endblock %}
-            </div>
-          </aside>
-        {% endif %}
+		<div class="grid-container">
+			<div class="main__inner grid-x grid-margin-x">
 
-        <div class="content small-12 medium-auto">
-          {% block tabs %}
-            {{ page.tabs }}
-          {% endblock %} 
-          
-          {% block content %}
-            <h1 class="page-title">{{ page_title }}</h1>
-            {{ page.content }}
-          {% endblock %}
-        </div>
+				{% if page.sidebar_1 %}
+					<aside class="sidebar sidebar--1 cell small-12 medium-3" role="complementary">
+						<div class="sidebar__inner sidebar__inner--1">
+							{% block sidebar_1 %}
+								{{ page.sidebar_1 }}
+							{% endblock %}
+						</div>
+					</aside>
+				{% endif %}
 
-        {% if page.sidebar_2 %}
-          <aside class="sidebar sidebar--2 cell small-12 medium-3" role="complementary">
-            <div class="sidebar__inner sidebar__inner--2">
-              {% block sidebar_2 %}
-                {{ page.sidebar_2 }}
-              {% endblock %}
-            </div>
-          </aside>
-        {% endif %}
+				<div class="content cell small-12 medium-auto">
+					{% block tabs %}
+						{{ page.tabs }}
+					{% endblock %}
 
-      </div>
-    </div>
+					{% block content %}
+						<h1 class="page-title">{{ page_title }}</h1>
+						{{ page.content }}
+					{% endblock %}
+				</div>
 
-    {% block content_after %}
-      {{ page.content_after }}
-    {% endblock %}
-  </main>
+				{% if page.sidebar_2 %}
+					<aside class="sidebar sidebar--2 cell small-12 medium-3" role="complementary">
+						<div class="sidebar__inner sidebar__inner--2">
+							{% block sidebar_2 %}
+								{{ page.sidebar_2 }}
+							{% endblock %}
+						</div>
+					</aside>
+				{% endif %}
+
+			</div>
+		</div>
+
+		{% block content_after %}
+			{{ page.content_after }}
+		{% endblock %}
+	</main>
 </div>
 
 <footer role="contentinfo">
-  {% include "@organisms/site-footer/_site-footer.twig" %}
+	<div class="layout__wrapper layout__wrapper--pre-footer">
+		<div class="layout__inner layout__inner--pre-footer grid-container">
+			{% block pre_footer %}
+				{{ page.pre_footer }}
+			{% endblock %}
+		</div>
+	</div>
+
+	{% include "@organisms/site-footer/_site-footer.twig" %}
 </footer>

@@ -1,26 +1,27 @@
 .filter-block {
-	background: $near-white;
-	padding: $padding-y $padding-x;
-	margin-bottom: 2rem;
+  background: $near-white;
+  padding: $padding-y $padding-x;
+  margin-bottom: 2rem;
 
-	h2.filter-block__title {
-		font-size: rem-calc(24);
-	}
+  h2.filter-block__title {
+    font-size: rem-calc(24);
+    margin-bottom: rem-calc(10);
+  }
 
-	.button {
-		margin-top: rem-calc(20);
-		margin-bottom: rem-calc(5);
-		margin-right: rem-calc(10);
+  .button {
+    margin-top: rem-calc(20);
+    margin-bottom: rem-calc(5);
+    margin-right: rem-calc(10);
 
-		&:last-child {
-			margin-right: 0;
-		}
-	}
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }
 
 // If in PL
 .sg-main {
-	.filter-block {
-		max-width: 400px;
-	}
+  .filter-block {
+    max-width: 400px;
+  }
 }

@@ -40,7 +40,8 @@
   $link-color: $red,
   $link-hover: $white,
   $link-bg-hover: $near-black,
-  $pipe-color: $red
+  $pipe-color: $red,
+  $border-color: $gray-border
 ) {
   background: $bg-color;
   color: $text-color;
@@ -70,6 +71,11 @@
       color: $pipe-color;
       font-weight: 800;
     }
+  }
+  .site-footer__footer-text {
+    border-top: 1px solid $border-color;
+    padding-top: rem-calc(12);
+    margin-top: rem-calc(24);
   }
 
   // Wordmark.
@@ -129,5 +135,13 @@
 }
 
 .site-footer--dk-gray {
-  @include footer($near-black, $white, $white, $black, $white, $near-white);
+  @include footer(
+    $near-black,
+    $white,
+    $white,
+    $black,
+    $white,
+    $near-white,
+    $gray
+  );
 }
