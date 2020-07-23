@@ -6,6 +6,7 @@
 - Moved skip-link to page-template.
 - Re-enabled footer_text in footer component.
 - Re-added foundation flex classes in order to use 'flex-grow'.
+- Added book-links, book-nav, and book-menu components.
 
 ## [1.1.3] - 2020-07-20
 
