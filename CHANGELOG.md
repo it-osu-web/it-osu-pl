@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.1.4] - 2020-07-23
+
 - Added pre-footer region to page-template.
 - Moved skip-link to page-template.
 - Re-enabled footer_text in footer component.
