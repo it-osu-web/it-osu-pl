@@ -1,0 +1,36 @@
+{% if has_links %}
+	<nav class="book-navigation" role="navigation" aria-labelledby="book-title">
+
+		{% if has_links %}
+			<h2 id="book-title" class="visually-hidden">
+				{{ 'Book traversal links for'|t }}
+				{{ parent_title }}
+			</h2>
+
+			<ul class="book-pager grid-x">
+
+				{% if prev_url %}
+					{% if prev_title == parent_title %}
+						<li class="book-pager__item book-pager__item--prev cell auto">
+							<a href="{{ prev_url }}" class="book-pager__link book-pager__link--prev" rel="prev" aria-label="{{ 'Go to book home page'|t }}">
+								{{ parent_title }}
+								Home
+							</a>
+						</li>
+					{% else %}
+						<li class="book-pager__item book-pager__item--prev cell auto">
+							<a href="{{ prev_url }}" class="book-pager__link book-pager__link--prev" rel="prev" aria-label="{{ 'Go to previous page'|t }}">{{ prev_title }}</a>
+						</li>
+					{% endif %}
+				{% endif %}
+
+				{% if next_url %}
+					<li class="book-pager__item book-pager__item--next cell auto">
+						<a href="{{ next_url }}" class="book-pager__link book-pager__link--next" rel="next" aria-label="{{ 'Go to next page'|t }}">{{ next_title }}</a>
+					</li>
+				{% endif %}
+
+			</ul>
+		{% endif %}
+	</nav>
+{% endif %}
