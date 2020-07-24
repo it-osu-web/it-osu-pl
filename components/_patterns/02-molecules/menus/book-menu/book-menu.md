@@ -1,4 +1,6 @@
-#### Book Menu
+---
+title: Book Menu
+---
 
 To use with Drupal:
 

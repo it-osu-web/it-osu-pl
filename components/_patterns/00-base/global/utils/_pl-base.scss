@@ -1,4 +1,4 @@
-@import '../../01-atoms/00-text/00-headings/_headings.scss';
+@import '../../../01-atoms/00-text/00-headings/_headings.scss';
 
 // These styles are specifically for use within Pattern Lab.
 .sg-main {
@@ -118,9 +118,18 @@
 }
 
 .sg-pattern-desc {
-  h3 {
+  h3,
+  h4 {
     font-family: $proxima;
+    font-size: 24px;
     font-style: normal;
     font-weight: 600;
+    text-transform: none;
   }
+  p {
+    color: black;
+  }
+}
+.sg-pattern-lineage {
+  color: black;
 }
