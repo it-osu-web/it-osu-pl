@@ -1,12 +1,12 @@
-book_parent: Book Name
+book_title: Book Name
 items:
   1:
     name: Chapter 1
     url: '#'
-    active: 1
   2:
     name: Chapter 2
     url: '#'
+    active: 1
   3:
     name: Chapter 3
     url: '#'
