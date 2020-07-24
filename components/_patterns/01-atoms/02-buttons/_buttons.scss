@@ -2,71 +2,62 @@
 
 // Remove undeline on link buttons.
 a.button {
-	text-decoration: none;
+  text-decoration: none;
 }
 
-// Extra top padding on small buttons.
+// Adjust padding on small buttons.
 .button.small {
-	padding-top: 0.875em;
+  padding: rem-calc(8 12 7);
+}
+
+// Buttons with icons.
+.button {
+  .svg-inline--fa {
+    font-size: 85%;
+    margin: rem-calc(0 0 1 8);
+    &.fa-envelope {
+      font-size: 95%;
+      margin: rem-calc(0 0 0 8);
+    }
+  }
 }
 
 // Overrides for solid buttons.
 .button {
-	.svg-inline--fa {
-		color: $white;
-		font-size: 85%;
-		margin: rem-calc(0 0 1 8);
-		&.fa-envelope {
-			font-size: 95%;
-			margin: rem-calc(0 0 0 8);
-		}
-	}
-	&:focus {
-		background: $button-background;
-		outline: 3px solid $black;
-		outline-offset: 1px;
-	}
+  &:focus {
+    background: $button-background;
+    outline: 3px solid $black;
+    outline-offset: 1px;
+  }
 
-	@each $name, $color in $foundation-palette {
-		&.#{$name} {
-			&:focus {
-				background: $color;
-			}
-		}
-	}
+  @each $name, $color in $foundation-palette {
+    &.#{$name} {
+      &:focus {
+        background: $color;
+      }
+    }
+  }
 }
 
 // Overrides for hollow buttons.
 .hollow.button {
-	.svg-inline--fa {
-		color: $button-background;
-	}
-	&:hover,
-	&:focus {
-		color: $white;
-		background: $button-background;
-		.svg-inline--fa {
-			color: $white;
-		}
-	}
-	&:focus {
-		outline: 3px solid $black;
-		outline-offset: 1px;
-	}
+  &:hover,
+  &:focus {
+    color: $white;
+    background: $button-background;
+  }
+  &:focus {
+    outline: 3px solid $black;
+    outline-offset: 1px;
+  }
 
-	@each $name, $color in $foundation-palette {
-		&.#{$name} {
-			.svg-inline--fa {
-				color: $color;
-			}
-			&:hover,
-			&:focus {
-				color: $white;
-				background: $color;
-				.svg-inline--fa {
-					color: $white;
-				}
-			}
-		}
-	}
+  @each $name, $color in $foundation-palette {
+    &.#{$name} {
+      &:hover,
+      &:focus {
+        color: $white;
+        background: $color;
+      }
+    }
+  }
 }

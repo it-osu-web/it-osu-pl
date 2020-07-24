@@ -45,7 +45,7 @@ nav {
 }
 
 // extlinks
-a,
+a:not(.button),
 a.link {
   .svg-inline--fa.fa-external-link-alt,
   .svg-inline--fa.fa-envelope {
