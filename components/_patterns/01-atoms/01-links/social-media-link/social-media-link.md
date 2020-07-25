@@ -1,3 +1,7 @@
+---
+title: Social Media Link
+---
+
 Uses FontAwesome
 
 Variables:

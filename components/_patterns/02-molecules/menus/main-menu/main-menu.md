@@ -1,1 +1,3 @@
-### Main Menu
+---
+title: Main Menu
+---

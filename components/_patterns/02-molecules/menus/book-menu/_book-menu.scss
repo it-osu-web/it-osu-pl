@@ -1,8 +1,7 @@
 #book-menu {
   background: $near-white;
-  padding: 1.25rem;
-  margin-top: 1.25rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  padding: rem-calc(16 20);
   max-width: 320px;
 
   h2.block__title {
@@ -18,8 +17,9 @@
 
   li.menu__item--toc {
     margin-bottom: rem-calc(14);
-    padding-left: 18px;
+    padding-left: 20px;
     font-size: rem-calc(16);
+    position: relative;
 
     &:last-child {
       margin-bottom: 0;
@@ -36,7 +36,7 @@
     }
 
     &:before {
-      margin-left: -14px;
+      margin-left: -18px;
       content: '';
       width: 0px;
       height: 0px;
@@ -44,6 +44,8 @@
       border-width: 6px 6px 6px 8px;
       border-color: transparent;
       display: inline-block;
+      position: absolute;
+      top: 5px;
     }
   }
 

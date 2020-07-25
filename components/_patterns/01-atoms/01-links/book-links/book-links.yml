@@ -2,13 +2,12 @@ links:
   1:
     url: '#'
     text: 'Edit Book Order'
-    type: 'book-edit-order'
+    class: 'book-edit-order'
   2:
     url: '#'
     text: 'Add Child Page'
-    type: 'book-add-child'
+    class: 'book-add-child'
   3:
     url: '#'
     text: 'Printer-friendly Version'
-    type: 'book-printer'
-
+    class: 'book-printer'

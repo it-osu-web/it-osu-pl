@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+- Fix extlink button link styles.
+- Make sure footer_text div only renders if field has value.
+- Update book-menu and book-links for easier import into Drupal theme.
+
 ## [1.1.4] - 2020-07-23
 
 - Added pre-footer region to page-template.
