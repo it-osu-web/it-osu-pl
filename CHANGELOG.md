@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.1.5] - 2020-07-25
+
 - Fix extlink button link styles.
 - Make sure footer_text div only renders if field has value.
 - Update book-menu and book-links for easier import into Drupal theme.
