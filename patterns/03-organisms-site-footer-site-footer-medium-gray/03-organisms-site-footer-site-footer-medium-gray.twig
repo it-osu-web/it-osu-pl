@@ -14,9 +14,11 @@
 				<a href="mailto:{{ ada_email }}?subject=Accessibility%20Assistance">{{ ada_email }}</a>.</p>
 		</div>
 
-		<div class="site-footer__footer-text">
-			<p>{{ footer_text }}</p>
-		</div>
+		{% if footer_text %}
+			<div class="site-footer__footer-text">
+				<p>{{ footer_text }}</p>
+			</div>
+		{% endif %}
 
 		{# show admin_link for Drupal sites if selected and user is not logged in #}
 		{% if admin_link == 1 %}

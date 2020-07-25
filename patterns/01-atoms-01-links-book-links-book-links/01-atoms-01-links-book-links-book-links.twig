@@ -1,0 +1,35 @@
+{%- if links -%}
+	<ul class="links links--book inline">
+
+		{%- for item in links -%}
+
+			{% if pl == 1 %}
+				{% set classname = item.class %}
+			{% else %}
+				{% set classname = item.attributes.class %}
+			{% endif %}
+
+			{% if 'book-add-child' in classname %}
+				{% set icon = 'fas fa-plus' %}
+			{% elseif 'book-printer' in classname %}
+				{% set icon = 'fas fa-print' %}
+			{% elseif 'book-edit-order' in classname %}
+				{% set icon = 'fas fa-list-ol' %}
+			{% else %}
+				{% set icon = null %}
+			{% endif %}
+
+			<li{{item.attributes}}>
+				<i class="{{ icon }}"></i>
+
+				{% if pl == 1 %}
+					<a href="{{item.url}}">{{item.text}}</a>
+				{% else %}
+					{{ item.link }}
+				{% endif %}
+			</li>
+
+		{%- endfor -%}
+
+	</ul>
+{%- endif -%}
