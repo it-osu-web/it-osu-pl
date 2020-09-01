@@ -31,12 +31,15 @@ config.patternLab = {
   ],
   publicDirectory: './pattern-lab/public/',
   ghData: 'components/_data/gh-data',
-  colorSwatches: [{
-    src: config.patternDirectory + '/00-base/global/01-colors/_color-vars.scss',
-    dest: config.patternDirectory + '/00-base/global/01-colors/colors.yml',
-    lineStartsWith: '$',
-    allowVarValues: false,
-  }],
+  colorSwatches: [
+    {
+      src:
+        config.patternDirectory + '/00-base/global/01-colors/_color-vars.scss',
+      dest: config.patternDirectory + '/00-base/global/01-colors/colors.yml',
+      lineStartsWith: '$',
+      allowVarValues: false,
+    },
+  ],
 };
 config.sass = {
   srcFiles: config.patternDirectory + '/style.scss',
@@ -60,7 +63,7 @@ config.npm = {
 function browserSync(done) {
   browsersync.init({
     server: {
-      baseDir: config.patternLab.publicDirectory
+      baseDir: config.patternLab.publicDirectory,
     },
   });
   done();
@@ -91,11 +94,11 @@ function css(done) {
 function js(done) {
   return (
     gulp
-    .src([config.js.srcFiles])
-    .pipe(plumber())
-    // .pipe(uglify())
-    .pipe(gulp.dest(config.js.destDirPatterns))
-    .pipe(browsersync.stream())
+      .src([config.js.srcFiles])
+      .pipe(plumber())
+      // .pipe(uglify())
+      .pipe(gulp.dest(config.js.destDirPatterns))
+      .pipe(browsersync.stream())
   );
   done();
 }
@@ -121,45 +124,51 @@ function plGenerate(done) {
 // Generate color swatches.
 // Adapted from: https://github.com/fourkitchens/emulsify-gulp.
 function colorSwatches(done) {
-  config.patternLab.colorSwatches.forEach(({
-    src,
-    lineStartsWith,
-    allowVarValues,
-    dest
-  }) => {
-    const scssVarList = _.filter(fs.readFileSync(src, 'utf8').split('\n'), item => _.startsWith(item, lineStartsWith));
+  config.patternLab.colorSwatches.forEach(
+    ({ src, lineStartsWith, allowVarValues, dest }) => {
+      const scssVarList = _.filter(
+        fs.readFileSync(src, 'utf8').split('\n'),
+        (item) => _.startsWith(item, lineStartsWith)
+      );
 
-    let varsAndValues = _.map(scssVarList, (item) => {
-      const x = item.split(':');
-      return {
-        name: x[0].trim(), // i.e. $color-gray
-        value: x[1].replace(/;.*/, '').trim(), // i.e. hsl(0, 0%, 50%)
-      };
-    });
+      let varsAndValues = _.map(scssVarList, (item) => {
+        const x = item.split(':');
+        return {
+          name: x[0].trim(), // i.e. $color-gray
+          value: x[1].replace(/;.*/, '').trim(), // i.e. hsl(0, 0%, 50%)
+        };
+      });
 
-    if (!allowVarValues) {
-      varsAndValues = _.filter(varsAndValues, ({
-        value
-      }) => !_.startsWith(value, '$'));
+      if (!allowVarValues) {
+        varsAndValues = _.filter(
+          varsAndValues,
+          ({ value }) => !_.startsWith(value, '$')
+        );
+      }
+      fs.writeFileSync(
+        dest,
+        yaml.dump({
+          items: varsAndValues,
+          meta: {
+            description: `To add to these items, use Sass variables that start with <code>${lineStartsWith}</code> in <code>${src}</code>`,
+          },
+        })
+      );
     }
-    fs.writeFileSync(dest, yaml.dump({
-      items: varsAndValues,
-      meta: {
-        description: `To add to these items, use Sass variables that start with <code>${lineStartsWith}</code> in <code>${src}</code>`,
-      },
-    }));
-
-  });
+  );
   done();
 }
 
 // Watch files.
 function watchFiles() {
-  gulp.watch(config.sass.watchFiles, gulp.series(css, colorSwatches, plGenerate));
+  gulp.watch(
+    config.sass.watchFiles,
+    gulp.series(css, colorSwatches, plGenerate)
+  );
   gulp.watch(config.js.watchFiles, gulp.series(cleanJS, js, plGenerate));
   gulp.watch(
     config.patternLab.watchFiles,
-    gulp.series(plGenerate, browserSyncReload),
+    gulp.series(plGenerate, browserSyncReload)
   );
 }
 
@@ -201,8 +210,8 @@ function drupalComposer(done) {
     .pipe(
       replace(
         'IT@OSU Pattern Lab',
-        'IT@OSU Pattern Lab assets for use in a Drupal 8/9 theme',
-      ),
+        'IT@OSU Pattern Lab assets for use in a Drupal 8/9 theme'
+      )
     )
     .pipe(gulp.dest('it-osu-pl-drupal'));
   done();
@@ -210,15 +219,17 @@ function drupalComposer(done) {
 
 // Request current README from it-osu-pl-drupal.
 function requestReadme(done) {
-  download('https://raw.githubusercontent.com/it-osu-web/it-osu-pl-drupal/master/README.md')
-    .pipe(gulp.dest('it-osu-pl-drupal'));
+  download(
+    'https://raw.githubusercontent.com/it-osu-web/it-osu-pl-drupal/master/README.md'
+  ).pipe(gulp.dest('it-osu-pl-drupal'));
   done();
 }
 
 // Request current CHANGELOG from it-osu-pl-drupal.
 function requestChangelog(done) {
-  download('https://raw.githubusercontent.com/it-osu-web/it-osu-pl-drupal/master/CHANGELOG.md')
-    .pipe(gulp.dest('it-osu-pl-drupal'));
+  download(
+    'https://raw.githubusercontent.com/it-osu-web/it-osu-pl-drupal/master/CHANGELOG.md'
+  ).pipe(gulp.dest('it-osu-pl-drupal'));
   done();
 }
 
@@ -246,7 +257,8 @@ function ghDataRemove(done) {
 // Publish compiled PL to gh-pages branch.
 function ghPublish(done) {
   ghpages.publish(
-    'build', {
+    'build',
+    {
       message: 'Publish gh-pages: auto-generated commit via gulp.',
     },
     function (err) {
@@ -255,7 +267,7 @@ function ghPublish(done) {
       } else {
         console.log(err);
       }
-    },
+    }
   );
   done();
 }
@@ -263,7 +275,8 @@ function ghPublish(done) {
 // Publish patterns to the it-osu-web/it-osu-pl-drupal repository.
 function drupalPublish(done) {
   ghpages.publish(
-    'it-osu-pl-drupal', {
+    'it-osu-pl-drupal',
+    {
       repo: 'https://github.com/it-osu-web/it-osu-pl-drupal.git',
       branch: 'master',
       message: 'Publish drupal: auto-generated commit via gulp.',
@@ -274,7 +287,7 @@ function drupalPublish(done) {
       } else {
         console.log(err);
       }
-    },
+    }
   );
   done();
 }
@@ -287,20 +300,20 @@ const start = gulp.series(
   copyNPM,
   copyBuild,
   copyDrupal,
-  watch,
+  watch
 );
 const buildPages = gulp.series(
   cleanJS,
   gulp.parallel(css, js),
   ghDataAdd,
   plGenerate,
-  copyBuild,
+  copyBuild
 );
 const deployPages = gulp.series(
   ghPagesCache,
   buildPages,
   ghPublish,
-  ghDataRemove,
+  ghDataRemove
 );
 const buildDrupal = gulp.series(
   cleanJS,
@@ -310,7 +323,7 @@ const buildDrupal = gulp.series(
   copyDrupal,
   drupalComposer,
   requestChangelog,
-  requestReadme,
+  requestReadme
 );
 const deployDrupal = gulp.series(ghPagesCache, drupalPublish);
 
