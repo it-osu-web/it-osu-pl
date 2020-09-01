@@ -1,21 +1,24 @@
-<footer id="site-footer" class="site-footer site-footer--{{ footer_color }}">
-	<div class="site-footer__inner grid-container">
+<footer id='site-footer' class='site-footer site-footer--{{ footer_color }}'>
+	<div class='site-footer__inner grid-container'>
 
-		<div class="site-footer__social-media">
+		<div class='site-footer__social-media'>
 			{% include "@molecules/social-media-links/social-media-links.twig" %}
 		</div>
 
-		<div class="site-footer__address-block">
+		<div class='site-footer__address-block'>
 			{% include "@molecules/address-block/address-block.twig" %}
 		</div>
 
-		<div class="site-footer__ada-statement">
-			<p>If you have trouble accessing this page and need to request an alternate format, contact
-				<a href="mailto:{{ ada_email }}?subject=Accessibility%20Assistance">{{ ada_email }}</a>.</p>
+		<div
+			class='site-footer__ada-statement'>
+			{# <p>If you have trouble accessing this page and need to request an alternate format, contact
+			<a href='mailto:{{ ada_email }}?subject=Accessibility%20Assistance'>{{ ada_email }}</a>.</p> #}
+			<p>If you have a disability and experience difficulty accessing this content, please call the Accessibility Helpline at
+				<a href='tel:6142925000'>614-292-5000</a>.</p>
 		</div>
 
 		{% if footer_text %}
-			<div class="site-footer__footer-text">
+			<div class='site-footer__footer-text'>
 				<p>{{ footer_text }}</p>
 			</div>
 		{% endif %}
@@ -23,8 +26,8 @@
 		{# show admin_link for Drupal sites if selected and user is not logged in #}
 		{% if admin_link == 1 %}
 			{% if not logged_in %}
-				<div class="site-footer__login-link">
-					<a href="/user/login">Admin Login</a>
+				<div class='site-footer__login-link'>
+					<a href='/user/login'>Admin Login</a>
 				</div>
 			{% endif %}
 		{% endif %}
