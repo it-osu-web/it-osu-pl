@@ -4,6 +4,7 @@
 - Add optional site slogan to masthead.
 - Adjust status message css and rename twig template. 
 - Update base table styles.
+- Add field__label style.
 
 
 ## [1.1.6] - 2020-09-01
