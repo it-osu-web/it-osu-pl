@@ -45,3 +45,9 @@ $statuses: (
     }
   }
 }
+
+// Adjust enclosing box for lists.
+.status-box ul {
+  padding: 0;
+  margin: 0;
+}
