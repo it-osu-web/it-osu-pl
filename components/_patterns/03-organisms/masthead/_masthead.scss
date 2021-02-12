@@ -16,6 +16,12 @@
   display: block;
 }
 
+.site-name__slogan {
+  display: block;
+  font-family: $capita;
+  font-style: italic;
+}
+
 #site-logo {
   display: none;
   float: right;
@@ -60,16 +66,18 @@ a.site-logo__link {
     margin-left: 2px;
   }
 
+  .site-name__slogan {
+    color: $text-color;
+    font-size: rem-calc(21);
+    padding-top: rem-calc(4);
+  }
+
   a.site-name__link {
-    @include heading(38, 700);
+    @include heading(40, 700);
     line-height: 105%;
     text-decoration: none;
     color: $text-color;
     letter-spacing: 0.0125em;
-
-    @include breakpoint(large) {
-      font-size: rem-calc(48);
-    }
 
     &:hover {
       background: none;
@@ -83,7 +91,7 @@ a.site-logo__link {
   }
 
   a.site-name__link--long {
-    font-size: rem-calc(36);
+    font-size: rem-calc(32);
   }
 
   .site-name__image {
@@ -130,20 +138,21 @@ a.site-logo__link {
     font-size: 1rem;
     font-weight: 300;
     color: $text-color;
-    margin-bottom: -3px;
     margin-left: 2px;
   }
 
+  .site-name__slogan {
+    color: $text-color;
+    font-size: rem-calc(20);
+    padding-top: rem-calc(2);
+  }
+
   a.site-name__link {
-    @include heading(38, 700);
+    @include heading(40, 700);
     line-height: 105%;
     text-decoration: none;
     color: $text-color;
     letter-spacing: 0.0125em;
-
-    @include breakpoint(large) {
-      font-size: rem-calc(48);
-    }
 
     &:hover {
       background: none;
@@ -157,7 +166,7 @@ a.site-logo__link {
   }
 
   a.site-name__link--long {
-    font-size: rem-calc(33);
+    font-size: rem-calc(31);
   }
 
   .site-name__image {
