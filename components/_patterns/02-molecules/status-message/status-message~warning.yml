@@ -1,0 +1,3 @@
+message_list:
+  warning:
+    message: "This is a warning message"
