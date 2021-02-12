@@ -6,6 +6,7 @@
 - Update base table styles.
 - Add field__label style.
 - Add clearfix to several regions in page template.
+- Update aria-labelledby in book menu. 
 
 
 ## [1.1.6] - 2020-09-01
