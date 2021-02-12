@@ -5,9 +5,11 @@
 - Adjust status message css and rename twig template. 
 - Update base table styles.
 - Add field__label style.
+- Add clearfix to several regions in page template.
 
 
 ## [1.1.6] - 2020-09-01
+
 - Update ADA message in footer.
 
 ## [1.1.5] - 2020-07-25
