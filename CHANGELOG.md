@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased]
+- Add optional site slogan to masthead.
+
 
 ## [1.1.6] - 2020-09-01
 - Update ADA message in footer.
