@@ -1,11 +1,43 @@
-.table__caption {
-	text-align: left;
-	margin-bottom: 0.5em;
+// This builds upon the styles provided by Foundation.
+
+table {
+  margin: rem-calc(20 0);
+
+  caption {
+    text-align: left;
+    font-family: $capita;
+    font-style: italic;
+    font-weight: 300;
+    font-size: rem-calc(18);
+  }
 }
 
-.table__heading-cell {
-	font-weight: 700;
-	&[scope='row'] {
-		text-align: left;
-	}
+tbody,
+thead {
+  border: 1px solid $gray-border;
+}
+
+th {
+  background: $gray-dark !important;
+  color: $white;
+  line-height: 1.25 !important;
+  p {
+    margin-bottom: 0;
+    line-height: 1.25;
+    font-size: rem-calc(15);
+  }
+}
+
+th,
+td {
+  vertical-align: top;
+  border: 1px solid $gray-border;
+  padding: rem-calc(10 12) !important;
+  font-size: rem-calc(15);
+}
+
+th {
+  &[scope="row"] {
+    text-align: left;
+  }
 }
