@@ -32,6 +32,9 @@ a.button {
 
   @each $name, $color in $foundation-palette {
     &.#{$name} {
+      .svg-inline--fa {
+        color: $white !important;
+      }
       &:focus {
         background: $color;
       }
