@@ -17,3 +17,6 @@ page:
   sidebar_2: "Test Sidebar 2"
   pre_footer: "Test Pre-footer"
   # hero: "Test Hero"
+message_list:
+  status:
+    message: "This is an example status message"

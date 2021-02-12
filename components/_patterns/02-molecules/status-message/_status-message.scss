@@ -1,7 +1,7 @@
 $statuses: (
-  'status': $success-color,
-  'warning': $warning-color,
-  'error': $alert-color,
+  "status": $success-color,
+  "warning": $warning-color,
+  "error": $alert-color,
 ) !default;
 
 @each $status-type, $color in $statuses {
@@ -46,8 +46,12 @@ $statuses: (
   }
 }
 
-// Adjust enclosing box for lists.
-.status-box ul {
-  padding: 0;
-  margin: 0;
+// Adjust enclosing box.
+.status-box {
+  padding-top: rem-calc(16);
+  padding-bottom: rem-calc(4);
+  ul {
+    padding: 0;
+    margin: 0;
+  }
 }
