@@ -64,3 +64,11 @@ a.button {
     }
   }
 }
+
+// Disabled button style overrides.
+.button.hollow.disabled {
+  &:hover,
+  &:focus {
+    background: $white;
+  }
+}

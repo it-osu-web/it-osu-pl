@@ -9,6 +9,7 @@
 - Update aria-labelledby in book menu.
 - Update pager color.
 - Update extlink button style.
+- Add disabled button styles.
 
 
 ## [1.1.6] - 2020-09-01
