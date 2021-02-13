@@ -32,6 +32,9 @@ a.button {
 
   @each $name, $color in $foundation-palette {
     &.#{$name} {
+      .svg-inline--fa {
+        color: $white !important;
+      }
       &:focus {
         background: $color;
       }
@@ -59,5 +62,13 @@ a.button {
         background: $color;
       }
     }
+  }
+}
+
+// Disabled button style overrides.
+.button.hollow.disabled {
+  &:hover,
+  &:focus {
+    background: $white;
   }
 }

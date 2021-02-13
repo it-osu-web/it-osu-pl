@@ -1,48 +1,48 @@
 .pager {
-	margin: 2em 0;
+  margin: 2em 0;
 }
 
 .pager__items {
-	@include list-reset;
-	text-align: center;
+  @include list-reset;
+  text-align: center;
 }
 
 .pager__item {
-	display: inline-block;
-	margin: 0 rem-calc(5);
+  display: inline-block;
+  margin: 0 rem-calc(5);
 }
 
 .pager__link,
 .pager__link:link,
 .pager__link:visited {
-	display: block;
-	min-width: 32px;
-	background: $red;
-	color: $white;
-	padding: 8px 12px 6px;
-	text-decoration: none;
-	line-height: 1.25;
-	font-size: 16px;
-	font-weight: 700;
+  display: block;
+  min-width: 32px;
+  background: $gray;
+  color: $white;
+  padding: 8px 12px 6px;
+  text-decoration: none;
+  line-height: 1.25;
+  font-size: 16px;
+  font-weight: 700;
 
-	&.is-active,
-	&:hover {
-		background: $near-black;
-	}
+  &.is-active,
+  &:hover {
+    background: $near-black;
+  }
 
-	&:focus {
-		outline: 3px solid $black;
-		outline-offset: 1px;
-	}
+  &:focus {
+    outline: 3px solid $black;
+    outline-offset: 1px;
+  }
 
-	&.pager__link--next {
-		padding: 8px 10px 6px 12px;
-	}
+  &.pager__link--next {
+    padding: 8px 10px 6px 12px;
+  }
 
-	&.pager__link--prev {
-		padding: 8px 12px 6px 10px;
-		svg {
-			transform: rotate(180deg);
-		}
-	}
+  &.pager__link--prev {
+    padding: 8px 12px 6px 10px;
+    svg {
+      transform: rotate(180deg);
+    }
+  }
 }
