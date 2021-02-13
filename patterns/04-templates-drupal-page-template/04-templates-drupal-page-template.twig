@@ -7,7 +7,7 @@
 	{% include "@organisms/masthead/_masthead.twig" %}
 </header>
 
-<div class="layout__wrapper layout__wrapper--primary-menu">
+<div class="layout__wrapper layout__wrapper--primary-menu clearfix">
 	<div class="layout__inner layout__inner--primary-menu grid-container">
 		{% block primary_menu %}
 			{{ page.primary_menu }}
@@ -15,7 +15,7 @@
 	</div>
 </div>
 
-<div class="layout__wrapper layout__wrapper--hero">
+<div class="layout__wrapper layout__wrapper--hero clearfix">
 	<div class="layout__inner layout__inner--hero grid-container">
 		{% block hero %}
 			{{ page.hero }}
@@ -23,7 +23,7 @@
 	</div>
 </div>
 
-<div class="layout__wrapper layout__wrapper--breadcrumb">
+<div class="layout__wrapper layout__wrapper--breadcrumb clearfix">
 	<div class="layout__inner layout__inner--breadcrumb grid-container">
 		{% block breadcrumb %}
 			{{ page.breadcrumb }}
@@ -31,7 +31,7 @@
 	</div>
 </div>
 
-<div class="layout__wrapper layout__wrapper--system">
+<div class="layout__wrapper layout__wrapper--system clearfix">
 	<div class="layout__inner layout__inner--system grid-container">
 		{% block system %}
 			{{ page.system }}
@@ -86,7 +86,7 @@
 </div>
 
 <footer role="contentinfo">
-	<div class="layout__wrapper layout__wrapper--pre-footer">
+	<div class="layout__wrapper layout__wrapper--pre-footer clearfix">
 		<div class="layout__inner layout__inner--pre-footer grid-container">
 			{% block pre_footer %}
 				{{ page.pre_footer }}
