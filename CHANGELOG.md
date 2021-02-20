@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.8] - 2021-02-19
+- Add general variant of status message.
+- Make sure sure footer_text only renders if it has value.
+- Remove all references to TTD.
+- Remove explicit refs to ada_email.
+- Adjust font weight in address block.
+- Masthead css updates.
+
 ## [1.1.7] - 2021-02-12
 - Add optional site slogan to masthead.
 - Adjust status message css and rename twig template. 
