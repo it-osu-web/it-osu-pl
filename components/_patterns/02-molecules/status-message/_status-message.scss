@@ -2,6 +2,7 @@ $statuses: (
   "status": $success-color,
   "warning": $warning-color,
   "error": $alert-color,
+  "general": $red-dark,
 ) !default;
 
 @each $status-type, $color in $statuses {

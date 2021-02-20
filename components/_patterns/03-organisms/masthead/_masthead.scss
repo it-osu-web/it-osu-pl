@@ -12,14 +12,34 @@
   vertical-align: middle;
 }
 
+a.site-name__link {
+  text-decoration: none;
+  letter-spacing: 0.0125em;
+
+  &:hover {
+    background: none;
+  }
+
+  &:focus {
+    background: none;
+    outline-offset: 3px;
+  }
+}
+
 .site-name__prefix {
   display: block;
+  font-weight: 400;
+  margin-left: 2px;
+  letter-spacing: 0.0125em;
 }
 
 .site-name__slogan {
   display: block;
   font-family: $capita;
   font-style: italic;
+  margin-left: 2px;
+  line-height: 1;
+  padding: rem-calc(6 0 4);
 }
 
 #site-logo {
@@ -37,6 +57,10 @@ a.site-logo__link {
 
   &:hover {
     background: none;
+  }
+  &:focus {
+    background: none;
+    outline-offset: 3px;
   }
 }
 
@@ -58,40 +82,30 @@ a.site-logo__link {
     }
   }
 
-  .site-name__prefix {
-    font-size: rem-calc(18);
-    font-weight: 400;
-    color: $text-color;
-    letter-spacing: 0.0125em;
-    margin-left: 2px;
-  }
-
-  .site-name__slogan {
-    color: $text-color;
-    font-size: rem-calc(21);
-    padding-top: rem-calc(4);
-  }
-
   a.site-name__link {
-    @include heading(40, 700);
-    line-height: 105%;
-    text-decoration: none;
+    @include heading(40, 700, $line-height: 1);
     color: $text-color;
-    letter-spacing: 0.0125em;
-
-    &:hover {
-      background: none;
-    }
 
     &:focus {
-      background: none;
       outline: 2px solid $text-color;
-      outline-offset: 3px;
     }
   }
 
   a.site-name__link--long {
     font-size: rem-calc(32);
+  }
+
+  .site-name__prefix {
+    font-size: rem-calc(18);
+    color: $text-color;
+  }
+
+  .site-name__slogan {
+    color: $text-color;
+    font-size: rem-calc(18);
+    @include breakpoint(medium) {
+      font-size: rem-calc(20);
+    }
   }
 
   .site-name__image {
@@ -101,9 +115,7 @@ a.site-logo__link {
 
   a.site-logo__link {
     &:focus {
-      background: none;
       outline: 2px solid $text-color;
-      outline-offset: 3px;
     }
   }
 
@@ -134,39 +146,30 @@ a.site-logo__link {
     }
   }
 
-  .site-name__prefix {
-    font-size: 1rem;
-    font-weight: 300;
-    color: $text-color;
-    margin-left: 2px;
-  }
-
-  .site-name__slogan {
-    color: $text-color;
-    font-size: rem-calc(20);
-    padding-top: rem-calc(2);
-  }
-
   a.site-name__link {
-    @include heading(40, 700);
-    line-height: 105%;
-    text-decoration: none;
+    @include heading(40, 700, $line-height: 1);
     color: $text-color;
-    letter-spacing: 0.0125em;
-
-    &:hover {
-      background: none;
-    }
 
     &:focus {
-      background: none;
       outline: 2px solid $text-color;
-      outline-offset: 3px;
     }
   }
 
   a.site-name__link--long {
     font-size: rem-calc(31);
+  }
+
+  .site-name__prefix {
+    font-size: 1rem;
+    color: $text-color;
+  }
+
+  .site-name__slogan {
+    color: $text-color;
+    font-size: rem-calc(18);
+    @include breakpoint(medium) {
+      font-size: rem-calc(19);
+    }
   }
 
   .site-name__image {
@@ -176,9 +179,7 @@ a.site-logo__link {
 
   a.site-logo__link {
     &:focus {
-      background: none;
       outline: 3px solid $text-color;
-      outline-offset: 3px;
     }
   }
 
