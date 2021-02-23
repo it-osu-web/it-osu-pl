@@ -1,5 +1,8 @@
 # Changelog
 
+## [Unreleased] 
+- Adjust padding on <a> elements.
+
 ## [1.1.8] - 2021-02-19
 - Add general variant of status message.
 - Make sure sure footer_text only renders if it has value.
