@@ -2,6 +2,7 @@
 
 ## [Unreleased] 
 - Adjust padding on <a> elements.
+- Indicate that external links are external in visually-hidden text.
 
 ## [1.1.8] - 2021-02-19
 - Add general variant of status message.
