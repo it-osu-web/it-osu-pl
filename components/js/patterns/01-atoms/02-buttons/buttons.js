@@ -2,7 +2,7 @@
 (function ($) {
 	$('.button').each(function () {
 		if ($(this).hasClass('ext')) {
-			$(this).append('<i class="fas fa-external-link-alt"></i>');
+			$(this).append('<span class="visually-hidden">external</span><i class="fas fa-external-link-alt"></i>');
 		}
 		if ($(this).hasClass('mailto')) {
 			$(this).append('<i class="fas fa-envelope"></i>');
