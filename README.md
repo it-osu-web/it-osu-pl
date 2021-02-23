@@ -22,7 +22,7 @@ The gulp default task includes initial PL site generation, regeneration as neces
 
 ## Contributing to this project
 
-Never commit directly to the `master` branch. All contributions should be added via pull requests. We will be following the [GitHub Flow](https://guides.github.com/introduction/flow/) branching model.
+Never commit directly to the `develop` or `master` branches. All contributions should be added via pull requests. We will be using the [git-flow](https://danielkummer.github.io/git-flow-cheatsheet/) branching model. This requires a one-time [setup](https://danielkummer.github.io/git-flow-cheatsheet/#setup) on your machine. And a one-time initialization of your local repo. Run `git flow init` within the root directory of the repo and accept all defaults during the init process.
 
 Be sure to work from the repo's [issue queue](https://github.com/it-osu-web/it-osu-pl/issues). If you plan to work on something that doesn't already have an issue, create one and assign it to yourself.
 
