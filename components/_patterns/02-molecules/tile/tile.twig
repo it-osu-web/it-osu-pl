@@ -13,10 +13,14 @@
 {% set classes_array = [tile_base_class] %}
 
 
-{% if (tile_modifiers is defined) or (tile_icon is defined) or (tile_text is null) %}
+{% if (tile_icon is defined) or (tile_color is defined) or (tile_modifiers is defined) or (tile_text is null) %}
 
 	{% if tile_icon is defined %}
 		{% set classes_array = classes_array|merge(["#{tile_base_class}--with-icon"]) %}
+	{% endif %}
+
+	{% if tile_color is defined %}
+		{% set classes_array = classes_array|merge(["#{tile_base_class}--#{tile_color}"]) %}
 	{% endif %}
 
 	{% if tile_modifiers is defined %}
@@ -36,7 +40,7 @@
 {% endif %}
 
 
-<a href="{{ tile_link }}" class="{{ tile_classes }} {{ tile_extra_classes }}" alt="{{ tile_link_alt }}">
+<a href="{{ tile_link }}" class="{{- tile_classes -}} {{- tile_extra_classes -}}" alt="{{ tile_link_alt }}">
 
 	{% if tile_icon_src %}
 		<div class="tile__icon">
