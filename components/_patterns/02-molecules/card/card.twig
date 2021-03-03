@@ -31,12 +31,9 @@
 	<img class="card__image" alt="{{ card_image_alt }}" src="{{ card_image }}"/>
 	<div class="{{ card_base_class }}__inner">
 		<div class="card__title">
-			{% include "@atoms/00-text/00-headings/_heading.twig" with {
-				"heading_level": card_heading_level|default(2),
-				"heading": card_title,
-			} %}
+			<h{{card_heading_level}}>{{ card_title }}</h{{card_heading_level}}>
 		</div>
-		<p class="card__content">{{ card_text }}</p>
+		<div class="card__content">{{ card_text }}</div>
 		<a class="button card__link" href="{{ card_link_url }}">{{ card_link_title }}</a>
 	</div>
 </div>

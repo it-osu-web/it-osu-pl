@@ -29,10 +29,7 @@
 		{% if infobox_heading_level == 0 %}
 			{{ infobox_title }}
 		{% else %}
-			{% include "@atoms/00-text/00-headings/_heading.twig" with {
-        "heading_level": infobox_heading_level|default(2),
-        "heading": infobox_title,
-      } %}
+			<h{{infobox_heading_level}}>{{ infobox_title }}</h{{infobox_heading_level}}>
 		{% endif %}
 	</div>
 	<div class="info-box__body">

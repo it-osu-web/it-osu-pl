@@ -2,6 +2,13 @@
 
 ## [Unreleased]
 
+## [1.2.0] - 2021-03-03
+- Update markup for card, info-box, and tile.
+- Update tile styles — remove italics.
+- Added color variations to tiles.
+- Updated `_tile.twig` file name to `tile.twig`. 
+
+
 ## [1.1.9] - 2021-03-02
 - Adjust padding on <a> elements.
 - Indicate that external links are external in visually-hidden text.

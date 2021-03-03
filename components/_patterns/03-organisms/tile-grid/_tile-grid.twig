@@ -5,7 +5,7 @@
 		{% else %}
 			{% set item_classes = 'cell small-12 medium-auto' %}
 		{% endif %}
-		{% include "@molecules/tile/_tile.twig" with {
+		{% include "@molecules/tile/tile.twig" with {
         "tile_modifiers": tile.tile_modifiers,
         "tile_extra_classes": item_classes,
         "tile_heading_level": tile.heading_level,
