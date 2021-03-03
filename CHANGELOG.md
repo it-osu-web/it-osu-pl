@@ -3,6 +3,7 @@
 ## [Unreleased] 
 - Adjust padding on <a> elements.
 - Indicate that external links are external in visually-hidden text.
+- Update card, info-box, and tile patterns to improve compatibility with Drupal themes. 
 
 
 ## [1.1.8] - 2021-02-19
