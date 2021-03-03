@@ -36,8 +36,12 @@
 
 .card__content {
   font-weight: 400;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .card__link {
-  margin-top: $space-y / 2;
+  margin-top: $space-y;
 }
