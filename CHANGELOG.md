@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 
-## [1.2.0] - 2021-03-02
+## [1.2.0] - 2021-03-03
 - Update markup for card, info-box, and tile.
 - Update tile styles — remove italics.
 - Added color variations to tiles.
