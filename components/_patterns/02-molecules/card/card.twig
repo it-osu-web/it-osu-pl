@@ -5,13 +5,12 @@
  *
  * Available variables:
  * - card_modifiers: array of modifiers to add to the base classname
- * - card_size: card size, either small, medium or large
  * - card_extra_classes: string of extra classes to add to main div
  * - card_image: url for the card's header image
  * - card_title: text string for the card's title
  * - card_text: text string for the card's content
- * - card_button_content: text string for the button label
- * - card_button_modifiers: modifiers for the button class, defaults to "alt"
+ * - card_link_url: link url.
+ * - card_link_title: link text.
  *
  */
 #}
@@ -19,26 +18,25 @@
 {% set card_base_class = card_base_class|default('card') %}
 {% set classes_array = [card_base_class] %}
 
-{% if (card_modifiers is defined) or (card_size is defined)  %}
-	{% if card_modifiers is defined %}
-		{% for card_modifier in card_modifiers %}
-			{% set classes_array = classes_array|merge(["#{card_base_class}--#{card_modifier}"]) %}
-		{% endfor %}
-	{% endif %}
-	{% set card_classes = classes_array|join(' ') %}
-	{% if card_size is defined %}
-		{% set classes_array = classes_array|merge(["#{card_base_class}--#{card_size}"]) %}
-	{% endif %}
+{% if card_modifiers is defined %}
+	{% for card_modifier in card_modifiers %}
+		{% set classes_array = classes_array|merge(["#{card_base_class}--#{card_modifier}"]) %}
+	{% endfor %}
 	{% set card_classes = classes_array|join(' ') %}
 {% else %}
 	{% set card_classes = card_base_class %}
 {% endif %}
 
 <div class="{{ card_classes }} {{ card_extra_classes }}">
-	<img class="card__image" alt="Card Image" src="{{ card_image }}"/>
-	<div class="{{card_base_class}}__inner">
-		<h2 class="card__title">{{ card_title }}</h2>
+	<img class="card__image" alt="{{ card_image_alt }}" src="{{ card_image }}"/>
+	<div class="{{ card_base_class }}__inner">
+		<div class="card__title">
+			{% include "@atoms/00-text/00-headings/_heading.twig" with {
+				"heading_level": card_heading_level|default(2),
+				"heading": card_title,
+			} %}
+		</div>
 		<p class="card__content">{{ card_text }}</p>
-		<button class="button" href="#">Card Button</button>
+		<a class="button card__link" href="{{ card_link_url }}">{{ card_link_title }}</a>
 	</div>
 </div>
