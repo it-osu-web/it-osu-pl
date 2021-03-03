@@ -13,10 +13,14 @@
 {% set classes_array = [tile_base_class] %}
 
 
-{% if (tile_modifiers is defined) or (tile_icon is defined) or (tile_text is null) %}
+{% if (tile_icon is defined) or (tile_color is defined) or (tile_modifiers is defined) or (tile_text is null) %}
 
 	{% if tile_icon is defined %}
 		{% set classes_array = classes_array|merge(["#{tile_base_class}--with-icon"]) %}
+	{% endif %}
+
+	{% if tile_color is defined %}
+		{% set classes_array = classes_array|merge(["#{tile_base_class}--#{tile_color}"]) %}
 	{% endif %}
 
 	{% if tile_modifiers is defined %}
@@ -36,7 +40,8 @@
 {% endif %}
 
 
-<a href="{{ tile_link }}" class="{{ tile_classes }} {{ tile_extra_classes }}">
+<a href="{{ tile_link }}" class="{{ tile_classes }} {{ tile_extra_classes }}" alt="{{ tile_link_alt }}">
+
 	{% if tile_icon_src %}
 		<div class="tile__icon">
 			<img src="{{ tile_icon_src }}" alt="{{ tile_icon_alt }}"/>
@@ -48,10 +53,7 @@
 			{% if tile_heading_level == 0 %}
 				{{ tile_title }}
 			{% else %}
-				{% include "@atoms/00-text/00-headings/_heading.twig" with {
-        "heading_level": tile_heading_level|default(2),
-        "heading": tile_title,
-      } %}
+				<h{{tile_heading_level}}>{{ tile_title }}</h{{tile_heading_level}}>
 			{% endif %}
 		</div>
 	{% endif %}
@@ -61,6 +63,6 @@
 	{% endif %}
 
 	{% if tile_text %}
-		<p class="tile__text">{{ tile_text }}</p>
+		<div class="tile__text">{{ tile_text }}</div>
 	{% endif %}
 </a>
