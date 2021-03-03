@@ -2,7 +2,7 @@
   background-color: $background;
   color: $color;
   margin-bottom: $grid-margin-after;
-  padding: $padding-y $padding-x $padding-y-bottom;
+  padding: $padding-y $padding-x;
   width: 100%;
   text-align: center;
   display: block;
@@ -44,9 +44,9 @@
   }
 
   .tile__text {
-    font-family: $capita;
-    font-style: italic;
-    font-weight: 300;
+    p:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
