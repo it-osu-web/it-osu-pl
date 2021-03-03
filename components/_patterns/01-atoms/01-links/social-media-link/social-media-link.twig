@@ -1,5 +1,6 @@
 <li class="social-media__item social-media__item--{{ social_link.name }} social-media__item--{{ loop.index }}" >
-  <a href="{{ social_link.url }}" target="_blank" title="{{ social_link.name }} profile link.">
+  <a href="{{ social_link.url }}" target="_blank">
+    <span class="visually-hidden">{{ social_link.name }} profile — external</span>
     <i class="{{ social_link.prefix }} fa-fw fa-lg fa-{{ social_link.icon }}"></i>
   </a>
 </li>
