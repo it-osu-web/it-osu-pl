@@ -4,9 +4,9 @@
  * - tile_modifiers - array of modifiers to add to the base classname
  * - tile_extra_classes - string of extra classes to add to main div
  * - tile_heading_level - defaults to 2, use '0' for no header element.
- * - tile_title - title
- * - tile_link - link from title (leave blank for no link)
- * - tile_text - the content of the paragraph
+ * - tile_title - title.
+ * - tile_link - link from title (leave blank for no link).
+ * - tile_text - the content of the paragraph.
 #}
 
 {% set tile_base_class = tile_base_class|default('tile') %}
@@ -37,24 +37,23 @@
 
 
 <a href="{{ tile_link }}" class="{{ tile_classes }} {{ tile_extra_classes }}">
-	{% if tile_icon %}
+	{% if tile_icon_src %}
 		<div class="tile__icon">
-			<img src="{{ base_path }}/images/{{ tile_icon }}" alt="{{ tile_icon_alt }}"/>
-
+			<img src="{{ tile_icon_src }}" alt="{{ tile_icon_alt }}"/>
 		</div>
 	{% endif %}
 
 	{% if tile_title %}
-	<div class="tile__title">
-		{% if tile_heading_level == 0 %}
-			{{ tile_title }}
-		{% else %}
-			{% include "@atoms/00-text/00-headings/_heading.twig" with {
+		<div class="tile__title">
+			{% if tile_heading_level == 0 %}
+				{{ tile_title }}
+			{% else %}
+				{% include "@atoms/00-text/00-headings/_heading.twig" with {
         "heading_level": tile_heading_level|default(2),
         "heading": tile_title,
       } %}
-		{% endif %}
-	</div>
+			{% endif %}
+		</div>
 	{% endif %}
 
 	{% if tile_label %}
@@ -62,10 +61,6 @@
 	{% endif %}
 
 	{% if tile_text %}
-		<div class="tile__body">
-			{% include "@atoms/00-text/04-paragraph/paragraph.twig" with {
-        "paragraph_content": tile_text,
-      } %}
-		</div>
+		<p class="tile__text">{{ tile_text }}</p>
 	{% endif %}
 </a>
