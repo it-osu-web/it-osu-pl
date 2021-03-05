@@ -1,6 +1,9 @@
 # Changelog
 
 ## [Unreleased]
+- Provide alternative to clearfix on layout__wrappers.
+- Update tile hover styles.
+- Remove tile alt.
 
 ## [1.2.0] - 2021-03-03
 - Update markup for card, info-box, and tile.
