@@ -72,6 +72,9 @@ a.tile--gray {
     font-weight: 400;
   }
 }
+a.tile--white {
+  @include tile($white);
+}
 
 a.tile--title-only {
   .tile__title {
