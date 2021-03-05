@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased]
+- Provide white option for tile.
 
 ## [1.2.1] - 2021-03-04
 - Provide alternative to clearfix on layout__wrappers.
