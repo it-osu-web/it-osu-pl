@@ -9,7 +9,11 @@
   text-decoration: none;
   color: $color;
 
-  &:hover,
+  &:hover {
+    outline: 2px solid $near-black;
+    background-color: darken($background, 3%);
+  }
+
   &:focus {
     outline: 2px solid $near-black;
     outline-offset: 2px;
