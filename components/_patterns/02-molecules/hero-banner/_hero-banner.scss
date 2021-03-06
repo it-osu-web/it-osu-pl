@@ -1,0 +1,42 @@
+.hero-banner {
+  position: relative;
+  background-color: $near-white;
+  overflow-y: hidden;
+  margin: 0 auto;
+}
+
+.hero-banner__image {
+  border: none;
+}
+
+.hero-banner__content {
+  padding: $padding-y $padding-x;
+
+  @include breakpoint(medium) {
+    position: absolute;
+    top: 2em;
+    left: 2em;
+    max-width: 300px;
+    background: rgba($color: $white, $alpha: 0.7);
+  }
+
+  @include breakpoint(large) {
+    max-width: 400px;
+  }
+  @include breakpoint(xxlarge) {
+    left: 10%;
+  }
+}
+
+.hero-banner__text {
+  @include heading(24, 700);
+
+  @include breakpoint(large) {
+    @include heading(28, 700);
+  }
+}
+
+.hero-banner__link {
+  margin-top: rem-calc(16);
+  margin-bottom: 0;
+}
