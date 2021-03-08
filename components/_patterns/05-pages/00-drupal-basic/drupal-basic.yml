@@ -1,5 +1,10 @@
 masthead_variant: standard
 masthead_color: white
+banner_image: '../../images/banners/energy_3760.jpeg'
+banner_image_alt: "Alt text for this image."
+banner_text: Learn how to temporarily move your class online.
+banner_link_src: '#'
+banner_link_title: View Resources
 breadcrumb:
   1:
     url: "#"
