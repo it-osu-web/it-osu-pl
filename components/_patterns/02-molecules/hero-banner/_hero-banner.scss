@@ -1,0 +1,75 @@
+.hero-banner {
+  position: relative;
+  @include breakpoint(xxlarge) {
+    max-height: 600px;
+  }
+}
+
+.hero-banner__image {
+  position: relative;
+  z-index: 1;
+
+  @include breakpoint(medium) {
+    position: static;
+  }
+
+  img {
+    border: none;
+    margin: 0 auto;
+
+    @include breakpoint(xxlarge) {
+      width: 100%;
+    }
+  }
+}
+
+.hero-banner__inner {
+  @include breakout-inner();
+  position: relative;
+  z-index: 2;
+
+  @include breakpoint(medium) {
+    position: static;
+  }
+}
+
+.hero-banner__content {
+  padding: $padding-y $padding-x;
+  background-color: $near-white;
+  margin-top: -3em;
+  margin-bottom: rem-calc(12);
+  box-shadow: $drop-shadow;
+
+  @include breakpoint(medium) {
+    background-color: rgba(240, 240, 240, 0.7);
+    margin-top: 0;
+    position: absolute;
+    top: 1.5em;
+    max-width: 400px;
+  }
+
+  @include breakpoint(large) {
+    top: 2.5em;
+    max-width: 460px;
+  }
+  @include breakpoint(xlarge) {
+    top: 3em;
+  }
+}
+
+.hero-banner__text {
+  @include heading(24, 700);
+
+  @include breakpoint(medium) {
+    @include heading(22, 700);
+  }
+
+  @include breakpoint(large) {
+    @include heading(26, 700);
+  }
+}
+
+.hero-banner__link {
+  margin-top: rem-calc(20);
+  margin-bottom: rem-calc(2);
+}

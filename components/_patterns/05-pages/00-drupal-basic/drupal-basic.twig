@@ -1,5 +1,9 @@
 {% extends "@templates/drupal/page-template.twig" %}
 
+{% block hero %}
+	{% include "@molecules/hero-banner/hero-banner.twig" %}
+{% endblock %}
+
 {% block breadcrumb %}
 	{% include "@molecules/menus/breadcrumb/breadcrumb.twig" %}
 {% endblock %}

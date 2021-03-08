@@ -2,6 +2,7 @@
 
 ## [Unreleased]
 - Provide white option for tile.
+- Add Hero Banner Pattern.
 
 ## [1.2.1] - 2021-03-04
 - Provide alternative to clearfix on layout__wrappers.
