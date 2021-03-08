@@ -16,11 +16,9 @@
 </div>
 
 <div class="layout__wrapper layout__wrapper--hero">
-	<div class="layout__inner layout__inner--hero grid-container">
-		{% block hero %}
-			{{ page.hero }}
-		{% endblock %}
-	</div>
+	{% block hero %}
+		{{ page.hero }}
+	{% endblock %}
 </div>
 
 <div class="layout__wrapper layout__wrapper--breadcrumb">
