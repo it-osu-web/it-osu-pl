@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased]
+
+## [1.2.3] - 2021-03-11
 - Fixed main menu dropdowns. 
 
 ## [1.2.2] - 2021-03-08
