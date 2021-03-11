@@ -18,6 +18,10 @@ main {
   overflow: auto;
 }
 
+.layout__wrapper--primary-menu {
+  overflow: visible;
+}
+
 .layout__wrapper--system,
 .layout__wrapper--breadcrumb {
   background: white;
