@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased]
+- Improve and unify focus styles for form elements.
 
 ## [1.2.3] - 2021-03-11
 - Fixed main menu dropdowns. 
