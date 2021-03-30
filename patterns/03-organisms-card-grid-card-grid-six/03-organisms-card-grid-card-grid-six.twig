@@ -1,0 +1,33 @@
+<div class="card-grid grid-x grid-margin-x">
+	{% for card in card_data %}
+
+		{% set count = loop.length %}
+		{% set auto = 'cell small-6 medium-auto grid-grow' %}
+		{% set three_across = 'cell small-6 medium-4 grid-grow' %}
+		{% set four_across = 'cell small-6 large-3 grid-grow' %}
+		{% set six_across = 'cell small-6 medium-4 xlarge-2 grid-grow' %}
+		{% set default = 'cell small-6 medium-4 large-3 grid-grow' %}
+
+		{% if count <= 3 %}
+			{% set item_classes = auto %}
+		{% elseif count is divisible by(5) %}
+			{% set item_classes = three_across %}
+		{% elseif count is divisible by(4) %}
+			{% set item_classes = four_across %}
+		{% elseif count is divisible by(3) %}
+			{% set item_classes = three_across %}
+		{% else %}
+			{% set item_classes = default %}
+		{% endif %}
+
+		{% include "@molecules/card/card.twig" with {
+      "card_modifiers": card.card_modifiers,
+      "card_extra_classes": item_classes,
+      "card_image": card.card_image,
+      "card_title": card.card_title,
+      "card_text": card.card_text,
+      "card_link_title": card.card_link_title,
+      "card_link_url": card.card_link_url,
+    } %}
+	{% endfor %}
+</div>
