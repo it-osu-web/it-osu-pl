@@ -3,6 +3,7 @@
 ## [Unreleased]
 - Improve and unify focus styles for form elements.
 - Remove extra page-title from template.
+- Reworked card so that button aligns to bottom of each card.
 
 ## [1.2.3] - 2021-03-11
 - Fixed main menu dropdowns. 
