@@ -1,6 +1,8 @@
 # Changelog
 
-## [Unreleased] -- will bump to 1.3.0
+## [Unreleased]
+
+## [1.3.0] - 2021-03-30
 - Improve and unify focus styles for form elements.
 - Remove extra page-title from template.
 - Reworked card so that button aligns to bottom of each card.
