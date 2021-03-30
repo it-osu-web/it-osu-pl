@@ -1,8 +1,12 @@
 # Changelog
 
-## [Unreleased]
+## [Unreleased] -- will bump to 1.3.0
 - Improve and unify focus styles for form elements.
 - Remove extra page-title from template.
+- Reworked card so that button aligns to bottom of each card.
+- Renamed card grid twig file.
+- Improved how tiles and cards are divided per row within grid. 
+- Removed info-box grid pattern.
 
 ## [1.2.3] - 2021-03-11
 - Fixed main menu dropdowns. 

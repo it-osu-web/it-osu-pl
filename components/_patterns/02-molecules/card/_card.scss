@@ -8,10 +8,6 @@
   width: 100%;
 }
 
-.card__inner {
-  padding: $padding-y $padding-x $padding-y-bottom;
-}
-
 .card__image {
   border: none;
   height: 200px;
@@ -21,7 +17,14 @@
   object-fit: cover;
 }
 
+.card__inner {
+  padding: $padding-y $padding-x $padding-y-bottom;
+  display: grid;
+  grid-template-rows: auto [title] auto [body] 40px [link-start];
+}
+
 .card__title {
+  grid-row-start: title;
   @include heading(26, 700);
   margin-bottom: $header-margin-bottom-narrow;
   h2,
@@ -35,6 +38,7 @@
 }
 
 .card__content {
+  grid-row-start: body;
   font-weight: 400;
 
   p:last-child {
@@ -43,5 +47,6 @@
 }
 
 .card__link {
-  margin-top: $space-y;
+  grid-row-start: link-start;
+  margin-top: 3rem;
 }
