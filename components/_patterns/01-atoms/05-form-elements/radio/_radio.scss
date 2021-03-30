@@ -3,3 +3,7 @@
 
   @extend .form-options-list;
 }
+
+input[type="radio"]:focus {
+  outline: 2px solid $near-black;
+}

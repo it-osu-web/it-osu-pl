@@ -1,5 +1,5 @@
-<div class="tile-grid grid-x grid-margin-x">
-	{% for tile in tile_data %}
+<div class="card-grid grid-x grid-margin-x">
+	{% for card in card_data %}
 
 		{% set count = loop.length %}
 		{% set auto = 'cell small-6 medium-auto grid-grow' %}
@@ -8,10 +8,10 @@
 		{% set six_across = 'cell small-6 medium-4 xlarge-2 grid-grow' %}
 		{% set default = 'cell small-6 medium-4 large-3 grid-grow' %}
 
-		{% if count <= 5 %}
+		{% if count <= 3 %}
 			{% set item_classes = auto %}
-		{% elseif count is divisible by(6) %}
-			{% set item_classes = six_across %}
+		{% elseif count is divisible by(5) %}
+			{% set item_classes = three_across %}
 		{% elseif count is divisible by(4) %}
 			{% set item_classes = four_across %}
 		{% elseif count is divisible by(3) %}
@@ -20,15 +20,14 @@
 			{% set item_classes = default %}
 		{% endif %}
 
-		{% include "@molecules/tile/tile.twig" with {
-      "tile_modifiers": tile.tile_modifiers,
-      "tile_extra_classes": item_classes,
-      "tile_heading_level": tile.heading_level,
-      "tile_link": tile.tile_link,
-      "tile_icon_src": tile.tile_icon_src,
-      "tile_icon_alt": tile.tile_icon_alt,
-      "tile_title": tile.tile_title,
-      "tile_text": tile.tile_text,
-      } %}
+		{% include "@molecules/card/card.twig" with {
+      "card_modifiers": card.card_modifiers,
+      "card_extra_classes": item_classes,
+      "card_image": card.card_image,
+      "card_title": card.card_title,
+      "card_text": card.card_text,
+      "card_link_title": card.card_link_title,
+      "card_link_url": card.card_link_url,
+    } %}
 	{% endfor %}
 </div>
