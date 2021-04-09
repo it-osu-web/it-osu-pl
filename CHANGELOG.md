@@ -2,6 +2,7 @@
 
 ## [Unreleased]
 - Rework card to better utilize css grid for button alignment.
+- Improve value check with footer_text.
 
 ## [1.3.0] - 2021-03-30
 - Improve and unify focus styles for form elements.
