@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased]
+
+## [1.4.0] - 2021-04-09
 - Rework card to better utilize css grid for button alignment.
 - Improve value check with footer_text.
 - Moved wrappers to region templates. NOTICE: Significant markup change.
