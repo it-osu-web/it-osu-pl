@@ -29,13 +29,13 @@
 
 <div class="{{ card_classes }} {{ card_extra_classes }}">
 	<img class="card__image" alt="{{ card_image_alt }}" src="{{ card_image }}"/>
-	<div class="{{ card_base_class }}__inner">
+	<div class="card__content">
 		<div class="card__title">
 			<h{{card_heading_level}}>{{ card_title }}</h{{card_heading_level}}>
 		</div>
-		<div class="card__content">{{ card_text }}</div>
-		<div class="card__link">
-			<a class="button" href=" {{ card_link_url }} ">{{ card_link_title }}</a>
-		</div>
+		<div class="card__text">{{ card_text }}</div>
+	</div>
+	<div class="card__link">
+		<a class="button" href=" {{ card_link_url }} ">{{ card_link_title }}</a>
 	</div>
 </div>

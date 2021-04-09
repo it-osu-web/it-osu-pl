@@ -92,7 +92,11 @@ a.site-logo__link {
   }
 
   a.site-name__link--long {
-    font-size: rem-calc(32);
+    font-size: rem-calc(38);
+
+    @include breakpoint(xlarge) {
+      font-size: rem-calc(42);
+    }
   }
 
   .site-name__prefix {
@@ -156,7 +160,7 @@ a.site-logo__link {
   }
 
   a.site-name__link--long {
-    font-size: rem-calc(31);
+    font-size: rem-calc(32);
   }
 
   .site-name__prefix {

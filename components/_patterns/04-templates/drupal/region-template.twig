@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * Theme override to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region <div>.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+
+{% if pl %}
+	{% set region_name = region_name %}
+{% else %}
+	{% set region_name = region|clean_class %}
+{% endif %}
+
+{%
+  set classes = [
+    'region',
+    'region-' ~ region_name
+  ]
+%}
+
+{# Add names of regions that should go full width. #}
+{% set full_width = ['hero'] %}
+
+{# Add names of regions that should not have wrappers. #}
+{% set no_wrapper = ['content', 'sidebar-1', 'sidebar-2', 'content_after'] %}
+
+{% if content %}
+	{% if region_name in no_wrapper %}
+		<div{{attributes.addClass(classes)}}>
+			{{ content }}
+		</div>
+	{% else %}
+		<div class="layout__wrapper layout__wrapper--{{ region_name }}">
+			<div class="layout__inner layout__inner--{{ region_name }}{% if region_name not in full_width %} grid-container {% endif %}">
+				<div{{attributes.addClass(classes)}}>
+					{{ content }}
+				</div>
+			</div>
+		</div>
+	{% endif %}
+{% endif %}

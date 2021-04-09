@@ -1,44 +1,36 @@
 .card {
-  display: inline-block;
-  margin-bottom: $grid-margin-after;
-  overflow: hidden;
   background-color: $white;
   box-shadow: $drop-shadow;
   border: none;
-  width: 100%;
+  display: grid;
+  grid-gap: 1.125em;
+  grid-template-rows: auto 1fr auto;
 }
 
 .card__image {
   border: none;
-  height: 200px;
+  height: auto;
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  object-fit: cover;
 }
 
-.card__inner {
-  padding: $padding-y $padding-x $padding-y-bottom;
-  display: grid;
-  grid-template-rows: auto [title] auto [body] 40px [link-start];
+.card__content {
+  padding: 0 1.25em;
 }
 
 .card__title {
-  grid-row-start: title;
-  @include heading(26, 700);
+  @include heading(26, 700, $line-height: 1.125);
   margin-bottom: $header-margin-bottom-narrow;
   h2,
   h3,
   h4,
   h5,
   h6 {
-    @include heading(26, 700);
+    @include heading(26, 700, $line-height: 1.125);
     margin-bottom: 0;
   }
 }
 
-.card__content {
-  grid-row-start: body;
+.card__text {
   font-weight: 400;
 
   p:last-child {
@@ -47,6 +39,5 @@
 }
 
 .card__link {
-  grid-row-start: link-start;
-  margin-top: 3rem;
+  padding: 0 1.25em;
 }

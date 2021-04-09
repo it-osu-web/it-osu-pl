@@ -7,35 +7,27 @@
 	{% include "@organisms/masthead/_masthead.twig" %}
 </header>
 
-<div class="layout__wrapper layout__wrapper--primary-menu">
-	<div class="layout__inner layout__inner--primary-menu grid-container">
-		{% block primary_menu %}
-			{{ page.primary_menu }}
-		{% endblock %}
-	</div>
-</div>
 
-<div class="layout__wrapper layout__wrapper--hero">
-	{% block hero %}
-		{{ page.hero }}
-	{% endblock %}
-</div>
+{% block primary_menu %}
+	{{ page.primary_menu }}
+{% endblock %}
 
-<div class="layout__wrapper layout__wrapper--breadcrumb">
-	<div class="layout__inner layout__inner--breadcrumb grid-container">
-		{% block breadcrumb %}
-			{{ page.breadcrumb }}
-		{% endblock %}
-	</div>
-</div>
+{% block hero %}
+	{{ page.hero }}
+{% endblock %}
 
-<div class="layout__wrapper layout__wrapper--system">
-	<div class="layout__inner layout__inner--system grid-container">
-		{% block system %}
-			{{ page.system }}
-		{% endblock %}
-	</div>
-</div>
+{% block breadcrumb %}
+	{{ page.breadcrumb }}
+{% endblock %}
+
+{% block system %}
+	{{ page.system }}
+{% endblock %}
+
+{% block tabs %}
+	{{ page.tabs }}
+{% endblock %}
+
 
 <div class="layout__wrapper layout__wrapper--main">
 	<main id="main-content">
@@ -54,9 +46,7 @@
 				{% endif %}
 
 				<div class="content cell small-12 medium-auto">
-					{% block tabs %}
-						{{ page.tabs }}
-					{% endblock %}
+
 
 					{% block content %}
 						{{ page.content }}
@@ -83,13 +73,9 @@
 </div>
 
 <footer role="contentinfo">
-	<div class="layout__wrapper layout__wrapper--pre-footer">
-		<div class="layout__inner layout__inner--pre-footer grid-container">
-			{% block pre_footer %}
-				{{ page.pre_footer }}
-			{% endblock %}
-		</div>
-	</div>
+	{% block pre_footer %}
+		{{ page.pre_footer }}
+	{% endblock %}
 
 	{% include "@organisms/site-footer/_site-footer.twig" %}
 </footer>

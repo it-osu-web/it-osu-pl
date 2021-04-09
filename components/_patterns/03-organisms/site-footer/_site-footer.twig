@@ -1,3 +1,9 @@
+{% if pl %}
+	{% if footer_text %}
+		{% set has_footer_text = 1 %}
+	{% endif %}
+{% endif %}
+
 <footer id='site-footer' class='site-footer site-footer--{{ footer_color }}'>
 	<div class='site-footer__inner grid-container'>
 
@@ -14,7 +20,7 @@
 				<a href='tel:6142925000'>614-292-5000</a>.</p>
 		</div>
 
-		{% if footer_text.text %}
+		{% if has_footer_text %}
 			<div class='site-footer__footer-text'>
 				<p>{{ footer_text }}</p>
 			</div>
