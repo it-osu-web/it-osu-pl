@@ -1,3 +1,7 @@
 .card-grid {
-	margin-top: $space-y;
+  margin-top: $space-y;
+
+  .card {
+    margin-bottom: rem-calc(30);
+  }
 }
