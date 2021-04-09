@@ -1,17 +1,51 @@
-{% extends "@templates/drupal/page-template.twig" %}
+{% embed "@templates/drupal/page-template.twig" %}
 
-{% block hero %}
-	{% include "@molecules/hero-banner/hero-banner.twig" %}
-{% endblock %}
-
-{% block breadcrumb %}
-	{% include "@molecules/menus/breadcrumb/breadcrumb.twig" %}
-{% endblock %}
-
-{% block system %}
-	{% include "@molecules/status-message/_status-message.twig" %}
-{% endblock %}
-
-{% block primary_menu %}
+	{% set menu_content %}
 	{% include "@molecules/menus/main-menu/main-menu.twig" %}
-{% endblock %}
+	{% endset %}
+
+	{% block primary_menu %}
+		{% include "@templates/drupal/region-template.twig" with {
+		region_name: 'primary-menu',
+		content: menu_content,
+	} %}
+	{% endblock %}
+
+
+	{% set hero_content %}
+	{% include "@molecules/hero-banner/hero-banner.twig" %}
+	{% endset %}
+
+	{% block hero %}
+		{% include "@templates/drupal/region-template.twig" with {
+		region_name: 'hero',
+		content: hero_content,
+	} %}
+	{% endblock %}
+
+
+	{% set breadcrumb_content %}
+	{% include "@molecules/menus/breadcrumb/breadcrumb.twig" %}
+	{% endset %}
+
+	{% block breadcrumb %}
+		{% include "@templates/drupal/region-template.twig" with {
+		region_name: 'breadcrumb',
+		content: breadcrumb_content,
+	} %}
+	{% endblock %}
+
+
+	{% set system_content %}
+	{% include "@molecules/status-message/_status-message.twig" %}
+
+	{% endset %}
+
+	{% block system %}
+		{% include "@templates/drupal/region-template.twig" with {
+		region_name: 'system',
+		content: system_content,
+	} %}
+	{% endblock %}
+
+{% endembed %}

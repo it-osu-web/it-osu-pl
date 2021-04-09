@@ -8,57 +8,61 @@
 
 <div class="masthead masthead--{{ masthead_variant }} masthead--{{ masthead_color }}">
 	<div class="masthead__inner grid-container">
-		<div class="grid-x grid-margin-x">
+		<div
+			class="grid-x grid-margin-x">
 
 			{# Site Name #}
 			{% if masthead_variant == 'slim' %}
 				<div id="site-name" class="cell medium-9 large-10">
-			{% else %}
-				<div id="site-name" class="cell medium-9">
-			{% endif %}
+				{% else %}
+					<div id="site-name" class="cell medium-9">
+					{% endif %}
 
-				{% if use_wordmark == 1 %}
-					<div class="site-name__inner site-name__inner--image">
-						<a class="site-name__link" href="/" title="home" rel="home"><img class="site-name__image" src="{{ base_path ~ directory }}/{{ masthead_wordmark }}" alt="{{ site_name_prefix }} {{ site_name }}"/></a>
+					{% if use_wordmark == 1 %}
+						<div class="site-name__inner site-name__inner--image">
+							<a class="site-name__link" href="/" title="home" rel="home"><img class="site-name__image" src="{{ base_path ~ directory }}/{{ masthead_wordmark }}" alt="{{ site_name_prefix }} {{ site_name }}"/></a>
+						</div>
+					{% else %}
+						<div
+							class="site-name__inner site-name__inner--text">
+
+							{# Site name prefix #}
+							{% if site_name_prefix|length %}
+								<span class="site-name__prefix">{{ site_name_prefix }}</span>
+							{% endif %}
+							{# End site name prefix #}
+
+							{# Site name #}
+							{% if site_name|length > 36 %}
+								<a class="site-name__link site-name__link--long" href="/" title="home" rel="home">{{ site_name }}</a>
+							{% else %}
+								<a class="site-name__link" href="/" title="home" rel="home">{{ site_name }}</a>
+							{% endif %}
+							{# End site name #}
+
+							{# Site slogan #}
+							{% if site_slogan|length %}
+								<span class="site-name__slogan">{{ site_slogan }}</span>
+							{% endif %}
+							{# End site slogan #}
+
+
+						</div>
+						{# end .site-name__inner--text #}
+					{% endif %}
+				</div>
+				{# end #site-name #}
+
+				{# Site Logo #}
+				{% if masthead_variant == 'slim' %}
+					<div id="site-logo" class="site-logo--slim cell medium-3 large-2">
+						<a class="site-logo__link" href="http://osu.edu" target="_blank"><img class="site-logo__image" src="{{ base_path ~ directory }}/images/osu-logos/block-o/block-o.svg" alt="The Ohio State University"/></a>
 					</div>
 				{% else %}
-					<div class="site-name__inner site-name__inner--text">
-						
-						{# Site name prefix #}
-						{% if site_name_prefix|length %}
-							<span class="site-name__prefix">{{ site_name_prefix }}</span>
-						{% endif %}
-						{# End site name prefix #}
-
-						{# Site name #}
-						{% if site_name|length > 30 %}
-							<a class="site-name__link site-name__link--long" href="/" title="home" rel="home">{{ site_name }}</a>
-						{% else %}
-							<a class="site-name__link" href="/" title="home" rel="home">{{ site_name }}</a>
-						{% endif %}
-						{# End site name #}
-
-						{# Site slogan #}
-						{% if site_slogan|length %}
-							<span class="site-name__slogan">{{ site_slogan }}</span>
-						{% endif %}
-						{# End site slogan #}
-
-
-					</div> {# end .site-name__inner--text #}
+					<div id="site-logo" class="site-logo--standard cell medium-3">
+						<a class="site-logo__link" href="http://osu.edu" target="_blank"><img class="site-logo__image" src="{{ base_path ~ directory }}/images/osu-logos/stacked/osu-stacked-{{ masthead_color }}.svg" alt="The Ohio State University — external"/></a>
+					</div>
 				{% endif %}
-			</div> {# end #site-name #}
-
-			{# Site Logo #}
-			{% if masthead_variant == 'slim' %}
-				<div id="site-logo" class="site-logo--slim cell medium-3 large-2">
-					<a class="site-logo__link" href="http://osu.edu" target="_blank"><img class="site-logo__image" src="{{ base_path ~ directory }}/images/osu-logos/block-o/block-o.svg" alt="The Ohio State University"/></a>
-				</div>
-			{% else %}
-				<div id="site-logo" class="site-logo--standard cell medium-3">
-					<a class="site-logo__link" href="http://osu.edu" target="_blank"><img class="site-logo__image" src="{{ base_path ~ directory }}/images/osu-logos/stacked/osu-stacked-{{ masthead_color }}.svg" alt="The Ohio State University — external"/></a>
-				</div>
-			{% endif %}
 
 			</div>
 		</div>
