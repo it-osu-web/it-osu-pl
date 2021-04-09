@@ -14,23 +14,6 @@ main {
   margin-top: rem-calc(30);
 }
 
-.layout__wrapper {
-  overflow: auto;
-}
-
-.layout__wrapper--primary-menu {
-  overflow: visible;
-}
-
-.layout__wrapper--system,
-.layout__wrapper--breadcrumb {
-  background: white;
-}
-
-.layout__wrapper--pre-footer {
-  background: $gray;
-}
-
 @include breakpoint(medium) {
   .sidebar {
     margin: 0;

@@ -1,25 +1,31 @@
 // Background color for main content. Body color is set by footer color.
 .layout-container,
-.layout__wrapper--main {
-	background: white;
+.layout__wrapper {
+  background: $white;
+}
+
+.layout__wrapper--pre-footer {
+  background: $gray;
+}
+
+.layout__wrapper {
+  overflow: auto;
 }
 
 body.footer-color {
-	&--dk-gray {
-		background: $near-black;
-	}
+  &--dk-gray {
+    background: $near-black;
+  }
 
-	&--md-gray {
-		background: $gray;
-	}
+  &--md-gray {
+    background: $gray;
+  }
 
-	&--lt-gray {
-		background: $near-white;
-	}
+  &--lt-gray {
+    background: $near-white;
+  }
 
-	&--white {
-		background: white;
-	}
+  &--white {
+    background: $white;
+  }
 }
-
-// TODO: Determine if this really belongs here.
