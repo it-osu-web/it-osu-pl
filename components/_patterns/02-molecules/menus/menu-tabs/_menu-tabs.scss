@@ -10,6 +10,7 @@ nav.tabs {
   flex-wrap: wrap;
   flex-direction: row;
   position: relative;
+  padding-top: rem-calc(20);
 }
 
 .menu--tab {
