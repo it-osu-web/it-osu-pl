@@ -13,11 +13,11 @@ card_data:
     card_text: |-
       Maybe you'll want more text here.
       A few lines or so? Hammock small batch ramps lo-fi vinyl kickstarter bitters shaman mumblecore.
-    card_link_title: Card Link
+    card_link_title: Card Link that is a bit Longer
     card_link_url: '#'
   3:
     card_image: https://placeimg.com/640/480/animals
-    card_title: Third Card
+    card_title: Third Card with a Much Longer Title
     card_text: |-
       Maybe you'll want more text here.
 
