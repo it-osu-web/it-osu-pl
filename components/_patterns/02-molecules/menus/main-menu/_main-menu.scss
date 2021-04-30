@@ -54,7 +54,8 @@ $dk-gray: $near-black;
 }
 
 .layout__inner--primary-menu {
-  padding: 0 1.5rem !important;
+  @extend .grid-container;
+  margin-left: -0.625rem;
 }
 
 // From original sass/base/_navbar.scss -- altered for this theme.

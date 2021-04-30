@@ -60,11 +60,11 @@
 //  55. Top Bar
 //  56. Xy Grid
 
-@import "../../node_modules/foundation-sites/scss/util/util";
-@import "00-base/global/utils/_00-variables.scss";
-@import "00-base/global/01-colors/_color-vars.scss";
-@import "00-base/global/01-colors/_colors-used.scss";
-@import "00-base/global/02-typography/_typography.scss";
+@import '../../node_modules/foundation-sites/scss/util/util';
+@import '00-base/global/utils/_00-variables.scss';
+@import '00-base/global/01-colors/_color-vars.scss';
+@import '00-base/global/01-colors/_colors-used.scss';
+@import '00-base/global/02-typography/_typography.scss';
 
 // 1. Global
 // ---------
@@ -131,7 +131,7 @@ $grid-row-width: $global-width;
 $grid-column-count: 12;
 $grid-column-gutter: $space-x;
 $grid-column-align-edge: true;
-$grid-column-alias: "columns";
+$grid-column-alias: 'columns';
 $block-grid-max: 8;
 
 // 4. Base Typography
@@ -140,7 +140,7 @@ $block-grid-max: 8;
 $header-font-family: $proxima;
 $header-font-weight: 600;
 $header-font-style: normal;
-$font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
+$font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: $near-black;
 $header-color--hover: $red;
 $header-lineheight: 1.2;
@@ -184,7 +184,7 @@ $blockquote-padding: rem-calc(0 40 0 20);
 $blockquote-border: 6px solid $gray-light;
 $cite-font-size: rem-calc(15);
 $cite-color: $near-black;
-$cite-pseudo-content: "\2014 \0020";
+$cite-pseudo-content: '\2014 \0020';
 
 $keystroke-font: $font-family-monospace;
 $keystroke-color: $black;
@@ -268,8 +268,8 @@ $breadcrumbs-item-color-disabled: $medium-gray;
 $breadcrumbs-item-margin: 0.75rem;
 $breadcrumbs-item-uppercase: true;
 $breadcrumbs-item-separator: true;
-$breadcrumbs-item-separator-item: "/";
-$breadcrumbs-item-separator-item-rtl: "\\";
+$breadcrumbs-item-separator-item: '/';
+$breadcrumbs-item-separator-item-rtl: '\\';
 $breadcrumbs-item-separator-color: $medium-gray;
 
 // 11. Button
@@ -303,7 +303,7 @@ $button-responsive-expanded: false;
 
 $buttongroup-margin: 1rem;
 $buttongroup-spacing: 1px;
-$buttongroup-child-selector: ".button";
+$buttongroup-child-selector: '.button';
 $buttongroup-expand-max: 6;
 $buttongroup-radius-on-each: true;
 
@@ -509,7 +509,7 @@ $offcanvas-transition-length: 0.5s;
 $offcanvas-transition-timing: ease;
 $offcanvas-fixed-reveal: true;
 $offcanvas-exit-background: rgba($white, 0.25);
-$maincontent-class: "off-canvas-content";
+$maincontent-class: 'off-canvas-content';
 
 // 26. Orbit
 // ---------
@@ -597,7 +597,15 @@ $prototype-font-bold: $global-weight-bold;
 
 $prototype-list-breakpoints: $global-prototype-breakpoints;
 $prototype-style-type-unordered: (disc, circle, square);
-$prototype-style-type-ordered: (decimal, lower-alpha, lower-latin, lower-roman, upper-alpha, upper-latin, upper-roman);
+$prototype-style-type-ordered: (
+  decimal,
+  lower-alpha,
+  lower-latin,
+  lower-roman,
+  upper-alpha,
+  upper-latin,
+  upper-roman
+);
 
 // 36. Prototype Overflow
 // ----------------------
@@ -632,7 +640,8 @@ $prototype-separator-margin-top: $global-margin;
 // --------------------
 
 $prototype-shadow-breakpoints: $global-prototype-breakpoints;
-$prototype-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+$prototype-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+  0 2px 10px 0 rgba(0, 0, 0, 0.12);
 
 // 41. Prototype Sizing
 // --------------------
@@ -730,7 +739,10 @@ $table-border: 1px solid smart-scale($table-background, $table-color-scale);
 $table-padding: rem-calc(8 10 10);
 $table-hover-scale: 2%;
 $table-row-hover: darken($table-background, $table-hover-scale);
-$table-row-stripe-hover: darken($table-background, $table-color-scale + $table-hover-scale);
+$table-row-stripe-hover: darken(
+  $table-background,
+  $table-color-scale + $table-hover-scale
+);
 $table-is-striped: true;
 $table-striped-background: smart-scale($table-background, $table-color-scale);
 $table-stripe: even;
