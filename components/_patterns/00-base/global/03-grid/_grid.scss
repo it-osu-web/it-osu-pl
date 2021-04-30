@@ -18,7 +18,7 @@
 }
 
 .grid-container {
-  @include container-padding();
+  @include container-padding(0.875);
 
   @include breakpoint(medium) {
     @include container-padding(1.75);

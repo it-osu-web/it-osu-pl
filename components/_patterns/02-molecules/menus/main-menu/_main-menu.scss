@@ -53,8 +53,15 @@ $dk-gray: $near-black;
   overflow: visible;
 }
 
-.layout__inner--primary-menu {
-  @extend .grid-container;
+$mobile-max: map-get($breakpoints, medium);
+
+@media only screen and (max-width: $mobile-max) {
+  .layout__inner--primary-menu.grid-container {
+    padding: 0;
+  }
+}
+
+.main-nav--inner {
   margin-left: -0.625rem;
 }
 
@@ -277,6 +284,7 @@ nav.a11y-navbar {
     }
   }
 
+  // Mobile version of menu.
   &.a11y-navbar-responsive {
     & div.a11y-navbar-instructions-show {
       // Keep instructions visually hidden in responsive menu.
@@ -313,7 +321,7 @@ nav.a11y-navbar {
 
             &:focus,
             &:hover {
-              outline: 2px dotted $teal;
+              outline: 2px solid $near-black;
               outline-offset: -2px;
               z-index: 999;
             }
@@ -367,7 +375,7 @@ nav.a11y-navbar {
                 &:focus,
                 &:hover {
                   background-color: darken($lt-gray, 15%);
-                  outline: 2px dotted $teal;
+                  outline: 2px solid $near-black;
                   outline-offset: -2px;
                 }
                 // Override default right arrows on submenus.
@@ -477,18 +485,20 @@ nav.a11y-navbar {
 
 button.a11y-navbar-toggle {
   @include button-reset();
+  @include container-padding(0.875);
 
+  padding-top: rem-calc(12);
+  padding-bottom: rem-calc(12);
   font-family: $proxima;
   background-color: $lt-gray;
   color: $dk-gray;
   width: 100%;
-  padding: 0.5rem 1.125rem;
   text-align: left;
   position: relative;
   text-transform: uppercase;
 
   &:focus {
-    outline: 2px dotted $teal;
+    outline: 2px solid $near-black;
     outline-offset: -2px;
     z-index: 999;
   }
@@ -496,7 +506,7 @@ button.a11y-navbar-toggle {
   // Hamburger icon.
   span {
     position: absolute;
-    right: 1.125rem;
+    right: $grid-container-padding * 0.875;
     top: 45%;
 
     &,
