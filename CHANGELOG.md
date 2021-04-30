@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased]
+- Increase side padding and gutters to make sites look less cramped.
 
 ## [1.4.1] - 2021-04-30
 - Allows for use of <span> as well as <a> elements as menuitems in HTML source.
