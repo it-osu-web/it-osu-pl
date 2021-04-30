@@ -1,6 +1,9 @@
 # Changelog
 
 ## [Unreleased]
+- Allows for use of <span> as well as <a> elements as menuitems in HTML source.
+- Added menubarInstructionsText option.
+
 
 ## [1.4.0] - 2021-04-09
 - Rework card to better utilize css grid for button alignment.
