@@ -94,7 +94,8 @@ nav.a11y-navbar {
       list-style-type: none;
       position: relative;
 
-      a[role="menuitem"] {
+      a[role='menuitem'],
+      span[role='menuitem'] {
         color: $dk-gray;
         text-decoration: none;
         background-color: $lt-gray;
@@ -117,7 +118,7 @@ nav.a11y-navbar {
         }
       }
 
-      ul[role="menu"] {
+      ul[role='menu'] {
         opacity: 0;
 
         &.a11y-navbar-menu-open {
@@ -133,10 +134,11 @@ nav.a11y-navbar {
             display: block;
             width: 100%;
 
-            a[aria-haspopup="true"] {
+            a[aria-haspopup='true'],
+            span[aria-haspopup='true'] {
               &::after {
                 // Right arrows
-                content: "";
+                content: '';
                 width: 0;
                 height: 0;
                 border-top: 0.25rem solid transparent;
@@ -165,16 +167,17 @@ nav.a11y-navbar {
       li {
         display: inline-block;
 
-        a[role="menuitem"] {
+        a[role='menuitem'],
+        span[role='menuitem'] {
           &.a11y-navbar-menuitem {
             border-bottom: none;
 
-            &[aria-haspopup="true"] {
+            &[aria-haspopup='true'] {
               padding-right: 1.5rem;
 
               &::after {
                 // Down arrows
-                content: "";
+                content: '';
                 width: 0;
                 height: 0;
                 border-top: 0.25rem solid $dk-gray;
@@ -193,14 +196,15 @@ nav.a11y-navbar {
           }
         }
 
-        ul[role="menu"] {
+        ul[role='menu'] {
           &.a11y-navbar-menu-open {
             top: 2.525rem;
             left: 0;
             background: white;
 
             li {
-              a[role="menuitem"] {
+              a[role='menuitem'],
+              span[role='menuitem'] {
                 // Second-level menu items
                 background-color: darken($lt-gray, 10%);
 
@@ -210,12 +214,13 @@ nav.a11y-navbar {
                 }
               }
 
-              ul[role="menu"] {
+              ul[role='menu'] {
                 top: 0;
                 left: 100%;
 
                 li {
-                  a[role="menuitem"] {
+                  a[role='menuitem'],
+                  span[role='menuitem'] {
                     // Third-level menu items
                     background-color: darken($lt-gray, 20%);
 
@@ -235,11 +240,12 @@ nav.a11y-navbar {
     &.a11y-navbar-orientation-vertical {
       width: 10rem;
 
-      a[role="menuitem"] {
-        &[aria-haspopup="true"] {
+      a[role='menuitem'],
+      span[role='menuitem'] {
+        &[aria-haspopup='true'] {
           &::after {
             // Right arrows
-            content: "";
+            content: '';
             width: 0;
             height: 0;
             border-top: 0.25rem solid transparent;
@@ -260,7 +266,7 @@ nav.a11y-navbar {
           border-bottom: 1px solid $md-gray;
         }
 
-        ul[role="menu"] {
+        ul[role='menu'] {
           &.a11y-navbar-menu-open {
             top: -1px;
             left: 100%;
@@ -291,7 +297,8 @@ nav.a11y-navbar {
           border: none;
           display: block;
 
-          a[role="menuitem"] {
+          a[role='menuitem'],
+          span[role='menuitem'] {
             &.a11y-navbar-menuitem {
               color: $dk-gray;
               background-color: darken($lt-gray, 7%);
@@ -310,12 +317,12 @@ nav.a11y-navbar {
               z-index: 999;
             }
 
-            &[aria-haspopup="true"] {
+            &[aria-haspopup='true'] {
               padding-right: 1.5rem;
 
               &::after {
                 // Down arrows
-                content: "";
+                content: '';
                 width: 0;
                 height: 0;
                 border-top: 0.25rem solid transparent; //should be transparent when using responsiveSubmenuToggles
@@ -333,7 +340,7 @@ nav.a11y-navbar {
             }
           }
 
-          ul[role="menu"] {
+          ul[role='menu'] {
             opacity: 1;
             max-height: 0;
             overflow: hidden;
@@ -346,7 +353,8 @@ nav.a11y-navbar {
             }
 
             li {
-              a[role="menuitem"] {
+              a[role='menuitem'],
+              span[role='menuitem'] {
                 // Second-level menuitems.
                 color: $dk-gray;
                 background-color: darken($lt-gray, 15%);
@@ -362,12 +370,12 @@ nav.a11y-navbar {
                   outline-offset: -2px;
                 }
                 // Override default right arrows on submenus.
-                &[aria-haspopup="true"] {
+                &[aria-haspopup='true'] {
                   padding-right: 1.5rem;
 
                   &::after {
                     // Down arrows
-                    content: "";
+                    content: '';
                     width: 0;
                     height: 0;
                     border-top: 0.25rem solid transparent; //should be transparent when using responsiveSubmenuToggles
@@ -385,9 +393,10 @@ nav.a11y-navbar {
                 }
               }
 
-              ul[role="menu"] {
+              ul[role='menu'] {
                 li {
-                  a[role="menuitem"] {
+                  a[role='menuitem'],
+                  span[role='menuitem'] {
                     // Third-level menuitems.
                     color: darken($dk-gray, 10%);
                     background-color: darken($lt-gray, 25%);
@@ -427,7 +436,7 @@ nav.a11y-navbar {
 
             &::after {
               // Pure CSS Chevron.
-              content: "";
+              content: '';
               display: inline-block;
               border-right: 2px solid $dk-gray;
               border-bottom: 2px solid $dk-gray;
@@ -437,14 +446,14 @@ nav.a11y-navbar {
               position: relative;
             }
 
-            &[aria-expanded="true"] {
+            &[aria-expanded='true'] {
               &::after {
                 transform: rotate(225deg);
                 top: 3px;
               }
             }
 
-            &[aria-expanded="false"] {
+            &[aria-expanded='false'] {
               &::after {
                 transform: rotate(45deg);
                 top: -2px;
@@ -499,7 +508,7 @@ button.a11y-navbar-toggle {
       background: $dk-gray;
       position: absolute;
       display: block;
-      content: "";
+      content: '';
     }
 
     &::before {
