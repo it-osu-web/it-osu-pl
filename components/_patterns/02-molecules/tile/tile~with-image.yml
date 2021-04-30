@@ -1,0 +1,12 @@
+tile_modifiers:
+  1: test
+tile_extra_classes:
+tile_heading_level:
+tile_link: '#'
+tile_image: 1
+tile_image_src: https://placeimg.com/640/480/animals
+tile_image_alt: 'Image for placement only.'
+tile_label: 'Test Title'
+tile_title: 'Tile With Image'
+tile_text: 'Literally asymmetrical hot chicken, edison bulb copper mug activated charcoal ut try-hard fam veniam cupidatat pop-up banjo.'
+tile_color: lt-gray
