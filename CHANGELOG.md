@@ -3,6 +3,8 @@
 ## [Unreleased]
 - Increase side padding and gutters to make sites look less cramped.
 - Various Tile updates including allowing for images.
+- Fix mobile styles for main menu.
+- Style current breadcrumb for when it is not a link.
 
 ## [1.4.1] - 2021-04-30
 - Allows for use of <span> as well as <a> elements as menuitems in HTML source.
