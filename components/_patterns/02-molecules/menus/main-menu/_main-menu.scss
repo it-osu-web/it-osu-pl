@@ -308,14 +308,15 @@ nav.a11y-navbar {
 
           a[role='menuitem'],
           span[role='menuitem'] {
+            // Top-level mobile menuitems.
             &.a11y-navbar-menuitem {
               color: $dk-gray;
               background-color: darken($lt-gray, 7%);
               border-right: none;
+              padding-left: $grid-container-padding * 1.25;
               position: relative;
               z-index: 99;
               height: 2.5rem;
-              line-height: 2.5;
               margin-bottom: 1px;
             }
 
@@ -364,12 +365,11 @@ nav.a11y-navbar {
             li {
               a[role='menuitem'],
               span[role='menuitem'] {
-                // Second-level menuitems.
+                // Second-level mobile menuitems.
                 color: $dk-gray;
                 background-color: darken($lt-gray, 15%);
-                padding-left: 1.875rem;
+                padding-left: $grid-container-padding * 1.75;
                 height: 2.5rem;
-                line-height: 2.5;
                 margin-bottom: 1px;
 
                 &:focus,
@@ -406,10 +406,10 @@ nav.a11y-navbar {
                 li {
                   a[role='menuitem'],
                   span[role='menuitem'] {
-                    // Third-level menuitems.
+                    // Third-level mobile menuitems.
                     color: darken($dk-gray, 10%);
                     background-color: darken($lt-gray, 25%);
-                    padding-left: 2.75rem;
+                    padding-left: $grid-container-padding * 2.25;
 
                     &:focus,
                     &:hover {
@@ -436,7 +436,7 @@ nav.a11y-navbar {
             padding: 0;
 
             &:focus {
-              outline: 2px dotted $dk-gray;
+              outline: 2px solid $dk-gray;
             }
 
             span {
