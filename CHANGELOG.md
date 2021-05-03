@@ -5,6 +5,7 @@
 - Various Tile updates including allowing for images.
 - Fix mobile styles for main menu.
 - Style current breadcrumb for when it is not a link.
+- Minor typography adjustment in footer.
 
 ## [1.4.1] - 2021-04-30
 - Allows for use of <span> as well as <a> elements as menuitems in HTML source.
