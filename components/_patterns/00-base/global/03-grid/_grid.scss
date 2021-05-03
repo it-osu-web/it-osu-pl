@@ -1,21 +1,30 @@
 .sample-grid {
-	margin-bottom: 2em;
-	.cell {
-		background: $near-white;
-		padding: 10px 15px;
-		min-height: 80px;
-	}
+  margin-bottom: 2em;
+  .cell {
+    background: $near-white;
+    padding: 10px 15px;
+    min-height: 80px;
+  }
 }
 
 // Helper classes.
 .grid-grow {
-	flex-grow: 1 !important;
+  flex-grow: 1 !important;
 }
 
-// TODO: Reorganize/rethink this whole component.
-$grid-container-padding: rem-calc(40);
+@mixin container-padding($factor: 1) {
+  padding-right: $grid-container-padding * $factor;
+  padding-left: $grid-container-padding * $factor;
+}
 
 .grid-container {
-	padding-right: $grid-container-padding;
-	padding-left: $grid-container-padding;
+  @include container-padding(0.875);
+
+  @include breakpoint(medium) {
+    @include container-padding(1.75);
+  }
+
+  @include breakpoint(large) {
+    @include container-padding(2.5);
+  }
 }

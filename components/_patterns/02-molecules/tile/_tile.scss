@@ -2,7 +2,7 @@
   background-color: $background;
   color: $color;
   margin-bottom: $grid-margin-after;
-  padding: $padding-y $padding-x;
+  padding: $padding-y 0;
   width: 100%;
   text-align: center;
   display: block;
@@ -12,11 +12,27 @@
   &:hover {
     outline: 2px solid $near-black;
     background-color: darken($background, 3%);
+    .tile__image img {
+      transition: transform 0.2s;
+      transform: scale(1.01);
+      @media (prefers-reduced-motion) {
+        transform: none;
+      }
+    }
   }
 
   &:focus {
     outline: 2px solid $near-black;
-    outline-offset: 2px;
+    outline-offset: 0;
+  }
+
+  .tile__image {
+    overflow: hidden;
+    margin-bottom: $space-y * 0.625;
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   .tile__icon {
@@ -30,6 +46,7 @@
     color: $color;
     margin-top: rem-calc(4);
     margin-bottom: rem-calc(4);
+    padding: 0 $padding-x;
 
     h2,
     h3,
@@ -47,46 +64,51 @@
     line-height: 1.125;
     font-weight: 600;
     margin: rem-calc(20 0 14);
+    padding: 0 $padding-x;
   }
 
   .tile__text {
+    padding: 0 $padding-x;
     p:last-child {
       margin-bottom: 0;
     }
   }
 }
 
-a.tile,
-a.tile--lt-gray {
-  @include tile();
-}
-a.tile--red {
-  @include tile($red, $white);
-  .tile__text {
-    font-weight: 600;
+a.tile {
+  &.tile--lt-gray {
+    @include tile();
   }
-}
-a.tile--gray {
-  @include tile($gray, $white);
-  .tile__text {
-    font-weight: 400;
+  &.tile--red {
+    @include tile($red, $white);
+    .tile__text {
+      font-weight: 600;
+    }
   }
-}
-a.tile--white {
-  @include tile($white);
-}
-
-a.tile--title-only {
-  .tile__title {
-    @include heading(20, 700);
-    margin-bottom: 0;
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+  &.tile--gray {
+    @include tile($gray, $white);
+    .tile__text {
+      font-weight: 400;
+    }
+  }
+  &.tile--white {
+    @include tile($white);
+  }
+  &.tile--with-image {
+    padding-top: 0 !important;
+  }
+  &.tile--title-only {
+    .tile__title {
       @include heading(20, 700);
       margin-bottom: 0;
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        @include heading(20, 700);
+        margin-bottom: 0;
+      }
     }
   }
 }
