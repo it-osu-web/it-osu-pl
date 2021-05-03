@@ -13,7 +13,11 @@
 {% set classes_array = [tile_base_class] %}
 
 
-{% if (tile_icon is defined) or (tile_color is defined) or (tile_modifiers is defined) or (tile_text is null) %}
+{% if (tile_image is defined) or (tile_icon is defined) or (tile_image is defined) or (tile_color is defined) or (tile_modifiers is defined) or (tile_text is null) %}
+
+	{% if tile_image is defined %}
+		{% set classes_array = classes_array|merge(["#{tile_base_class}--with-image"]) %}
+	{% endif %}
 
 	{% if tile_icon is defined %}
 		{% set classes_array = classes_array|merge(["#{tile_base_class}--with-icon"]) %}
@@ -21,6 +25,8 @@
 
 	{% if tile_color is defined %}
 		{% set classes_array = classes_array|merge(["#{tile_base_class}--#{tile_color}"]) %}
+	{% else %}
+		{% set classes_array = classes_array|merge(["#{tile_base_class}--lt-gray"]) %}
 	{% endif %}
 
 	{% if tile_modifiers is defined %}
@@ -42,14 +48,22 @@
 
 <a href="{{ tile_link }}" class="{{ tile_classes }} {{ tile_extra_classes }}">
 
-	{% if tile_icon %}
-		<div class="tile__icon">
+	{% if tile_image and not tile_icon %}
+		<div class='tile__image'>
+			<img src="{{ tile_image_src }}" alt="{{ tile_image_alt }}"/>
+		</div>
+	{% endif %}
+
+
+	{% if tile_icon and not tile_image %}
+		<div class='tile__icon'>
 			<img src="{{ tile_icon_src }}" alt="{{ tile_icon_alt }}"/>
 		</div>
 	{% endif %}
 
+
 	{% if tile_title %}
-		<div class="tile__title">
+		<div class='tile__title'>
 			{% if tile_heading_level == 0 %}
 				{{ tile_title }}
 			{% else %}
@@ -58,11 +72,11 @@
 		</div>
 	{% endif %}
 
-	{% if tile_label %}
-		<div class="tile__label">{{ tile_label }}</div>
+	{% if tile_label and not tile_title %}
+		<div class='tile__label'>{{ tile_label }}</div>
 	{% endif %}
 
 	{% if tile_text %}
-		<div class="tile__text">{{ tile_text }}</div>
+		<div class='tile__text'>{{ tile_text }}</div>
 	{% endif %}
 </a>
