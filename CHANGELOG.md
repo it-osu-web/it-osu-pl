@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased]
+
+## [1.4.2] - 2021-05-03
 - Increased side padding and gutters to make sites look less cramped.
 - Various Tile updates including allowing for images.
 - Fixed mobile styles for main menu.
