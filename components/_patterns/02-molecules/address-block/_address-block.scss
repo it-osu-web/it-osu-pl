@@ -1,39 +1,40 @@
 .address-block__wordmark {
-	margin-bottom: 0.5em;
+  margin-bottom: 0.5em;
 
-	a {
-		padding: 0;
-		&:hover {
-			background: none;
-		}
-	}
+  a {
+    padding: 0;
+    &:hover {
+      background: none;
+    }
+  }
 
-	img {
-		width: 280px;
-		border: none;
-	}
+  img {
+    width: 280px;
+    border: none;
+  }
 }
 .address-block__address {
-	p {
-		margin: 0;
-		font-size: 0.875rem;
-		line-height: 1.375;
-		font-weight: 400;
-	}
+  p {
+    margin: 0;
+    margin-bottom: rem-calc(4);
+    font-size: rem-calc(14);
+    line-height: 1.125;
+    font-weight: 400;
+  }
 
-	.site-name {
-		font-weight: 700;
-		font-size: 1rem;
-		margin-bottom: 2px;
-	}
+  .site-name {
+    font-weight: 700;
+    font-size: rem-calc(16);
+    margin-bottom: rem-calc(4);
+  }
 
-	.pipe {
-		font-size: 120%;
-		vertical-align: -2%;
-	}
+  .pipe {
+    font-size: 120%;
+    vertical-align: -2%;
+  }
 
-	span.mailto,
-	.fa-mailto .extlink {
-		display: none;
-	}
+  span.mailto,
+  .fa-mailto .extlink {
+    display: none;
+  }
 }

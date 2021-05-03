@@ -13,7 +13,6 @@ breadcrumb:
     url: "#"
     text: "2nd Level"
   3:
-    url: "#"
     text: "3rd Level"
 page_title: Page Title
 page:
@@ -22,3 +21,4 @@ page:
 message_list:
   status:
     message: "This is an example status message"
+footer_text: I'm baby leggings 90's tote bag ugh post-ironic, roof party pabst four dollar toast bitters brunch. Affogato single-origin coffee master cleanse ennui, pop-up succulents edison bulb.

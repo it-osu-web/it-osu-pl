@@ -1,8 +1,13 @@
 # Changelog
 
 ## [Unreleased]
-- Increase side padding and gutters to make sites look less cramped.
+- Increased side padding and gutters to make sites look less cramped.
 - Various Tile updates including allowing for images.
+- Fixed mobile styles for main menu.
+- Styled current breadcrumb for when it is not a link.
+- Minor typography adjustment in footer.
+- Adjusted masthead padding per breakpoint.
+- Updated stacked OSU logo svgs.
 
 ## [1.4.1] - 2021-04-30
 - Allows for use of <span> as well as <a> elements as menuitems in HTML source.

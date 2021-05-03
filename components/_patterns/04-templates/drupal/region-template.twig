@@ -38,8 +38,8 @@
 			{{ content }}
 		</div>
 	{% else %}
-		<div class="layout__wrapper layout__wrapper--{{ region_name }}">
-			<div class="layout__inner layout__inner--{{ region_name }}{% if region_name not in full_width %} grid-container {% endif %}">
+		<div class='layout__wrapper layout__wrapper--{{ region_name }}'>
+			<div class='layout__inner layout__inner--{{ region_name }}{% if region_name not in full_width %} grid-container {% endif %}'>
 				<div{{attributes.addClass(classes)}}>
 					{{ content }}
 				</div>
