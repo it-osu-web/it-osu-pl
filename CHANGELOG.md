@@ -1,7 +1,7 @@
 # Changelog
 
 ## [Unreleased]
-- Update address block to accommodate for letters in phone numbers.
+- Update address block to accommodate for letters in phone numbers. NOTICE: Markup change.
 - Add aspect ratio mixin and classes.
 - Apply 3:2 aspect ratio to tile images.
 
