@@ -3,9 +3,7 @@
   color: $color;
   margin-bottom: $grid-margin-after;
   padding: $padding-y 0;
-  width: 100%;
   text-align: center;
-  display: block;
   text-decoration: none;
   color: $color;
 
@@ -27,11 +25,9 @@
   }
 
   .tile__image {
-    overflow: hidden;
     margin-bottom: $space-y * 0.625;
     img {
-      width: 100%;
-      height: auto;
+      object-fit: cover;
     }
   }
 
@@ -111,4 +107,10 @@ a.tile {
       }
     }
   }
+}
+
+// Make tile full width in pl and layout builder.
+.sg-pattern-example > .tile,
+.block--inline-block .tile {
+  width: 100%;
 }
