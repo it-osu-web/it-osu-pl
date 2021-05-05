@@ -1,17 +1,14 @@
-<div class="tile-grid grid-x grid-margin-x">
+<div class='tile-grid grid-x grid-margin-x'>
 	{% for tile in tile_data %}
 
 		{% set count = loop.length %}
 		{% set auto = 'cell small-6 medium-auto grid-grow' %}
 		{% set three_across = 'cell small-6 medium-4 grid-grow' %}
 		{% set four_across = 'cell small-6 large-3 grid-grow' %}
-		{% set six_across = 'cell small-6 medium-4 xlarge-2 grid-grow' %}
 		{% set default = 'cell small-6 medium-4 large-3 grid-grow' %}
 
-		{% if count <= 5 %}
+		{% if count < 6 %}
 			{% set item_classes = auto %}
-		{% elseif count is divisible by(6) %}
-			{% set item_classes = six_across %}
 		{% elseif count is divisible by(4) %}
 			{% set item_classes = four_across %}
 		{% elseif count is divisible by(3) %}

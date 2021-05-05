@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 - Update address block to accommodate for letters in phone numbers.
+- Add aspect ratio mixin and classes.
+- Apply 3:2 aspect ratio to tile images.
 
 ## [1.4.2] - 2021-05-03
 - Increased side padding and gutters to make sites look less cramped.
