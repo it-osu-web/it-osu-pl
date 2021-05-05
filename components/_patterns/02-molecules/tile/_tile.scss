@@ -25,11 +25,9 @@
   }
 
   .tile__image {
-    overflow: hidden;
     margin-bottom: $space-y * 0.625;
     img {
-      width: 100%;
-      height: auto;
+      object-fit: cover;
     }
   }
 

@@ -14,3 +14,20 @@
     outline: none;
   }
 }
+
+// Image ratios.
+.ratio-1-1 {
+  @include ratio(1, 1);
+}
+
+.ratio-3-2 {
+  @include ratio(3, 2);
+}
+
+.ratio-4-3 {
+  @include ratio(4, 3);
+}
+
+.ratio-16-9 {
+  @include ratio(16, 9);
+}
