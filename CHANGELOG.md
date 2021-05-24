@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased]
+
+## [1.5.1] - 2021-05-24
 - Remove tile image zoom on hover.
 - Removed unused/unfinished menu script on main menu that was negatively affecting Drupal admin menubar. 
 
