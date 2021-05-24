@@ -11,11 +11,7 @@
     outline: 2px solid $near-black;
     background-color: darken($background, 3%);
     .tile__image img {
-      transition: transform 0.2s;
-      transform: scale(1.01);
-      @media (prefers-reduced-motion) {
-        transform: none;
-      }
+      opacity: 0.92;
     }
   }
 
