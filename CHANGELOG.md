@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased]
+- Remove tile image zoom on hover.
 
 ## [1.5.0] - 2021-05-05
 - Update address block to accommodate for letters in phone numbers. NOTICE: Markup change.
