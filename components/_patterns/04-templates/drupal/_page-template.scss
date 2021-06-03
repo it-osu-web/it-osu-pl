@@ -5,21 +5,28 @@ main {
 
 .content {
   margin: 0 auto;
+  order: 1;
 }
 
 .sidebar--1 {
   margin-bottom: rem-calc(30);
+  order: 2;
 }
 .sidebar--2 {
   margin-top: rem-calc(30);
+  order: 3;
 }
 
 @include breakpoint(medium) {
+  .content {
+    order: 2;
+  }
   .sidebar {
     margin: 0;
   }
   .sidebar--1 {
     padding-right: rem-calc(16);
+    order: 1;
   }
   .sidebar--2 {
     padding-left: rem-calc(16);

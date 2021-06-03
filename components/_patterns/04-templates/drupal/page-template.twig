@@ -35,6 +35,14 @@
 		<div class="grid-container">
 			<div class="main__inner grid-x grid-margin-x">
 
+				<div class="content cell small-12 medium-auto">
+
+
+					{% block content %}
+						{{ page.content }}
+					{% endblock %}
+				</div>
+
 				{% if page.sidebar_1 %}
 					<aside class="sidebar sidebar--1 cell small-12 medium-3" role="complementary">
 						<div class="sidebar__inner sidebar__inner--1">
@@ -44,14 +52,6 @@
 						</div>
 					</aside>
 				{% endif %}
-
-				<div class="content cell small-12 medium-auto">
-
-
-					{% block content %}
-						{{ page.content }}
-					{% endblock %}
-				</div>
 
 				{% if page.sidebar_2 %}
 					<aside class="sidebar sidebar--2 cell small-12 medium-3" role="complementary">
