@@ -1,6 +1,5 @@
 {% if items %}
-	<nav class="pager" role="navigation" aria-labelledby="pagination-heading">
-		<h4 id="pagination-heading" class="visually-hidden">{{ 'Pagination'|t }}</h4>
+	<nav class="pager" role="navigation" aria-label={{ 'Pagination'|t }}>
 		<ul
 			class="pager__items js-pager__items">
 			{# Print previous item if we are not on the first page. #}

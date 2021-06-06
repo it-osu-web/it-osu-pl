@@ -7,7 +7,6 @@
 	{% include "@organisms/masthead/_masthead.twig" %}
 </header>
 
-
 {% block primary_menu %}
 	{{ page.primary_menu }}
 {% endblock %}
@@ -28,48 +27,42 @@
 	{{ page.tabs }}
 {% endblock %}
 
-
 <div class="layout__wrapper layout__wrapper--main">
-	<main id="main-content">
+	<div class="grid-container">
+		<div class="main__inner grid-x grid-margin-x">
 
-		<div class="grid-container">
-			<div class="main__inner grid-x grid-margin-x">
+			{% if page.sidebar_1 %}
+				<aside class="sidebar sidebar--1 cell small-12 medium-3" role="complementary">
+					<div class="sidebar__inner sidebar__inner--1">
+						{% block sidebar_1 %}
+							{{ page.sidebar_1 }}
+						{% endblock %}
+					</div>
+				</aside>
+			{% endif %}
 
-				{% if page.sidebar_1 %}
-					<aside class="sidebar sidebar--1 cell small-12 medium-3" role="complementary">
-						<div class="sidebar__inner sidebar__inner--1">
-							{% block sidebar_1 %}
-								{{ page.sidebar_1 }}
-							{% endblock %}
-						</div>
-					</aside>
-				{% endif %}
+			<main id="main-content" class="content cell small-12 medium-auto">
+				{% block content %}
+					{{ page.content }}
+				{% endblock %}
+			</main>
 
-				<div class="content cell small-12 medium-auto">
+			{% if page.sidebar_2 %}
+				<aside class="sidebar sidebar--2 cell small-12 medium-3" role="complementary">
+					<div class="sidebar__inner sidebar__inner--2">
+						{% block sidebar_2 %}
+							{{ page.sidebar_2 }}
+						{% endblock %}
+					</div>
+				</aside>
+			{% endif %}
 
-
-					{% block content %}
-						{{ page.content }}
-					{% endblock %}
-				</div>
-
-				{% if page.sidebar_2 %}
-					<aside class="sidebar sidebar--2 cell small-12 medium-3" role="complementary">
-						<div class="sidebar__inner sidebar__inner--2">
-							{% block sidebar_2 %}
-								{{ page.sidebar_2 }}
-							{% endblock %}
-						</div>
-					</aside>
-				{% endif %}
-
-			</div>
 		</div>
+	</div>
 
-		{% block content_after %}
-			{{ page.content_after }}
-		{% endblock %}
-	</main>
+	{% block content_after %}
+		{{ page.content_after }}
+	{% endblock %}
 </div>
 
 <footer role="contentinfo">
