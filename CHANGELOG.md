@@ -1,6 +1,9 @@
 # Changelog
 
 ## [Unreleased]
+- Added ID to Breadcrumb heading.
+- Moved label of Pager to aria-label of parent <nav> element.
+- Moved <main> element to only wrap content region. 
 
 ## [1.5.1] - 2021-05-24
 - Remove tile image zoom on hover.
