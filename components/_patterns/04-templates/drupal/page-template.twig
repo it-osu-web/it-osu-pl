@@ -7,7 +7,6 @@
 	{% include "@organisms/masthead/_masthead.twig" %}
 </header>
 
-
 {% block primary_menu %}
 	{{ page.primary_menu }}
 {% endblock %}
@@ -28,9 +27,7 @@
 	{{ page.tabs }}
 {% endblock %}
 
-
 <div class="layout__wrapper layout__wrapper--main">
-
 	<div class="grid-container">
 		<div class="main__inner grid-x grid-margin-x">
 
@@ -45,8 +42,6 @@
 			{% endif %}
 
 			<main id="main-content" class="content cell small-12 medium-auto">
-
-
 				{% block content %}
 					{{ page.content }}
 				{% endblock %}
@@ -68,7 +63,6 @@
 	{% block content_after %}
 		{{ page.content_after }}
 	{% endblock %}
-
 </div>
 
 <footer role="contentinfo">
