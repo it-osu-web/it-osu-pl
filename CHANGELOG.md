@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased]
+- Updates to masthead site name sizes. 
 
 ## [1.6.0] - 2021-06-05
 - Added ID to Breadcrumb heading.
