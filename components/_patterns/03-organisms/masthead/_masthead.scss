@@ -1,232 +1,260 @@
 //common elements
 .masthead {
-  @include clearfix;
+	@include clearfix;
 }
 
 #site-name {
-  display: table;
+	display: table;
 }
 
 .site-name__inner {
-  display: table-cell;
-  vertical-align: middle;
+	display: table-cell;
+	vertical-align: middle;
 }
 
 a.site-name__link {
-  text-decoration: none;
-  letter-spacing: 0.0125em;
+	text-decoration: none;
+	letter-spacing: 0.0125em;
 
-  &:hover {
-    background: none;
-  }
+	&:hover {
+		background: none;
+	}
 
-  &:focus {
-    background: none;
-    outline-offset: 3px;
-  }
+	&:focus {
+		background: none;
+		outline-offset: 3px;
+	}
 }
 
 .site-name__prefix {
-  display: block;
-  font-weight: 400;
-  margin-left: 2px;
-  letter-spacing: 0.0125em;
+	display: block;
+	font-weight: 400;
+	margin-left: 2px;
+	letter-spacing: 0.0125em;
 }
 
 .site-name__slogan {
-  display: block;
-  font-family: $capita;
-  font-style: italic;
-  margin-left: 2px;
-  line-height: 1;
-  padding: rem-calc(6 0 4);
+	display: block;
+	font-family: $capita;
+	font-style: italic;
+	margin-left: 2px;
+	line-height: 1;
+	padding: rem-calc(6 0 4);
 }
 
 #site-logo {
-  display: none;
-  float: right;
+	display: none;
+	float: right;
 
-  @include breakpoint(medium) {
-    display: block;
-  }
+	@include breakpoint(medium) {
+		display: block;
+	}
 }
 
 a.site-logo__link {
-  float: right;
-  padding: 0;
+	float: right;
+	padding: 0;
 
-  &:hover {
-    background: none;
-  }
-  &:focus {
-    background: none;
-    outline-offset: 3px;
-  }
+	&:hover {
+		background: none;
+	}
+	&:focus {
+		background: none;
+		outline-offset: 3px;
+	}
 }
 
 // Needed for the logo to nest under navbar in slim version.
 #osu_navbar {
-  position: relative;
-  z-index: 99;
+	position: relative;
+	z-index: 99;
 }
 
 //mixin for masthead--standard
 @mixin masthead-standard($bg-color: $white, $text-color: $black) {
-  background: $bg-color;
-  padding: rem-calc(24) 0;
+	background: $bg-color;
+	padding: rem-calc(24) 0;
 
-  @include breakpoint(medium) {
-    padding: rem-calc(12) 0;
-  }
+	@include breakpoint(medium) {
+		padding: rem-calc(12) 0;
+	}
 
-  #site-name {
-    @include breakpoint(medium) {
-      padding-right: 2em;
-      height: 135px;
-    }
-  }
+	#site-name {
+		@include breakpoint(medium) {
+			padding-right: 2em;
+			height: 135px;
+		}
+	}
 
-  a.site-name__link {
-    @include heading(40, 700, $line-height: 1);
-    color: $text-color;
+	a.site-name__link {
+		@include heading(28, 700, $line-height: 1);
+		color: $text-color;
 
-    &:focus {
-      outline: 2px solid $text-color;
-    }
-  }
+		&:focus {
+			outline: 2px solid $text-color;
+		}
 
-  a.site-name__link--long {
-    font-size: rem-calc(38);
+		@include breakpoint(medium) {
+			font-size: rem-calc(32);
+		}
 
-    @include breakpoint(xlarge) {
-      font-size: rem-calc(42);
-    }
-  }
+		@include breakpoint(large) {
+			font-size: rem-calc(36);
+		}
+	}
 
-  .site-name__prefix {
-    font-size: rem-calc(18);
-    color: $text-color;
-  }
+	a.site-name__link--long {
+		font-size: rem-calc(24);
 
-  .site-name__slogan {
-    color: $text-color;
-    font-size: rem-calc(18);
-    @include breakpoint(medium) {
-      font-size: rem-calc(20);
-    }
-  }
+		@include breakpoint(medium) {
+			font-size: rem-calc(28);
+		}
 
-  .site-name__image {
-    width: 400px;
-    margin-top: rem-calc(14);
-  }
+		@include breakpoint(large) {
+			font-size: rem-calc(30);
+		}
+	}
 
-  a.site-logo__link {
-    &:focus {
-      outline: 2px solid $text-color;
-    }
-  }
+	.site-name__prefix {
+		font-size: rem-calc(18);
+		color: $text-color;
+	}
 
-  .site-logo__image {
-    width: auto;
-    border: none;
-    float: right;
-    @include breakpoint(medium) {
-      height: 125px;
-    }
-  }
+	.site-name__slogan {
+		color: $text-color;
+		font-size: rem-calc(18);
+		@include breakpoint(medium) {
+			font-size: rem-calc(20);
+		}
+	}
+
+	.site-name__image {
+		width: 360px;
+		margin-top: rem-calc(14);
+	}
+
+	a.site-logo__link {
+		&:focus {
+			outline: 2px solid $text-color;
+		}
+	}
+
+	.site-logo__image {
+		width: auto;
+		border: none;
+		float: right;
+		@include breakpoint(medium) {
+			height: 125px;
+		}
+	}
 }
 
 //mixin for masthead--slim
 @mixin masthead-slim($bg-color: $white, $text-color: $black) {
-  background: $bg-color;
-  padding: rem-calc(18) 0;
+	background: $bg-color;
+	padding: rem-calc(18) 0;
 
-  @include breakpoint(medium) {
-    padding: 0;
-  }
+	@include breakpoint(medium) {
+		padding: 0;
+	}
 
-  #site-name {
-    min-height: 90px;
-    padding: 0.75em 0;
+	#site-name {
+		min-height: 90px;
+		padding: 0.75em 0;
 
-    @include breakpoint(medium) {
-      padding-right: 2em;
-      height: 120px;
-    }
-  }
+		@include breakpoint(medium) {
+			padding-right: 2em;
+			height: 120px;
+		}
+	}
 
-  a.site-name__link {
-    @include heading(40, 700, $line-height: 1);
-    color: $text-color;
+	a.site-name__link {
+		@include heading(28, 700, $line-height: 1);
+		color: $text-color;
 
-    &:focus {
-      outline: 2px solid $text-color;
-    }
-  }
+		&:focus {
+			outline: 2px solid $text-color;
+		}
 
-  a.site-name__link--long {
-    font-size: rem-calc(32);
-  }
+		@include breakpoint(medium) {
+			font-size: rem-calc(30);
+		}
 
-  .site-name__prefix {
-    font-size: 1rem;
-    color: $text-color;
-  }
+		@include breakpoint(large) {
+			font-size: rem-calc(34);
+		}
+	}
 
-  .site-name__slogan {
-    color: $text-color;
-    font-size: rem-calc(18);
-    @include breakpoint(medium) {
-      font-size: rem-calc(19);
-    }
-  }
+	a.site-name__link--long {
+		font-size: rem-calc(24);
 
-  .site-name__image {
-    width: 320px;
-    margin-top: rem-calc(12);
-  }
+		@include breakpoint(medium) {
+			font-size: rem-calc(28);
+		}
 
-  a.site-logo__link {
-    &:focus {
-      outline: 3px solid $text-color;
-    }
-  }
+		@include breakpoint(large) {
+			font-size: rem-calc(30);
+		}
+	}
 
-  .site-logo__image {
-    height: 90px;
-    width: auto;
-    border: none;
-    box-shadow: 0 1px 6px 0 rgba(49, 49, 49, 0.5);
-    float: right;
-    position: relative;
-    margin-top: -1px;
-    z-index: 9;
-  }
+	.site-name__prefix {
+		font-size: 1rem;
+		color: $text-color;
+	}
+
+	.site-name__slogan {
+		color: $text-color;
+		font-size: rem-calc(16);
+		@include breakpoint(medium) {
+			font-size: rem-calc(18);
+		}
+	}
+
+	.site-name__image {
+		width: 320px;
+		margin-top: rem-calc(12);
+	}
+
+	a.site-logo__link {
+		&:focus {
+			outline: 3px solid $text-color;
+		}
+	}
+
+	.site-logo__image {
+		height: 90px;
+		width: auto;
+		border: none;
+		box-shadow: 0 1px 6px 0 rgba(49, 49, 49, 0.5);
+		float: right;
+		position: relative;
+		margin-top: -1px;
+		z-index: 9;
+	}
 }
 
 // Apply mixins based on class.
 .masthead--standard.masthead--white {
-  @include masthead-standard();
+	@include masthead-standard();
 }
 .masthead--standard.masthead--lt-gray {
-  @include masthead-standard($near-white);
+	@include masthead-standard($near-white);
 }
 .masthead--standard.masthead--md-gray {
-  @include masthead-standard($gray, $white);
+	@include masthead-standard($gray, $white);
 }
 .masthead--standard.masthead--dk-gray {
-  @include masthead-standard($near-black, $white);
+	@include masthead-standard($near-black, $white);
 }
 .masthead--slim.masthead--white {
-  @include masthead-slim();
+	@include masthead-slim();
 }
 .masthead--slim.masthead--lt-gray {
-  @include masthead-slim($near-white);
+	@include masthead-slim($near-white);
 }
 .masthead--slim.masthead--md-gray {
-  @include masthead-slim($gray, $white);
+	@include masthead-slim($gray, $white);
 }
 .masthead--slim.masthead--dk-gray {
-  @include masthead-slim($near-black, $white);
+	@include masthead-slim($near-black, $white);
 }

@@ -8,5 +8,10 @@ window.addEventListener('load', function (event) {
     mode: 'dualAction',
     responsiveSubmenuToggles: true,
   };
+
   var mainMenu = new a11yNavbar('main-nav', options);
+  
+  // Only display menu after the script is loaded.
+  var navID = document.getElementById('nav-inner');
+  navID.style.display = "block";
 });
