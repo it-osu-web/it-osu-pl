@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+## [1.6.1] - 2021-06-25
+- Updates to masthead site name sizes.
+- Only display main-menu after the script is fully loaded.
+- Move mobile menu icon to left side in preparation for search block on Drupal sites.
+
 ## [1.6.0] - 2021-06-05
 - Added ID to Breadcrumb heading.
 - Moved label of Pager to aria-label of parent <nav> element.
