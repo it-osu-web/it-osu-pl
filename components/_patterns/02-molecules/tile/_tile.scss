@@ -1,112 +1,113 @@
 @mixin tile($background: $near-white, $color: $black) {
-  background-color: $background;
-  color: $color;
-  margin-bottom: $grid-margin-after;
-  padding: $padding-y 0;
-  text-align: center;
-  text-decoration: none;
-  color: $color;
+	background-color: $background;
+	color: $color;
+	margin-bottom: $grid-margin-after;
+	padding: $padding-y 0;
+	text-align: center;
+	text-decoration: none;
+	color: $color;
 
-  &:hover {
-    outline: 2px solid $near-black;
-    background-color: darken($background, 3%);
-    .tile__image img {
-      opacity: 0.92;
-    }
-  }
+	&:hover {
+		outline: 2px solid $near-black;
+		background-color: darken($background, 3%);
+		.tile__image img {
+			opacity: 0.92;
+		}
+	}
 
-  &:focus {
-    outline: 2px solid $near-black;
-    outline-offset: 0;
-  }
+	&:focus {
+		outline: 2px solid $near-black;
+		outline-offset: 0;
+	}
 
-  .tile__image {
-    margin-bottom: $space-y * 0.625;
-    img {
-      object-fit: cover;
-    }
-  }
+	.tile__image {
+		margin-bottom: $space-y * 0.625;
+		img {
+			object-fit: cover;
+		}
+	}
 
-  .tile__icon {
-    max-width: rem-calc(100);
-    height: auto;
-    margin: $space-y / 2 auto $space-y;
-  }
+	.tile__icon {
+		max-width: rem-calc(100);
+		height: auto;
+		margin: rem-calc(10) auto rem-calc(20);
+	}
 
-  .tile__title {
-    @include heading(24, 700);
-    color: $color;
-    margin-top: rem-calc(4);
-    margin-bottom: rem-calc(4);
-    padding: 0 $padding-x;
+	.tile__title {
+		@include heading(24, 700);
+		color: $color;
+		margin-top: rem-calc(4);
+		margin-bottom: rem-calc(4);
+		padding: 0 $padding-x;
 
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      @include heading(24, 700);
-      color: $color;
-      margin-bottom: rem-calc(4);
-    }
-  }
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			@include heading(24, 700);
+			color: $color;
+			margin-bottom: rem-calc(4);
+		}
+	}
 
-  .tile__label {
-    font-size: rem-calc(18);
-    line-height: 1.125;
-    font-weight: 600;
-    margin: rem-calc(20 0 14);
-    padding: 0 $padding-x;
-  }
+	.tile__label {
+		font-size: rem-calc(18);
+		line-height: 1.125;
+		font-weight: 600;
+		margin: rem-calc(20 0 14);
+		padding: 0 $padding-x;
+	}
 
-  .tile__text {
-    padding: 0 $padding-x;
-    p:last-child {
-      margin-bottom: 0;
-    }
-  }
+	.tile__text {
+		padding: 0 $padding-x;
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
 }
 
 a.tile {
-  &.tile--lt-gray {
-    @include tile();
-  }
-  &.tile--red {
-    @include tile($red, $white);
-    .tile__text {
-      font-weight: 600;
-    }
-  }
-  &.tile--gray {
-    @include tile($gray, $white);
-    .tile__text {
-      font-weight: 400;
-    }
-  }
-  &.tile--white {
-    @include tile($white);
-  }
-  &.tile--with-image {
-    padding-top: 0 !important;
-  }
-  &.tile--title-only {
-    .tile__title {
-      @include heading(20, 700);
-      margin-bottom: 0;
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        @include heading(20, 700);
-        margin-bottom: 0;
-      }
-    }
-  }
+	&.tile--lt-gray {
+		@include tile();
+	}
+	&.tile--red {
+		@include tile($red, $white);
+		.tile__text {
+			font-weight: 600;
+		}
+	}
+	&.tile--gray {
+		@include tile($gray, $white);
+		.tile__text {
+			font-weight: 400;
+		}
+	}
+	&.tile--white {
+		@include tile($white);
+	}
+	&.tile--with-image {
+		padding-top: 0 !important;
+	}
+	&.tile--title-only {
+		.tile__title {
+			@include heading(20, 700);
+			margin-bottom: 0;
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				@include heading(20, 700);
+				margin-bottom: 0;
+			}
+		}
+	}
 }
 
 // Make tile full width in pl and layout builder.
 .sg-pattern-example > .tile,
+.block .tile,
 .block--inline-block .tile {
-  width: 100%;
+	width: 100%;
 }

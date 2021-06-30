@@ -4,7 +4,7 @@
  * A11y Navbar Copyright (c) 2019 Joe Bondra
  */
 
-class a11yNavbar {
+ class a11yNavbar {
   
   constructor(id, options={}) {
     // Define members.
@@ -938,9 +938,15 @@ class a11yNavbar {
 
   performClick (menuitem) {
     let href = menuitem.getAttribute('href');
+    let target = menuitem.getAttribute('target');
 
     if (href) {
-      window.location = href;
+      if (target) {
+        window.open(href, target);
+      }
+      else {
+        window.location = href;
+      }
     }
   }
 
