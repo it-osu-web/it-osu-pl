@@ -30,7 +30,7 @@
 	.tile__icon {
 		max-width: rem-calc(100);
 		height: auto;
-		margin: $space-y / 2 auto $space-y;
+		margin: rem-calc(10) auto rem-calc(20);
 	}
 
 	.tile__title {
