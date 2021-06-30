@@ -2,6 +2,7 @@
 
 ## [Unreleased]
 - Update a11yNavbar script to add support for target attribute.
+- Update page template bottom padding.
 
 ## [1.6.1] - 2021-06-25
 - Updates to masthead site name sizes.
