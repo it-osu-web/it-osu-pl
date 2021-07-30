@@ -95,7 +95,7 @@ a.site-logo__link {
 		}
 
 		@include breakpoint(medium) {
-			font-size: rem-calc(32);
+			font-size: rem-calc(34);
 		}
 
 		@include breakpoint(large) {
@@ -104,14 +104,14 @@ a.site-logo__link {
 	}
 
 	a.site-name__link--long {
-		font-size: rem-calc(24);
+		font-size: rem-calc(26);
 
 		@include breakpoint(medium) {
-			font-size: rem-calc(28);
+			font-size: rem-calc(32);
 		}
 
 		@include breakpoint(large) {
-			font-size: rem-calc(30);
+			font-size: rem-calc(36);
 		}
 	}
 
@@ -177,23 +177,23 @@ a.site-logo__link {
 		}
 
 		@include breakpoint(medium) {
-			font-size: rem-calc(30);
+			font-size: rem-calc(34);
 		}
 
 		@include breakpoint(large) {
-			font-size: rem-calc(34);
+			font-size: rem-calc(36);
 		}
 	}
 
 	a.site-name__link--long {
-		font-size: rem-calc(24);
+		font-size: rem-calc(26);
 
 		@include breakpoint(medium) {
-			font-size: rem-calc(28);
+			font-size: rem-calc(32);
 		}
 
 		@include breakpoint(large) {
-			font-size: rem-calc(30);
+			font-size: rem-calc(36);
 		}
 	}
 

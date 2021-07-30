@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased]
+- Further updates to Masthead typography. 
 
 ## [1.6.2] - 2021-06-30
 - Update a11yNavbar script to add support for target attribute.
