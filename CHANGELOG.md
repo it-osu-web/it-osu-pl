@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased]
+
+## [1.6.3] - 2021-07-30
 - Further updates to Masthead typography. 
 
 ## [1.6.2] - 2021-06-30
