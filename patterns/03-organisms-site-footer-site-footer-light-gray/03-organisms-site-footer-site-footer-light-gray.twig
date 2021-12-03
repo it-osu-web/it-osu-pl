@@ -16,9 +16,25 @@
 		</div>
 
 		<div class='site-footer__ada-statement'>
+		{% if default_ada_statement == 1 %}
 			<p>If you have a disability and experience difficulty accessing this content, please call the Accessibility Helpline at
 				<a href='tel:6142925000'>614-292-5000</a>.</p>
 		</div>
+		{% else %}
+			{{ ada_statement_text }}
+		{% endif %}
+
+		{% if privacy_statement %}
+		<div class='site-footer__privacy-statement'>
+			<a href='{{ privacy_statement }}' target='_blank'>Privacy Statement</a>
+		</div>
+		{% endif %}
+
+		{% if non_discrimination_notice %}
+		<div class='site-footer__non-discrimination-notice'>
+			<a href='{{ non_discrimination_notice }}' target='_blank'>Non-discrimination Notice</a>
+		</div>
+		{% endif %}
 
 		{% if has_footer_text %}
 			<div class='site-footer__footer-text'>
