@@ -1,120 +1,120 @@
 @mixin heading(
-  $size: 36,
-  $weight: $header-font-weight,
-  $font-family: $header-font-family,
-  $line-height: $header-lineheight,
-  $font-style: normal,
-  $color: $header-color,
-  $color-link: inherit,
-  $color-link-hover: $header-color--hover
+	$size: 36,
+	$weight: $header-font-weight,
+	$font-family: $header-font-family,
+	$line-height: $header-lineheight,
+	$font-style: normal,
+	$color: $header-color,
+	$color-link: inherit,
+	$color-link-hover: $header-color--hover
 ) {
-  font-size: rem-calc($size);
-  font-weight: $weight;
-  font-family: $font-family;
-  line-height: $line-height;
-  font-style: $font-style;
-  color: $color;
-  a,
-  &__link {
-    color: $color-link;
-    text-decoration: none;
-    font-weight: $weight;
+	font-size: rem-calc($size);
+	font-weight: $weight;
+	font-family: $font-family;
+	line-height: $line-height;
+	font-style: $font-style;
+	color: $color;
+	a,
+	&__link {
+		color: $color-link;
+		text-decoration: none;
+		font-weight: $weight;
 
-    &:hover {
-      color: $color-link-hover;
-      background: inherit;
-      text-decoration: underline;
-    }
+		&:hover {
+			color: $color-link-hover;
+			background: inherit;
+			text-decoration: underline;
+		}
 
-    &:focus {
-      outline: 1px solid $color;
-      outline-offset: 3px;
-    }
-  }
+		&:focus {
+			outline: 1px solid $color;
+			outline-offset: 3px;
+		}
+	}
 }
 
 h1,
 .h1 {
-  @include heading(38, 800, $proxima);
+	@include heading(38, 800, $proxima);
 }
 
 h2,
 .h2 {
-  @include heading(28, 700, $proxima);
+	@include heading(28, 700, $proxima);
 }
 
 h3,
 .h3 {
-  @include heading(24, 400, $capita, 1.2, italic, black);
-  margin-bottom: rem-calc(10);
+	@include heading(24, 700, $proxima);
+	margin-bottom: rem-calc(10);
 }
 
 h4,
 .h4 {
-  @include heading(20, 700);
-  text-transform: uppercase;
+	@include heading(20, 400, $proxima);
+	text-transform: uppercase;
 }
 
 h5,
 .h5 {
-  @include heading(16, 700);
+	@include heading(16, 700);
 }
 
 h6,
 .h6 {
-  @include heading(16, 700);
+	@include heading(16, 700);
 }
 
 h1.page-title {
-  margin-bottom: rem-calc(12);
+	margin-bottom: rem-calc(12);
 }
 
 h4.label {
-  text-transform: none;
+	text-transform: none;
 }
 
 // Headers within long text.
 .field--type-text-long,
 .field--type-text-with-summary,
 .cke-field {
-  p + h2,
-  p + h3,
-  p + h4,
-  p + h5,
-  p + h6 {
-    margin-top: rem-calc(36);
-  }
+	p + h2,
+	p + h3,
+	p + h4,
+	p + h5,
+	p + h6 {
+		margin-top: rem-calc(36);
+	}
 
-  ul + h2,
-  ul + h3,
-  ul + h4,
-  ul + h5,
-  ul + h6 {
-    margin-top: rem-calc(36);
-  }
+	ul + h2,
+	ul + h3,
+	ul + h4,
+	ul + h5,
+	ul + h6 {
+		margin-top: rem-calc(36);
+	}
 
-  ol + h2,
-  ol + h3,
-  ol + h4,
-  ol + h5,
-  ol + h6 {
-    margin-top: rem-calc(36);
-  }
+	ol + h2,
+	ol + h3,
+	ol + h4,
+	ol + h5,
+	ol + h6 {
+		margin-top: rem-calc(36);
+	}
 
-  .media + h2,
-  .media + h3,
-  .media + h4,
-  .media + h5,
-  .media + h6,
-  img + h2,
-  img + h3,
-  img + h4,
-  img + h5,
-  img + h6 {
-    margin-top: rem-calc(36);
-  }
+	.media + h2,
+	.media + h3,
+	.media + h4,
+	.media + h5,
+	.media + h6,
+	img + h2,
+	img + h3,
+	img + h4,
+	img + h5,
+	img + h6 {
+		margin-top: rem-calc(36);
+	}
 
-  h3 + h4 {
-    margin-top: rem-calc(6);
-  }
+	h3 + h4 {
+		margin-top: rem-calc(6);
+	}
 }
