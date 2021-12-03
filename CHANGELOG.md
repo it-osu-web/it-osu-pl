@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.7.0] - 2021-12-02
+
 - Update Masthead styles.
 - Update h3 and h4 styles.
 - Remove default border from <img> tag.
