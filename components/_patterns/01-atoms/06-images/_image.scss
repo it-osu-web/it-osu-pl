@@ -1,22 +1,22 @@
 @mixin img {
-  display: block;
-  height: auto;
-  max-width: 100%;
+	display: block;
+	height: auto;
+	max-width: 100%;
 }
 
 img,
 picture {
-  @include img;
+	@include img;
 }
 
-img {
-  border: 1px solid $gray;
+.image {
+	border: 1px solid $gray;
 }
 
 figure {
-  margin: 0; //override normalize
+	margin: 0; //override normalize
 }
 
 .figure__caption {
-  font-style: italic;
+	font-style: italic;
 }
