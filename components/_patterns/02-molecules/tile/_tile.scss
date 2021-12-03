@@ -104,10 +104,3 @@ a.tile {
 		}
 	}
 }
-
-// Make tile full width in pl and layout builder.
-.sg-pattern-example > .tile,
-.block .tile,
-.block--inline-block .tile {
-	width: 100%;
-}
