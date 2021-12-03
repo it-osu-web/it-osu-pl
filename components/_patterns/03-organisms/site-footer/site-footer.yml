@@ -8,8 +8,9 @@ zip: 43210
 phone: 614-292-8860
 fax: 614-292-8860
 contact_email: odee@osu.edu
-footer_text: 'This content will be displayed in the footer below the contact info. It can contain links or other pertinent information.'
+footer_text: "This content will be displayed in the footer below the contact info. It can contain links or other pertinent information."
 admin_link: 1
+default_ada_statement: 1
 social_links:
   1:
     name: Twitter

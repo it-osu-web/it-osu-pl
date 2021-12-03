@@ -111,12 +111,12 @@ nav.a11y-navbar {
 			span[role="menuitem"] {
 				color: $dk-gray;
 				text-decoration: none;
+				font-weight: 600;
 				background-color: $lt-gray;
 				line-height: 1.25rem;
 				padding: 0.625rem 1rem;
 				display: block;
 				min-height: 1.5rem;
-				text-transform: uppercase;
 				position: relative;
 				z-index: 99;
 				margin-bottom: 1px;

@@ -73,16 +73,16 @@ a.site-logo__link {
 //mixin for masthead--standard
 @mixin masthead-standard($bg-color: $white, $text-color: $black) {
 	background: $bg-color;
-	padding: rem-calc(24) 0;
+	padding: rem-calc(24 0);
 
 	@include breakpoint(medium) {
-		padding: rem-calc(12) 0;
+		padding: rem-calc(10 0);
 	}
 
 	#site-name {
 		@include breakpoint(medium) {
 			padding-right: 2em;
-			height: 135px;
+			height: 125px;
 		}
 	}
 
@@ -95,23 +95,23 @@ a.site-logo__link {
 		}
 
 		@include breakpoint(medium) {
-			font-size: rem-calc(34);
+			font-size: rem-calc(38);
 		}
 
 		@include breakpoint(large) {
-			font-size: rem-calc(36);
+			font-size: rem-calc(40);
 		}
 	}
 
 	a.site-name__link--long {
-		font-size: rem-calc(26);
+		font-size: rem-calc(28);
 
 		@include breakpoint(medium) {
-			font-size: rem-calc(32);
+			font-size: rem-calc(36);
 		}
 
 		@include breakpoint(large) {
-			font-size: rem-calc(36);
+			font-size: rem-calc(38);
 		}
 	}
 
@@ -144,7 +144,7 @@ a.site-logo__link {
 		border: none;
 		float: right;
 		@include breakpoint(medium) {
-			height: 125px;
+			height: 110px;
 		}
 	}
 }
@@ -237,9 +237,6 @@ a.site-logo__link {
 .masthead--standard.masthead--white {
 	@include masthead-standard();
 }
-.masthead--standard.masthead--lt-gray {
-	@include masthead-standard($near-white);
-}
 .masthead--standard.masthead--md-gray {
 	@include masthead-standard($gray, $white);
 }
@@ -248,9 +245,6 @@ a.site-logo__link {
 }
 .masthead--slim.masthead--white {
 	@include masthead-slim();
-}
-.masthead--slim.masthead--lt-gray {
-	@include masthead-slim($near-white);
 }
 .masthead--slim.masthead--md-gray {
 	@include masthead-slim($gray, $white);

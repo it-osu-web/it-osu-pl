@@ -27,10 +27,10 @@
 %}
 
 {# Add names of regions that should go full width. #}
-{% set full_width = ['hero'] %}
+{% set full_width = ['hero', 'content-after'] %}
 
 {# Add names of regions that should not have wrappers. #}
-{% set no_wrapper = ['content', 'sidebar-1', 'sidebar-2', 'content_after'] %}
+{% set no_wrapper = ['content', 'sidebar-1', 'sidebar-2'] %}
 
 {% if content %}
 	{% if region_name in no_wrapper %}
