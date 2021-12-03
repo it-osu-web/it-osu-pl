@@ -237,9 +237,6 @@ a.site-logo__link {
 .masthead--standard.masthead--white {
 	@include masthead-standard();
 }
-.masthead--standard.masthead--lt-gray {
-	@include masthead-standard($near-white);
-}
 .masthead--standard.masthead--md-gray {
 	@include masthead-standard($gray, $white);
 }
@@ -248,9 +245,6 @@ a.site-logo__link {
 }
 .masthead--slim.masthead--white {
 	@include masthead-slim();
-}
-.masthead--slim.masthead--lt-gray {
-	@include masthead-slim($near-white);
 }
 .masthead--slim.masthead--md-gray {
 	@include masthead-slim($gray, $white);
