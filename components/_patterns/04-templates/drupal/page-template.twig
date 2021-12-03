@@ -59,11 +59,12 @@
 
 		</div>
 	</div>
-
-	{% block content_after %}
-		{{ page.content_after }}
-	{% endblock %}
 </div>
+
+{% block content_after %}
+	{{ page.content_after }}
+{% endblock %}
+
 
 <footer role="contentinfo">
 	{% block pre_footer %}
